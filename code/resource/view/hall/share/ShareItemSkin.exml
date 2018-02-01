@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="ShareItemSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group width="471">
+		<e:Image source="hshare_bg2_png" verticalCenter="0" width="100%"/>
+		<e:Image id="ibg1" x="172" verticalCenter="0" source="hshare_bg8_png" visible="false"/>
+		<e:Label id="acout1" verticalCenter="16" fontFamily="黑体" x="239" y="10" textColor="0xAC6B4C"/>
+		<e:Image id="aImg1" x="169" width="68" height="68" verticalCenter="0"/>
+		<e:Image id="ibg2" verticalCenter="0" source="hshare_bg8_png" x="332" y="10" visible="false"/>
+		<e:Label id="acout2" verticalCenter="16" y="20" textColor="0xAC6B4C" fontFamily="黑体" x="399"/>
+		<e:Image id="aImg2" width="68" verticalCenter="0" height="68" x="332" y="10"/>
+		<e:Image source="hshare_bg3_png" verticalCenter="0"/>
+		<e:Image id="lightImg" source="hshare_bg4_png" height="72" width="100%" scale9Grid="20,14,126,54" visible="false"/>
+		<e:Label id="targetLab" x="17" verticalCenter="0" textColor="0x8C4A10" fontFamily="黑体"/>
+		<e:Image id="receiveImg" source="hshare_bg7_png" left="0" visible="false"/>
+	</e:Group>
+</e:Skin>

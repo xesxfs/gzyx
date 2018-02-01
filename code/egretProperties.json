@@ -1,0 +1,39 @@
+{
+	"publish": {
+		"web": 0,
+		"native": 1,
+		"path": "bin-release"
+	},
+	"egret_version": "4.0.3",
+	"modules": [
+		{
+			"name": "egret"
+		},
+		{
+			"name": "eui"
+		},
+		{
+			"name": "res"
+		},
+		{
+			"name": "socket"
+		},
+		{
+			"name": "tween"
+		},
+		{
+			"name": "game"
+		},
+		{
+			"name": "dragonbones"
+		},
+		{
+			"name": "particle",
+			"path": "../modules/particle"
+		},
+		{
+			"name": "md5",
+			"path": "../modules/md5"
+		}
+	]
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EmailTwoSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+		<e:Image width="712" height="1001.36" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="212,52,331,54" horizontalCenter="0" verticalCenter="0"/>
+		<e:Image width="657" height="866" y="265" source="hall_within_box_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" scale9Grid="44,36,43,34"/>
+		<e:Image y="187" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
+		<e:Image y="195.34" anchorOffsetX="0" anchorOffsetY="0" source="mailbox_png" horizontalCenter="0"/>
+		<e:Label id="email_title" text="临时维护补偿" y="283" fontFamily="Microsoft YaHei" anchorOffsetY="0" height="50" anchorOffsetX="0" width="562" verticalAlign="middle" textAlign="center" horizontalCenter="0" size="34" textColor="0x3c3c3c"/>
+	<e:Image id="contentImg" source="hall_within_box3_png" y="336" scale9Grid="17,8,109,55" anchorOffsetY="0" height="625" anchorOffsetX="0" width="609" horizontalCenter="0"/>
+	<e:Scroller width="567" height="360" y="370" horizontalCenter="0">
+		<e:Group>
+			<e:Label id="email_content" text="杯子" y="0" anchorOffsetX="0" width="567" anchorOffsetY="0" fontFamily="Microsoft YaHei" horizontalCenter="0" x="0" scaleX="1" scaleY="1" textColor="0x7e5a3d" size="28"/>
+		</e:Group>
+	</e:Scroller>
+	<e:Group id="enclosure" y="576" anchorOffsetY="0" height="533" horizontalCenter="0" anchorOffsetX="0" width="693">
+		<e:Image source="cutline_png" y="164" horizontalCenter="0"/>
+		<e:Image source="email_iconbg_png" y="188" horizontalCenter="0.5"/>
+		<e:Image id="iconImg" x="290.93" y="202.2" source="hall_one_card_png" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Label id="email_name" text="房卡1张" x="222" y="335" anchorOffsetX="0" width="244" anchorOffsetY="0" height="50" verticalAlign="top" fontFamily="Microsoft YaHei" textAlign="center" textColor="0xb33318" size="32"/>
+		<e:Group id="getedGro" width="324" height="98" y="414" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+			<e:Image source="hall_two_bt1_png" y="6" horizontalCenter="0" x="64" scaleX="1" scaleY="1"/>
+			<e:Image source="email_geted_png" verticalCenter="0" horizontalCenter="0"/>
+		</e:Group>
+		<e:Group id="getGro" width="324" height="98" y="414" horizontalCenter="0">
+			<e:Button id="email_two_receive" label="" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="hall_receive_png" horizontalCenter="0" verticalCenter="-3.5"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+		</e:Group>
+	</e:Group>
+	<e:Button id="email_two_back" label="" x="656" y="160.3" anchorOffsetX="0" anchorOffsetY="0">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

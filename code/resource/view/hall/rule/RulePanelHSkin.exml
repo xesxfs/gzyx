@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RulePanelHSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="750" height="1334">
+	<e:Group id="hallGro" width="714" height="1002" x="20" y="166" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Image width="712" height="1001.36" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="212,52,331,54" horizontalCenter="0" verticalCenter="0" x="-1" y="0" scaleX="1" scaleY="1"/>
+		<e:Image y="21" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="-1" scaleX="1" scaleY="1"/>
+		<e:Button id="rule_back" label="" x="636" y="-5.699999999999989" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Image y="31.340000000000003" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0.5" source="rule_title_n_png" x="299" scaleX="1" scaleY="1"/>
+		<e:Image source="hall_within_box_png" y="105.08999999999997" scale9Grid="37,34,86,36" anchorOffsetX="0" width="675" anchorOffsetY="0" height="853.73" horizontalCenter="0.5" x="18" scaleX="1" scaleY="1"/>
+		<e:Image source="rule_tiltle5_png" y="102" horizontalCenter="0.5" x="22" scaleX="1" scaleY="1"/>
+		<e:Group width="667" height="85" x="22" y="102" scaleX="1" scaleY="1">
+			<e:RadioButton id="radioAHall" value="0" selected="true" groupName="radioGro" y="0" x="0.99" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Group width="100%" height="100%">
+					<e:Image horizontalCenter="3" verticalCenter="0" source.down="rule_title2_png" source.disabled=""/>
+				</e:Group>
+				<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl1_d_png" source.up="rule_bl1_n_png"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton value="1" selected="false" groupName="radioGro" y="0" x="169.19" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Group width="100%" height="100%">
+					<e:Image horizontalCenter="2" verticalCenter="0" source.down="rule_title3_png" source.disabled=""/>
+				</e:Group>
+				<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl2_d_png" source.up="rule_bl2_n_png"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton value="2" selected="false" groupName="radioGro" y="0" x="335.72" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Group width="100%" height="100%">
+					<e:Image source.down="rule_title3_png" source.disabled=""/>
+				</e:Group>
+				<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl3_d_png" source.up="rule_bl3_n_png"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton value="3" selected="false" groupName="radioGro" y="0" x="502.12" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Group width="100%" height="100%">
+					<e:Image x="166" source.down="rule_title2_png" source.disabled="" scaleX="-1"/>
+				</e:Group>
+				<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl4_d_png" source.up="rule_bl4_n_png"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+		</e:Group>
+		<e:ViewStack id="jp_view_stack_hall" width="630" height="732.24" y="196.16000000000003" selectedIndex="0" horizontalCenter="0" anchorOffsetY="0" x="40" scaleX="1" scaleY="1">
+			<e:Group width="100%" height="100%" name="基本规则视图">
+			<e:Scroller id="jpruleScroller_basic_h" height="100%" width="100%" scrollPolicyH="off">
+				<e:Group width="630" height="658">
+				<e:Label id="jp_rule_basic_text_h" width="590" fontFamily="黑体" size="24" wordWrap="true" textColor="0xF9F5D8" y="10" x="20" lineSpacing="4"/>
+				</e:Group>
+			</e:Scroller>
+			</e:Group>
+			<e:Group width="100%" height="100%" name="基本番型视图">
+			<e:Scroller id="jpruleScroller_multiple_h" width="100%" height="100%" scrollPolicyH="off">
+				<e:Group id="jpFanTypeGroup_h">
+				<e:layout>
+					<e:VerticalLayout/>
+				</e:layout>
+				</e:Group>
+			</e:Scroller>
+			</e:Group>
+			<e:Group width="100%" height="100%" name="算法视图">
+			<e:Scroller id="jpruleScroller_crearing_h" height="100%" width="100%" scrollPolicyH="off">
+				<e:Group width="630" height="650">
+				<e:Label id="jp_rule_crearing_text_h" width="590" fontFamily="黑体" size="24" wordWrap="true" textColor="0xF9F5D8" y="10" x="20" lineSpacing="4"/>
+				</e:Group>
+			</e:Scroller>
+			</e:Group>
+			<e:Group width="100%" height="100%" name="特殊规则视图">
+			<e:Scroller id="jpruleScroller_special_h" width="100%" height="100%" scrollPolicyH="off">
+				<e:Group>
+				<e:Label id="jp_rule_special_text_h" text="" fontFamily="黑体" width="590" size="24" textColor="0xF9F5D8" x="20" y="10" lineSpacing="4"/>
+				</e:Group>
+			</e:Scroller>
+			</e:Group>
+		</e:ViewStack>
+	</e:Group>
+    <e:Group id="gameGro" width="100%" height="516" x="0" y="818" anchorOffsetY="0">
+			<e:Image height="520" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" width="100%" scale9Grid="313,78,54,31" horizontalCenter="0" x="0" scaleX="1" scaleY="1" bottom="-7" y="3"/>
+			<e:Image y="-86.33000000000004" horizontalCenter="0" x="327" scaleX="1" scaleY="1" source="hall_take_png"/>
+			<e:Image source="hall_within_box_png" y="25.09" scale9Grid="37,34,86,36" anchorOffsetX="0" width="675" anchorOffsetY="0" height="479" horizontalCenter="0.5" x="18" scaleX="1" scaleY="1"/>
+			<e:Image source="rule_tiltle5_png" y="22" horizontalCenter="0.5" x="22" scaleX="1" scaleY="1"/>
+			<e:Group width="667" height="85" x="41" y="22" scaleX="1" scaleY="1">
+				<e:RadioButton id="radioAGame" value="0" selected="true" groupName="radioGro2" y="0" x="0.99" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Group width="100%" height="100%">
+						<e:Image horizontalCenter="2" verticalCenter="0" source.down="rule_title2_png" source.disabled=""/>
+					</e:Group>
+					<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl1_d_png" source.up="rule_bl1_n_png"/>
+					</e:Skin>
+				</e:skinName>
+				</e:RadioButton>
+				<e:RadioButton value="1" selected="true" groupName="radioGro2" y="0" x="169.19" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Group width="100%" height="100%">
+						<e:Image source.down="rule_title3_png" source.disabled=""/>
+					</e:Group>
+					<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl2_d_png" source.up="rule_bl2_n_png"/>
+					</e:Skin>
+				</e:skinName>
+				</e:RadioButton>
+				<e:RadioButton value="2" selected="true" groupName="radioGro2" y="0" x="335.72" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Group width="100%" height="100%">
+						<e:Image source.down="rule_title3_png" source.disabled=""/>
+					</e:Group>
+					<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl3_d_png" source.up="rule_bl3_n_png"/>
+					</e:Skin>
+				</e:skinName>
+				</e:RadioButton>
+				<e:RadioButton value="3" selected="true" groupName="radioGro2" y="0" x="502.12" anchorOffsetX="0" anchorOffsetY="0" width="166" height="85">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Group width="100%" height="100%">
+						<e:Image x="166" source.down="rule_title2_png" source.disabled="" scaleX="-1"/>
+					</e:Group>
+					<e:Image horizontalCenter="0" verticalCenter="-3" source.down="rule_bl4_d_png" source.up="rule_bl4_n_png"/>
+					</e:Skin>
+				</e:skinName>
+				</e:RadioButton>
+			</e:Group>
+			<e:ViewStack id="jp_view_stack_game" width="630" height="373.24" y="107.16" selectedIndex="0" horizontalCenter="0" anchorOffsetY="0" x="40" scaleX="1" scaleY="1">
+				<e:Group width="100%" height="100%" name="基本规则视图">
+				<e:Scroller id="jpruleScroller_basic_g" height="100%" width="100%" scrollPolicyH="off">
+					<e:Group width="630" height="658">
+					<e:Label id="jp_rule_basic_text_g" width="590" fontFamily="黑体" size="24" wordWrap="true" textColor="0xF9F5D8" y="10" x="20" lineSpacing="4"/>
+					</e:Group>
+				</e:Scroller>
+				</e:Group>
+				<e:Group width="100%" height="100%" name="基本番型视图">
+				<e:Scroller id="jpruleScroller_multiple_g" width="100%" height="100%" scrollPolicyH="off">
+					<e:Group id="jpFanTypeGroup_g">
+					<e:layout>
+						<e:VerticalLayout/>
+					</e:layout>
+					</e:Group>
+				</e:Scroller>
+				</e:Group>
+				<e:Group width="100%" height="100%" name="算法视图">
+				<e:Scroller id="jpruleScroller_crearing_g" height="100%" width="100%" scrollPolicyH="off">
+					<e:Group width="630" height="650">
+					<e:Label id="jp_rule_crearing_text_g" width="590" fontFamily="黑体" size="24" wordWrap="true" textColor="0xF9F5D8" y="10" x="20" lineSpacing="4"/>
+					</e:Group>
+				</e:Scroller>
+				</e:Group>
+				<e:Group width="100%" height="100%" name="特殊规则视图">
+				<e:Scroller id="jpruleScroller_special_g" width="100%" height="100%" scrollPolicyH="off">
+					<e:Group>
+					<e:Label id="jp_rule_special_text_g" text="" fontFamily="黑体" width="590" size="24" textColor="0xF9F5D8" x="20" y="10" lineSpacing="4"/>
+					</e:Group>
+				</e:Scroller>
+				</e:Group>
+			</e:ViewStack>
+	</e:Group>
+</e:Skin>

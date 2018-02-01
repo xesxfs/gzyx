@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PaymentPanelSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="610" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" height="478" scale9Grid="104,43,504,29" horizontalCenter="0" verticalCenter="-13.5"/>
+	<e:Image width="578" height="342.52" y="437.12" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="41,24,67,54" source="hall_within_box2_png" horizontalCenter="0"/>
+	<e:Image id="iconImg" x="251.13" y="459.79" anchorOffsetX="0" anchorOffsetY="0" source="hall_one_card_png" scaleX="0.8" scaleY="0.8"/>
+	<e:Label id="payment_name" text="房卡1张" x="355.3" y="465.43" anchorOffsetX="0" width="244" anchorOffsetY="0" height="77" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0x943300"/>
+	<e:Label id="payment_money" text="¥20.00" y="573.74" anchorOffsetX="0" width="500" anchorOffsetY="0" height="77" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" size="70" textColor="0x943300" horizontalCenter="0"/>
+	<e:Button id="payment_right" label="" y="784.02" horizontalCenter="1">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="hall_two_bt_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="hall_confirm_purchase_png" horizontalCenter="0.5" verticalCenter="-6"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="payment_close" label="" x="618" y="393" anchorOffsetX="0" anchorOffsetY="0">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image source="payment_title_png" y="390.57" horizontalCenter="0"/>
+	<e:Image source="cutline_png" y="558" scale9Grid="206,0,187,4" width="520" horizontalCenter="0"/>
+	<e:Image source="cutline_png" y="658" scale9Grid="206,0,187,4" width="520" horizontalCenter="0"/>
+	<e:Image source="hall_tip_png" x="581.99" y="698"/>
+	<e:Label id="purseLab" text="钱包剩余(¥88.00)" y="673" anchorOffsetX="0" width="367" anchorOffsetY="0" height="77" textAlign="center" verticalAlign="middle" fontFamily="Microsoft YaHei" size="32" horizontalCenter="0" textColor="0x3c3c3c"/>
+	<e:Rect id="payment_method" width="459" height="100" x="146.5" y="667" fillAlpha="0" strokeAlpha="0" anchorOffsetX="0"/>
+</e:Skin>

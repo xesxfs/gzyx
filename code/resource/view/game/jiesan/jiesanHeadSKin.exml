@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="jiesanHeadSKin" width="130" height="170" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="headImg" width="70" height="70" y="7" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="game_youren_png"/>
+	<e:Label id="nameLabel" text="风中的风" y="93" textColor="0x9b6b6b" size="25" horizontalCenter="0" textAlign="center" fontFamily="Microsoft YaHei"/>
+	<e:Label id="stateLabel" text="同意解散" y="130" size="25" textAlign="center" horizontalCenter="0" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+</e:Skin>

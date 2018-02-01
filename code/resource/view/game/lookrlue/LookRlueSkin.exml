@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LookRlueSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="711" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" height="689" scale9Grid="202,68,92,45" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image y="342.34" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
+	<e:Image y="358.6" anchorOffsetX="0" anchorOffsetY="0" source="game_ckgz_png" horizontalCenter="0"/>
+	<e:Image width="675" height="474.12" y="421.6" source="hall_within_box_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0.5" scale9Grid="64,40,50,26"/>
+	<e:Image x="108" y="478.97" source="room_fz_png"/>
+	<e:Image x="108" y="588.3" source="room_js_png"/>
+	<e:Image x="108" y="698.3" source="room_wf_png"/>
+	<e:Image x="108" y="807.6" source="room_zn_png"/>
+	<e:Image source="cutline_png" y="536.98" anchorOffsetY="0" horizontalCenter="0.5"/>
+	<e:Image source="cutline_png" y="652.3" anchorOffsetY="0" x="73"/>
+	<e:Image source="cutline_png" y="768.61" anchorOffsetY="0" x="73"/>
+	<e:Label text="房主：" x="162" y="472.97" anchorOffsetX="0" width="96" anchorOffsetY="0" height="52" textColor="0x797979" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
+	<e:Label text="局数：" x="162" y="582.3" anchorOffsetX="0" width="96" anchorOffsetY="0" height="52" textColor="0x797979" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
+	<e:Label text="玩法：" x="162" y="692.3" anchorOffsetX="0" width="96" anchorOffsetY="0" height="52" textColor="0x797979" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
+	<e:Label text="抓鸟：" x="162" y="801.6" anchorOffsetX="0" width="96" anchorOffsetY="0" height="52" textColor="0x797979" fontFamily="Microsoft YaHei" verticalAlign="middle"/>
+	<e:Label id="roomerLab" text="绝对罪人" x="258" y="472.97" anchorOffsetX="0" width="290" anchorOffsetY="0" height="52" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x990000"/>
+	<e:Label id="roundLab" text="4局" x="258" y="582.3" anchorOffsetX="0" width="290" anchorOffsetY="0" height="52" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x990000"/>
+	<e:Label id="playMetLab" text="三同、步步高" x="258" y="692.3" anchorOffsetX="0" anchorOffsetY="0" height="52" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x990000"/>
+	<e:Label id="zhuaLab" text="抓1鸟" x="258" y="801.6" anchorOffsetX="0" width="290" anchorOffsetY="0" height="52" fontFamily="Microsoft YaHei" verticalAlign="middle" textColor="0x990000"/>
+	<e:Button id="sureBtn" label="" y="897.48" anchorOffsetX="0" horizontalCenter="0">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" xmlns:w="http://ns.egret.com/wing"/>
+			<e:Image horizontalCenter="0" verticalCenter="-3" source="sure_bl_png"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button y="305.94" x="660.19" id="closeBtn">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

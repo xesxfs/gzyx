@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FriendPanelTSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="750" height="1334">
+	<e:Image width="712" height="1001.36" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="212,52,331,54" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image y="187" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
+	<e:Button id="backBtn" label="" x="656" y="160.3" anchorOffsetX="0" anchorOffsetY="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image y="195.34" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="room_title_png"/>
+    <e:Button id="joinBtn" label="" x="165.66" anchorOffsetX="0" anchorOffsetY="0" y="1050">
+    <e:skinName>
+        <e:Skin states="up,down,disabled">
+        <e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+        <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image verticalCenter="-5" source="room_join_png" horizontalCenter="0"/>
+        </e:Skin>
+    </e:skinName>
+    </e:Button>
+	<e:Button id="createBtn" label="" x="418.96" anchorOffsetX="0" anchorOffsetY="0" y="1050">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image verticalCenter="-5" source="room_create_png" horizontalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	
+	<e:Scroller id="joinRoomScroller" width="671" height="773" y="263" horizontalCenter="2.5">
+        <e:Group id="scroGro" touchEnabled="true" touchChildren="false">
+            <e:Image id="scroImg1" y="0" horizontalCenter="0" source="room_page_1_png"/>
+					<e:Image id="scroImg2" y="0" horizontalCenter="0" source="room_page_2_png"/>
+					<e:Image id="scroImg3" y="0" x="0" source="room_page_3_png"/>
+					<e:Image id="scroImg0" y="10" x="10" source="room_page_1_png"/>
+					<e:layout>
+						<e:HorizontalLayout gap="0"/>
+					</e:layout>
+        </e:Group>
+	</e:Scroller>
+	<e:Group width="750" height="200" y="836" horizontalCenter="0">
+		<e:RadioButton id="radioBtnA" label="" y="145.15" x="296.85" selected="true" value="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_page_s_png" source.down="room_page_n_png" source.disabled="room_page_n_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton id="radioBtnB" label="" y="145.15" x="357" value="1">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_page_s_png" source.down="room_page_n_png" source.disabled="room_page_n_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton id="radioBtnC" label="" y="145.15" x="417.15" value="2">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_page_s_png" source.down="room_page_n_png" source.disabled="room_page_n_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="reSetRuleSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui">
+	<e:Group width="100%" height="100%" x="0" y="0">
+		<e:Image width="667" height="1065" y="152.5" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="79,43,29,29" horizontalCenter="0.5" x="42" scaleX="1" scaleY="1"/>
+		<e:Image width="702" height="99" y="84" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" x="22" scaleX="1" scaleY="1"/>
+		<e:Image width="160.66" height="43" x="292.67" y="112" anchorOffsetX="0" anchorOffsetY="0" source="f_xiugai1_png"/>
+		<e:Button label="" x="619" y="84">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" width.down="95%" height.down="95%" horizontalCenter="0" verticalCenter="0" source="hall_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label text="状态" x="106" y="206" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+		<e:Group x="87.99999999999997" y="252.91">
+			<e:Image width="570" height="107.88" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="hall_within_box_png" scale9Grid="24,23,63,55"/>
+			<e:Label text="仅自己可见" x="44.00000000000003" fontFamily="Microsoft YaHei" textColor="0x000000" verticalCenter="0"/>
+			<e:Label text="仅好友可见" x="307.8700000000001" textColor="0x000000" fontFamily="Microsoft YaHei" verticalCenter="0"/>
+			<e:RadioButton label="" x="224.00000000000014" verticalCenter="0">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="f_kong_png" source.down="f_gou_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="" x="488.0000000000001" verticalCenter="0">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="f_kong_png" source.down="f_gou_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:RadioButton>
+		</e:Group>
+		<e:Group x="87.99999999999997" y="439.27">
+			<e:Image width="570" height="153.33" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="hall_within_box_png" scale9Grid="24,23,63,55"/>
+			<e:Label text="房卡*1" x="473.63" y="93.58" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+			<e:Label text="房卡*1" x="467.57" y="20.87" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+			<e:Label text="房卡*1" x="159.97" y="93.58" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+			<e:RadioButton label="16局" x="37" verticalCenter="33" anchorOffsetX="0" width="107.6">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png" scale9Grid="9,8,23,25"/>
+					<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="0.5" textColor="0x000000"/>
+				</e:Skin>
+				</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="32局" x="362.73" verticalCenter="33" anchorOffsetX="0" width="107.6">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png" scale9Grid="9,8,23,25"/>
+					<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="0.5" textColor="0x000000"/>
+				</e:Skin>
+				</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="4局" x="37" verticalCenter="-40" anchorOffsetX="0" width="107.6">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png" scale9Grid="9,8,23,25"/>
+				<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="0.5" textColor="0x000000"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="8局" x="362.37" verticalCenter="-41" anchorOffsetX="0" width="104.57">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="1.5"  textColor="0x000000"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:Label text="房卡*1" x="153" y="23" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+		</e:Group>
+		<e:Group x="97.99999999999997" y="890.18">
+			<e:Image width="570" height="153.33" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="hall_within_box_png" scale9Grid="24,23,63,55"/>
+			<e:RadioButton label="抓4鸟" x="37" verticalCenter="33" anchorOffsetX="0" width="127.29">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png" scale9Grid="9,8,23,25"/>
+				<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="0.5" textColor="0x000000"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="抓6鸟" x="362.73" verticalCenter="33" anchorOffsetX="0" width="131.84">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png" scale9Grid="9,8,23,25"/>
+				<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="0.5" textColor="0x000000"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="抓1鸟" x="37" verticalCenter="-40" anchorOffsetX="0" width="125.78">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png" scale9Grid="9,8,23,25"/>
+				<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="0.5" textColor="0x000000"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="抓2鸟" x="362.37" verticalCenter="-41" anchorOffsetX="0" width="133.36">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="21.5" verticalCenter="1.5" textColor="0x000000"/>
+				</e:Skin>
+			</e:skinName>
+			</e:RadioButton>
+		</e:Group>
+		<e:Group x="90.50000000000003" y="671.18">
+			<e:Image width="570" height="153.33" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="hall_within_box_png" scale9Grid="24,23,63,55"/>
+			<e:CheckBox label="三同" x="56.42" y="25.940000000000055">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="40" verticalCenter="0"  textColor="0x000000" fontFamily="Microsoft YaHei"/>
+					</e:Skin>
+				</e:skinName>
+			</e:CheckBox>
+			<e:CheckBox label="一枝花" x="57.49999999999997" y="88.94000000000017">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="40" verticalCenter="0"  textColor="0x000000" fontFamily="Microsoft YaHei"/>
+					</e:Skin>
+				</e:skinName>
+			</e:CheckBox>
+			<e:CheckBox label="扎2鸟" x="380.5" y="35.940000000000055">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="40" height="40" source="f_kong_png" source.down="f_gou_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="40" verticalCenter="0"  textColor="0x000000" fontFamily="Microsoft YaHei"/>
+					</e:Skin>
+				</e:skinName>
+			</e:CheckBox>
+		</e:Group>
+		<e:Label text="局数" x="103" y="385" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+		<e:Label text="抓鸟" x="118" y="842.23" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+		<e:Label text="规则" x="100" y="618.4" textColor="0x000000" fontFamily="Microsoft YaHei"/>
+		<e:Button label="" x="297" y="1088">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%"  width.down="95%" height.down="95%" horizontalCenter="0" verticalCenter="0" source="hall_two_bt_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image width="83" height="39" x="22.4" y="16.44" anchorOffsetX="0" anchorOffsetY="0"  width.down="78" height.down="35" horizontalCenter="0" verticalCenter="0" source="f_xiugai_png"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+
+	</e:Group>
+</e:Skin>

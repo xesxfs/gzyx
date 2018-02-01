@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShareTotalItemSkin" width="674" height="126" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bgImg" source="share_record_else_png" horizontalCenter="0" verticalCenter="0" scale9Grid="45,39,78,33" width="674"/>
+	<e:Image source="share_result_headbg_png" x="91" scaleX="0.7" scaleY="0.7" verticalCenter="-3.5"/>
+	<e:Image id="headImg" source="share_result_headmask_png" x="91" scaleX="0.7" scaleY="0.7" verticalCenter="-3.5" width="139" height="141"/>
+	<e:Image id="headMaskImg" source="share_result_headmask_png" x="91" scaleX="0.7" scaleY="0.7" verticalCenter="-3.5"/>
+	<e:Image id="ownerImg" source="game_house_png" x="94" y="12"/>
+	<e:Image id="numImg" source="share_record_1_png" x="20" verticalCenter="-5.5"/>
+	<e:Label id="numLab" text="2" x="36" y="37" fontFamily="FangSong" size="50" bold="true" textColor="0x7e5a3d"/>
+	<e:Label id="nameLab" text="你无法无天" x="204" y="19" fontFamily="Microsoft YaHei"/>
+	<e:Label text="自摸:" x="204" y="72" fontFamily="Microsoft YaHei" textColor="0x7e5a3d" size="26"/>
+	<e:Label id="zimoLab" text="3" x="269" y="73" fontFamily="Microsoft YaHei" textColor="0xb23618" size="26"/>
+	<e:Label text="胡牌:" x="314" y="72" fontFamily="Microsoft YaHei" textColor="0x7E5A3D" size="26"/>
+	<e:Label id="hupaiLab" text="3" x="379" y="73" fontFamily="Microsoft YaHei" textColor="0xB23618" size="26"/>
+	<e:Label text="中鸟:" x="414" y="72" fontFamily="Microsoft YaHei" textColor="0x7E5A3D" size="26"/>
+	<e:Label id="zhongniaoLab" text="3" x="479" y="73" fontFamily="Microsoft YaHei" textColor="0xB23618" size="26"/>
+	<e:BitmapLabel id="winNumLab" x="529" font="win_fnt" text="+600" scaleX="0.6" scaleY="0.6" verticalCenter="1"/>
+</e:Skin>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SwapCardUISkin" width="350" height="120" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label y="4" size="20" text="换牌" x="3"/>
+	<e:Label y="4" size="20" text="下一张" x="103"/>
+	<e:Label y="4" size="20" text="最后" x="169"/>
+	<e:Label y="4" size="20" text="胡" x="229"/>
+	<e:Label y="4" size="20" text="断线" x="269"/>
+	<e:Label y="5.99" size="20" text="色子" x="-45.66"/>
+	<e:Label y="5.99" size="20" text="规则" x="-93.66"/>
+	<e:Label id="diceLabel" y="82.66" size="20" text="0&amp;0" x="-42.33" textColor="0xf2ee0e"/>
+	<e:Group y="24" height="80" id="selectGroup0" width="45" touchEnabled="false" x="10"/>
+	<e:Group y="24" height="80" id="selectGroup1" width="45" touchEnabled="false" x="63"/>
+	<e:Group y="24" height="80" id="selectGroup2" width="45" touchEnabled="false" x="116"/>
+	<e:Group y="24" height="80" id="selectGroup3" width="45" touchEnabled="false" x="170"/>
+	<e:Group y="24" height="80" id="selectGroup4" width="45" touchEnabled="false" x="220"/>
+	<e:Group y="24" height="80" id="selectGroup5" width="45" touchEnabled="false" x="270"/>
+	<e:Group y="24" height="80" id="selectGroup6" width="45" touchEnabled="false" x="-45"/>
+	<e:Group y="24" height="80" id="selectGroup7" width="45" touchEnabled="false" x="-95"/>
+</e:Skin>

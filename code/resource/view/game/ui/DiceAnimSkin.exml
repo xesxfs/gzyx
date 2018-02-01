@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="DiceAnimSkin" width="150" height="100" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="game_sz0_png" visible="false"/>
+	<e:Image source="game_sz1_png" visible="false"/>
+	<e:Image source="game_sz2_png" visible="false"/>
+	<e:Image source="game_sz3_png" visible="false"/>
+	<e:Image source="game_sz4_png" visible="false"/>
+	<e:Image source="game_sz5_png" visible="false"/>
+	<e:Image source="game_sz0_png" x="67" y="1" visible="false"/>
+	<e:Image source="game_sz1_png" x="67" y="1" visible="false"/>
+	<e:Image source="game_sz2_png" x="67" y="1" visible="false"/>
+	<e:Image source="game_sz3_png" x="67" y="1" visible="false"/>
+	<e:Image source="game_sz4_png" x="67" y="1" visible="false"/>
+	<e:Image source="game_sz5_png" x="67" y="1" visible="false"/>
+	<e:Group id="diceGro" width="149" height="98" x="76" y="50" anchorOffsetX="75" anchorOffsetY="49" scaleX="0.6" scaleY="0.6">
+		<e:Image source="s1_png" x="26" y="25" scaleX="1" scaleY="1"/>
+		<e:Image x="86" y="25" source="s1_png" scaleX="1" scaleY="1"/>
+	</e:Group>
+</e:Skin>

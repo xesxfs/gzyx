@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LoginPanelSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bigImg" source="hall_bg_jpg" x="0" y="0"/>
+	<e:Image height="710" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" width="710" scale9Grid="313,78,54,31" horizontalCenter="0" verticalCenter="0" x="-7" y="-2" scaleX="1" scaleY="1"/>
+	<e:Image y="331.37" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="-8" scaleX="1" scaleY="1"/>
+	<e:Image y="408.37" anchorOffsetX="0" width="675" anchorOffsetY="0" height="580" horizontalCenter="-1.5" x="9" scaleX="1" scaleY="1" source="hall_within_box2_png" scale9Grid="51,51,31,28"/>
+    <e:Group id="loginGro" width="702" height="684" y="324" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" visible="false">
+			<e:Image y="16" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" source="login_logintitle_png" horizontalCenter="0"/>
+			<e:Image y="240.02" horizontalCenter="4.5" source="cutline_png"/>
+			<e:Image source="cutline_png" y="367.58" horizontalCenter="0.5"/>
+			<e:Button id="registBtnC" label="" anchorOffsetX="0" anchorOffsetY="0" y="506" x="131" scaleX="1" scaleY="1">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt2_png"/>
+					<e:Image anchorOffsetX="0" anchorOffsetY="0" y="24" source="login_regist_o_png" horizontalCenter="0"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="loginBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="506" x="407" scaleX="1" scaleY="1">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+					<e:Image anchorOffsetX="0" anchorOffsetY="0" y="24" source="login_login_png" horizontalCenter="0"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+            <e:Label text="账号：" x="101" y="187.4" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+			<e:Label text="密码：" x="101" y="315.4" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+			<e:Label id="forgetLab" text="忘记密码" x="520" y="315.4" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" textColor="0x139501" scaleX="1" scaleY="1"/>
+			<e:EditableText id="nameEdit" width="270" height="36" text="" x="245" y="187.4" size="36" textColor="0x000000" anchorOffsetX="0" prompt="朋际ID/手机号码" displayAsPassword="false" promptColor="0xc2b5a0" maxChars="11" restrict="&quot;0-9&quot;" inputType="tel"/>
+			<e:EditableText id="passEdit" width="270" height="36" text="" x="245" y="315.4" size="36" textColor="0x000000" anchorOffsetX="0" prompt="请输入密码" displayAsPassword="true" promptColor="0xc2b5a0" restrict="&quot;a-zA-Z0-9&quot;" inputType="password" maxChars="16"/>
+			<e:Button y="-25.14" x="632.85" id="closeBtnB" scaleX="1" scaleY="1">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%"  source="hall_close_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+	</e:Group>
+    <e:Group id="registGro" width="702" height="684" y="324" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" visible="false">
+			<e:Image y="16" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="295" scaleX="1" scaleY="1" source="login_regist_title_png"/>
+			<e:Image source="cutline_png" y="195.18" horizontalCenter="0.5"/>
+			<e:Image source="cutline_png" y="301.6" x="49"/>
+			<e:Image source="cutline_png" y="408.6" x="49"/>
+			<e:Image source="cutline_png" y="515.18" horizontalCenter="0.5"/>
+			<e:Label text="手机号：" x="95" y="143" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+			<e:Label text="验证码：" x="95" y="249.6" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+			<e:Label text="密   码：" x="95" y="356.6" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+			<e:Label text="密   码：" x="95" y="463" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+			<e:EditableText id="phoneEdit" width="340" height="36" text="" x="245" y="143" size="36" textColor="0x000000" anchorOffsetX="0" prompt="请输入11位手机号码" promptColor="0xc2b5a0" maxChars="11" restrict="&quot;0-9&quot;" inputType="tel"/>
+			<e:EditableText id="verifyEdit" width="230" height="36" text="" x="239.85" y="249.6" size="36" textColor="0x000000" anchorOffsetX="0" prompt="请输入验证码" promptColor="0xc2b5a0" maxChars="6" restrict="&quot;0-9&quot;" inputType="tel"/>
+			<e:EditableText id="passEditZS" width="340" height="36" text="" x="249.85" y="356.6" size="36" textColor="0x000000" anchorOffsetX="0" prompt="输入密码" displayAsPassword="true" promptColor="0xc2b5a0" restrict="&quot;a-zA-Z0-9&quot;" maxChars="16" inputType="password"/>
+			<e:EditableText id="passEditZU" width="340" height="36" text="" x="244.7" y="463" size="36" textColor="0x000000" anchorOffsetX="0" prompt="确认密码" displayAsPassword="true" promptColor="0xc2b5a0" restrict="&quot;a-zA-Z0-9&quot;" maxChars="16" inputType="password"/>
+			<e:Button id="registBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="547.85" horizontalCenter="0" x="258" scaleX="1" scaleY="1">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+					<e:Image anchorOffsetX="0" anchorOffsetY="0" y="24" horizontalCenter="0" source="login_regist_g_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="getVerify" label="" anchorOffsetX="0" anchorOffsetY="0" y="207.36" horizontalCenter="214" x="268" scaleX="1" scaleY="1">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt2_png"/>
+					<e:Image anchorOffsetX="0" anchorOffsetY="0" y="22" horizontalCenter="0" source="login_getcode_png" scaleX="0.95" scaleY="0.95"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button y="-25.14" x="632.85" id="closeBtn" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%"  source="hall_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+    </e:Group>
+	<e:Group id="findPassGro" width="702" height="684" y="324" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" visible="false">
+		<e:Image y="16" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="295" scaleX="1" scaleY="1" source="login_find_png"/>
+		<e:Image source="cutline_png" y="195.18" horizontalCenter="0.5"/>
+		<e:Image source="cutline_png" y="301.6" x="49"/>
+		<e:Image source="cutline_png" y="408.6" x="49"/>
+		<e:Image source="cutline_png" y="515.18" horizontalCenter="0.5"/>
+		<e:Label text="手机号：" x="95" y="143" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+		<e:Label text="验证码：" x="95" y="249.6" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+		<e:Label text="新密码：" x="95" y="356.6" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+		<e:Label text="新密码：" x="95" y="463" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+		<e:EditableText id="phoneEdit0" width="340" height="36" text="" x="245" y="143" size="36" textColor="0x000000" anchorOffsetX="0" prompt="请输入11位手机号码" promptColor="0xc2b5a0" restrict="&quot;0-9&quot;" maxChars="11" inputType="tel"/>
+		<e:EditableText id="verifyEdit0" width="230" height="36" text="" x="239.85" y="249.6" size="36" textColor="0x000000" anchorOffsetX="0" prompt="请输入验证码" promptColor="0xc2b5a0" restrict="&quot;0-9&quot;" maxChars="6" inputType="tel"/>
+		<e:EditableText id="passEditZS0" width="340" height="36" text="" x="249.85" y="356.6" size="36" textColor="0x000000" anchorOffsetX="0" prompt="输入密码" displayAsPassword="true" promptColor="0xc2b5a0" restrict="&quot;a-zA-Z0-9&quot;" maxChars="16" inputType="password"/>
+		<e:EditableText id="passEditZU0" width="340" height="36" text="" x="244.7" y="463" size="36" textColor="0x000000" anchorOffsetX="0" prompt="确认密码" displayAsPassword="true" promptColor="0xc2b5a0" restrict="&quot;a-zA-Z0-9&quot;" maxChars="16" inputType="password"/>
+		<e:Button id="getBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="547.85" horizontalCenter="0" x="258" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+				<e:Image anchorOffsetX="0" anchorOffsetY="0" y="24" horizontalCenter="0" source="login_submit_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button id="getVerify0" label="" anchorOffsetX="0" anchorOffsetY="0" y="207.36" horizontalCenter="214" x="268" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt2_png"/>
+				<e:Image anchorOffsetX="0" anchorOffsetY="0" y="22" horizontalCenter="0" source="login_getcode_png" scaleX="0.95" scaleY="0.95"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button y="-25.14" x="632.85" id="closeBtn0" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Group id="baseInfoGro" width="702" height="684" y="324" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0">
+		<e:Image y="16" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1" horizontalCenter="0" source="login_base_png"/>
+		<e:Image y="390.32" horizontalCenter="4.5" source="cutline_png"/>
+		<e:Image source="cutline_png" y="517.88" horizontalCenter="0.5"/>
+		<e:Group id="iconGro" width="700" height="200" y="113.04" x="1">
+			<e:Image x="57" y="16" source=""/>
+			<e:Image x="266" y="16" source=""/>
+			<e:Image x="476" y="16" source=""/>
+			<e:RadioButton id="iconRadio" label="" x="57" y="16" groupName="radioIconGro" value="0" selected="true">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="login_icon_choose_n_png" source.down="login_icon_choose_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="" x="266" y="16" groupName="radioIconGro" value="1">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="login_icon_choose_n_png" source.down="login_icon_choose_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:RadioButton>
+			<e:RadioButton label="" x="476" y="16" groupName="radioIconGro" value="2">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="login_icon_choose_n_png" source.down="login_icon_choose_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:RadioButton>
+		</e:Group>
+		<e:Button id="loginBtn1" label="" anchorOffsetX="0" anchorOffsetY="0" y="541.15" scaleX="1" scaleY="1" horizontalCenter="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" y="24" source="login_did_png" horizontalCenter="0"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Label text="昵称：" x="161" y="337.7" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="36" textAlign="left" scaleX="1" scaleY="1" textColor="0x974412"/>
+		<e:EditableText id="nameEdit0" width="270" height="36" text="" x="305" y="337.7" size="36" textColor="0x000000" anchorOffsetX="0" prompt="输入昵称" displayAsPassword="false" promptColor="0xC2B5A0" maxChars="8" restrict="&quot;a-zA-Z0-9\u4E00-\u9FA5&quot;"/>
+		<e:RadioButton id="sexMRadio" label="" x="170.67" y="459.15" groupName="radioGro" value="0" selected="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="login_check_di_png" source.down="login_check_gou_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton id="sexWRadio" label="" x="420.01" y="459.15" groupName="radioGro" value="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="login_check_di_png" source.down="login_check_gou_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:Image source="boy_png" x="226.67" y="468.15"/>
+		<e:Image source="login_mz_png" x="258" y="464.15"/>
+		<e:Image source="login_wz_png" x="502.7" y="464.15"/>
+		<e:Image source="girl_png" x="474.33" y="468.15"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<e:Skin class="HallSceneSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  >
+	<e:Group height="100%" width="100%">
+		<e:Image width="750" height="1334" anchorOffsetX="0" source="hall_bg_jpg"/>
+
+		<ns1:Marquee id="marquee" y="119" skinName="MarqueeSkin" x="6" width="533" visible="false"/>
+		<e:Group id="room" x="426.9999999999999" y="479.00000000000006">
+			<e:Image id="friendMask1" source="hall_friends_room_png" x="-128" y="208" scaleX="0.9" scaleY="0.9"/>
+			<e:Image id="friendMask2" source="hall_friends_room_png" x="-128" y="208" scaleX="0.9" scaleY="0.9"/>
+			<e:Image id="playMask1" x="-128" y="-92" source="hall_playground_png" scaleX="0.9" scaleY="0.9"/>
+			<e:Image id="playMask2" x="-128" y="-92" source="hall_playground_png" scaleX="0.9" scaleY="0.9"/>
+			<e:Button id="hall_friends_room" label="" x="-150" y="200">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_friends_room_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="hall_playground" label="" x="-150" y="-100">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_playground_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Image id="lightPlay1" source="saoLight_test_png" x="-330" y="-470" blendMode="add" fillMode="scale" alpha="0.3" scaleY="1" scaleX="1"/>
+			<e:Image id="lightPlay2" source="saoLight_test_png" x="-24.25" y="-470" blendMode="add" fillMode="scale" alpha="0.3"/>
+			<e:Image id="lightFriend1" source="saoLight_test_png" x="-666.62" y="-140" blendMode="add" fillMode="scale" alpha="0.3"/>
+			<e:Image id="lightFriend2" source="saoLight_test_png" x="-666.62" y="-140" blendMode="add" fillMode="scale" alpha="0.3"/>
+		</e:Group>
+		<e:Image id="flowerImg" width="49" height="37" x="431" y="18"/>
+		<e:Image id="flowerImg1" width="49" height="37" x="661" y="25"/>
+		<ns1:SideMenu skinName="SideMenuSkin" left="0" verticalCenter="0" visible="false"/>
+	</e:Group>
+</e:Skin>

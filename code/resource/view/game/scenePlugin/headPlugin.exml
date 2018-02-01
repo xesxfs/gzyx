@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="headPlugin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="headGroup" touchEnabled="false" touchThrough="true" width="100%" height="100%" x="0" y="0">
+		<ns1:HeadUI xmlns:ns1="*" y="671" skinName="headUISkin1" x="285"/>
+		<ns1:HeadUI xmlns:ns1="*" x="490" y="423" skinName="headUISkin1"/>
+		<ns1:HeadUI xmlns:ns1="*" y="147" skinName="headUISkin1" x="285"/>
+		<ns1:HeadUI xmlns:ns1="*" x="60" y="423" skinName="headUISkin1"/>
+		<ns1:HeadUI x="1" scaleX="1" scaleY="1" skinName="headUISkin1" y="848"/>
+		<ns1:HeadUI scaleY="1" x="583" scaleX="1" skinName="headUISkin1" y="709"/>
+		<ns1:HeadUI scaleY="1" scaleX="1" x="583" skinName="headUISkin1" y="30"/>
+		<ns1:HeadUI scaleY="1" x="1" scaleX="1" skinName="headUISkin1" y="137"/>
+	</e:Group>
+	<e:Group id="readyGroup" touchThrough="true" width="100%" x="0" height="100%" y="0">
+		<e:Image touchEnabled="false" source="ready_png" y="682" horizontalCenter="0"/>
+		<e:Image x="547" top="443" source="ready_png"/>
+		<e:Image top="157" source="ready_png" horizontalCenter="0"/>
+		<e:Image x="116" top="446" source="ready_png"/>
+		<e:Image touchEnabled="false" x="62.67" bottom="277" source="ready_png"/>
+		<e:Image x="642.25" bottom="412" source="ready_png"/>
+		<e:Image x="643.08" top="204" source="ready_png"/>
+		<e:Image x="60.22" top="313" source="ready_png"/>
+		<e:Button id="readyBtn" bottom="277" anchorOffsetX="0" horizontalCenter="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
+			<e:Image width="100%" height="100%" width.down="95%" horizontalCenter="0" verticalCenter="0" height.down="95%" source="game_greenBtn_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image width="111" height="56" width.down="105" height.down="53" anchorOffsetX="0" anchorOffsetY="0" source="cs_ready_png" horizontalCenter="0" y="15"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Group id="gangFenGroup" touchThrough="true" width="100%" touchEnabled="false" height="100%" touchChildren="true" x="0" y="0">
+		<e:BitmapLabel text="+123" bottom="338" horizontalCenter="-261" font="win_fnt"/>
+		<e:BitmapLabel text="+123" right="12" bottom="477" font="win_fnt"/>
+		<e:BitmapLabel text="+123" right="14" top="114" font="win_fnt"/>
+		<e:BitmapLabel text="+123" left="19" top="211" font="win_fnt"/>
+		<e:BitmapLabel text="-123" bottom="338" horizontalCenter="-261" font="lose_fnt"/>
+		<e:BitmapLabel text="-123" right="12" bottom="477" font="lose_fnt"/>
+		<e:BitmapLabel text="-123" right="14" top="115" font="lose_fnt"/>
+		<e:BitmapLabel text="-123" top="211" left="19" font="lose_fnt"/>
+	</e:Group>
+	<e:Group id="btnGroup" width="100%" height="100%" x="0" y="0">
+		<e:Rect height="100%" width="100%" x="0" fillAlpha="0.5" bottom="0" y="0" scaleX="1" scaleY="1"/>
+		<e:Button id="readyBtn1" bottom="277" anchorOffsetX="0" horizontalCenter="0">
+		<e:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
+			<e:Image width="100%" height="100%" width.down="95%" horizontalCenter="0" verticalCenter="0" height.down="95%" source="game_greenBtn_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image width="111" height="55" width.down="105" height.down="53" anchorOffsetX="0" anchorOffsetY="0" source="cs_ready_png" horizontalCenter="0" y="17"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="jixuBtn" bottom="277" anchorOffsetX="0" horizontalCenter="0" visible="false">
+		<e:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
+			<e:Image width="100%" height="100%" width.down="95%" horizontalCenter="0" verticalCenter="0" height.down="95%" source="hall_two_bt_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="result_continue_png"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Button id="xujuBtn" bottom="277" anchorOffsetX="0" horizontalCenter="1" visible="false">
+		<e:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
+			<e:Image width="100%" height="100%" width.down="95%" horizontalCenter="0" verticalCenter="0" height.down="95%" source="hall_two_bt_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="cs_xuju_png"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+	</e:Group>
+</e:Skin>

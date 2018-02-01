@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="LeftCardShowUISkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="juGroup" touchThrough="false" touchEnabled="false" y="0">
+		<e:Image width="150" height="40" x="0" y="0" source="game_bg2_png" scale9Grid="24,5,149,36"/>
+		<e:Image width="160" height="30" anchorOffsetX="0" anchorOffsetY="0" source="game_shengyu_png" horizontalCenter="0" verticalCenter="0"/>
+		<e:Label id="leftCardLabel" size="30" text="00" verticalAlign="middle" textAlign="center" width="53" height="30" bold="true" horizontalCenter="14.5" textColor="0xE5CE4F" verticalCenter="0"/>
+	</e:Group>
+</e:Skin>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PaymentMethodItemSkin" width="514" height="130" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+    <e:Image x="460" y="53.46" source="hall_tip_png" anchorOffsetX="0" anchorOffsetY="0"/>
+    <e:Label id="payNameLab" text="钱包剩余(¥88.00)" y="26.46" anchorOffsetX="0" width="420" anchorOffsetY="0" height="77" textAlign="left" verticalAlign="middle" fontFamily="Microsoft YaHei" size="30" horizontalCenter="0" textColor="0x3c3c3c"/>
+    <e:Rect id="touchRect" width="514" height="78" y="22.46" anchorOffsetX="0" anchorOffsetY="0" strokeAlpha="0" fillAlpha="0" horizontalCenter="0"/>
+    <e:Image source="cutline_png" y="120.44" scale9Grid="123,0,345,4" width="520" horizontalCenter="0"/>
+</e:Skin>

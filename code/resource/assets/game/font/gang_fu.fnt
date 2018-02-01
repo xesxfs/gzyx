@@ -1,0 +1,12 @@
+{"file":"gang_fu.png","frames":{
+"-":{"x":139,"y":220,"w":47,"h":14,"offX":2,"offY":29,"sourceW":50,"sourceH":75},
+"0":{"x":0,"y":0,"w":46,"h":73,"offX":2,"offY":1,"sourceW":50,"sourceH":75},
+"1":{"x":139,"y":148,"w":31,"h":70,"offX":10,"offY":3,"sourceW":50,"sourceH":75},
+"2":{"x":48,"y":73,"w":45,"h":72,"offX":3,"offY":1,"sourceW":50,"sourceH":75},
+"3":{"x":0,"y":75,"w":46,"h":73,"offX":2,"offY":1,"sourceW":50,"sourceH":75},
+"4":{"x":48,"y":0,"w":47,"h":71,"offX":1,"offY":2,"sourceW":50,"sourceH":75},
+"5":{"x":48,"y":147,"w":45,"h":72,"offX":3,"offY":2,"sourceW":50,"sourceH":75},
+"6":{"x":95,"y":73,"w":43,"h":73,"offX":3,"offY":1,"sourceW":50,"sourceH":75},
+"7":{"x":97,"y":0,"w":42,"h":71,"offX":3,"offY":2,"sourceW":50,"sourceH":75},
+"8":{"x":0,"y":150,"w":46,"h":73,"offX":2,"offY":1,"sourceW":50,"sourceH":75},
+"9":{"x":95,"y":148,"w":42,"h":73,"offX":3,"offY":1,"sourceW":50,"sourceH":75}}}

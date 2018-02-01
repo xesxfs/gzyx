@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SharePanelSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="667" height="715" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="138,57,425,51" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image width="670" y="330" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-1"/>
+	<e:Image y="339" anchorOffsetX="0" anchorOffsetY="0" source="share_png" horizontalCenter="0"/>
+	<e:Button id="share_close" label="" x="635.5" y="303" anchorOffsetX="0" anchorOffsetY="0">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image id="qrCodeImg" y="463" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-1" source="share_qrcode_jpg" width="214" height="214"/>
+	<e:Label text="扫码直接下载游戏" y="713" anchorOffsetX="0" width="448" anchorOffsetY="0" height="50" textColor="0x000000" size="30" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" horizontalCenter="0"/>
+	<e:Image y="797" horizontalCenter="0.5" source="share_cutline_png"/>
+	<e:Button id="pengjiBtn" label="" x="103" y="842" visible="false">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="pengji_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="qqBtn" label="" y="842" x="130">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="QQ_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="wxBtn" label="" y="838.97" x="330">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="WX_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="wxfriendBtn" label="" y="838.97" x="529">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="Friend_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label text="朋际" x="102.7" y="935" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" textColor="0x000000" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" visible="false"/>
+	<e:Label text="QQ" y="934" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" textColor="0x000000" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" x="126"/>
+	<e:Label text="微信" y="934" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" textColor="0x000000" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" x="330"/>
+	<e:Label text="朋友圈" y="934" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" textColor="0x000000" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" x="525.03"/>
+</e:Skin>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="huTypeSkin" width="600" height="500" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group width="400" height="500" x="0" y="0">
+		<e:Scroller width="600" height="500" x="0" y="0">
+			<e:List id="cardList" >
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+</e:Skin>

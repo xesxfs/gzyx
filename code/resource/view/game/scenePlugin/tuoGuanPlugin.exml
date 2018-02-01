@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="tuoGuanPlugin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui">
+	<e:Group id="tuoGuanGroup" touchEnabled="true" touchChildren="false" left="0" right="0" top="0" bottom="0">
+		<e:Rect height="100%" width="100%" x="0" fillAlpha="0.5" bottom="0"/>
+		<e:Image width="100%" x="0" height="433" bottom="0" source="game_bg_png"/>
+		<e:Image horizontalCenter="0" source="game_tuoguan_png" y="1081"/>
+	</e:Group>
+</e:Skin>

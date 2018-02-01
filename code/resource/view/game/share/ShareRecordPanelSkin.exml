@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShareRecordPanelSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="shareGro" width="750" height="1334" x="0" y="0">
+		<e:Image source="share_record_bg_png" y="12" horizontalCenter="0.5" x="-171" scaleX="1" scaleY="1"/>
+		<e:Image source="share_record_alpha_png" scale9Grid="177,69,405,140" height="860" x="-160" y="257" scaleX="1" scaleY="1" horizontalCenter="0"/>
+		<e:Image source="share_record_title_png" y="139.92" horizontalCenter="0"/>
+		<e:Image source="share_record_titlebg_png" y="301" x="160"/>
+		<e:Label text="长沙麻将" y="308" fontFamily="Microsoft YaHei" textColor="0xfeedba" horizontalCenter="0"/>
+		<e:Image source="share_record_cutline_png" y="895" horizontalCenter="0.5"/>
+		<e:Image id="qrCodeImg" source="share_qrcode_jpg" x="115.4" y="921" width="159" height="159"/>
+		<e:Label id="overTimeLab" text="2017/05/09 17:00 结束" y="1015.6" fontFamily="Microsoft YaHei" textColor="0x923312" x="333.72"/>
+        <e:Scroller width="674" height="600" y="359.3" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="50" scaleX="1" scaleY="1">
+			<e:List id="shareList" width="100%" height="100%" x="0" y="240" anchorOffsetY="0">
+			<e:layout>
+				<e:VerticalLayout paddingTop="3" gap="8"/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+	</e:Group>
+	<e:Button id="backBtn" label="" x="44.08" y="1186.97" scaleX="1" scaleY="1">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="share_record_back_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+
+    <e:Button id="pengjiBtn" label="" x="178.03" y="1178.49" scaleX="1" scaleY="1">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="pengji_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="qqBtn" label="" x="328.03" y="1178.49" scaleX="1" scaleY="1">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="QQ_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="wxBtn" label="" y="1175.46" x="477.03" scaleX="1" scaleY="1">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="WX_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="wxfriendBtn" label="" x="625.03" y="1175.46" scaleX="1" scaleY="1">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="Friend_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label text="朋际" x="177.73" y="1271.49" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scaleX="1" scaleY="1" textColor="0xf2f5f4"/>
+	<e:Label text="QQ" x="327.03" y="1271.49" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" scaleX="1" scaleY="1" textColor="0xf2f5f4"/>
+	<e:Label text="微信" y="1271.49" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" textColor="0xf2f5f4" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" x="476.03" scaleX="1" scaleY="1"/>
+	<e:Label text="朋友圈" y="1271.49" anchorOffsetX="0" width="94.97" anchorOffsetY="0" height="31.82" textColor="0xf2f5f4" size="25" fontFamily="Microsoft YaHei" verticalAlign="middle" textAlign="center" x="625.03" scaleX="1" scaleY="1"/>
+</e:Skin>

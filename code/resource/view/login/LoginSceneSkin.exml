@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="LoginSceneSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="100%" height="100%" y="0" x="0" source="hall_bg_jpg"/>
+	<e:Group id="healthGro" width="750" height="150" x="0" bottom="0">
+		<e:Label text="《健康游戏忠告》" y="6.77" fontFamily="Microsoft YaHei" horizontalCenter="0"/>
+		<e:Label text="抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防上当受骗。" y="57.62" size="26" fontFamily="Microsoft JhengHei" horizontalCenter="0"/>
+		<e:Label text="适度游戏益脑，沉迷游戏伤身。合理安排时间，享受健康生活。" y="94" size="26" fontFamily="Microsoft JhengHei" horizontalCenter="0"/>
+	</e:Group>
+</e:Skin>

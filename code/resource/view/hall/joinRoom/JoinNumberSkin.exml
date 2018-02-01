@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="JoinNumberSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image y="310" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="room_inputbg_png"/>
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" source="room_inputbg_png" y="310" x="70"/>
+	<e:Image y="296" anchorOffsetX="0" anchorOffsetY="0" source="room_jr_png" horizontalCenter="0.5"/>
+	<e:Image width="496" height="80" y="394.89" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="room_shownum_png"/>
+	<e:Group id="numbers" y="409.89" horizontalCenter="0" anchorOffsetX="0" width="476" anchorOffsetY="0" height="49">
+		<e:Label text="6" x="20.33" fontFamily="Microsoft YaHei" size="50" verticalCenter="0"/>
+		<e:Label text="6" x="100" fontFamily="Microsoft YaHei" size="50" verticalCenter="0"/>
+		<e:Label text="6" x="180" fontFamily="Microsoft YaHei" size="50" verticalCenter="0"/>
+		<e:Label text="6" x="260" fontFamily="Microsoft YaHei" size="50" verticalCenter="0"/>
+		<e:Label text="6" x="340" fontFamily="Microsoft YaHei" size="50" verticalCenter="0"/>
+		<e:Label text="6" x="420.33" fontFamily="Microsoft YaHei" size="50" verticalCenter="0"/>
+	</e:Group>
+	<e:Group id="number_bt" y="468.62" horizontalCenter="0" width="540" anchorOffsetY="0" height="500.55">
+		<e:Button label="0" x="192.08" y="381.92" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="1" x="22.08" y="268" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="2" x="192.08" y="268" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="3" x="358.08" y="268" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="4" x="22.08" y="142" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="5" x="192.08" y="142" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="6" x="358.08" y="142" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="7" x="22.08" y="32" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="8" x="192.08" y="32" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="9" x="358.08" y="32" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="删除" x="22.08" y="381.92" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50" fontFamily="Microsoft YaHei" textColor="0xde7d2c"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="确定" x="359.6" y="381.92" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="room_num_normal_png" source.down="room_num_down_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" size="50" fontFamily="Microsoft YaHei" textColor="0xffde00"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+	</e:Group>
+	<e:Button id="joinNum_close" label="" x="602.04" y="303.04" anchorOffsetX="0" anchorOffsetY="0">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

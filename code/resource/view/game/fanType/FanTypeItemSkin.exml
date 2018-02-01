@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="FanTypeItemSkin" width="650" height="180" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Label id="descripeLabel" y="68" text="什么牌都可以胡，可吃碰杠" width="603" size="28" x="21" height="157" textColor="0x3d3d3d" fontFamily="SimHei"/>
+	<e:Label id="nameLabel" y="19" size="27" text="鸡胡" x="21" textColor="0x993300" fontFamily="SimHei"/>
+	<e:Group id="cardGroup" width="628" height="63" y="111" x="20">
+	</e:Group>
+</e:Skin>

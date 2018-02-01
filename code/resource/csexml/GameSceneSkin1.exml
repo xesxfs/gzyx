@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameSceneSkin1" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:ns2="XX.*">
+	<e:Group id="footGroup" top="0" bottom="0" touchEnabled="false" right="0" left="0">
+
+		<e:Image id="gameSceneBg1" width="100%" height="100%" x="-1.52" y="0" source="gametable_jpg"/>
+
+
+	</e:Group>
+	<e:Group id="gameUIGroup" touchEnabled="false" left="0" right="0" top="0" bottom="0">
+		<ns1:TopTitleShowUI id="topTitleShowUI" scaleX="1" scaleY="1" skinName="TopTitleShowUISkin"/>
+		<ns1:MatchLoadingUI id="matchLoadingUI" y="497" skinName="MatchLoadingUISkin" horizontalCenter="10"/>
+
+		<ns1:FriendRoomShowUI id="froomInfoShowUI" skinName="FriendRoomShowUISkin" y="408" x="274"/>
+		<ns1:LeftCardShowUI id="leftCardUI" x="295" y="625" skinName="LeftCardShowUISkin"/>
+
+
+
+
+		<e:Group id="diceGroup" touchThrough="true" touchEnabled="false" touchChildren="true" left="0" right="0" top="0" bottom="0" visible="false">
+		<ns1:DiceAnim id="game_dice" xmlns:ns1="*"  verticalCenter="-149" scaleX="0.8" scaleY="0.8" horizontalCenter="0"/>
+		</e:Group>
+		<ns1:DiscShowUI id="discShowUI" skinName="DiscShowUISkin" y="436" x="293"/>
+
+
+		<ns1:CardsShowUI id="cardShowUI" skinName="CardsShowSkin"/>
+		<ns1:ActShowUI id="actShowUI" skinName="ActShowUISkin"/>
+		<ns1:OutCardTipUI id="outCardTip" skinName="OutCardTipUISkin"/>
+		<e:Group id="outFlagGroup" touchEnabled="false" touchChildren="true" touchThrough="true" left="0" right="0" top="0" bottom="0">
+			<e:Group width="100%" height="100%" x="0" top="0" touchThrough="true">
+				<ns2:HeadShowUI width="20" height="20" x="261" y="289" skinName="HeadShowUISkin"/>
+			</e:Group>
+		</e:Group>
+
+
+		<e:Group id="btnGroup" width="100%" height="100%" x="0" y="0" visible="false">
+			<e:Rect height="100%" width="100%" x="0" fillAlpha="0.5" bottom="0" y="0" scaleX="1" scaleY="1"/>
+			<e:Button id="readyBtn1" bottom="277" anchorOffsetX="0" horizontalCenter="0">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" width.down="95%" horizontalCenter="0" verticalCenter="0" height.down="95%" source="game_greenBtn_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image width="111" height="55" width.down="105" height.down="53" anchorOffsetX="0" anchorOffsetY="0" source="cs_ready_png" horizontalCenter="0" y="17"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="jixuBtn" width="140" height="70" bottom="277" anchorOffsetX="0" horizontalCenter="0" visible="false">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" width.down="95%" horizontalCenter="0" verticalCenter="0" height.down="95%" source="hall_two_bt_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="result_continue_png"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="xujuBtn" width="140" height="70" bottom="277" anchorOffsetX="0" horizontalCenter="1" visible="false">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" width.down="95%" horizontalCenter="0" verticalCenter="0" height.down="95%" source="hall_two_bt_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="cs_xuju_png"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+		</e:Group>
+
+
+
+
+
+		<ns1:ScoreShowUI id="scoreShowUI" skinName="ScoreShowUISkin"/>
+	</e:Group>
+	<e:Group id="swapCardGroup" height="80" touchEnabled="false" touchChildren="true" touchThrough="false" x="260" y="180" width="260"/>
+
+	<ns1:TuoGuanShowUI id="tuoguanShowUI" skinName="TuoGuanShowUISkin"/>
+
+	<e:Group id="zhongniaoGroup" width="100%" height="100%" x="0" y="0" touchEnabled="false" visible="false">
+		<e:Image width="180" height="150" x="294" y="954" source="game_zhongniao_png"/>
+		<e:Image width="180" height="150" x="556" y="404" source="game_zhongniao_png"/>
+		<e:Image width="180" height="150" x="278" y="94" source="game_zhongniao_png"/>
+		<e:Image width="180" height="150" x="34" y="474" source="game_zhongniao_png"/>
+		<e:Group id="zhaniaoGroup" width="328" height="81" y="454.24" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0.5">
+			<e:Image id="zhaNiaoBg" width="200" y="0" horizontalCenter="0" source="zhaniaoBg_png" scale9Grid="19,18,13,13" height="120"/>
+		</e:Group>
+	</e:Group>
+
+</e:Skin>

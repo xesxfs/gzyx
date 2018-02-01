@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="discPlugin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group width="100%" height="100%" x="0" y="0">
+		<e:Group id="juGroup" touchThrough="false" touchEnabled="false" verticalCenter="-32" horizontalCenter="1" x="296" y="615" scaleX="1" scaleY="1">
+			<e:Image width="150" height="40" x="0" y="0" source="game_bg2_png" scale9Grid="24,5,149,36"/>
+			<e:Image width="160" height="30" anchorOffsetX="0" anchorOffsetY="0" source="game_shengyu_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Label id="leftCardLabel" size="30" text="00" verticalAlign="middle" textAlign="center" width="53" height="30" bold="true" horizontalCenter="14.5" textColor="0xE5CE4F" verticalCenter="0"/>
+		</e:Group>
+		<e:Group id="discGroup" height="100%" width="100%" touchThrough="false" touchEnabled="false" x="0" y="0" scaleX="1" scaleY="1">
+			<e:Image horizontalCenter="0" verticalCenter="-149" source="game_fengpanBg_png"/>
+			<e:Image horizontalCenter="0" verticalCenter="-152" source="game_feng0_png"/>
+			<e:Image source="game_feng3_png" horizontalCenter="0" verticalCenter="-153"/>
+			<e:Image horizontalCenter="0" verticalCenter="-153" source="game_feng2_png"/>
+			<e:Image horizontalCenter="0" verticalCenter="-154" source="game_feng1_png"/>
+			<e:Image horizontalCenter="0" verticalCenter="-154" x="10" y="10" source="game_lightdi1_png"/>
+			<e:Image horizontalCenter="0" verticalCenter="-153" x="10" y="10" source="game_lightdi2_png"/>
+			<e:Image horizontalCenter="0" verticalCenter="-152" source="game_lightdi0_png"/>
+			<e:Image horizontalCenter="0" verticalCenter="-153" x="10" y="10" source="game_lightdi3_png"/>
+			<e:Image horizontalCenter="0" verticalCenter="-152" source="game_light0_png"/>
+			<e:Image source="game_light1_png" horizontalCenter="0" verticalCenter="-152"/>
+			<e:Image source="game_light2_png" horizontalCenter="0" verticalCenter="-152"/>
+			<e:Image source="game_light3_png" horizontalCenter="1" verticalCenter="-152"/>
+			<e:BitmapLabel id="cdLabel" text="99" width="70" height="30" horizontalCenter="0" verticalCenter="-153" font="daojishi_fnt"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

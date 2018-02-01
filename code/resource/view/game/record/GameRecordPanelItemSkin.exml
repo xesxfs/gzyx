@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameRecordPanelItemSkin" width="660" height="230" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+    <e:Image source="hall_within_box_png" scale9Grid="37,34,86,36" anchorOffsetX="0" width="660" anchorOffsetY="0" height="230" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="record_bottom_png" x="8.67" y="67" scale9Grid="36,18,82,93" anchorOffsetX="0" width="643"/>
+	<e:Label id="roundLab" text="第一局" x="28" y="26" fontFamily="Microsoft YaHei" textColor="0x7e5a3d" anchorOffsetX="0" width="194" size="28"/>
+	<e:Label id="dateLab" text="2017-3-17" y="26" fontFamily="Microsoft YaHei" textColor="0x7e5a3d" textAlign="center" anchorOffsetX="0" width="205" x="233" size="28"/>
+	<e:Label id="timeLab" text="16:20:13" y="26" fontFamily="Microsoft YaHei" textColor="0x7e5a3d" textAlign="right" anchorOffsetX="0" width="186" x="451" size="28"/>
+	<e:Image source="cutline_png" y="140" horizontalCenter="0"/>
+	<e:Image source="cutline_png" y="74" scale9Grid="75,0,455,4" width="140" rotation="90" horizontalCenter="0.5"/>
+	<e:Group id="selfGro" width="675" height="154" y="68" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+		<e:Image source="record_self_top_png" x="21" y="-1"/>
+		<e:Image source="record_self_top_png" x="341" y="-1"/>
+		<e:Image source="record_self_bottom_png" x="337.67" y="72.01" scaleX="-1"/>
+		<e:Image source="record_self_bottom_png" x="341" y="72"/>
+	</e:Group>
+	<e:Group id="winLabGro" width="675" height="154" y="68" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+		<e:Label text="疯了疯了" x="61" y="27.33" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" size="28"/>
+		<e:Label text="-30" x="121" y="27.33" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" textAlign="right" size="28"/>
+		<e:Label text="疯了疯了" x="381" y="27.33" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" size="28"/>
+		<e:Label text="-30" x="441" y="27.33" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" textAlign="right" size="28"/>
+		<e:Label text="疯了疯了" x="61" y="97.33000000000001" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" size="28"/>
+		<e:Label text="-30" x="121" y="97.33000000000001" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" textAlign="right" size="28"/>
+		<e:Label text="疯了疯了" x="381" y="97.33000000000001" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" size="28"/>
+		<e:Label text="-30" x="441" y="97.33000000000001" fontFamily="Microsoft YaHei" textColor="0x696969" anchorOffsetX="0" width="194" scaleX="1" scaleY="1" textAlign="right" size="28"/>
+	</e:Group>
+    <e:Group id="zhuangGro" width="675" height="154" y="68" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
+			<e:Image source="g_zhuang_png" x="26" y="28" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="g_zhuang_png" x="346" y="28" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="g_zhuang_png" x="26" y="98" scaleX="0.8" scaleY="0.8"/>
+			<e:Image source="g_zhuang_png" x="346" y="98" scaleX="0.8" scaleY="0.8"/>
+    </e:Group>
+</e:Skin>

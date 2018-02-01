@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SelectActUISkin" width="600" height="150" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+	<e:Group height="150" width="600" x="0">
+		<ns1:SelectActBtn id="passBtn" y="1" skinName="SelectActBtnSkin" x="2"/>
+		<ns1:SelectActBtn id="eatBtn" y="1" skinName="SelectActBtnSkin" x="113"/>
+		<ns1:SelectActBtn id="pengBtn" y="1" skinName="SelectActBtnSkin" x="225"/>
+		<ns1:SelectActBtn id="gangBtn" x="336" y="1" skinName="SelectActBtnSkin"/>
+		<ns1:SelectActBtn id="huBtn" y="1" skinName="SelectActBtnSkin" x="447"/>
+	</e:Group>
+</e:Skin>

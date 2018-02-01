@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ActShowUISkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<ns1:SelectActUI id="selectActUI" skinName="SelectActUISkin" horizontalCenter="0" bottom="418"/>
+	<ns1:EatComboUI id="eatComboUI" skinName="EatComboUISkin" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

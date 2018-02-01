@@ -1,0 +1,22 @@
+[
+    {
+        "name": "ftp-160913145100",
+        "host": "host",
+        "user": "username",
+        "password": "password",
+        "port": 21,
+        "protocol": "ftp",
+        "remotePath": "code/",
+        "passive": false,
+        "debug": false,
+        "privateKeyPath": null,
+        "ignoreDir": [
+            ".out/",
+            ".git/"
+        ],
+        "ignoreFileSuffix": [
+            "diff"
+        ],
+        "diffFile": "ftpdiff-1473749464256.diff"
+    }
+]

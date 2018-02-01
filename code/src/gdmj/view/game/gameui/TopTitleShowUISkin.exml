@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="TopTitleShowUISkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="750" height="81" x="0" y="0" anchorOffsetX="0" anchorOffsetY="0" source="newtitle_bg_png"/>
+	<e:Group id="matchTitleGroup" width="655" height="48" x="59" y="6" anchorOffsetY="0" anchorOffsetX="0" visible="false">
+		<e:Image horizontalCenter="0" verticalCenter="0" source="game_mt_png"/>
+	</e:Group>
+	<e:Group id="friendTitleGroup" width="655" height="48" x="49" y="6" anchorOffsetY="0" anchorOffsetX="0">
+		<e:Image x="49" verticalCenter="0" source="game_fh_png"/>
+		<e:Image x="409" verticalCenter="0" source="game_js_png"/>
+		<e:BitmapLabel id="t_desknum" x="182" verticalCenter="0" font="gfnum_fnt" text="1796283"/>
+		<e:BitmapLabel id="t_jushu" x="513" text="0/-" font="gfnum_fnt" verticalCenter="0.5"/>
+	</e:Group>
+</e:Skin>

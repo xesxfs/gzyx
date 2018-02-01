@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="MessageBoxDSkin" width="720" height="1280" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="rule_bg_png" horizontalCenter="0" height="589" scale9Grid="86,34,516,785" verticalCenter="0"/>
+	<e:Image y="376" horizontalCenter="0" source="rule_title_png"/>
+	<e:Image y="385" horizontalCenter="0.5" source="com_warm_hint_png"/>
+	<e:Image y="479" source="rule_bg1_png" horizontalCenter="0" scale9Grid="13,12,104,79" width="598" height="299"/>
+	<e:Image x="589" y="349" source="set_close_png"/>
+	<e:Button id="close" x="588" y="349">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="set_closeBtn_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label id="msgLabel" y="566" textColor="0xFFF3EB" text="游戏即将开始，是否确定离开游戏？是真的？" horizontalCenter="0" width="500" height="172" lineSpacing="20"/>
+	<e:Button id="okBtn" label="确定" x="130" y="820">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="com_quxiao_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="cancelBtn" label="取消" x="430" y="820">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="com_queding_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

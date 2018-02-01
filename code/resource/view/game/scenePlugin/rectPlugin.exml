@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="rectPlugin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="rectGroup" touchEnabled="false" touchChildren="false" touchThrough="false" width="100%" height="100%" x="0" y="0">
+		<e:Group id="hand3" right="0" left="0" touchEnabled="false" top="0" bottom="0" touchThrough="false" touchChildren="false">
+		<e:Image x="429.01" source="card_big_bg1_png" bottom="290"/>
+		<e:Image source="card_big_bg1_png" x="511.65" bottom="290"/>
+		<e:Image id="hand0_start0" source="card_big_bg1_png" x="594.24" y="923"/>
+		<e:Image source="card_big_bg1_png" x="35.27" bottom="155"/>
+		<e:Image source="card_big_bg1_png" x="117.91" bottom="155"/>
+		<e:Image source="card_big_bg1_png" x="200.55" bottom="155"/>
+		<e:Image source="card_big_bg1_png" x="283.11" bottom="155"/>
+		<e:Image source="card_big_bg1_png" x="364.22" bottom="155"/>
+		<e:Image source="card_big_bg1_png" x="446.83" bottom="155"/>
+		<e:Image id="hand0_start2" x="529.45" source="card_big_bg1_png" y="1057"/>
+		<e:Image id="locateGet4" source="card_big_bg1_png" x="630" y="1057"/>
+		</e:Group>
+		<e:Group bottom="0" touchChildren="false" left="0" touchThrough="false" top="0" x="20" right="0" y="20" touchEnabled="false" id="hand4">
+		<e:Image id="locateGet0" scaleX="-1" x="700" source="card_left_bg1_png" verticalCenter="-400.5"/>
+		<e:Image id="hand1_start0" source="card_left_bg1_png" scaleX="-1" x="700" verticalCenter="-356.5"/>
+		<e:Image x="700" scaleX="-1" source="card_left_bg1_png" verticalCenter="-320.5"/>
+		<e:Image source="card_left_bg1_png" scaleX="-1" x="700" verticalCenter="-284.5"/>
+		<e:Image source="card_left_bg1_png" x="700" scaleX="-1" verticalCenter="-250.5"/>
+		<e:Image source="card_left_bg1_png" scaleX="-1" x="700" verticalCenter="-214.5"/>
+		<e:Image source="card_left_bg1_png" x="700" scaleX="-1" verticalCenter="-178.5"/>
+		<e:Image source="card_left_bg1_png" scaleX="-1" x="700" verticalCenter="-144.5"/>
+		<e:Image source="card_left_bg1_png" x="700" scaleX="-1" verticalCenter="-108.5"/>
+		<e:Image source="card_left_bg1_png" scaleX="-1" x="700" verticalCenter="-72.5"/>
+		<e:Image id="hand1_end0" source="card_left_bg1_png" scaleX="-1" x="700" verticalCenter="-36.5"/>
+		</e:Group>
+		<e:Group bottom="0" x="30" left="0" touchThrough="false" top="0" id="hand0" right="0" y="30" touchEnabled="false" touchChildren="false">
+		<e:Image id="hand2_start0" source="card_bgup_png" x="80" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image source="card_bgup_png" x="119" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image source="card_bgup_png" x="158" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image x="197" source="card_bgup_png" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image source="card_bgup_png" x="236" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image source="card_bgup_png" x="275" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image source="card_bgup_png" x="314" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image source="card_bgup_png" x="353" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image source="card_bgup_png" x="392" top="114" scaleX="0.93" scaleY="0.93"/>
+		<e:Image id="hand2_end0" x="431" top="114" source="card_bgup_png" scaleX="0.93" scaleY="0.93"/>
+		<e:Image id="locateGet1" source="card_bgup_png" x="33" top="114" scaleX="0.93" scaleY="0.93"/>
+		</e:Group>
+		<e:Group bottom="0" id="eat2" left="0" touchThrough="false" top="0" x="50" right="0" y="50" touchEnabled="false" touchChildren="false">
+		<e:Image id="eat3_start0" source="card_left_bg0_png" x="36.72" verticalCenter="-328.5"/>
+		<e:Image source="card_left_bg0_png" x="36.72" verticalCenter="-291.5"/>
+		<e:Image source="card_left_bg0_png" x="36.72" verticalCenter="-255.5"/>
+		</e:Group>
+		<e:Group right="0" touchChildren="false" left="0" touchEnabled="false" top="0" x="40" bottom="0" y="40" touchThrough="false" id="hand1">
+		<e:Image id="hand3_end0" source="card_left_bg1_png" x="50.31" y="403.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="439.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="475.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="511.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="547.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="583.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="619.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="655.03"/>
+		<e:Image source="card_left_bg1_png" x="50.31" y="691.03"/>
+		<e:Image id="hand3_start0" source="card_left_bg1_png" x="50.31" y="727.03"/>
+		<e:Image id="locateGet2" source="card_left_bg1_png" x="50.31" verticalCenter="142.5"/>
+		</e:Group>
+		<e:Group id="out3" right="0" x="50" left="0" touchEnabled="false" top="0" bottom="0" y="50" touchThrough="false" touchChildren="false">
+		<e:Image id="out0_start0" source="card_midself_bg_png" x="224.84" bottom="533"/>
+		<e:Image source="card_midself_bg_png" y="719.77" x="274.49"/>
+		<e:Image source="card_midself_bg_png" y="719.77" x="323.11"/>
+		<e:Image source="card_midself_bg_png" y="719.77" x="371.76"/>
+		<e:Image source="card_midself_bg_png" y="719.77" x="421.37"/>
+		<e:Image y="719.77" x="471.05" source="card_midself_bg_png"/>
+		<e:Image id="out0_start2" source="card_midself_bg_png" x="195.89" bottom="472"/>
+		<e:Image source="card_midself_bg_png" y="782.41" x="245.53"/>
+		<e:Image source="card_midself_bg_png" y="782.41" x="295.15"/>
+		<e:Image source="card_midself_bg_png" y="782.41" x="344.81"/>
+		<e:Image source="card_midself_bg_png" y="782.41" x="394.42"/>
+		<e:Image source="card_midself_bg_png" y="782.41" x="444.58"/>
+		<e:Image source="card_midself_bg_png" y="782.41" x="494.2"/>
+		<e:Image source="card_midself_bg_png" y="782.41" x="544.64"/>
+		</e:Group>
+		<e:Group right="0" id="out4" left="0" touchEnabled="false" top="0" touchChildren="false" bottom="0" y="60" touchThrough="false" x="60">
+		<e:Image source="card_left_bg0_png" y="417.45" x="566" scaleX="-1"/>
+		<e:Image source="card_left_bg0_png" y="456.77" scaleX="-1" x="566"/>
+		<e:Image source="card_left_bg0_png" y="495.41" x="566" scaleX="-1"/>
+		<e:Image source="card_left_bg0_png" y="532.56" scaleX="-1" x="566"/>
+		<e:Image source="card_left_bg0_png" y="569.74" x="566" scaleX="-1"/>
+		<e:Image id="out1_start0" source="card_left_bg0_png" scaleX="-1" x="566" verticalCenter="-33.5"/>
+		<e:Image source="card_left_bg0_png" y="370.47" scaleX="-1" x="627"/>
+		<e:Image source="card_left_bg0_png" y="408.35" scaleX="-1" x="627"/>
+		<e:Image source="card_left_bg0_png" y="446.98" x="627" scaleX="-1"/>
+		<e:Image source="card_left_bg0_png" y="484.11" scaleX="-1" x="627"/>
+		<e:Image source="card_left_bg0_png" x="627" y="521.18" scaleX="-1"/>
+		<e:Image source="card_left_bg0_png" y="559.8" x="627" scaleX="-1"/>
+		<e:Image source="card_left_bg0_png" y="598.47" scaleX="-1" x="627"/>
+		<e:Image id="out1_start2" source="card_left_bg0_png" x="627" scaleX="-1" verticalCenter="-5.5"/>
+		</e:Group>
+		<e:Group right="0" touchChildren="false" left="0" touchEnabled="false" top="0" x="70" bottom="0" y="70" touchThrough="false" id="out0">
+		<e:Image source="card_bgup1_png" y="280" x="235"/>
+		<e:Image source="card_bgup1_png" y="280" x="280"/>
+		<e:Image source="card_bgup1_png" y="280" x="325"/>
+		<e:Image source="card_bgup1_png" y="280" x="370"/>
+		<e:Image source="card_bgup1_png" y="280" x="415"/>
+		<e:Image id="out2_start0" source="card_bgup1_png" x="460" y="280"/>
+		<e:Image source="card_bgup1_png" y="217" x="200"/>
+		<e:Image source="card_bgup1_png" y="217" x="245"/>
+		<e:Image source="card_bgup1_png" y="217" x="290"/>
+		<e:Image source="card_bgup1_png" y="217" x="335"/>
+		<e:Image source="card_bgup1_png" y="217" x="380"/>
+		<e:Image source="card_bgup1_png" y="217" x="425"/>
+		<e:Image source="card_bgup1_png" y="217" x="470"/>
+		<e:Image id="out2_start2" x="515" top="217" source="card_bgup1_png"/>
+		</e:Group>
+		<e:Group right="0" touchChildren="false" left="0" touchEnabled="false" top="0" x="70" bottom="0" y="70" touchThrough="false" id="out1">
+		<e:Image id="out3_start0" source="card_left_bg0_png" x="115" verticalCenter="-245.5"/>
+		<e:Image source="card_left_bg0_png" y="431.82" x="115.2"/>
+		<e:Image source="card_left_bg0_png" y="469.93" x="115.2"/>
+		<e:Image source="card_left_bg0_png" y="507.05" x="115.2"/>
+		<e:Image source="card_left_bg0_png" y="545.68" x="115.2"/>
+		<e:Image source="card_left_bg0_png" y="584.83" x="115.2"/>
+		<e:Image source="card_left_bg0_png" y="623.51" x="115.2"/>
+		<e:Image source="card_left_bg0_png" y="662.85" x="115.19"/>
+		<e:Image id="out3_start1" source="card_left_bg0_png" x="177" verticalCenter="-223.5"/>
+		<e:Image source="card_left_bg0_png" y="456.53" x="177"/>
+		<e:Image source="card_left_bg0_png" y="495.16" x="177"/>
+		<e:Image source="card_left_bg0_png" y="533.76" x="177"/>
+		<e:Image source="card_left_bg0_png" y="571.92" x="177"/>
+		<e:Image source="card_left_bg0_png" y="612.04" x="177"/>
+		</e:Group>
+		<e:Group id="eat4" right="0" left="0" touchEnabled="false" top="0" x="20" bottom="0" y="20" touchThrough="false" touchChildren="false">
+		<e:Image id="eat0_start0" x="180" source="card_big_bg0_png" y="940"/>
+		<e:Image source="card_big_bg0_png" y="940" x="248"/>
+		<e:Image source="card_big_bg0_png" y="940" x="316.96"/>
+		<e:Image source="card_big_bg0_png" y="913.6" x="246.97"/>
+		</e:Group>
+		<e:Group bottom="0" touchChildren="false" left="0" touchThrough="false" top="0" id="eat3" right="0" y="30" touchEnabled="false" x="30">
+		<e:Image y="652.36" x="700" scaleX="-1" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
+		<e:Image source="card_left_bg0_png" y="677.36" scaleX="-1" x="700"/>
+		<e:Image id="eat1_start0" source="card_left_bg0_png" scaleX="-1" x="700" verticalCenter="67.5"/>
+		</e:Group>
+		<e:Group right="0" x="40" left="0" touchEnabled="false" top="0" touchChildren="false" bottom="0" y="40" touchThrough="false" id="eat0">
+		<e:Image y="113" x="480" source="card_bgup2_png" scaleX="0.93" scaleY="0.93"/>
+		<e:Image y="113" x="517" source="card_bgup2_png" scaleX="0.93" scaleY="0.93"/>
+		<e:Image id="eat2_start0" x="554" top="113" source="card_bgup2_png" scaleX="0.93" scaleY="0.93"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="outGroup" touchEnabled="false" touchChildren="false" touchThrough="false" left="0" right="0" top="0" bottom="0"/>
+	<e:Group id="cardGroup" touchThrough="true" touchEnabled="false" touchChildren="true" x="0" y="0"/>
+	<e:Group id="outFlagGroup" touchEnabled="false" touchChildren="true" touchThrough="true" x="0" y="0"/>
+	<e:Group id="outEffectGroup" touchEnabled="false" touchThrough="false" touchChildren="false" width="100%" height="100%" x="0" y="0">
+		<e:Group height="145" width="116" horizontalCenter="0" bottom="493">
+		<e:Image x="0" y="0" source="zhaniaoBg_png" scale9Grid="18,17,17,14" width="120" height="145"/>
+		</e:Group>
+		<e:Group width="116" height="145" x="509" verticalCenter="-150.5">
+		<e:Image x="0" y="0" source="zhaniaoBg_png" scale9Grid="18,17,17,14" width="120" height="145" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group width="116" height="145" horizontalCenter="0" top="221">
+		<e:Image x="0" y="0" source="zhaniaoBg_png" scale9Grid="18,17,17,14" width="120" height="145" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:Group width="116" height="145" x="120" verticalCenter="-150.5">
+		<e:Image x="0" y="0" source="zhaniaoBg_png" scale9Grid="18,17,17,14" width="120" height="145" scaleX="1" scaleY="1"/>
+		</e:Group>
+	</e:Group>
+	<e:Group id="tipGroup" touchThrough="true" touchEnabled="false" left="0" right="0" top="0" bottom="0">
+		<ns1:SelectActUI id="selectActUI" xmlns:ns1="*" skinName="SelectActUISkin" width="600" height="150" touchEnabled="false" horizontalCenter="0" bottom="418"/>
+		<e:Group id="eatComboGroup" height="84" width="600" touchThrough="true" horizontalCenter="0" bottom="520"/>
+	</e:Group>
+</e:Skin>

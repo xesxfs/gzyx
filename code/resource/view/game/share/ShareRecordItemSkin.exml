@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ShareRecordItemSkin" width="674" height="126" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="bgImg" source="share_record_else_png" horizontalCenter="0" verticalCenter="0" scale9Grid="45,39,78,33" width="674"/>
+	<e:Image source="share_result_headbg_png" x="91" scaleX="0.7" scaleY="0.7" verticalCenter="-3.5"/>
+	<e:Image id="headImg" source="share_result_headmask_png" x="91" scaleX="0.7" scaleY="0.7" verticalCenter="-3.5" width="139" height="141"/>
+	<e:Image id="headMaskImg" source="share_result_headmask_png" x="91" scaleX="0.7" scaleY="0.7" verticalCenter="-3.5"/>
+	<e:Image id="ownerImg" source="game_house_png" x="94" y="12"/>
+	<e:Image id="numImg" source="share_record_1_png" x="20" verticalCenter="-5.5"/>
+	<e:Label id="numLab" text="2" x="36" y="37" fontFamily="FangSong" size="50" bold="true" textColor="0x7e5a3d"/>
+	<e:Label id="nameLab" text="你无法无天" x="204" y="19" fontFamily="Microsoft YaHei"/>
+	<e:Label text="胜局数:" x="204" y="67" fontFamily="Microsoft YaHei" textColor="0x7e5a3d"/>
+	<e:Label id="winLab" text="3" x="309" y="68" fontFamily="Microsoft YaHei" textColor="0xb23618"/>
+	<e:Image id="bigWinImg" source="share_record_winer_png" x="360" y="15.85"/>
+	<e:Label text="积分:" x="457" y="47" fontFamily="Microsoft YaHei" textColor="0x7E5A3D"/>
+	<e:BitmapLabel id="winNumLab" x="529" font="win_fnt" text="+600" scaleX="0.6" scaleY="0.6" verticalCenter="1"/>
+</e:Skin>

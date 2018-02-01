@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="PaymentMethodSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image width="610" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" height="478" scale9Grid="118,43,473,29" horizontalCenter="0" verticalCenter="-13.5"/>
+	<e:Image width="578" height="420" y="437.21" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="23,24,64,54" source="hall_within_box2_png" horizontalCenter="0"/>
+	<e:Button id="method_close" label="" x="618" y="393" anchorOffsetX="0" anchorOffsetY="0">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image source="payment_way_title_png" y="388.65" horizontalCenter="0.5"/>
+	<e:Scroller width="514" height="350" y="470.13" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="-4" x="50" scaleX="1" scaleY="1">
+		<e:List id="methodList" width="100%" height="100%" x="0" y="240" anchorOffsetY="0">
+		<e:layout>
+			<e:VerticalLayout paddingTop="3" gap="4"/>
+		</e:layout>
+		</e:List>
+	</e:Scroller>
+</e:Skin>

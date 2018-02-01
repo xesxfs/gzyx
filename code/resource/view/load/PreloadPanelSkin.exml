@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="PreloadPanelSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="preGro" left="0" right="0" top="0" bottom="0">
+		<e:Image width="100%" x="0" height="100%" y="0" source="hall_bg_jpg"/>
+		<e:Label id="percentLab" fontFamily="黑体" bold="true" size="36" horizontalCenter="0" verticalCenter="94" text="0%" textColor="0xffffff" strokeColor="0xf79465"/>
+		<e:Label text="首次进入游戏建议在WIFI状态下进行" horizontalCenter="0" verticalCenter="0" size="26" bold="true" textAlign="center" textColor="0xFDFBFB" visible="false"/>
+	</e:Group>
+	<e:Group id="gameGro" width="100%" height="100%" x="0" y="0">
+		<e:Image source="common_labdi_png" scale9Grid="92,5,10,36" anchorOffsetX="0" width="563" horizontalCenter="0" verticalCenter="20"/>
+		<e:Label text="游戏加载中，请稍等" horizontalCenter="0" verticalCenter="20" size="30" bold="false" textAlign="center" textColor="0xFDFBFB" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+</e:Skin>

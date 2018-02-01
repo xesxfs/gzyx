@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ModifyRlueSkinT" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="1334" width="750">
+	<w:Config id="1594658eddc"/>
+	<e:Image height="740" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" width="711" scale9Grid="313,78,54,31" horizontalCenter="0.5" verticalCenter="1"/>
+	<e:Image y="315.02" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
+	<e:Image y="324.83" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="modify_title_png"/>
+	<e:Button y="293.97" x="658.04" id="closeBtn">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Image source="hall_within_box_png" y="401.68" scale9Grid="37,34,86,36" anchorOffsetX="0" width="675" anchorOffsetY="0" height="508.15" horizontalCenter="0.5"/>
+	<e:ViewStack id="mViewStack" height="626.85" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="41.5" selectedIndex="0">
+		<e:Group width="100%" height="100%" name="Group" x="0" y="0">
+			<e:Image source="set_mask_png" x="162" y="28.55" scale9Grid="15,17,94,54" anchorOffsetY="0" height="53.33" anchorOffsetX="0" width="261.33"/>
+            <e:Label text="局数:" x="77.17" y="40.55" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" textColor="0x5f5c5b"/>
+			<e:Label text="玩法:" x="77.83" y="258.52" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" textColor="0x5F5C5B"/>
+            <e:Label id="hadLab" text="拥有局数卡X89" x="166.58" y="40.55" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="center" textColor="0x9e1e00" width="250.66"/>
+			<e:Image source="modify_line_jpg" y="129" scale9Grid="6,0,36,4" width="540" horizontalCenter="0"/>
+			<e:Group id="moveGroup" width="720" height="200" y="13" horizontalCenter="0">
+				<e:Image id="posImgA" x="57" y="93" source="modify_circle_n_png" scaleX="1" scaleY="1"/>
+				<e:Image id="posImgB" source="modify_circle_n_png" x="239" y="93" scaleX="1" scaleY="1"/>
+				<e:Image id="posImgC" source="modify_circle_n_png" x="422" y="93" scaleX="1" scaleY="1"/>
+				<e:Image id="posImgD" source="modify_circle_n_png" x="604" y="93" scaleX="1" scaleY="1"/>
+				<e:Image id="moveImg" source="modify_circle_s_png" x="597" y="85" scaleX="1" scaleY="1"/>
+				<e:Group id="roudLabGro" width="720" height="61" y="144.64" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="0" scaleX="1" scaleY="1">
+					<e:Label text="4局" x="48.41" y="16" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="center" textColor="0x5F5C5B" scaleX="1" scaleY="1" width="74"/>
+					<e:Label text="8局" x="229.06" y="16" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="center" textColor="0x5F5C5B" scaleX="1" scaleY="1" width="74"/>
+					<e:Label text="16局" x="411.06" y="16" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="center" textColor="0x5F5C5B" scaleX="1" scaleY="1" width="74"/>
+					<e:Label text="不限" x="593.06" y="16" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="center" textColor="0x6bc235" scaleX="1" scaleY="1" width="74"/>
+				</e:Group>
+			</e:Group>
+			<e:Image source="cutline_png" y="230.98" horizontalCenter="0.5"/>
+			<e:Group id="toggleBtnGro" width="720" height="244" y="249.32" horizontalCenter="0" anchorOffsetY="0">
+				<e:ToggleButton label="" x="182" y="29.680000000000064" selected="true" scaleX="1" scaleY="1">
+					<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="hall_two_bt_png" source.down="modify_lightbtn_png" source.disabled="modify_lightbtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image source="modify_st_png" horizontalCenter="0" verticalCenter="-3"/>
+						<e:Image source="modify_true_png" x="132" y="-20" includeIn="down,disabled"/>
+					</e:Skin>
+					</e:skinName>
+				</e:ToggleButton>
+				<e:ToggleButton label="" x="422.12" y="29.680000000000064" selected="true" scaleX="1" scaleY="1">
+					<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="hall_two_bt_png" source.down="modify_lightbtn_png" source.disabled="modify_lightbtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image horizontalCenter="0" verticalCenter="-3" source="modify_bbg_png"/>
+						<e:Image source="modify_true_png" x="132" y="-20" includeIn="down,disabled"/>
+					</e:Skin>
+					</e:skinName>
+				</e:ToggleButton>
+				<e:ToggleButton label="" x="182" y="137.18999999999994" selected="true" scaleX="1" scaleY="1">
+					<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="hall_two_bt_png" source.down="modify_lightbtn_png" source.disabled="modify_lightbtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image horizontalCenter="0" verticalCenter="-3" source="modify_yzh_png"/>
+						<e:Image source="modify_true_png" x="132" y="-20" includeIn="down,disabled"/>
+					</e:Skin>
+					</e:skinName>
+				</e:ToggleButton>
+			</e:Group>
+			<e:Button id="nextBtn" label="" y="531.32" horizontalCenter="0">
+				<e:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt2_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image horizontalCenter="0" verticalCenter="-3.5" source="modify_next_png"/>
+				</e:Skin>
+				</e:skinName>
+			</e:Button>
+		</e:Group>
+		<e:Group width="100%" height="100%" name="Group" x="0" y="0">
+			<e:Label text="抓鸟:" x="77.17" y="50.55" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" textColor="0x5F5C5B"/>
+			<e:Button id="sureBtn" label="" y="531.32" horizontalCenter="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt2_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image horizontalCenter="0" verticalCenter="-3.5" source="modify_surechange_png"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Group id="radioGro" width="720" height="300" y="25" horizontalCenter="0">
+				<e:RadioButton id="radioBtnZhua" label="" x="181" y="37" selected="true" scaleX="1" scaleY="1" value="0">
+					<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="hall_two_bt_png" source.down="modify_lightbtn_png" source.disabled="modify_lightbtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image source="modify_zhua_1_png" horizontalCenter="0" verticalCenter="-3"/>
+						<e:Image source="modify_true_png" x="132" y="-20" includeIn="down,disabled"/>
+					</e:Skin>
+					</e:skinName>
+				</e:RadioButton>
+				<e:RadioButton label="" x="422" y="37" selected="false" scaleX="1" scaleY="1" value="1">
+					<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="hall_two_bt_png" source.down="modify_lightbtn_png" source.disabled="modify_lightbtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image horizontalCenter="0" verticalCenter="-3" source="modify_zhua_2_png"/>
+						<e:Image source="modify_true_png" x="132" y="-20" includeIn="down,disabled"/>
+					</e:Skin>
+					</e:skinName>
+				</e:RadioButton>
+				<e:RadioButton label="" x="181" y="149" selected="false" scaleX="1" scaleY="1" value="2">
+					<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="hall_two_bt_png" source.down="modify_lightbtn_png" source.disabled="modify_lightbtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image horizontalCenter="0" verticalCenter="-3" source="modify_zhua_4_png"/>
+						<e:Image source="modify_true_png" x="132" y="-20" includeIn="down,disabled"/>
+					</e:Skin>
+					</e:skinName>
+				</e:RadioButton>
+				<e:RadioButton label="" x="422" y="149" selected="false" scaleX="1" scaleY="1" value="3">
+					<e:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="hall_two_bt_png" source.down="modify_lightbtn_png" source.disabled="modify_lightbtn_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+						<e:Image horizontalCenter="0" verticalCenter="-3" source="modify_zhua_6_png"/>
+						<e:Image source="modify_true_png" x="132" y="-20" includeIn="down,disabled"/>
+					</e:Skin>
+					</e:skinName>
+				</e:RadioButton>
+			</e:Group>
+		</e:Group>
+	</e:ViewStack>
+</e:Skin>
