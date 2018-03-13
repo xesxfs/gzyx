@@ -108,7 +108,7 @@ class LoginController extends BaseController{
         var testAccount =  account;   
         var testPassword = password;
 		testLoginData.param = { user: testAccount,password:testPassword};
-		httpsend.send(testLoginData,this.revWxLoginReq,this,false);
+		httpsend.send(testLoginData,this.revWxLoginReq,this);
 	}
 
 	/**IM登录请求 */
