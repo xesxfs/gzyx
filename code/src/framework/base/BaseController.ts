@@ -1,6 +1,6 @@
 /**
  * 控制基类
- * @author chenkai 
+ * @author chen 
  * @date 2016/11/10
  */
 class BaseController {

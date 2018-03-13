@@ -7,7 +7,7 @@ class UserInfo {
     /**[userID][userVO] 全部用户列表(包括自己)  对应to_game,由于to_game大量数据冗余，只选择保存需要的*/
     public userList = {};
     /**用户http登录时，保存自己数据*/
-    public httpUserInfo:UserVO;
+    public selfUser:UserVO;
     
     /**
      * 添加用户
@@ -23,12 +23,12 @@ class UserInfo {
     
     /**获取自己用户信息*/
     public getMyUserVo():UserVO{
-        return this.getUser(this.httpUserInfo.userID);
+        return this.getUser(this.selfUser.userID);
     }
 
     /**修改自己的名字 */
     public changeName(str) {
-        var user:UserVO = this.getUser(this.httpUserInfo.userID);
+        var user:UserVO = this.getUser(this.selfUser.userID);
         user.nickName = str;
     }
     
@@ -103,7 +103,7 @@ class UserInfo {
     /**删除所有用户信息，除了自己*/
     public deleteAllUserExcptMe(){
         for(var key in this.userList){
-            if(parseInt(key) != this.httpUserInfo.userID){
+            if(parseInt(key) != this.selfUser.userID){
                 delete this.userList[key];
             }
         }

@@ -13,8 +13,6 @@
     "resource/view/game/ui/EatComboUISkin.exml",
     "src/gdmj/view/game/gameui/ActShowUISkin.exml",
     "src/gdmj/view/game/gameui/OutCardTipUISkin.exml",
-    "resource/csexml/headUISkin1.exml",
-    "src/gdmj/view/game/gameui/HeadShowUISkin.exml",
     "src/gdmj/view/game/gameui/ScoreShowUISkin.exml",
     "src/gdmj/view/game/gameui/TuoGuanShowUISkin.exml",
     "resource/csexml/GameSceneSkin1.exml",
@@ -22,6 +20,7 @@
     "resource/csexml/gameResultItemSkin.exml",
     "resource/csexml/gameResultSkin.exml",
     "resource/csexml/gameUserSkin.exml",
+    "resource/csexml/headUISkin1.exml",
     "resource/csexml/reSetRuleSkin.exml",
     "resource/csexml/socketClosePanelSkin.exml",
     "resource/view/common/BottomMenuASkin.exml",
@@ -89,7 +88,8 @@
     "resource/view/login/BindPanelSkin.exml",
     "resource/view/login/LoginChoosePanelSkin.exml",
     "resource/view/login/LoginPanelSkin.exml",
-    "resource/view/login/LoginSceneSkin.exml"
+    "resource/view/login/LoginSceneSkin.exml",
+    "src/gdmj/view/game/gameui/HeadShowUISkin.exml"
   ],
   "skins": {
     "EatComboUISkin": "resource/eui_skins/EatComboUISkin.exml"

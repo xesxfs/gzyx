@@ -199,7 +199,7 @@ class ProtocolData {
 
     /**游戏状态*/
     public static Rev100803 = {
-        gameConfig: ProtocolData.gameConfig,   //游戏配置，预留(内含GAME_TYPE)
+        gameConfig:{},// ProtocolData.gameConfig,   //游戏配置，预留(内含GAME_TYPE)
         lastCardNum: 0,    //剩余牌数
         oniCard: 0,        //鬼牌
         bankerSeat: 0,     //庄家位置
@@ -432,7 +432,7 @@ class ProtocolData {
     /**回放数据*/
     public static replay = {
         PI: [],                         //用户信息列表 [[userName:"",userid:0,seatid:0,point:0, [card1,card2,...]], [], ...]
-        GC: ProtocolData.gameConfig,    //游戏配置
+        GC:{},// ProtocolData.gameConfig,    //游戏配置
         ST: 0,                          //开始时间
         ET: 0,                          //结束时间
         GI: {
@@ -558,7 +558,7 @@ class ProtocolData {
         code: 0,
         command_id: 0,
         info: {
-            deskInfo: ProtocolData.deskInfo,
+            deskInfo:{} ,//ProtocolData.deskInfo,
             desk_code: "",
             deskindex: 0,
             deskstation: 0,

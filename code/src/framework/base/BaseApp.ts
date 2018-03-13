@@ -1,6 +1,6 @@
 /**
  * App基类
- * @author chenkai
+ * @author chen
  * @date 2016/11/14
  */
 class BaseApp extends SingleClass{
@@ -24,7 +24,7 @@ class BaseApp extends SingleClass{
 	public unRegisterController(ctrlName:string){
 		this.moduleList[ctrlName].onRemove();
 		delete this.moduleList[ctrlName];
-	}
+	}\
 
 	/**
 	 * 获取controller

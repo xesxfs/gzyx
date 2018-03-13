@@ -1,6 +1,6 @@
 /**
  * 单例基类
- * @author chenkai
+ * @author chen
  * @date 2016/10/11
  */
 class SingleClass {

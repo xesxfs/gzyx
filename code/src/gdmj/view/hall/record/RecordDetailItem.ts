@@ -43,7 +43,7 @@ class RecordDetailItem extends eui.ItemRenderer {
             (<eui.Label>this.winLabGro.getChildAt(i*2+1)).textColor = pointColor;
         }
 
-        var selfId = App.DataCenter.UserInfo.httpUserInfo.userID;
+        var selfId = App.DataCenter.UserInfo.selfUser.userID;
         for(var i = 0;i < itemData.length;i ++) {
             if (selfId == Number(itemData[i].playerID)) {
                 this.selfGro.getChildAt(i).visible = true;

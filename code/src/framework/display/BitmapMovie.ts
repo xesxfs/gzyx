@@ -1,7 +1,7 @@
 /**
  * 自定义位图影片动画
  * 从配置文件中获取序列图，使用Timer计时播放
- * @author chenkai
+ * @author chen
  * @date 2016/8/4
  */
 class BitmapMovie extends egret.Bitmap{

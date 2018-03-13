@@ -35,11 +35,6 @@ class LoginController extends BaseController{
         if(App.DataCenter.debugInfo.isDebug){
             this.sendDebugLoginReq(App.DataCenter.debugInfo.account, App.DataCenter.debugInfo.password);
 			this.startLoadHall();
-			/**test */
-			//this.startLoadLogin();
-
-			/**test */
-			//this.runLoginScene();
             return;
         }
         
@@ -48,10 +43,6 @@ class LoginController extends BaseController{
 			console.log("原生登录");
 			/**原有的原生登录 */
 			//this.startLoadLogin();
-
-			/**IM登录 */
-			//App.NativeBridge.getLogin();
-
 			this.runLoginScene();
 			return;
         }
@@ -222,7 +213,7 @@ class LoginController extends BaseController{
 			// App.DataCenter.ServerInfo.PUSH_SERVER_URL = "ws://" + ud.ip + ":" + ud.prushport;
 			// var md5Pass = new md5().hex_md5(ud.password);
 			App.DataCenter.ServerInfo.MD5PASS = ud.password;
-			App.DataCenter.UserInfo.httpUserInfo = su;
+			App.DataCenter.UserInfo.selfUser = su;
 			App.DataCenter.UserInfo.addUser(su);
 //			egret.localStorage.setItem("refresh_token",ud.refToken);
 			this.bLogin = true;

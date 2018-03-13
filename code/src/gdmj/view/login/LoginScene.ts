@@ -44,8 +44,7 @@ class LoginScene extends BaseScene{
     private onWXLogin(e: egret.Event) {
 		//egret.ExternalInterface.call("wxLogin","wx"); 
         /**test */
-        if (!this.editText) {
-            this.showTestInput();
+        if (!this.editText) {        
         }
         else {
             if (this.editText.text != "") {
@@ -64,45 +63,5 @@ class LoginScene extends BaseScene{
         }
     }
     
-    /**输入测试账号 */
-    private showTestInput() {
-        this.editText = new eui.EditableText();
-        this.editText.y = 800;
-        this.editText.size = 40;
-        this.editText.width = 200;
-        this.editText.height = 100;
-        this.editText.textColor = 0x8CC254;
-        this.editText.horizontalCenter = 0;
-        this.editText.prompt = "输入账号";
-        this.editText.setFocus();
-        this.addChild(this.editText);
-    }
-
-   /**测试账号按钮*/
-   private debugBtns(){
-        var row=2;
-        var column=6;
-        var xoffset=450;
-        var yoffset=40
-        
-        for(var i = 1;i <= 16;i++) {
-            let b=new eui.Label();
-            let ii=i-1;
-            b.background=true;
-            b.backgroundColor=0x000000;
-            b.text = "test" +i.toString();
-            
-            b.x = ii % column * 100 + xoffset
-            b.y = yoffset + ~~(ii / column) * 60;
-           
-            b.x=~~(ii/row)*80+xoffset
-            b.y=yoffset+(ii%row)*60;
-            this.addChild(b);
-            b.addEventListener(egret.TouchEvent.TOUCH_TAP,(e:egret.TouchEvent)=>{   
-            let lab= <eui.Label>e.target;                 
-            
-            this.ctrl.sendDebugLoginReq(lab.text, App.DataCenter.debugInfo.password);
-            },this)
-        }
-    }
+  
 }

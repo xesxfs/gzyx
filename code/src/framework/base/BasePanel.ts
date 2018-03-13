@@ -1,6 +1,6 @@
 /**
  * 面板基类
- * @author chenkai
+ * @author chen
  * @date 2016/6/27
  */
 class BasePanel extends BaseUI{

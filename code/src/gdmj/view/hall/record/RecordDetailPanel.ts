@@ -58,7 +58,7 @@ class RecordDetailPanel extends BasePanel {
             (<eui.Label>this.listGro.getChildAt(4+i*2+1)).textColor = pointColor;
         }
 
-        var selfId = App.DataCenter.UserInfo.httpUserInfo.userID;
+        var selfId = App.DataCenter.UserInfo.selfUser.userID;
         for(var i = 0;i < itemData.length;i ++) {
             if (selfId == Number(itemData[i].playerID)) {
                 this.myselfGro.getChildAt(i).visible = true;

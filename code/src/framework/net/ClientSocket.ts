@@ -1,6 +1,6 @@
 /**
  * Socket管理类
- * @author chenkai
+ * @author chen
  * @date 2016/6/28
  * 
  * 1 连接socket

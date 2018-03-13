@@ -148,7 +148,7 @@ class HallController extends BaseController {
         console.log("发送获取游戏服务器");
         var data = ProtocolData.Send200_1_0;
         data.serverType = App.gameSocket.serverType;
-        data.userid = App.DataCenter.UserInfo.httpUserInfo.userID;
+        data.userid = App.DataCenter.UserInfo.selfUser.userID;
         data.gameid = Game_ID.selfRoom;
         data.deskCode = this.curRoomid;
         //查询房间所在游戏服务器
@@ -296,7 +296,7 @@ class HallController extends BaseController {
     /**发送登录游戏服务器*/
     public sendWLogin() {
         var data = ProtocolData.Send100002;
-        data.userid = App.DataCenter.UserInfo.httpUserInfo.userID;
+        data.userid = App.DataCenter.UserInfo.selfUser.userID;
         data.pass = App.DataCenter.ServerInfo.MD5PASS;
         App.gameSocket.send(ProtocolHead.Send100002, data);
     }
@@ -608,7 +608,7 @@ class HallController extends BaseController {
     /**推送服务器*/
     public sendPushLogin() {
         var data = ProtocolData.Send181_0_0;
-        data.userid = App.DataCenter.UserInfo.httpUserInfo.userID;
+        data.userid = App.DataCenter.UserInfo.selfUser.userID;
         App.gameSocket.send(ProtocolHead.Send181_0_0, data);
     }
 

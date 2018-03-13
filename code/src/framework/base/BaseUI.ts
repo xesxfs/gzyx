@@ -1,6 +1,6 @@
 /**
  * 自定义UI
- * @author chenkai 
+ * @author chen 
  * @date 2016/7/5
  */
 class BaseUI extends eui.Component{

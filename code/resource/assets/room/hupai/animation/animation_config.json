@@ -1,0 +1,70 @@
+{
+  "card_type": {
+    "card1": {
+      "doc": "1",
+      "count": 1
+    },
+    "card2": {
+      "doc": "2",
+      "count": 19
+    },
+    "card3": {
+      "doc": "3",
+      "count": 21
+    },
+    "card4": {
+      "doc": "4",
+      "count": 18
+    },
+    "card6": {
+      "doc": "6",
+      "count": 30
+    },
+    "card7": {
+      "doc": "7",
+      "count": 21
+    },
+    "card9": {
+      "doc": "9",
+      "count": 22
+    },
+    "card10": {
+      "doc": "10",
+      "count": 30
+    },
+    "card11": {
+      "doc": "11",
+      "count": 31
+    },
+	"card12": {
+      "doc": "12",
+      "count": 30
+    },
+	"card13": {
+      "doc": "13",
+      "count": 30
+    },
+    "card14": {
+      "doc": "14",
+      "count": 26
+    },
+    "card15": {
+      "doc": "15",
+      "count": 29
+    }
+  },
+  "end_type": {
+    "end1": {
+      "doc": "31",
+      "count": 1
+    },
+    "end2": {
+      "doc": "32",
+      "count": 21
+    },
+    "end6": {
+      "doc": "33",
+      "count": 10
+    }
+  }
+}

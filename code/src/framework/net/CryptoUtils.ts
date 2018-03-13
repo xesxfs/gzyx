@@ -1,6 +1,6 @@
 /**
  * 加密类
- * @author leo
+ * @author chen
  * @date 
  */
 class CryptoUtils {

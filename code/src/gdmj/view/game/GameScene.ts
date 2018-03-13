@@ -269,7 +269,7 @@ class GameScene extends BaseScene {
         var curPlayCount = count;
         var maxPlayCount = json.maxPlayCount;
         //baoc游戏规则
-        ProtocolData.gameConfig = json.gameConfig;
+        // ProtocolData.gameConfig = json.gameConfig;
         /***玩家信息 */
         this.saveGameSeatInfo(gameSeatInfo);
         this.setAllUserReady();

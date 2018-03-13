@@ -1,6 +1,6 @@
 /**
  * socket管理类
- * @author chenkai
+ * @author chen
  * @date
  */
 class SocketManager extends SingleClass{
