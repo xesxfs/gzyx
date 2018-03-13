@@ -5,7 +5,7 @@
 
 
 
-    <e:Group id="loginGro" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0" visible="false">
+    <e:Group id="loginGro" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0">
 
 
 
@@ -48,7 +48,7 @@
 
 
     </e:Group>
-	<e:Group id="registGro" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0">
+	<e:Group id="registGro" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0" visible="false">
 		<e:Image source="login_tankuang__png" scale9Grid="76,64,457,391"/>
 		<e:Button y="29.4" id="closeBtn0" scaleX="1" scaleY="1" right="30">
 		<e:skinName>

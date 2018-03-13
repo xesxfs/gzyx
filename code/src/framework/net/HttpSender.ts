@@ -74,33 +74,4 @@ class HttpSender {
     }
 
 
-	/**
-	 * 合并请求头和参数
-	 * @param obj1 请求头
-	 * @param obj2  参数
-	 */
-    private extendObj(obj1: Object, obj2: Object) {
-
-        var obj3 = new Object;
-
-        for (let key in obj2) {
-            if (obj3.hasOwnProperty(key)) continue;
-            obj3[key] = obj2[key];
-            if (key == "skey") obj3[key] = App.DataCenter.UserInfo.selfUser.skey;
-            if (key == "uid") obj3[key] = App.DataCenter.UserInfo.selfUser.userID;
-            if (App.DataCenter.UserInfo.selfUser) console.log("skey:::", App.DataCenter.UserInfo.selfUser.skey)
-            if (key == "param") {
-                for (let key1 in obj3[key]) {
-                    if (key1 == "playerID") obj3[key][key1] = App.DataCenter.UserInfo.selfUser.userID;
-                }
-            }
-        }
-
-        for (let key in obj1) {
-            if (obj3.hasOwnProperty(key)) continue;
-            obj3[key] = obj1[key];
-        }
-        return obj3;
-    }
-
 }
