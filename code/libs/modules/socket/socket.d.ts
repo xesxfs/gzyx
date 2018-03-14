@@ -83,19 +83,6 @@ declare namespace egret {
          * @language zh_CN
          */
         close(): void;
-        /**
-         *
-         * @version Egret 4.1.0
-         * @platform Web,Native
-         * @language en_US
-         */
-        /**
-         *
-         * @version Egret 4.1.0
-         * @platform Web,Native
-         * @language zh_CN
-         */
-        disconnect(): void;
     }
     /**
      * @version Egret 2.4
@@ -411,7 +398,6 @@ declare namespace egret.native {
         private _bindEvent();
         send(message: any): void;
         close(): void;
-        disconnect(): void;
     }
 }
 declare namespace egret.web {
@@ -434,6 +420,5 @@ declare namespace egret.web {
         private _bindEvent();
         send(message: any): void;
         close(): void;
-        disconnect(): void;
     }
 }

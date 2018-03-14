@@ -45,6 +45,6 @@ class EmailItem extends eui.ItemRenderer{
     }
     private onTouch(e: egret.TouchEvent) {
         var ctrl = new HallController();
-		ctrl.sendEmailDetail(this.data.data.id);
+		// ctrl.sendEmailDetail(this.data.data.id);
     }
 }

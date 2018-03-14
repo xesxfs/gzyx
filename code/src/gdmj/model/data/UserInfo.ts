@@ -7,7 +7,7 @@ class UserInfo {
     /**[userID][userVO] 全部用户列表(包括自己)  对应to_game,由于to_game大量数据冗余，只选择保存需要的*/
     public userList = {};
     /**用户http登录时，保存自己数据*/
-    public selfUser:UserVO;
+    public selfUser:UserVO=new UserVO();
     
     /**
      * 添加用户

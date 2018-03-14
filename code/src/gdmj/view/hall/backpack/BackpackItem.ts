@@ -44,7 +44,7 @@ class BackpackItem extends eui.ItemRenderer {
     }
 
     private onTouch(e: egret.TouchEvent) {
-        var ctlr =<HallController> App.getController(HallController.NAME)
-        ctlr.createFriendRoom();
+        // var ctlr =<HallController> App.getController(HallController.NAME)
+        // ctlr.createFriendRoom();
     }
 }

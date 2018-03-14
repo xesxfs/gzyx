@@ -158,28 +158,28 @@ class UserInfoPanel extends BasePanel{
 
     /**失去焦点 */
     private FcousOut() {
-        this.nameBg.visible = false;
+        // this.nameBg.visible = false;
 
-        this.offFlag = true;
-        var curText = this.nameLab.text;
-        if (curText != this.curName) {
-            var http = new HttpSender();
-            var data = ProtocolHttp.editNickName;
-            data.param.nickname = curText;
-            http.send(data, (data)=>{
-                console.log("修改昵称返回：", data);
-                if (data.ret) {
-                    TipsLog.hallInfo(data.desc);
-                    this.nameLab.text = this.curName;
-                    this.offFlag = false;
-                }
-                else {
-                    this.curName = data.data;
-                    //同步昵称到本地数据
-                    App.DataCenter.UserInfo.changeName(data.data);
-                }
-            },this);
-        }
+        // this.offFlag = true;
+        // var curText = this.nameLab.text;
+        // if (curText != this.curName) {
+        //     var http = new HttpSender();
+        //     var data = ProtocolHttp.editNickName;
+        //     data.param.nickname = curText;
+        //     http.send(data, (data)=>{
+        //         console.log("修改昵称返回：", data);
+        //         if (data.ret) {
+        //             TipsLog.hallInfo(data.desc);
+        //             this.nameLab.text = this.curName;
+        //             this.offFlag = false;
+        //         }
+        //         else {
+        //             this.curName = data.data;
+        //             //同步昵称到本地数据
+        //             App.DataCenter.UserInfo.changeName(data.data);
+        //         }
+        //     },this);
+        // }
     }
 
     /**踢人 */
@@ -195,10 +195,10 @@ class UserInfoPanel extends BasePanel{
 
     /**加好友 */
     private addFriend() {
-        var http =new HttpSender();
-        var data =ProtocolHttp.AddFriend;
-        data.param.uid=this.recData.uid;
-        http.send(data,this.friendBack,this);
+        // var http =new HttpSender();
+        // var data =ProtocolHttp.AddFriend;
+        // data.param.uid=this.recData.uid;
+        // http.send(data,this.friendBack,this);
     }
 
     /**加好友返回 */

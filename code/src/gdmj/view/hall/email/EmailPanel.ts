@@ -45,9 +45,9 @@ class EmailPanel extends BasePanel {
 
 	 /*刷新邮件列表*/
     public sendGetEmail() {
-        var http: HttpSender = new HttpSender();
-        var qr = ProtocolHttp.send_z_emailList;
-        http.send(qr, this.revGetEmail, this);
+        // var http: HttpSender = new HttpSender();
+        // var qr = ProtocolHttp.send_z_emailList;
+        // http.send(qr, this.revGetEmail, this);
     }
     /**邮件返回 */
     private revGetEmail(data) {

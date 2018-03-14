@@ -1,13 +1,13 @@
 /**
  * 登录界面
- * @author chenwei
+ * @author chen
  * @date 2016/6/27
  */
 class LoginScene extends BaseScene {
     /**控制模块*/
     protected ctrl: LoginController;
-
-    private editText: eui.EditableText;
+    public wxBtn: eui.Button;
+    public accountBtn: eui.Button;
 
     public constructor() {
         super();
@@ -15,11 +15,13 @@ class LoginScene extends BaseScene {
     }
 
     protected onEnable() {
-        App.NativeBridge.getBagType();
+        this.wxBtn.addEventListener("touchTap", this.onWXLogin, this);
+        this.accountBtn.addEventListener("touchTap", this.onAccountLogin, this)
     }
 
     protected onRemove() {
-
+        this.wxBtn.removeEventListener("touchTap", this.onWXLogin, this);
+        this.accountBtn.removeEventListener("touchTap", this.onAccountLogin, this)
     }
 
     /**判断本机是否存在token */
@@ -29,16 +31,14 @@ class LoginScene extends BaseScene {
 
 
     /**点击微信登录*/
-    private onWXLogin(e: egret.Event) {
+    private onWXLogin(e: egret.TouchEvent) {
 
-        if (!this.editText) {
-        }
-        else {
-            if (this.editText.text != "") {
-                this.ctrl.sendDebugLoginReq(this.editText.text, App.DataCenter.debugInfo.password);
-            }
-        }
     }
+
+    private onAccountLogin(e: egret.TouchEvent) {
+        App.PanelManager.open(PanelConst.LoginPanel);
+    }
+
 
 
 }

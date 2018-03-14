@@ -113,11 +113,11 @@ class RecordItem extends eui.ItemRenderer {
         //     })
         // }
         
-        var http = new HttpSender();
-        let data = ProtocolHttp.getShareRecord;
-        data.param.deskBuildDate = this.data.deskBuildDate;
-        data.param.deskCode = this.data.deskCode;
-        http.send(data, this.revShare, this);
+        // var http = new HttpSender();
+        // let data = ProtocolHttp.getShareRecord;
+        // data.param.deskBuildDate = this.data.deskBuildDate;
+        // data.param.deskCode = this.data.deskCode;
+        // http.send(data, this.revShare, this);
     }
 
     private revShare(data) {
@@ -136,11 +136,11 @@ class RecordItem extends eui.ItemRenderer {
 
     /**记录详情请求 */
     public sendRecordDetail() {
-        var http = new HttpSender();
-        let data = ProtocolHttp.GetScoreDetailList;
-        data.param.deskBuildDate = this.data.deskBuildDate;
-        data.param.deskCode = this.data.deskCode;
-        http.send(data, this.recRecordDetail, this);
+        // var http = new HttpSender();
+        // let data = ProtocolHttp.GetScoreDetailList;
+        // data.param.deskBuildDate = this.data.deskBuildDate;
+        // data.param.deskCode = this.data.deskCode;
+        // http.send(data, this.recRecordDetail, this);
     }
 
     /**记录详情接收 */

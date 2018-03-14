@@ -66,9 +66,9 @@ class PaymentPanel extends BasePanel{
 
 	/**确认支付 */
 	protected rights(){
-		var ctrl = new HallController();
-		ctrl.sendBuySure(this.targetId,this.payType);
-		this.hide();
+		// var ctrl = new HallController();
+		// ctrl.sendBuySure(this.targetId,this.payType);
+		// this.hide();
 	}
 
 	/**选择支付方式 */

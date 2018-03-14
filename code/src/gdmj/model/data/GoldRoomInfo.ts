@@ -12,13 +12,13 @@ class GoldRoomInfo {
 	 * @data 
 	 */
 	public readData(data){
-		var len = data.length;
-		for(var i=0;i<len;i++){
-			var obj = ProtocolHttp.GoldRoomJson;
-			obj = data[i];
-			obj.versusroomcfg = JSON.parse(data[i].versusroomcfg);
-			this.infoList.push(obj);
-		}
+		// var len = data.length;
+		// for(var i=0;i<len;i++){
+		// 	// var obj = ProtocolHttp.GoldRoomJson;
+		// 	obj = data[i];
+		// 	obj.versusroomcfg = JSON.parse(data[i].versusroomcfg);
+		// 	this.infoList.push(obj);
+		// }
 	}	
 
 	/**

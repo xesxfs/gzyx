@@ -49,7 +49,7 @@ class NativeBridge extends SingleClass{
                 if (info.isInvite != "NO") {
                     App.DataCenter.inviteFlag = info.roomId;
                 }
-                (<LoginController>App.getController(LoginController.NAME)).sendImLoginReq(info.token, info.uid.toString());
+                // (<LoginController>App.getController(LoginController.NAME)).sendImLoginReq(info.token, info.uid.toString());
             }
             else {
                 App.NativeBridge.sendCloseStart();
@@ -163,7 +163,7 @@ class NativeBridge extends SingleClass{
             else if (data.type == "findPassword") {
                 if(data.ret) {
                     TipsLog.hallInfo("找回成功");
-                    (<LoginPanel>App.PanelManager.getPanel(PanelConst.LoginPanel)).back();
+                    // (<LoginPanel>App.PanelManager.getPanel(PanelConst.LoginPanel)).back();
                 }
             }
             else if (data.type == "userBindingPhone") {

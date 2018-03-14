@@ -31,12 +31,12 @@ class LoadingLock extends SingleClass{
         this.thisObject = thisObject;
         this.startOverTimer();
         if(this.mc == null) {
-            var data = RES.getRes("loadMc_json");
-            var texture = RES.getRes("loadMc_png");
-       	    var mcDataFactory: egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,texture);
-            this.mc = new egret.MovieClip(mcDataFactory.generateMovieClipData("load"));
-            this.mc.x = (App.StageUtils.stageWidth - this.mc.width) / 2;
-            this.mc.y = (App.StageUtils.stageHeight - this.mc.height) / 2;
+            // var data = RES.getRes("loadMc_json");
+            // var texture = RES.getRes("loadMc_png");
+       	    // var mcDataFactory: egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data,texture);
+            // this.mc = new egret.MovieClip(mcDataFactory.generateMovieClipData("load"));
+            // this.mc.x = (App.StageUtils.stageWidth - this.mc.width) / 2;
+            // this.mc.y = (App.StageUtils.stageHeight - this.mc.height) / 2;
         }
         if(this.rect == null) {
             this.rect = new eui.Rect();
@@ -50,7 +50,7 @@ class LoadingLock extends SingleClass{
             App.LayerManager.lockLayer.addChild(this.rect);
         }
         App.LayerManager.lockLayer.addChild(this.mc);
-        this.mc.gotoAndPlay("roll",-1);
+        // this.mc.gotoAndPlay("roll",-1);
 
         if (this.descGro) {
             App.LayerManager.lockLayer.addChild(this.descGro);
@@ -110,27 +110,27 @@ class LoadingLock extends SingleClass{
 
     //添加Loading描述
     public addDesc(tips: string) {
-        if (this.descGro == null) {
-            this.descGro = new eui.Group();
-            this.descGro.width = App.StageUtils.stageWidth;
-            this.descGro.height = App.StageUtils.stageHeight;
+        // if (this.descGro == null) {
+        //     this.descGro = new eui.Group();
+        //     this.descGro.width = App.StageUtils.stageWidth;
+        //     this.descGro.height = App.StageUtils.stageHeight;
 
-            var bg = new eui.Image();
-            bg.texture = RES.getRes("game_bg2_png");
-            bg.verticalCenter = 100;
-            bg.horizontalCenter = 0;
-            bg.scale9Grid = new egret.Rectangle(24,5,149,36);
-            bg.width = 500;
-            this.descGro.addChild(bg);
+        //     var bg = new eui.Image();
+        //     bg.texture = RES.getRes("game_bg2_png");
+        //     bg.verticalCenter = 100;
+        //     bg.horizontalCenter = 0;
+        //     bg.scale9Grid = new egret.Rectangle(24,5,149,36);
+        //     bg.width = 500;
+        //     this.descGro.addChild(bg);
 
-            this.descLab = new eui.Label();
-            this.descLab.verticalCenter = 103;
-            this.descLab.horizontalCenter = 0;
-            this.descLab.size = 30;
-            this.descLab.textColor = 0xfff1be;
-            this.descGro.addChild(this.descLab);
-        }
-        this.descLab.text = tips;
-        App.LayerManager.lockLayer.addChild(this.descGro);
+        //     this.descLab = new eui.Label();
+        //     this.descLab.verticalCenter = 103;
+        //     this.descLab.horizontalCenter = 0;
+        //     this.descLab.size = 30;
+        //     this.descLab.textColor = 0xfff1be;
+        //     this.descGro.addChild(this.descLab);
+        // }
+        // this.descLab.text = tips;
+        // App.LayerManager.lockLayer.addChild(this.descGro);
     }
 }

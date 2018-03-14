@@ -24,7 +24,7 @@ class BaseApp extends SingleClass{
 	public unRegisterController(ctrlName:string){
 		this.moduleList[ctrlName].onRemove();
 		delete this.moduleList[ctrlName];
-	}\
+	}
 
 	/**
 	 * 获取controller

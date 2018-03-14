@@ -11,11 +11,11 @@ class HttpSender {
 	 * @param cb 回调函数
 	 * @param obj thisObject
 	 */
-    public send(paramObj: Object, cb: Function, obj: any, action: string = "", lock: boolean = true): void {
+    public send(paramObj: Object, cb: Function, obj: any, lock: boolean = true): void {
 
-        let dataObj = paramObj;
+        let dataObj = paramObj["param"];
         let dataToSend = JSON.stringify(dataObj);
-        var url = App.DataCenter.ServerInfo.WEB_URL.replace("%1", action);
+        var url = App.DataCenter.ServerInfo.WEB_URL.replace("%1", paramObj["action"]);
         url = url.replace("%2", App.DataCenter.UserInfo.selfUser.userID.toString());
         url = url.replace("%3", App.DataCenter.UserInfo.selfUser.skey);
         url = url.replace("%4", dataToSend);
@@ -53,24 +53,24 @@ class HttpSender {
      * 发送post登录请求
      */
     public post(url: string, paramObj: Object, cb: Function, obj: any): void {
-        let dataObj = this.extendObj(ProtocolHttp.httpHead, paramObj);
-        let dataToSend = JSON.stringify(dataObj);
-        console.log("post url:" + App.DataCenter.ServerInfo.WEB_URL);
-        var request: egret.HttpRequest = new egret.HttpRequest();
-        request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        request.open(url, egret.HttpMethod.POST);
-        request.once(egret.Event.COMPLETE, function (e) {
-            var request = <egret.HttpRequest>e.currentTarget;
-            console.log("requet.response:" + request.response);
-            var re = JSON.parse(request.response);
+        // let dataObj = this.extendObj(ProtocolHttp.httpHead, paramObj);
+        // let dataToSend = JSON.stringify(dataObj);
+        // console.log("post url:" + App.DataCenter.ServerInfo.WEB_URL);
+        // var request: egret.HttpRequest = new egret.HttpRequest();
+        // request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        // request.open(url, egret.HttpMethod.POST);
+        // request.once(egret.Event.COMPLETE, function (e) {
+        //     var request = <egret.HttpRequest>e.currentTarget;
+        //     console.log("requet.response:" + request.response);
+        //     var re = JSON.parse(request.response);
 
-            cb.call(obj, re);
-        }, this);
+        //     cb.call(obj, re);
+        // }, this);
 
-        request.once(egret.IOErrorEvent.IO_ERROR, function (e) {
-            console.log("error : event=" + e);
-        }, this);
-        request.send(dataToSend);
+        // request.once(egret.IOErrorEvent.IO_ERROR, function (e) {
+        //     console.log("error : event=" + e);
+        // }, this);
+        // request.send(dataToSend);
     }
 
 

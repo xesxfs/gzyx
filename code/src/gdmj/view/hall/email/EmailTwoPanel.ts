@@ -60,7 +60,7 @@ class EmailTwoPanel extends BasePanel {
 	/**领取附件 */
 	protected receive(){
 		var ctrl = new HallController();
-		ctrl.sendEmailGoods(this.eid);
+		// ctrl.sendEmailGoods(this.eid);
 	}
 
 	/**更新邮件状态,领取成功回调 */

@@ -29,10 +29,6 @@ class App extends BaseApp {
             egret.ExternalInterface.call("customLoadingFlag", jsonStr);
         }
 
-        //定义Native访问接口
-        if (App.DeviceUtils.IsNative) {
-            this.setInterfaces();
-        }
 
         //注册Controller
         this.registerController(LoginController.NAME, new LoginController());
@@ -86,10 +82,6 @@ class App extends BaseApp {
         panel.register(PanelConst.LoginChoosePanel, LoginChoosePanel);      //登录选择
         panel.register(PanelConst.BindPanel, BindPanel);      //绑定
 
-        //监听事件
-        this.addEvent(App.EVENT_NATIVE_SHAKE, this.nativeShake, this);
-        this.addEvent(App.EVENT_SET_WEB_WXSHARE, this.setWebWxShare, this);
-        this.addEvent(App.EVENT_NATIVE_WXSHARE, this.nativeWxShare, this);
 
         //显示登录界面
         this.sendEvent(LoginController.EVENT_SHOW_LOGIN);
@@ -101,64 +93,7 @@ class App extends BaseApp {
         App.GameConfig.initUserConfig();
     }
 
-    //Native接口
-    private setInterfaces() {
-        //手机点击退出键
-        egret.ExternalInterface.addCallback("quitApp", function (message: string) {
-            console.log("message form native : " + message);
-            var messageBox: MessageBox = App.MsgBoxManager.getBoxA();
-            messageBox.showMsg("是否关闭游戏");
-            messageBox.ok = () => {
-                egret.ExternalInterface.call("quitApp", "quitApp");
-            }
-        });
-
-        //Native返回微信登录请求结果
-        egret.ExternalInterface.addCallback("getCode", function (code: string) {
-            TipsLog.hallInfo("egret get code: " + code);
-            if (code) {
-                //这里回调必须用异步函数
-                egret.setTimeout(() => {
-                    var loginController: LoginController = App.getController(LoginController.NAME);
-                    loginController.sendLoginAppReq(code, "");
-                }, this, 10);
-            } else {
-                TipsLog.hallInfo("code is null");
-            }
-        });
-    }
-
-    /**
-     * Native分享
-     * @isTimeline 是否分享到朋友圈
-     */
-    public nativeWxShare(isTimeline: boolean) {
-        egret.ExternalInterface.call("wxShare", "http://gamemj.com/mj/index.php?pid=" + App.DataCenter.UserInfo.getMyUserVo().userID + "&deskCode=" + App.DataCenter.deskInfo.deskCode + "&deskId=" + App.DataCenter.deskInfo.deskID + "&gameID=" + App.serverSocket.gameID);
-    }
-
-    /**
-     * Native震动
-     * @shakeTime 震动时间，默认1500ms
-     */
-    public nativeShake(shakeTime: number = 1500) {
-        egret.ExternalInterface.call("shake", shakeTime + "");
-    }
-
-    /**
-     * H5分享，重置微信分享接口，传入桌子号和用户ID等
-     * @userID 用户ID
-     * @deskCode 桌子号
-     * @replayCode 回放码
-     */
-    public setWebWxShare(userID: number, deskCode: number, replayCode: string, deskId: number) {
-        var gameID: Game_ID = App.serverSocket.gameID;
-        console.log("调用微信分享,deskCode=" + deskCode + " userID=" + userID + " replayCode=" + replayCode
-            + " gameID=" + gameID);
-        if (window['wxShare']) {
-            window['wxShare'](userID, deskCode, replayCode, gameID, deskId);
-        }
-    }
-
+  
     private onSocketClose() {
         App.PanelManager.open(PanelConst.SocketClosePanel, null, null, false);
     }

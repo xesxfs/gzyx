@@ -270,13 +270,13 @@ class HeadPlugin extends BaseUI {
      * 发送Http请求玩家信息
      */
     private getOtherUserInfo(num: number) {
-        let user: UserVO = App.DataCenter.UserInfo.getUserByPos(num);
-        if (user) {
-            let http = new HttpSender();
-            let data = ProtocolHttp.getOtherUserInfo;
-            data.param.uid = user.userID;
-            http.send(data, this.updateUserInfo, this);
-        }
+        // let user: UserVO = App.DataCenter.UserInfo.getUserByPos(num);
+        // if (user) {
+        //     let http = new HttpSender();
+        //     let data = ProtocolHttp.getOtherUserInfo;
+        //     data.param.uid = user.userID;
+        //     http.send(data, this.updateUserInfo, this);
+        // }
     }
 
     /**
