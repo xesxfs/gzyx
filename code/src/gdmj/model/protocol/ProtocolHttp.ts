@@ -7,6 +7,9 @@ class ProtocolHttp {
 
     /**接收登录*/
     public static rev_z_login = {
+        ret:0,
+        desc:"",
+        data:{
         uid: 0,//	integer	用户ID
         nick_name: "",//	string	昵称
         sex: 0,//	integer	性别 1.man 2.woman
@@ -22,6 +25,7 @@ class ProtocolHttp {
         paiwei_score: 0,//	integer	排位分
         paiwei_rank: 0,//integer	排位等级
         paiwei_rank_name: "",//string	等级名称
+        }
     }
 
 

@@ -71,9 +71,27 @@ class LoginPanel extends BasePanel {
         httpsend.send(loginData, this.revLogin, this);
     }
 
-    private revLogin() {
+    private revLogin(data:any) {
         this.hide();
-        let ctrl = App.getController(LoginController.NAME) as LoginController
+        let ctrl = App.getController(LoginController.NAME) as LoginController;
+        ctrl.bLogin=true;
+  
+        let json=ProtocolHttp.rev_z_login;
+        json=data;
+        if(json.ret==0){
+            let suser=App.DataCenter.UserInfo.selfUser;
+            suser.userID=json.data.uid;
+            suser.nickName=json.data.nick_name;
+            suser.skey=json.data.skey;
+            suser.headUrl=json.data.avater_url;
+            suser.coin=json.data.diamonds;
+            suser.gold=json.data.gold;
+            suser.IP=json.data.login_ip;
+            suser.sex=json.data.sex;
+
+        }
+        ctrl.startLoadHall();
+
     }
 
 

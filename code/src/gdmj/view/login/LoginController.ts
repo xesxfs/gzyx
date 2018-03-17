@@ -13,7 +13,7 @@ class LoginController extends BaseController{
 	/**大厅是否加载完成*/
 	private bHallLoaded:boolean = false;
 	/**登录请求是否完成*/
-    private bLogin:boolean = false;
+    public bLogin:boolean = false;
 	public constructor() {
 		super();
 	}
@@ -32,11 +32,11 @@ class LoginController extends BaseController{
 		this.bLogin = false;
         
 		//测试账号登录  从浏览器获取账号，发送登录请求
-        if(App.DataCenter.debugInfo.isDebug){
-            this.sendDebugLoginReq(App.DataCenter.debugInfo.account, App.DataCenter.debugInfo.password);
-			this.startLoadHall();
-            return;
-        }	
+        // if(App.DataCenter.debugInfo.isDebug){
+        //     this.sendDebugLoginReq(App.DataCenter.debugInfo.account, App.DataCenter.debugInfo.password);
+		// 	this.startLoadHall();
+        //     return;
+        // }	
 	    this.startLoadLogin();
 	}
 
@@ -66,7 +66,7 @@ class LoginController extends BaseController{
 	}
 
 	/**开始加载大厅*/
-	private startLoadHall(){
+	public startLoadHall(){
 		var preloadPanel: PreloadPanel = App.PanelManager.open(PanelConst.PreloadPanel);
 		App.ResUtils.loadGroup(["hall","common","preload","game"],this, this.loadHallComplete, this.loadHallProgress);
 	}

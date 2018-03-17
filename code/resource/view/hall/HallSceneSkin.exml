@@ -1,38 +1,121 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<e:Skin class="HallSceneSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  >
+<e:Skin class="HallSceneSkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  >
 	<e:Group height="100%" width="100%">
-		<e:Image width="750" height="1334" anchorOffsetX="0" source="hall_bg_jpg"/>
-
-		<ns1:Marquee id="marquee" y="119" skinName="MarqueeSkin" x="6" width="533" visible="false"/>
-		<e:Group id="room" x="426.9999999999999" y="479.00000000000006">
-			<e:Image id="friendMask1" source="hall_friends_room_png" x="-128" y="208" scaleX="0.9" scaleY="0.9"/>
-			<e:Image id="friendMask2" source="hall_friends_room_png" x="-128" y="208" scaleX="0.9" scaleY="0.9"/>
-			<e:Image id="playMask1" x="-128" y="-92" source="hall_playground_png" scaleX="0.9" scaleY="0.9"/>
-			<e:Image id="playMask2" x="-128" y="-92" source="hall_playground_png" scaleX="0.9" scaleY="0.9"/>
-			<e:Button id="hall_friends_room" label="" x="-150" y="200">
-				<e:skinName>
+		<e:Image source="main_bg_jpg" width="100%" height="100%"/>
+		<e:Image bottom="0" horizontalCenter="0" source="bottom_png"/>
+		<e:Image source="mm_png" bottom="0" right="0"/>
+		<e:Button label="" x="168" width="110" height="110" y="640">
+			<e:skinName>
 				<e:Skin states="up,down,disabled">
-					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_friends_room_png"/>
-					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image width="100%" height="100%" source="action_down_png" source.down="action_up_png" source.disabled="action_off_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
-				</e:skinName>
-			</e:Button>
-			<e:Button id="hall_playground" label="" x="-150" y="-100">
-				<e:skinName>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="334" y="640">
+			<e:skinName>
 				<e:Skin states="up,down,disabled">
-					<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_playground_png"/>
-					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image width="100%" height="100%" source="btn_mall_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
-				</e:skinName>
-			</e:Button>
-			<e:Image id="lightPlay1" source="saoLight_test_png" x="-330" y="-470" blendMode="add" fillMode="scale" alpha="0.3" scaleY="1" scaleX="1"/>
-			<e:Image id="lightPlay2" source="saoLight_test_png" x="-24.25" y="-470" blendMode="add" fillMode="scale" alpha="0.3"/>
-			<e:Image id="lightFriend1" source="saoLight_test_png" x="-666.62" y="-140" blendMode="add" fillMode="scale" alpha="0.3"/>
-			<e:Image id="lightFriend2" source="saoLight_test_png" x="-666.62" y="-140" blendMode="add" fillMode="scale" alpha="0.3"/>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="501" y="640">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="lobby_fenxiang_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="672" y="640">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="item_png" source.down="unitem_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="844" y="640" enabled="false">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="radio_png" source.disabled="radio_dis_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="1000" y="640">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_tiandao_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="970" top="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_help_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="1080" top="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_msg_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="1190" top="0">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_setting_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Button label="" x="260" y="230">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_setting_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Group top="0" left="0">
+			<e:Image source="img_infoFrame_png" verticalCenter="0" scale9Grid="99,30,22,4" x="40"/>
+			<e:Image verticalCenter="0" width="100" height="100" source=""/>
+			<e:Label text="sos" verticalCenter="0" x="140" textColor="0xffffff"/>
 		</e:Group>
-		<e:Image id="flowerImg" width="49" height="37" x="431" y="18"/>
-		<e:Image id="flowerImg1" width="49" height="37" x="661" y="25"/>
-		<ns1:SideMenu skinName="SideMenuSkin" left="0" verticalCenter="0" visible="false"/>
+		<e:Group x="348" top="40">
+			<e:Image source="img_infoFrame_png"/>
+			<e:Image verticalCenter="0" x="12" source="ico_jewel_png"/>
+			<e:Button label="" x="200">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+			</e:Button>
+			<e:Label text="1111111" textColor="0xFCC83C" verticalCenter="0" x="60"/>
+		</e:Group>
+		<e:Group x="638" top="40">
+			<e:Image source="img_infoFrame_png" x="40"/>
+			<e:Image source="ico_gold_x_png" verticalCenter="0" x="12"/>
+			<e:Button label="" right="10">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Label text="1111111" textColor="0xfcc83c" verticalCenter="0" x="60"/>
+		</e:Group>
+
 	</e:Group>
 </e:Skin>
