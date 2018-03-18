@@ -1,6 +1,6 @@
 /**
  * Socket通讯协议
- * @author  chenkai
+ * @author  chen
  * @date 2016/7/4
  */
 class ProtocolData {

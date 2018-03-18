@@ -1,6 +1,6 @@
 /**
  * 调试信息
- * @author chenkai
+ * @author chen
  * @date 2016/11/16
  */
 class DebugInfo {

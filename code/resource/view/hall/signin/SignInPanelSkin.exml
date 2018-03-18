@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="SignInPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group>
+		<e:Image source="tankuang_big_png"/>
+		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>
+		<e:Label text="签到" y="57" textColor="0x000000" horizontalCenter="0" size="28"/>
+	</e:Group>
+</e:Skin>

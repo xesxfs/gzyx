@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="LoginSceneSkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image height="100%" y="0" source="bg_png" left="0" right="0"/>
+	<e:Image height="100%" y="0" left="0" right="0" source="login_bg_png"/>
 	<e:Image source="logo_d_png" horizontalCenter="0" top="0"/>
 
 	<e:Button id="wxBtn" label="" y="573" horizontalCenter="-262.5">

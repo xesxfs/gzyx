@@ -1,6 +1,6 @@
 /**
  * 设备工具类
- * @author chenkai
+ * @author chen
  * @2016/10/11
  */
 class DeviceUtils extends SingleClass{

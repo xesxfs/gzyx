@@ -1,81 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="gameUserSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" height="1280" width="720">
+<e:Skin class="gameUserSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<w:Config id="1594658eddc"/>
-	<e:Image height="689.33" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" width="711" scale9Grid="313,78,54,31" horizontalCenter="0" verticalCenter="26.5"/>
-	<e:Image y="342" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
-	<e:Image y="351.81" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="userinfo_title_png"/>
-	<e:Button y="310.5" x="642" id="closeBtn">
-		<e:skinName>
-			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-		</e:skinName>
-	</e:Button>
-	<e:Image source="hall_within_box_png" y="420" scale9Grid="37,34,86,36" anchorOffsetX="0" width="675" anchorOffsetY="0" height="462.82" horizontalCenter="-1.5"/>
-	<e:Image source="cutline_png" y="704.48" horizontalCenter="0.5"/>
-	<e:Image source="userinfo_headbg_png" x="91.7" y="464"/>
-	<e:Image id="headMaskImg" source="userinfo_headmask_png" x="91.7" y="464"/>
-	<e:Image id="headIcon" source="userinfo_headmask_png" x="91.7" y="464" width="194" height="196"/>
-	<e:Image id="nameBg" source="hall_within_box3_png" x="366.31" y="485.52" scale9Grid="17,8,109,55" anchorOffsetX="0" height="60" width="245"/>
-	<e:Image id="sexImg" source="girl_png" x="326.2" y="497.99"/>
-	<e:Label text="ID:" x="323.52" y="590.55" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" textColor="0x7e5a3d"/>
-	<e:EditableText id="nameLab" text="逗比姍姍逗比姍姍姍" x="377.23" y="501.6" anchorOffsetX="0" size="28" fontFamily="Microsoft YaHei" textAlign="left" width="230" textColor="0xb33318" restrict="&quot;a-zA-Z0-9\u4E00-\u9FA5&quot;"/>
-	<e:Image id="modifyImg" source="hall_roommodif_png" x="621.86" y="494.12"/>
-	<e:Label id="idLab" text="123456789" x="372.67" y="592.07" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" textColor="0xb33318"/>
-	<e:Label text="总  局  数:" x="102" y="742" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" textColor="0x7e5a3d"/>
-	<e:Label id="totalLab" text="699" x="272" y="742" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" textColor="0xb33318"/>
-	<e:Label text="胜      率:" x="412" y="742" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" textColor="0x7e5a3d"/>
-	<e:Label id="winPercentLab" text="50%" x="554" y="742" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" width="120" height="28" textColor="0xb33318"/>
-	<e:Label text="游戏场积分:" x="102" y="810" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" textColor="0x7e5a3d"/>
-	<e:Label id="integralLab" text="10000" x="270" y="810" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" textColor="0xb33318"/>
-	<e:Label text="最高连胜:" x="412" y="810" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" textColor="0x7e5a3d"/>
-	<e:Label id="continuousWinLab" text="20" x="560" y="810" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="28" textAlign="left" textColor="0xb33318"/>
-	<e:Button id="contactBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="895.37" horizontalCenter="0">
-		<e:skinName>
-		<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="-4" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" y="20" horizontalCenter="0" source="sure_bl_png"/>
-		</e:Skin>
-		</e:skinName>
-	</e:Button>
-	<e:Group id="btnGro" width="720" height="137.88" y="871.64" anchorOffsetY="0" horizontalCenter="0">
-		<e:Button id="addFriendBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="23.729999999999905" x="405" scaleX="1" scaleY="1">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="-4" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" y="20" horizontalCenter="0" source="addfriend_btlab_png"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="kickBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="23.729999999999905" x="135" scaleX="1" scaleY="1">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="-4" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" y="20" horizontalCenter="0" source="kick_btlab_png"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
+	<e:Group anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
+		<e:Image source="tankuang_small_png"/>
+		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>
+		<e:Label text="个人信息" y="57" textColor="0x000000" horizontalCenter="0" size="28"/>
+		<e:Label id="uid" text="Label" x="59.31" y="257.56"/>
+		<e:Label id="nickName" text="Label" x="210.82" y="121.6" anchorOffsetX="0" width="75.52"/>
+		<e:Label id="dia" text="Label" x="210.82" y="167.45"/>
+		<e:Label id="gold" text="Label" x="210.82" y="213.3" anchorOffsetX="0" width="75.52"/>
+		<e:Label id="score" text="1" x="210.82" y="260.15"/>
+		<e:Label id="duanwei" text="2" x="210.82" y="305.8" anchorOffsetX="0" width="75.52"/>
+		<e:Image id="headUrl" width="123.04" height="118.48" x="27.42" y="124.42" anchorOffsetX="0" anchorOffsetY="0"/>
 	</e:Group>
-	<e:Button id="addFriendSBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="895" scaleX="1" scaleY="1" horizontalCenter="0">
-		<e:skinName>
-		<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="-4" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" y="20" horizontalCenter="0" source="addfriend_btlab_png"/>
-		</e:Skin>
-		</e:skinName>
-	</e:Button>
-	<e:Button id="bindBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="895.37" horizontalCenter="0" visible="false">
-		<e:skinName>
-		<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="-4" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" y="20" horizontalCenter="0" source="login_bind_png"/>
-		</e:Skin>
-		</e:skinName>
-	</e:Button>
 </e:Skin>

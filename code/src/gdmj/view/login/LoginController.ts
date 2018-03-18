@@ -67,7 +67,7 @@ class LoginController extends BaseController{
 
 	/**开始加载大厅*/
 	public startLoadHall(){
-		var preloadPanel: PreloadPanel = App.PanelManager.open(PanelConst.PreloadPanel);
+		var preloadPanel = App.PanelManager.open(PanelConst.PreloadPanel) as PreloadPanel;
 		App.ResUtils.loadGroup(["hall","common","preload","game"],this, this.loadHallComplete, this.loadHallProgress);
 	}
 

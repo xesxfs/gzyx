@@ -1,6 +1,6 @@
 /**
  * 桌子信息
- * @author chenkai
+ * @author chen
  * @date 2016/11/17
  */
 class DeskInfo {

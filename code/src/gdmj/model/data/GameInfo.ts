@@ -1,6 +1,6 @@
 /**
  * 游戏数据
- * @author chenkai 
+ * @author chen
  * @date 2016/6/29
  */
 class GameInfo {

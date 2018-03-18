@@ -1,6 +1,6 @@
 /**
  * 弹框管理
- * @author chenkai 
+ * @author chen
  * @date 2016/6/28
  */
 class PopUpManager extends SingleClass{

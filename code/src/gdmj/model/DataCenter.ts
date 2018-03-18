@@ -1,6 +1,6 @@
 /**
  * 数据中心
- * @author chenkai 
+ * @author chen
  * @date 2016/6/27
  */
 class DataCenter extends SingleClass{

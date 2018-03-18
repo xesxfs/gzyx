@@ -1,6 +1,6 @@
 /**
  * 数字工具类
- * @author chenkai
+ * @author chen
  * @date 2016/6/29
  */
 class NumberTool {

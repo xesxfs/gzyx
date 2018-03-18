@@ -1,6 +1,6 @@
 /**
  * 数组工具
- * @author chenkai
+ * @author chen
  * @date 2016/7/19
  */
 class ArrayTool {

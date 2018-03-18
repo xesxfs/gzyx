@@ -1,6 +1,6 @@
 /**
  * 用户数据VO
- * @author chenkai
+ * @author chen
  * @date 2016/6/28
  */
 class UserVO {

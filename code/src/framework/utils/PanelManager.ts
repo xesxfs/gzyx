@@ -1,6 +1,6 @@
 /**
  * 弹框管理类
- * @author chenkai
+ * @author chen
  * @date 2016/11/9
  *
  */
@@ -35,19 +35,10 @@ class PanelManager extends SingleClass{
 	 * @gameBool 是否在游戏场内打开Panel
 	 * @click为true时点击黑色背景回调
  	 */ 
-    public open(panelID:number, callBack:Function = null, thisObject:any = null,click:boolean=true,lock = true,transData:any=null,gameBool:boolean=false,clickCallback:Function=null){
+    public open(panelID:number, callBack:Function = null, thisObject:any = null,click:boolean=true,lock = true,transData:any=null,gameBool:boolean=false,clickCallback:Function=null):any{
 		//  console.log("打开Panel=="+panelID+"&&click=="+click);
      	 var panel = this.panelList[panelID];
 		
-		 if(App.SceneManager.getCurScene() == App.SceneManager.getScene(SceneConst.GameScene)){
-			  App.PopUpManager.changeTransparency(0.4);
-		 }
-		 else if (App.SceneManager.getCurScene() == App.SceneManager.getScene(SceneConst.LoginScene)) {
-			  App.PopUpManager.changeTransparency(0.01);
-		 }
-		 else{
-			  App.PopUpManager.changeTransparency(0.8);
-		 }
      	 if(panel == null){
                var clz = this.panelClassList[panelID];
          	 if(clz != null){

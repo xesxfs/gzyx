@@ -1,7 +1,7 @@
 module EffectUtils {
 	/**
 	 *
-	 * @author chenwei
+	 * @author chen
 	 *  2016/07/12
 	 */
 	

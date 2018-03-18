@@ -1,6 +1,6 @@
 /**
  * 资源配置文件
- * @author chenkai
+ * @author chen
  * @date 2016/9/8
  */
 class AssetConst{

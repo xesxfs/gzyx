@@ -53,21 +53,20 @@ class App extends BaseApp {
         panel.register(PanelConst.BackpackPanel, BackpackPanel);                    //背包面板
         panel.register(PanelConst.FriendPanel, FriendPanel);                        //好友房列表
         panel.register(PanelConst.JoinRoomPanel, JoinRoomPanel);                    //加入房间
-        panel.register(PanelConst.JoinNumber, JoinNumber, AssetConst.InputRoom);                          //输入加入房间
         panel.register(PanelConst.LookRlue, LookRlue);                              //游戏内查看规则
         panel.register(PanelConst.ModifyRlueT, ModifyRlueT);                        //游戏内修改规则
-        panel.register(PanelConst.RecordPanel, RecordPanel);                        //记录面板
-        panel.register(PanelConst.RecordDetailPanel, RecordDetailPanel);            //记录详情面板
-        panel.register(PanelConst.RulePanel, RulePanelH, [AssetConst.Rule, AssetConst.Card]); //玩法说明面板
+        panel.register(PanelConst.SignPanel, SignInPanel);                        //游戏内修改规则
+       
+        panel.register(PanelConst.RulePanel, RulePanel); //玩法说明面板
         panel.register(PanelConst.EmailPanel, EmailPanel);         //邮件面板
-        panel.register(PanelConst.EmailTwoPanel, EmailTwoPanel);         //二级邮件面板
+      
         panel.register(PanelConst.PreloadPanel, PreloadPanel);                     //加载
-        panel.register(PanelConst.SetPanel, SetPanel, AssetConst.SetPanel);//设置
-        panel.register(PanelConst.RecordPanel, RecordPanel);       //记录
-        panel.register(PanelConst.RecordDetailPanel, RecordDetailPanel);       //记录
+        panel.register(PanelConst.SetPanel, SetPanel);//设置
+        panel.register(PanelConst.ActivePanel, ActivePanel);//活动
+        panel.register(PanelConst.CreateRoomPanel, CreateRoomPanel);//创建房间
         panel.register(PanelConst.UserInfoPanel, UserInfoPanel);       //个人信息
         panel.register(PanelConst.GameResultPanel, GameResultPanel);       //结算
-        panel.register(PanelConst.HuTypePanel, HuTypePanel);          //胡牌类型
+        panel.register(PanelConst.GoldPanel, GoldPanel);          //金币场
         panel.register(PanelConst.TapePanel, TapePanel);          //录音界面
         panel.register(PanelConst.JieSanPanel, JieSanPanel);      //解散房间
         panel.register(PanelConst.SendjiesanPanel, SendjiesanPanel);//提示解散房间
@@ -76,7 +75,7 @@ class App extends BaseApp {
         panel.register(PanelConst.SocketClosePanel, SocketClosePanel);//socket重连弹窗
         panel.register(PanelConst.InvitePanelT, InvitePanelT);//好友房邀请好友
         panel.register(PanelConst.LoginPanel, LoginPanel);//登录界面
-        panel.register(PanelConst.ShareRecordPanel, ShareRecordPanel);//好友房分享界面
+      
         panel.register(PanelConst.ShareResultPanel, ShareResultPanel);//结算分享界面
         panel.register(PanelConst.AllRecord, AllRecord);      //总结算面板
         panel.register(PanelConst.LoginChoosePanel, LoginChoosePanel);      //登录选择

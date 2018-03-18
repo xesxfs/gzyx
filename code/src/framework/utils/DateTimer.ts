@@ -1,7 +1,7 @@
 /**
  * 根据系统时间的计时器
  * 由于android和ios设备运行效率不一致，导致egret.Timer计时不正确，在对计时精确度有较高要求场合使用该类
- * @author chenkai
+ * @author chen
  * @date 2016/6/29
  * 
  * Example:

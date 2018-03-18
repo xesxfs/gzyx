@@ -1,6 +1,6 @@
 /**
  *
- * @author chenwei
+ * @author chen
  *  2017/01/16
  * 跑马灯信息
  */

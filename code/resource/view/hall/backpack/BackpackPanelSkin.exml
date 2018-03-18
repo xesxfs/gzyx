@@ -1,36 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="BackpackPanelSkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="hallGro" width="708" height="834" y="250" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="3">
-		<e:Image height="827" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" width="711" scale9Grid="313,78,54,31" horizontalCenter="0" verticalCenter="0" x="-4" y="4" scaleX="1" scaleY="1"/>
-		<e:Image y="24" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="-5" scaleX="1" scaleY="1"/>
-		<e:Button id="mall_back" label="" x="631.31" y="-1.3199999999999932" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName> 
-		</e:Button>
-		<e:Image y="29.810000000000002" anchorOffsetX="0" anchorOffsetY="0" x="296" source="bagpack_title_png" scaleX="1" scaleY="1"/>
-		<e:Label id="nilLabHall" text="暂无道具" y="367.57" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="000000"/>
-		<e:Scroller width="650" height="672" y="108.79000000000002" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="26" scaleX="1" scaleY="1">
-			<e:List id="backpackListHall" width="680" height="668" x="0" y="240" anchorOffsetY="0">
-			<e:layout>
-				<e:VerticalLayout paddingTop="3"/>
-			</e:layout>
-			</e:List>
-		</e:Scroller>
-	</e:Group>
-	<e:Group id="gameGro" width="100%" height="516" x="0" y="818" anchorOffsetY="0">
-		<e:Image height="520" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" width="100%" scale9Grid="313,78,54,31" horizontalCenter="0" x="0" scaleX="1" scaleY="1" bottom="-7" y="3"/>
-		<e:Image y="-86.33000000000004" horizontalCenter="0" x="327" scaleX="1" scaleY="1" source="hall_knapsack_png"/>
-		<e:Label id="nilLabGame" text="暂无道具" y="247.27" horizontalCenter="0" fontFamily="Microsoft YaHei" textColor="0x7e5a3d"/>
-		<e:Scroller width="650" height="458.67" y="34.120000000000005" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" x="50" scaleX="1" scaleY="1">
-			<e:List id="backpackListGame" width="680" height="668" x="0" y="240" anchorOffsetY="0">
-			<e:layout>
-				<e:VerticalLayout paddingTop="3"/>
-			</e:layout>
-			</e:List>
-		</e:Scroller>
+<e:Skin class="BackpackPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group>
+		<e:Image source="tankuang_big_png"/>
+		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>
+		<e:Label text="背包" y="57" textColor="0x000000" horizontalCenter="0" size="28"/>
 	</e:Group>
 </e:Skin>

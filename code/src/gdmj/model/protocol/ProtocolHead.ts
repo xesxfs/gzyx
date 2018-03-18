@@ -1,6 +1,6 @@
 /**
  * Socket通讯协议头
- * @author chenkai
+ * @author chen
  * @date 2016/11/17
  */
 class ProtocolHead {

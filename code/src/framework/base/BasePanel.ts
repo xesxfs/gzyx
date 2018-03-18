@@ -6,8 +6,6 @@
 class BasePanel extends BaseUI{
     
     public recData:any;
-    public gameBool:boolean;
-
     public constructor() {
         super();
     }

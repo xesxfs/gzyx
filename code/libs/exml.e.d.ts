@@ -128,19 +128,13 @@ declare class PaymentPanelSkin extends eui.Skin{
 }
 declare class MarqueeSkin extends eui.Skin{
 }
-declare class RecordDetailItemSkin extends eui.Skin{
-}
-declare class RecordDetailPanelSkin extends eui.Skin{
-}
-declare class RecordItemSkin extends eui.Skin{
-}
-declare class RecordPanelSkin extends eui.Skin{
-}
-declare class RulePanelHSkin extends eui.Skin{
+declare class RulePanelSkin extends eui.Skin{
 }
 declare class SetPanelSkin extends eui.Skin{
 }
 declare class ShareItemSkin extends eui.Skin{
+}
+declare class SignInPanelSkin extends eui.Skin{
 }
 declare class PreloadPanelSkin extends eui.Skin{
 }
@@ -177,4 +171,10 @@ declare class ScoreShowUISkin extends eui.Skin{
 declare class TopTitleShowUISkin extends eui.Skin{
 }
 declare class TuoGuanShowUISkin extends eui.Skin{
+}
+declare class ActivePanelSkin extends eui.Skin{
+}
+declare class CreateRoomPanelSkin extends eui.Skin{
+}
+declare class GoldPanelSkin extends eui.Skin{
 }

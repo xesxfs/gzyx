@@ -1,6 +1,6 @@
 /**
  * 弹框常量，用于PanelManager打开和关闭弹框
- * @author chenkai
+ * @author chen
  * @date 2016/11/9
  */
 enum PanelConst {
@@ -90,13 +90,13 @@ enum PanelConst {
      * 二级邮箱
      */
     EmailTwoPanel,
-     /**
-     * 好友房列表
-     */
+    /**
+    * 好友房列表
+    */
     FriendPanel,
-      /**
-     * 加入房间
-     */
+    /**
+   * 加入房间
+   */
     JoinRoomPanel,
     /**
      * 输入加入房间
@@ -170,9 +170,9 @@ enum PanelConst {
      * socket关闭弹窗
      */
     SocketClosePanel,
-	 /**
-     * 好友房邀请好友
-     */
+    /**
+    * 好友房邀请好友
+    */
     InvitePanelT,
     /**
      * 登录界面
@@ -197,7 +197,16 @@ enum PanelConst {
     /**
      * 绑定
      */
-    BindPanel
+    BindPanel,
+    /**
+    * 活动
+    */
+    ActivePanel,
+    /**
+    * 金币
+    */
+    GoldPanel
+
 }
 
 

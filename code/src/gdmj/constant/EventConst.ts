@@ -1,6 +1,6 @@
 /**
  * 事件名
- * @author chenkai
+ * @author chen
  * @date 2016/9/27
  */
 class EventConst {

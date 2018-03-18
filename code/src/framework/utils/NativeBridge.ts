@@ -1,6 +1,6 @@
 /**
  * 原生通信
- * @author huanglong
+ * @author huang
  * 2017-03-23
  */
 
