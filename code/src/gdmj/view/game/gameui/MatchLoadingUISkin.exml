@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="MatchLoadingUISkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="loadingGroup" anchorOffsetX="0" x="0">
-		<e:Image width="100%" height="100%" y="0" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="6,7,40,39" scaleX="1" scaleY="1" x="0" source="game_bg2_png"/>
-		<e:Label id="loadingLabel" text="牌局即将开始" size="25" anchorOffsetX="0" width="170" horizontalCenter="0" verticalCenter="0" textColor="0x47B5CC" textAlign="left" fontFamily="Microsoft YaHei" bold="true"/>
-	</e:Group>
-</e:Skin>

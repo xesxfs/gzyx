@@ -1,25 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="HeadShowUISkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="HeadShowUISkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="readyGroup" touchThrough="true" width="100%" height="100%">
-		<e:Image touchEnabled="false" source="ready_png" y="682" horizontalCenter="0" rotation="0" scaleY="1"/>
-		<e:Image x="547" top="443" source="ready_png"/>
-		<e:Image top="157" source="ready_png" horizontalCenter="0"/>
-		<e:Image x="116" top="446" source="ready_png"/>
-		<e:Image touchEnabled="false" x="62.67" bottom="277" source="ready_png"/>
-		<e:Image x="642.25" bottom="412" source="ready_png"/>
-		<e:Image x="643.08" top="204" source="ready_png"/>
-		<e:Image x="60.22" top="313" source="ready_png"/>
+		<e:Image touchEnabled="false" y="622" horizontalCenter="70" rotation="0" scaleY="1" source="ok_png"/>
+		<e:Image x="1127" top="443" source="ok_png"/>
+		<e:Image top="57" horizontalCenter="100" source="ok_png"/>
+		<e:Image x="96" top="456" source="ok_png"/>
 	</e:Group>
 	<e:Group id="headGroup" touchEnabled="false" touchThrough="true" width="100%" height="100%" x="0" y="0">
-		<ns1:HeadUI xmlns:ns1="*" y="671" skinName="headUISkin1" x="285"/>
-		<ns1:HeadUI xmlns:ns1="*" x="490" y="423" skinName="headUISkin1"/>
-		<ns1:HeadUI xmlns:ns1="*" y="147" skinName="headUISkin1" x="285"/>
-		<ns1:HeadUI xmlns:ns1="*" x="60" y="423" skinName="headUISkin1"/>
-	</e:Group>
-	<e:Group id="headGroup1" touchEnabled="false" touchChildren="false" touchThrough="false" width="100%" height="100%" x="0" y="0">
-		<ns1:HeadUI xmlns:ns1="*" x="1" scaleX="1" scaleY="1" skinName="headUISkin1" y="848"/>
-		<ns1:HeadUI xmlns:ns1="*" scaleY="1" x="583" scaleX="1" skinName="headUISkin1" y="709"/>
-		<ns1:HeadUI xmlns:ns1="*" scaleY="1" scaleX="1" x="583" skinName="headUISkin1" y="30"/>
-		<ns1:HeadUI xmlns:ns1="*" scaleY="1" x="1" scaleX="1" skinName="headUISkin1" y="137"/>
+		<ns1:HeadUI xmlns:ns1="*" y="576" skinName="headUISkin1" x="563"/>
+		<ns1:HeadUI xmlns:ns1="*" x="1100" y="265" skinName="headUISkin1"/>
+		<ns1:HeadUI xmlns:ns1="*" y="19" skinName="headUISkin1" x="583"/>
+		<ns1:HeadUI xmlns:ns1="*" x="62" y="285" skinName="headUISkin1"/>
 	</e:Group>
 </e:Skin>

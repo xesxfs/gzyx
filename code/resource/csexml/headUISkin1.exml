@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="headUISkin1" width="180" height="219" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Label id="nameLabel" y="183" size="26" width="183" verticalAlign="middle" textAlign="center" multiline="true" maxChars="5" text="" horizontalCenter="1.5"/>
-	<e:Image y="54" source="avatar_png" horizontalCenter="0.5"/>
-	<e:Image id="headQuestionImg" y="57" source="avater2_png" x="25"/>
-	<e:Image id="headImg" y="59" width="110" height="110" horizontalCenter="-1"/>
-	<e:Image id="headShade" y="57" source="avater3_png" horizontalCenter="5"/>
-	<e:Image id="headShadeT" y="57" source="avater3_png" horizontalCenter="5"/>
-	<e:Image id="duanxianImg" y="66" x="22" source="avater4_png" horizontalCenter="-1.5" visible="false"/>
-	<e:Rect id="tgRect" width="114" height="110" y="60" horizontalCenter="0" strokeAlpha="1" fillAlpha="0.65" visible="false"/>
-	<e:Image id="tuoGuanIcon" y="89" horizontalCenter="1" source="tuoguanzhong_png" visible="false"/>
-	<e:Image id="sidai" width="133" height="57" x="27" y="117" source="sidai_png" visible="false"/>
-	<e:Image id="headOwner" x="22" y="50" source="game_house_png" visible="false"/>
-	<e:Image id="headzhuang" x="120" y="50" source="g_zhuang_png" visible="false"/>
-	<e:Image id="duanxian" width="138" height="33" y="93" anchorOffsetX="0" anchorOffsetY="0" source="duanxin_png" horizontalCenter="0" visible="false"/>
-	<e:Label id="scoreLabel" text="0" y="137" size="25" textAlign="center" horizontalCenter="0" visible="false"/>
+<e:Skin class="headUISkin1" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<w:Config id="162398a87bf" horizontalCenter="0" y="13"/>
+	<e:Image source="img_headMask_png" horizontalCenter="0" y="10"/>
+	<e:Image source="friend_invite_png" horizontalCenter="0" y="5"/>
+	<e:Image source="img_zhuang_png" x="11"/>
+	<e:Label id="nameLabel" y="94" size="26" verticalAlign="middle" textAlign="center" multiline="true" maxChars="5" text="sos" horizontalCenter="0.5" anchorOffsetX="0" textColor="0xffffff"/>
+	<e:Image source="infoFrame_png" y="125"/>
+	<e:Label id="goldLabel" text="0" y="129" size="25" textAlign="center" horizontalCenter="0" textColor="0xf7c70e"/>
 </e:Skin>

@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="DiscShowUISkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group id="discGroup" touchThrough="false" touchEnabled="false" x="0">
-		<e:Image source="game_fengpanBg_png" x="0" y="0"/>
-		<e:Image source="game_feng0_png" x="5" y="2"/>
-		<e:Image source="game_feng3_png" x="5" y="1"/>
-		<e:Image source="game_feng2_png" x="5" y="1"/>
-		<e:Image source="game_feng1_png" x="5" y="0"/>
-		<e:Image x="5" y="0" source="game_lightdi1_png"/>
-		<e:Image x="5" y="1" source="game_lightdi2_png"/>
-		<e:Image source="game_lightdi0_png" y="2" x="5"/>
-		<e:Image x="5" y="1" source="game_lightdi3_png"/>
-		<e:Image source="game_light0_png" x="5" y="2"/>
-		<e:Image source="game_light1_png" x="5" y="2"/>
-		<e:Image source="game_light2_png" x="5" y="2"/>
-		<e:Image source="game_light3_png" x="6" y="2"/>
-		<e:BitmapLabel id="cdLabel" text="99" width="70" height="30" font="daojishi_fnt" y="63" x="47"/>
+	<e:Group id="discGroup" touchThrough="false" touchEnabled="false">
+		<e:Image source="timerBg_png"/>
+		<e:BitmapLabel id="cdLabel" text="99" width="39" height="35" font="daojishi_fnt" horizontalCenter="0" verticalCenter="0" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Image source="xTimerImage_png" x="21" top="4"/>
+		<e:Image source="img_lTimer_png" x="4" top="0"/>
+		<e:Image source="img_xTimer_png" y="6" right="0"/>
+		<e:Image source="lTimerImage_png" x="89" y="19"/>
+		<e:Image source="bTimerImage_png" x="7" y="20"/>
+		<e:Image source="img_bTimer_png" x="2" y="7"/>
+		<e:Image source="img_dTimer_png" x="7" y="82"/>
+		<e:Image source="dTimerImage_png" x="21" y="92"/>
 	</e:Group>
 </e:Skin>

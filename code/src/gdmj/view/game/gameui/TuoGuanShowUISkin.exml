@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="TuoGuanShowUISkin"  width="750" height="1334" xmlns:e="http://ns.egret.com/eui">
-	<e:Group id="tuoGuanGroup" touchEnabled="true" touchChildren="false" left="0" right="0" top="0" bottom="0">
-		<e:Rect height="100%" width="100%" x="0" fillAlpha="0.5" bottom="0"/>
-		<e:Image width="100%" x="0" height="433" bottom="0" source="game_bg_png"/>
-		<e:Image horizontalCenter="0" source="game_tuoguan_png" y="1081"/>
+<e:Skin class="TuoGuanShowUISkin"   xmlns:e="http://ns.egret.com/eui">
+	<e:Group id="tuoGuanGroup" touchEnabled="true" touchChildren="false" left="0" right="0" y="0">
+		<e:Image source="userAI_BG_png" scale9Grid="160,66,960,65" right="0" left="0"/>
+		<e:Image source="userAI_png" x="1023" verticalCenter="0"/>
+		<e:Image source="text_CancelAI_png" horizontalCenter="0" verticalCenter="0"/>
 	</e:Group>
 </e:Skin>

@@ -13,5 +13,13 @@
   },
   "15b285966ed": {
     "guideLinesEnabled": true
+  },
+  "162398a87bf": {
+    "guideLines": [
+      {
+        "type": "h",
+        "pos": 138
+      }
+    ]
   }
 }

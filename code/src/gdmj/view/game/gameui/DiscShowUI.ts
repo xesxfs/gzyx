@@ -17,8 +17,8 @@ class DiscShowUI extends eui.Component {
 
     private init() {
         for (let i = 0; i < 4; i++) {
-            this.redDiscList.push(this.discGroup.getChildAt(i + 9));
-            this.redDiscBGList.push(this.discGroup.getChildAt(i + 5));
+            this.redDiscList.push(this.discGroup.getChildAt(i + 3));
+            this.redDiscBGList.push(this.discGroup.getChildAt(i + 2));
         }
 
     }
@@ -43,7 +43,7 @@ class DiscShowUI extends eui.Component {
         }
         var bgLen = this.redDiscList.length;
         for (var i = 0; i < bgLen; i++) {
-            this.redDiscBGList[i].visible = false;
+            this.redDiscBGList[i].visible = true;
         }
     }
 
@@ -72,7 +72,7 @@ class DiscShowUI extends eui.Component {
         var count = this.curOutTimeLimit - this.outTimer.currentCount;
         this.setCdLabel(NumberTool.formatTime(count));
         if (count <= 3) {
-            App.SoundManager.playEffect(SoundManager.warn);
+            // App.SoundManager.playEffect(SoundManager.warn);
         }
     }
 
