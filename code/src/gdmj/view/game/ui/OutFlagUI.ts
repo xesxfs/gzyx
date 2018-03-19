@@ -1,6 +1,6 @@
 /**
  * 当前出牌指示
- * @author chenkai
+ * @author chen
  * @date 2016/7/21
  */
 class OutFlagUI extends egret.Bitmap{
@@ -15,7 +15,7 @@ class OutFlagUI extends egret.Bitmap{
 	private initRes(){
 		if(this.bInitRes == false){
 			this.bInitRes = true;
-			this.bitmapData = RES.getRes("game_outflag_png");
+			this.bitmapData = RES.getRes("finger_png");
 		}
 	}
 

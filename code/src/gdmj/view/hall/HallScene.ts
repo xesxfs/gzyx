@@ -51,6 +51,7 @@ class HallScene extends BaseScene {
         switch (e.target) {
             case this.activeBtn:
                 App.PanelManager.open(PanelConst.ActivePanel)
+                this.ctrl.registerSocket();
                 break;
             case this.mallBtn:
                 App.PanelManager.open(PanelConst.MallPanel)

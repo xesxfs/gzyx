@@ -1,6 +1,6 @@
 /**
  * 字符串工具类
- * @author chenkai
+ * @author chen
  * @date 2016/9/13
  */
 class StringTool {

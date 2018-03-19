@@ -19,10 +19,10 @@ class GameScene extends BaseScene {
     public headShowUI: HeadShowUI;
     public outCardTipUI: OutCardTipUI;
     public discShowUI: DiscShowUI;
-    public topTitleShowUI: TopTitleShowUI;
-    public matchLoadingUI: MatchLoadingUI;
-    public scoreShowUI: ScoreShowUI;
-    public froomInfoShowUI: FriendRoomShowUI;
+    // public topTitleShowUI: TopTitleShowUI;
+    // public matchLoadingUI: MatchLoadingUI;
+    // public scoreShowUI: ScoreShowUI;
+    // public froomInfoShowUI: FriendRoomShowUI;
     public leftCardUI: LeftCardShowUI;
     public tuoguanShowUI: TuoGuanShowUI;
     public swapCardGroup: eui.Group;
@@ -46,19 +46,19 @@ class GameScene extends BaseScene {
     }
 
     protected onEnable() {
-        this.actShowUI.addEventListener("actAction", this.actAction, this);
-        this.cardShowUI.addEventListener("cardAction", this.cardAction, this);
-        this.setBottomMenu();
-        this.resetScene();
-        this.setMatchLoading();
-        this.updateAllHeadUI();
+        // this.actShowUI.addEventListener("actAction", this.actAction, this);
+        // this.cardShowUI.addEventListener("cardAction", this.cardAction, this);
+        // this.setBottomMenu();
+        // this.resetScene();
+        // this.setMatchLoading();
+        // this.updateAllHeadUI();
 
-        this.setRoomInfo();
-        this.ctrl.registerSocket();
-        this.getGameState();
-        this.startReadyTimer(this.readyTime);
-        this.showSwapCard();
-        console.log("onEnable");
+        // this.setRoomInfo();
+        // this.ctrl.registerSocket();
+        // this.getGameState();
+        // this.startReadyTimer(this.readyTime);
+        // this.showSwapCard();
+        // console.log("onEnable");
     }
 
     protected onRemove() {
@@ -276,7 +276,7 @@ class GameScene extends BaseScene {
         /***剩余牌数 */
         this.leftCardUI.setLeftCard(json.lastCardNum);
         /***局数*/
-        this.topTitleShowUI.setJuShu(curPlayCount, maxPlayCount);
+        // this.topTitleShowUI.setJuShu(curPlayCount, maxPlayCount);
 
         switch (deskStatus) {
             case GS_GAME_STATION.GS_WAIT_SETGAME:  //等待设置游戏
@@ -309,7 +309,7 @@ class GameScene extends BaseScene {
         this.gameState = GameState.Playing;
         App.DataCenter.gameState = GameState.Playing;
         this.headShowUI.moveTo();
-        this.froomInfoShowUI.hide();
+        // this.froomInfoShowUI.hide();
         this.hideAllReady();
         this.resumeDesk(data);
 
@@ -485,15 +485,15 @@ class GameScene extends BaseScene {
      * 匹配场loading 设置
      */
     public setMatchLoading() {
-        if (App.DataCenter.roomInfo.roomType != RoomType.MatchRoom) {
-            return;
-        }
-        let len = App.DataCenter.UserInfo.getUserNum();
-        if (len >= 4) {
-            this.matchLoadingUI.stopMatching();
-        } else {
-            this.matchLoadingUI.startMatching();
-        }
+        // if (App.DataCenter.roomInfo.roomType != RoomType.MatchRoom) {
+        //     return;
+        // }
+        // let len = App.DataCenter.UserInfo.getUserNum();
+        // if (len >= 4) {
+        //     this.matchLoadingUI.stopMatching();
+        // } else {
+        //     this.matchLoadingUI.startMatching();
+        // }
     }
 
 
@@ -573,19 +573,19 @@ class GameScene extends BaseScene {
     }
 
     public hideFriendInfo() {
-        this.froomInfoShowUI.hide();
+        // this.froomInfoShowUI.hide();
     }
 
     public showFriendInfo() {
-        this.froomInfoShowUI.show();
+        // this.froomInfoShowUI.show();
     }
 
     public hideMatchLoading() {
-        this.matchLoadingUI.hideMatching();
+        // this.matchLoadingUI.hideMatching();
     }
 
     public showMatchLoading() {
-        this.matchLoadingUI.showMatching();
+        // this.matchLoadingUI.showMatching();
     }
 
     public hideTuoGuan() {
@@ -694,15 +694,15 @@ class GameScene extends BaseScene {
     private setRoomInfo() {
         let roomInfo = App.DataCenter.roomInfo;
         let deskInfo = App.DataCenter.deskInfo
-        if (roomInfo.roomType == RoomType.FriendRoom) {
-            this.froomInfoShowUI.setDeskNo(deskInfo.deskID)
-            this.froomInfoShowUI.show();
-            this.topTitleShowUI.setDeskNum(deskInfo.deskID);
-            this.topTitleShowUI.showFriendTitle();
-        } else {
-            this.topTitleShowUI.showMatchTitle();
+        // if (roomInfo.roomType == RoomType.FriendRoom) {
+        //     this.froomInfoShowUI.setDeskNo(deskInfo.deskID)
+        //     this.froomInfoShowUI.show();
+        //     this.topTitleShowUI.setDeskNum(deskInfo.deskID);
+        //     this.topTitleShowUI.showFriendTitle();
+        // } else {
+        //     this.topTitleShowUI.showMatchTitle();
 
-        }
+        // }
     }
     /**设置底部菜单 */
     public setBottomMenu() {

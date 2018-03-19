@@ -156,19 +156,11 @@ declare class CardsShowSkin extends eui.Skin{
 }
 declare class DiscShowUISkin extends eui.Skin{
 }
-declare class FriendRoomShowUISkin extends eui.Skin{
-}
 declare class HeadShowUISkin extends eui.Skin{
 }
 declare class LeftCardShowUISkin extends eui.Skin{
 }
-declare class MatchLoadingUISkin extends eui.Skin{
-}
 declare class OutCardTipUISkin extends eui.Skin{
-}
-declare class ScoreShowUISkin extends eui.Skin{
-}
-declare class TopTitleShowUISkin extends eui.Skin{
 }
 declare class TuoGuanShowUISkin extends eui.Skin{
 }
