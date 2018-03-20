@@ -167,6 +167,7 @@ class ClientSocket {
         if (this.socket && this.socket.connected) {
 
             var sendDataByte: egret.ByteArray = new egret.ByteArray();
+            sendDataByte.endian = egret.Endian.LITTLE_ENDIAN;
             var sendJson = JSON.stringify(data)
             sendJson = this.XORfunc(sendJson);
             console.log("XORfunc:", sendJson);
@@ -179,7 +180,7 @@ class ClientSocket {
             // var head: egret.ByteArray = new egret.ByteArray();
             // head.writeInt(size);
             // head.writeBytes(sendDataByte);
-            // console.log("all size:", head.length);
+            console.log("all size:", sendJson.length);
             this.socket.writeBytes(sendDataByte);
             this.socket.flush();
             console.log("Send:", JSON.stringify(data));
@@ -209,7 +210,7 @@ class ClientSocket {
      */
     public process(b: egret.ByteArray): void {
         var size = b.readInt();
-        if (size != b.length) {
+        if (size != (b.length-this.headSize)) {
             console.log("数据错误!!")
             return
         }

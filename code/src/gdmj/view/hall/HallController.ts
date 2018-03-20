@@ -71,7 +71,7 @@ class HallController extends BaseController {
     //     /**socket连接成功*/
     private onSocketConnect(socket: ClientSocket) {
         console.log(" hall connenct success");
-        App.gameSocket.send("",{cmd:2})
+        App.gameSocket.send("",{cmd:1,f:"jjj"})
        
     }
 
