@@ -2,8 +2,8 @@
 <e:Skin class="headUISkin1" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<w:Config id="162398a87bf" horizontalCenter="0" y="13"/>
 	<e:Image source="img_headMask_png" horizontalCenter="0" y="10"/>
-	<e:Image source="friend_invite_png" horizontalCenter="0" y="5"/>
-	<e:Image source="img_zhuang_png" x="11"/>
+	<e:Image id="headImg" source="friend_invite_png" horizontalCenter="0" y="5"/>
+	<e:Image id="headzhuang" source="img_zhuang_png" x="11"/>
 	<e:Label id="nameLabel" y="94" size="26" verticalAlign="middle" textAlign="center" multiline="true" maxChars="5" text="sos" horizontalCenter="0.5" anchorOffsetX="0" textColor="0xffffff"/>
 	<e:Image source="infoFrame_png" y="125"/>
 	<e:Label id="goldLabel" text="0" y="129" size="25" textAlign="center" horizontalCenter="0" textColor="0xf7c70e"/>

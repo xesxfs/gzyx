@@ -20,8 +20,7 @@ class ClientSocket {
     private reconnenctLimit: number = 5;      //断线重连限制次数
     private bAllowReconnnect: boolean = false;//是否允许断线重连
 
-    public protoBuffer: string = "";          //断线时，协议缓存
-    public dataBuffer = null;                //断线时，数据缓存
+    public dataBuffer = null;                //数据缓存
 
     private url: string = "";                 //IP地址
 
@@ -29,7 +28,7 @@ class ClientSocket {
     public gameID: Game_ID;                   //游戏ID
     public roomLevel: Room_Level;             //金币房间等级
     public deskCode: string;                  //加入的房间号
-    private headSize: number = 4             //头大小
+    private headSize: number = 4;       //头大小
 
 
     /**
@@ -38,9 +37,9 @@ class ClientSocket {
      * @param callBack 回调函数
      * @param thisObject 回调函数绑定对象
      */
-    public register(proto: string, callBack: Function, thisObject) {
-        this.callBackList[proto] = callBack;
-        this.objList[proto] = thisObject;
+    public register(proto: number, callBack: Function, thisObject) {
+        this.callBackList[proto.toString()] = callBack;
+        this.objList[proto.toString()] = thisObject;
     }
 
     /**
@@ -140,7 +139,6 @@ class ClientSocket {
         }
         this.resetReconnenct();
         this.dataBuffer = null;
-        this.protoBuffer = null;
     }
 
     //重置重连
@@ -160,35 +158,22 @@ class ClientSocket {
     /**
      * 发送数据
      * @param data 待发送json数据
-     * @param d1 协议号1
-     * @param d2 协议号2
-     */
-    public send(proto: string, data: any = {}) {
-        if (this.socket && this.socket.connected) {
 
+     */
+    public send(data: any = {}) {
+        if (this.socket && this.socket.connected) {
             var sendDataByte: egret.ByteArray = new egret.ByteArray();
             sendDataByte.endian = egret.Endian.LITTLE_ENDIAN;
             var sendJson = JSON.stringify(data)
             sendJson = this.XORfunc(sendJson);
-            console.log("XORfunc:", sendJson);
-            console.log("XORfunc2:", this.XORfunc(sendJson));
             sendDataByte.writeUnsignedInt(sendJson.length);
-            sendDataByte.writeUTFBytes(sendJson)
-            // var size: number = sendDataByte.length + 4;
-            // console.log("body size:", size);
-            // var protoList = proto.split("_");
-            // var head: egret.ByteArray = new egret.ByteArray();
-            // head.writeInt(size);
-            // head.writeBytes(sendDataByte);
-            console.log("all size:", sendJson.length);
+            sendDataByte.writeUTFBytes(sendJson);
             this.socket.writeBytes(sendDataByte);
             this.socket.flush();
             console.log("Send:", JSON.stringify(data));
-
         } else {
             egret.log("socket is not connected");
             this.dataBuffer = data;
-            this.protoBuffer = proto;
             App.EventManager.sendEvent(EventConst.SocketNotConnect, this);
             App.PanelManager.open(PanelConst.SocketClosePanel, null, null, false);
         }
@@ -200,8 +185,7 @@ class ClientSocket {
         var b: egret.ByteArray = new egret.ByteArray();
         b.endian = egret.Endian.LITTLE_ENDIAN;
         this.socket.readBytes(b);
-        this.process(b);
-
+        this.processA(b);
     }
 
     /**
@@ -209,9 +193,9 @@ class ClientSocket {
      * @param b 待解析数据
      */
     public process(b: egret.ByteArray): void {
-        var size = b.readInt();
-        if (size != (b.length-this.headSize)) {
-            console.log("数据错误!!")
+        var size = b.readUnsignedInt();
+        if (size != (b.length - this.headSize)) {
+            this.processA(b);
             return
         }
         var str = b.readUTFBytes(b.length - this.headSize);
@@ -221,15 +205,41 @@ class ClientSocket {
             data = JSON.parse(str);
             console.log("rev:", data);
         }
-        // var proto: string = id1 + "";
-        // var callBack: Function = this.callBackList[proto];
-        // var thisObject = this.objList[proto];
-        // console.log("rev:", proto, data);
-        // if (callBack && thisObject) {
-        //     callBack.call(thisObject, data);
-        // } else {
-        //     console.log("不存在对应消息:", proto);
-        // }
+        var proto = data.cmd;
+        var callBack: Function = this.callBackList[proto];
+        var thisObject = this.objList[proto];
+        console.log("rev:", proto, data);
+        if (callBack && thisObject) {
+            callBack.call(thisObject, data);
+        } else {
+            console.log("不存在对应消息:", proto);
+        }
+    }
+    /*** */
+    private processA(b: egret.ByteArray) {
+        b.position = 0;
+        while (b.position != b.length) {
+            var size = b.readUnsignedInt();
+            var str = b.readUTFBytes(size);
+            var data;
+            if ("" != str) {
+                str = this.XORfunc(str);
+                data = JSON.parse(str);
+            }
+            var proto = data.cmd+"";
+            var callBack: Function = this.callBackList[proto];
+            var thisObject = this.objList[proto];
+            console.log("rev:", proto, data);
+            if (callBack && thisObject) {
+                callBack.call(thisObject, data);
+            } else {
+                console.log("未处理的消息:", proto);
+            }
+
+        }
+
+
+
     }
 
     private XORfunc(str: string): string {
@@ -242,19 +252,5 @@ class ClientSocket {
         return temp;
     }
 
-    /**
-     * 消息头部
-     * @param size 数据长度
-     * @param id1 
-     * @param id2
-     */
-    private getHead(size, id1): egret.ByteArray {
-        var a: egret.ByteArray = new egret.ByteArray();
-        a.endian = egret.Endian.LITTLE_ENDIAN;
-        a.writeInt(size);
-        a.writeInt(id1);
-        a.writeInt(0);
-        return a;
-    }
 }
 

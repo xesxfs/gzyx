@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="GameSceneSkin1" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:ns2="XX.*">
-	<e:Group id="footGroup" top="0" bottom="0" touchEnabled="false" left="0" anchorOffsetX="0" width="1334">
+<e:Skin class="GameSceneSkin1" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:ns2="XX.*">
+	<e:Group id="footGroup" top="0" bottom="0" touchEnabled="false" left="0" anchorOffsetX="0">
 
 		<e:Image id="gameSceneBg" width="100%" height="100%" source="room_bg_png"/>
 
 
 	</e:Group>
 	<e:Group id="gameUIGroup" touchEnabled="false" left="0" right="0" top="0" bottom="0">
-		<ns1:HeadShowUI skinName="HeadShowUISkin"/>
+		<ns1:CardsShowUI id="cardShowUI" skinName="CardsShowSkin"/>
+		<e:Group id="outFlagGroup" width="100%" height="100%" touchThrough="true"/>
+		<ns1:HeadShowUI id="headShowUI" skinName="HeadShowUISkin"/>
 
 
 
 
 
 		<ns1:DiscShowUI id="discShowUI" skinName="DiscShowUISkin" horizontalCenter="0" verticalCenter="0"/>
-		<ns1:OutCardTipUI skinName="OutCardTipUISkin"/>
-		<ns1:TuoGuanShowUI skinName="TuoGuanShowUISkin" bottom="0" width="100%"/>
-		<ns1:LeftCardShowUI skinName="LeftCardShowUISkin" left="50" top="48"/>
+		<ns1:OutCardTipUI id="outCardTipUI" skinName="OutCardTipUISkin"/>
+		<ns1:SelectActUI id="selectActUI" x="662" y="482" skinName="SelectActUISkin"/>
+		<ns1:TuoGuanShowUI id="touGuanShowUI" skinName="TuoGuanShowUISkin" bottom="0" width="100%"/>
+		<ns1:LeftCardShowUI id="leftCardShowUI" skinName="LeftCardShowUISkin" left="130" top="28"/>
 
 
 

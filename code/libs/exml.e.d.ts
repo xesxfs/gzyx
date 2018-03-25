@@ -50,8 +50,6 @@ declare class ModifyRlueSkinT extends eui.Skin{
 }
 declare class ModifyRuleSureSkin extends eui.Skin{
 }
-declare class reGameSceme extends eui.Skin{
-}
 declare class GameRecordPanelItemSkin extends eui.Skin{
 }
 declare class GameRecordPanelSkin extends eui.Skin{

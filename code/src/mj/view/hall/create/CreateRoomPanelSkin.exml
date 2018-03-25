@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CreateRoomPanelSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image horizontalCenter="0" source="srf_img_tanKuang2_png"/>
+		<e:RadioButton label="冲锋鸡" x="401" y="119.62" groupName="xji" selected="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image source="img_check_png" source.down="img_sigle_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1.5" x="56.96" size="26" textColor="0x3d3737"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:Button id="okBtn" label="确定" anchorOffsetX="0" anchorOffsetY="0" y="505.15" x="458.55" scaleX="1" scaleY="1">
+			<e:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
+				<e:Image width="100%" height="100%" source="btn_yellow_png" source.down="btn_yellow_big_png" horizontalCenter="0" verticalCenter="0"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Image source="cjfj_tx_png" y="36" horizontalCenter="0"/>
+		<e:Image source="img_diKuang_png" x="33.55" y="91.15"/>
+		<e:Image source="yxj_select_png" x="21.21" y="118.62"/>
+		<e:Image source="line2_png" x="246" y="96.83"/>
+		<e:Image source="line2_png" x="247" y="179"/>
+		<e:Image source="line2_png" x="247" y="261"/>
+		<e:Image source="line2_png" x="247" y="343"/>
+		<e:Image source="line2_png" x="246" y="424.71"/>
+		<e:Label text="选鸡：" x="303" y="133.15" textColor="0x000000"/>
+		<e:Label text="其它：" x="303" y="211" textColor="0x000000"/>
+		<e:Label text="玩法：" x="303" y="290" textColor="0x000000"/>
+		<e:Label text="局数：" x="303" y="368" textColor="0x000000"/>
+		<e:Label text="消耗：" x="303" y="445.87" textColor="0x000000"/>
+		<e:RadioButton id="fourRadBtn" label="4局" x="401" y="353" groupName="jushu" selected="true" value="4">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image source="img_check_png" source.down="img_sigle_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1.5" x="56.96" size="26" textColor="0x3d3737"/>
+				</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton label="8局" x="569" y="353" groupName="jushu" value="8">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image source="img_check_png" source.down="img_sigle_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1.5" x="56.96" size="26" textColor="0x3d3737"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton label="包鸡" x="401" y="190.62" groupName="other" selected="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image source="img_check_png" source.down="img_sigle_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1.5" x="56.96" size="26" textColor="0x3d3737"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton label="标准玩法" x="401" y="275" groupName="wanfa" selected="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image source="img_check_png" source.down="img_sigle_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1.5" x="56.96" size="26" textColor="0x3d3737"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton label="三丁拐" x="569" y="275" groupName="wanfa">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image source="img_check_png" source.down="img_sigle_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1.5" x="56.96" size="26" textColor="0x3d3737"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:RadioButton label="二丁拐" x="713.53" y="275" groupName="wanfa">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image source="img_check_png" source.down="img_sigle_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1.5" x="56.96" size="26" textColor="0x3d3737"/>
+			</e:Skin>
+			</e:skinName>
+		</e:RadioButton>
+		<e:Label text="32钻石" x="466.3" y="442" size="28" textColor="0xf29696"/>
+		<e:Image source="ico_jewel_png" x="401" y="430"/>
+	</e:Group>
+</e:Skin>

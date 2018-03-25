@@ -1,6 +1,6 @@
 /**
  * 资源管理类
- * @author chenkai
+ * @author chen
  * @date 2016/9/8
  * 
  * 功能：

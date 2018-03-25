@@ -1,3 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="SelectActBtnSkin" width="150" height="150" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image id="actImg" source="pass_btnpress_png" horizontalCenter="0" verticalCenter="0"/>
 </e:Skin>

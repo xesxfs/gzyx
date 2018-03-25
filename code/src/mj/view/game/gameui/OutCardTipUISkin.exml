@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="OutCardTipUISkin"  width="1280" height="720" xmlns:e="http://ns.egret.com/eui">
+	<e:Group id="outEffectGroup" touchEnabled="false" touchThrough="false" touchChildren="false" width="100%" height="100%" x="0" y="0">
+		<e:Group horizontalCenter="0" bottom="153">
+		<e:Image x="0" y="0" scale9Grid="18,17,17,14" source="Hit_mahjong_bg_png"/>
+		</e:Group>
+		<e:Group x="969" y="272">
+		<e:Image x="0" y="0" scale9Grid="18,17,17,14" scaleX="1" scaleY="1" source="Hit_mahjong_bg_png"/>
+		</e:Group>
+		<e:Group horizontalCenter="0" top="141">
+		<e:Image x="0" y="0" scale9Grid="18,17,17,14" scaleX="1" scaleY="1" source="Hit_mahjong_bg_png"/>
+		</e:Group>
+		<e:Group x="260" y="272">
+		<e:Image x="0" y="0" scale9Grid="18,17,17,14" scaleX="1" scaleY="1" source="Hit_mahjong_bg_png"/>
+		</e:Group>
+	</e:Group>
+</e:Skin>

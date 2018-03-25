@@ -241,9 +241,9 @@ class SoundManager extends SingleClass{
 	 * @param loops 循环次数
 	 */ 
 	public playBGM(bgmName:string, startTime:number = 0, loops:number = Number.MAX_VALUE){
-        if(this.allowPlayBGM == false || this.bgmChannel != null  || App.SceneManager.getCurScene() == App.SceneManager.getScene(SceneConst.HallScene)) {
-            return;
-        }
+        // if(this.allowPlayBGM == false || this.bgmChannel != null  || App.SceneManager.getCurScene() == App.SceneManager.getScene(SceneConst.HallScene)) {
+        //     return;
+        // }
     	  this.stopBGM();
         var bgm: egret.Sound = this.soundList[bgmName];
         if(bgm == null){

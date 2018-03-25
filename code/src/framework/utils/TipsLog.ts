@@ -1,7 +1,7 @@
 module TipsLog {
 	/**
 	 * 顶部悬浮提示
-	 * @author huanglong
+	 * @author huang
 	 * 2017/04/27
 	 */
 

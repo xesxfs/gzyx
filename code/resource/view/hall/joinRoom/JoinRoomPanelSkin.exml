@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="JoinRoomPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
+	<e:Group id="numGroup" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="srf_img_tanKuang_png" x="-1"/>
-		<e:Label text="请输入房间邀请码" y="46" horizontalCenter="1" size="22" textColor="0x000000"/>
 		<e:Button label="" x="97" y="164">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -99,7 +98,8 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Group width="435" y="82" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="1">
+		<e:Label text="请输入房间邀请码" y="46" horizontalCenter="1" size="22" textColor="0x000000"/>
+		<e:Group id="roomIdGroup" width="435" y="82" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="1">
 			<e:Image source="img_timeKuang_png" x="0" y="0"/>
 			<e:Image source="img_timeKuang_png" x="76" y="0"/>
 			<e:Image source="img_timeKuang_png" x="152" y="0"/>
@@ -110,7 +110,7 @@
 			<e:Label text="0" x="86" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
 			<e:Label text="0" x="162" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
 			<e:Label text="0" x="238" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
-			<e:Label text="0" x="314" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
+			<e:Label text="2" x="314" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
 			<e:Label text="0" x="389" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
 		</e:Group>
 	</e:Group>
