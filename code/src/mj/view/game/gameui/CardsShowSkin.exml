@@ -50,20 +50,20 @@
 		<e:Image id="locateGet0" source="card_bgup_png" x="373" scaleX="0.93" scaleY="0.93" y="34"/>
 		</e:Group>
 		<e:Group id="hand3" touchChildren="false" touchEnabled="false" x="0" y="0" touchThrough="false" width="100%" height="100%">
-		<e:Image id="hand3_end1" source="card_left_bg1_png" x="50.31" y="14.03"/>
-			<e:Image source="card_left_bg1_png" x="50.31" y="52.03"/>
-			<e:Image source="card_left_bg1_png" x="50.31" y="89.03"/>
-			<e:Image source="card_left_bg1_png" x="50.31" y="121.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="157.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="193.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="229.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="265.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="301.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="337.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="373.03"/>
-		<e:Image source="card_left_bg1_png" x="50.31" y="409.03"/>
-		<e:Image id="hand3_start1" source="card_left_bg1_png" x="50.31" y="445.03"/>
-		<e:Image id="locateGet1" source="card_left_bg1_png" x="50.31" y="512"/>
+		<e:Image id="hand3_end1" source="card_left_bg1_png" x="90.31" y="14.03"/>
+			<e:Image source="card_left_bg1_png" x="90.31" y="52.03"/>
+			<e:Image source="card_left_bg1_png" x="90.31" y="89.03"/>
+			<e:Image source="card_left_bg1_png" x="90.31" y="121.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="157.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="193.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="229.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="265.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="301.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="337.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="373.03"/>
+		<e:Image source="card_left_bg1_png" x="90.31" y="409.03"/>
+		<e:Image id="hand3_start1" source="card_left_bg1_png" x="90.31" y="445.03"/>
+		<e:Image id="locateGet1" source="card_left_bg1_png" x="90.31" y="512"/>
 		</e:Group>
 		<e:Group id="out0" touchEnabled="false" touchThrough="false" touchChildren="false" width="100%" height="100%">
 			<e:Image source="card_midself_bg_png" name="0" scaleX="1" scaleY="1" y="434" x="400"/>
@@ -126,24 +126,24 @@
 			<e:Image source="card_midself_bg_png" name="6" scaleX="1" scaleY="1" y="194" x="440"/>
 		</e:Group>
 		<e:Group id="out3" touchChildren="false" touchEnabled="false" touchThrough="false" width="100%" height="100%">
-			<e:Image source="card_left_bg0_png" name="13" scaleX="1" scaleY="1" y="140" x="128"/>
-			<e:Image source="card_left_bg0_png" name="12" scaleX="1" scaleY="1" y="179" x="128"/>
-			<e:Image source="card_left_bg0_png" name="11" scaleX="1" scaleY="1" y="218" x="128"/>
-			<e:Image source="card_left_bg0_png" name="10" scaleX="1" scaleY="1" y="258" x="128"/>
-			<e:Image source="card_left_bg0_png" name="9" scaleX="1" scaleY="1" y="298" x="128"/>
-			<e:Image source="card_left_bg0_png" name="8" scaleX="1" scaleY="1" y="338" x="128"/>
-			<e:Image source="card_left_bg0_png" name="7" scaleX="1" scaleY="1" y="378" x="128"/>
-			<e:Image source="card_left_bg0_png" name="6" scaleX="1" scaleY="1" y="418" x="128"/>
-			<e:Image source="card_left_bg0_png" name="6" scaleX="1" scaleY="1" y="458" x="128"/>
-			<e:Image source="card_left_bg0_png" name="6" scaleX="1" scaleY="1" y="497" x="128"/>
-			<e:Image source="card_left_bg0_png" name="5" scaleX="1" scaleY="1" y="172" x="188"/>
-			<e:Image source="card_left_bg0_png" name="4" scaleX="1" scaleY="1" y="210" x="188"/>
-			<e:Image source="card_left_bg0_png" name="3" scaleX="1" scaleY="1" y="250" x="188"/>
-			<e:Image source="card_left_bg0_png" name="2" scaleX="1" scaleY="1" y="290" x="188"/>
-			<e:Image source="card_left_bg0_png" name="1" scaleX="1" scaleY="1" y="330" x="188"/>
-			<e:Image source="card_left_bg0_png" name="0" scaleX="1" scaleY="1" y="370" x="188"/>
-			<e:Image source="card_left_bg0_png" name="0" scaleX="1" scaleY="1" y="410" x="188"/>
-			<e:Image source="card_left_bg0_png" name="0" scaleX="1" scaleY="1" y="449" x="188"/>
+			<e:Image source="card_left_bg0_png" name="13" scaleX="1" scaleY="1" y="140" x="168"/>
+			<e:Image source="card_left_bg0_png" name="12" scaleX="1" scaleY="1" y="179" x="168"/>
+			<e:Image source="card_left_bg0_png" name="11" scaleX="1" scaleY="1" y="218" x="168"/>
+			<e:Image source="card_left_bg0_png" name="10" scaleX="1" scaleY="1" y="258" x="168"/>
+			<e:Image source="card_left_bg0_png" name="9" scaleX="1" scaleY="1" y="298" x="168"/>
+			<e:Image source="card_left_bg0_png" name="8" scaleX="1" scaleY="1" y="338" x="168"/>
+			<e:Image source="card_left_bg0_png" name="7" scaleX="1" scaleY="1" y="378" x="168"/>
+			<e:Image source="card_left_bg0_png" name="6" scaleX="1" scaleY="1" y="418" x="168"/>
+			<e:Image source="card_left_bg0_png" name="6" scaleX="1" scaleY="1" y="458" x="168"/>
+			<e:Image source="card_left_bg0_png" name="6" scaleX="1" scaleY="1" y="497" x="168"/>
+			<e:Image source="card_left_bg0_png" name="5" scaleX="1" scaleY="1" y="172" x="228"/>
+			<e:Image source="card_left_bg0_png" name="4" scaleX="1" scaleY="1" y="210" x="228"/>
+			<e:Image source="card_left_bg0_png" name="3" scaleX="1" scaleY="1" y="250" x="228"/>
+			<e:Image source="card_left_bg0_png" name="2" scaleX="1" scaleY="1" y="290" x="228"/>
+			<e:Image source="card_left_bg0_png" name="1" scaleX="1" scaleY="1" y="330" x="228"/>
+			<e:Image source="card_left_bg0_png" name="0" scaleX="1" scaleY="1" y="370" x="228"/>
+			<e:Image source="card_left_bg0_png" name="0" scaleX="1" scaleY="1" y="410" x="228"/>
+			<e:Image source="card_left_bg0_png" name="0" scaleX="1" scaleY="1" y="449" x="228"/>
 		</e:Group>
 		<e:Group id="eat0" touchEnabled="false" touchThrough="false" touchChildren="false" width="100%" height="100%">
 		<e:Image id="eat0_start1" x="20" source="card_big_bg0_png" y="620"/>
@@ -164,58 +164,58 @@
 			<e:Image source="card_big_bg0_png" y="602.6" x="756.97"/>
 		</e:Group>
 		<e:Group id="eat1" touchChildren="false" touchThrough="false" touchEnabled="false" width="100%" height="100%">
-		<e:Image y="462.36" x="1160" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
-		<e:Image source="card_left_bg0_png" y="499.36" x="1160"/>
-		<e:Image id="eat1_start1" source="card_left_bg0_png" scaleX="1" x="1160" y="537"/>
-			<e:Image source="card_left_bg0_png" y="489.36" x="1160"/>
-			<e:Image y="332.36" x="1160" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
-			<e:Image source="card_left_bg0_png" y="369.36" x="1160"/>
-			<e:Image id="eat1_start0" source="card_left_bg0_png" scaleX="1" x="1160" y="407"/>
-			<e:Image source="card_left_bg0_png" y="359.36" x="1160"/>
-			<e:Image y="202.36" x="1160" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
-			<e:Image source="card_left_bg0_png" y="239.36" x="1160"/>
-			<e:Image id="eat1_start2" source="card_left_bg0_png" scaleX="1" x="1160" y="277"/>
-			<e:Image source="card_left_bg0_png" y="229.36" x="1160"/>
-			<e:Image y="72.36" x="1160" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
-			<e:Image source="card_left_bg0_png" y="109.36" x="1160"/>
-			<e:Image id="eat1_start3" source="card_left_bg0_png" scaleX="1" x="1160" y="147"/>
-			<e:Image source="card_left_bg0_png" y="99.36" x="1160"/>
+		<e:Image y="462.36" x="1206" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
+		<e:Image source="card_left_bg0_png" y="499.36" x="1206"/>
+		<e:Image id="eat1_start1" source="card_left_bg0_png" scaleX="1" x="1206" y="537"/>
+			<e:Image source="card_left_bg0_png" y="489.36" x="1206"/>
+			<e:Image y="332.36" x="1206" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
+			<e:Image source="card_left_bg0_png" y="369.36" x="1206"/>
+			<e:Image id="eat1_start0" source="card_left_bg0_png" scaleX="1" x="1206" y="407"/>
+			<e:Image source="card_left_bg0_png" y="359.36" x="1206"/>
+			<e:Image y="202.36" x="1206" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
+			<e:Image source="card_left_bg0_png" y="239.36" x="1206"/>
+			<e:Image id="eat1_start2" source="card_left_bg0_png" scaleX="1" x="1206" y="277"/>
+			<e:Image source="card_left_bg0_png" y="229.36" x="1208"/>
+			<e:Image y="72.36" x="1208" source="card_left_bg0_png" anchorOffsetY="0" height="48"/>
+			<e:Image source="card_left_bg0_png" y="109.36" x="1210"/>
+			<e:Image id="eat1_start3" source="card_left_bg0_png" scaleX="1" x="1210" y="147"/>
+			<e:Image source="card_left_bg0_png" y="99.36" x="1210"/>
 		</e:Group>
 		<e:Group id="eat2" touchEnabled="false" touchChildren="false" touchThrough="false" width="100%" height="100%">
-		<e:Image y="53" x="817" source="card_bgup2_png"/>
-		<e:Image y="53" x="859" source="card_bgup2_png"/>
-		<e:Image id="eat2_start1" x="900" source="card_bgup2_png" y="53"/>
-			<e:Image id="eat2_start0" x="856" source="card_bgup2_png" y="43"/>
-			<e:Image y="53" x="699" source="card_bgup2_png"/>
-			<e:Image y="53" x="736" source="card_bgup2_png"/>
-			<e:Image id="eat2_start2" x="774" source="card_bgup2_png" y="53"/>
-			<e:Image id="eat2_start3" x="734" source="card_bgup2_png" y="43"/>
-			<e:Image y="53" x="579" source="card_bgup2_png"/>
-			<e:Image y="53" x="616" source="card_bgup2_png"/>
-			<e:Image id="eat2_start4" x="654" source="card_bgup2_png" y="53"/>
-			<e:Image id="eat2_start5" x="614" source="card_bgup2_png" y="43"/>
-			<e:Image y="53" x="455" source="card_bgup2_png"/>
-			<e:Image y="53" x="496" source="card_bgup2_png"/>
-			<e:Image id="eat2_start6" x="537" source="card_bgup2_png" y="53"/>
-			<e:Image id="eat2_start7" x="494" source="card_bgup2_png" y="43"/>
+		<e:Image y="33" x="937" source="card_bgup2_png"/>
+		<e:Image y="33" x="979" source="card_bgup2_png"/>
+		<e:Image id="eat2_start1" x="1022" source="card_bgup2_png" y="33"/>
+			<e:Image id="eat2_start0" x="976" source="card_bgup2_png" y="23"/>
+			<e:Image y="33" x="819" source="card_bgup2_png"/>
+			<e:Image y="33" x="856" source="card_bgup2_png"/>
+			<e:Image id="eat2_start2" x="894" source="card_bgup2_png" y="33"/>
+			<e:Image id="eat2_start3" x="854" source="card_bgup2_png" y="23"/>
+			<e:Image y="33" x="699" source="card_bgup2_png"/>
+			<e:Image y="33" x="736" source="card_bgup2_png"/>
+			<e:Image id="eat2_start4" x="774" source="card_bgup2_png" y="33"/>
+			<e:Image id="eat2_start5" x="734" source="card_bgup2_png" y="23"/>
+			<e:Image y="33" x="575" source="card_bgup2_png"/>
+			<e:Image y="33" x="616" source="card_bgup2_png"/>
+			<e:Image id="eat2_start6" x="657" source="card_bgup2_png" y="33"/>
+			<e:Image id="eat2_start7" x="614" source="card_bgup2_png" y="23"/>
 		</e:Group>
 		<e:Group id="eat3" touchThrough="false" touchEnabled="false" touchChildren="false" width="100%" height="100%">
-			<e:Image id="eat3_start1" source="card_left_bg0_png" x="36.72" y="6"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="43"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="79"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="39"/>
-			<e:Image id="eat3_start0" source="card_left_bg0_png" x="36.72" y="136"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="173"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="209"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="169"/>
-			<e:Image id="eat3_start2" source="card_left_bg0_png" x="36.72" y="266"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="303"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="339"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="299"/>
-			<e:Image id="eat3_start3" source="card_left_bg0_png" x="36.72" y="396"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="433"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="459"/>
-			<e:Image source="card_left_bg0_png" x="36.72" y="419"/>
+			<e:Image id="eat3_start1" source="card_left_bg0_png" x="6.72" y="6"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="43"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="79"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="39"/>
+			<e:Image id="eat3_start0" source="card_left_bg0_png" x="6.72" y="136"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="173"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="209"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="169"/>
+			<e:Image id="eat3_start2" source="card_left_bg0_png" x="6.72" y="266"/>
+			<e:Image source="card_left_bg0_png" x="8.72" y="303"/>
+			<e:Image source="card_left_bg0_png" x="8.72" y="339"/>
+			<e:Image source="card_left_bg0_png" x="8.72" y="299"/>
+			<e:Image id="eat3_start3" source="card_left_bg0_png" x="8.72" y="396"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="433"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="459"/>
+			<e:Image source="card_left_bg0_png" x="6.72" y="419"/>
 		</e:Group>
 	</e:Group>
 	<e:Group id="cardGroup" touchEnabled="true" touchChildren="true" touchThrough="true" width="100%" height="100%">

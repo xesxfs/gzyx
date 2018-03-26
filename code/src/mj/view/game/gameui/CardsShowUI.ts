@@ -189,7 +189,7 @@ class CardsShowUI extends eui.Component {
 		var locateGetPoint = new egret.Point(locateGet.x, locateGet.y);
 		this.takePointList.push(locateGetPoint);
 
-		for (let i = len - 2; i >= 0; i--) {
+		for (let i = 0; i < len - 1; i++) {
 			var op = this.hand3.getChildAt(i);
 			var p = new egret.Point(op.x, op.y);
 			this.handlePointList[3].push(p)
@@ -474,10 +474,6 @@ class CardsShowUI extends eui.Component {
 			cardListValue.forEach((value) => {
 				cpgcardList.push(this.cardFactory.getOutCard(pos, value))
 			})
-		} else if (act == ACT_act.Act_Chi) {
-			cardListValue = cardList;
-			deleteCardList = [cardList[1], cardList[2]];
-			ArrayTool.sortArr(cardListValue);
 		} else if (act == ACT_act.Act_Gang) {
 			if (actParam == 1) {  //1补杠
 				cardListValue = [cardValue];
