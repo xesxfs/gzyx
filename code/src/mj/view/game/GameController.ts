@@ -48,6 +48,8 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_BEGIN_ROBOT_OP_BC, this.revTuoGuang, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_CANCEL_ROBOT_OP_SUCC_BC, this.revCancleTuoGuang, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM, this.revQuiteGame, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_END_BC, this.revEndResult, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_READY_STAGE_BC, this.revReady, this);
 
     }
 
@@ -141,7 +143,7 @@ class GameController extends BaseController {
             json.zi_mo_hu_flag ? (actList.push(ACT_act.Act_Hu)) : "";
             actList.push(ACT_act.Act_Pass);
             if (actList.length > 1) {
-                this.gameScene.selectActUI.updateInfo(actList,json.getin_mj);
+                this.gameScene.selectActUI.updateInfo(actList, json.getin_mj);
                 this.gameScene.selectActUI.show();
             }
 
@@ -172,7 +174,6 @@ class GameController extends BaseController {
     private revPass(data) {
         let json = ProtocolData.Rev2011;
         json = data;
-
     }
 
     private revPeng(data) {
@@ -245,6 +246,19 @@ class GameController extends BaseController {
 
     private revZRenJi(data) {
         let json = ProtocolData.Rev2025;
+        json = data;
+
+    }
+
+
+    private revReady(data) {
+        let json = ProtocolData.Rev2019;
+        json = data;
+
+    }
+
+    private revEndResult(data) {
+        let json = ProtocolData.Rev2020;
         json = data;
 
     }

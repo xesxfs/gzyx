@@ -1,7 +1,4 @@
 /**
- * 麻将牌
- * @author chenkai 
- * @date 2016/6/29
  */
 class Card extends egret.DisplayObjectContainer {
     public static NAME: string = "Card";
