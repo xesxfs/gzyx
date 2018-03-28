@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ActivePanelSkin"  xmlns:e="http://ns.egret.com/eui">
-	<e:Group>
-		<e:Image source="tankuang_big_png"/>
-		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>
-		<e:Label text="活动" y="57" textColor="0x000000" horizontalCenter="0" size="28"/>
-	</e:Group>
-</e:Skin>

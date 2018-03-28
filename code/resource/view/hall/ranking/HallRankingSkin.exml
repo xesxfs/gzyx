@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="HallRankingSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group y="0" left="7">
+		<e:Image source="rank_foot_png"/>
+		<e:Scroller width="118" height="399" x="1" y="49" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group>
+			<e:List id="rankLst" width="100%" y="-1" anchorOffsetY="0" horizontalCenter="0" x="-1" scaleX="1" scaleY="1" itemRendererSkinName="RankingItemSkin">
+				<e:ArrayCollection>
+					<e:Array>
+						<e:Object headUrl="img_default_png"/>
+						<e:Object headUrl="img_default_png"/>
+						<e:Object headUrl="img_default_png"/>
+						<e:Object headUrl="img_default_png"/>
+						<e:Object headUrl="img_default_png"/>
+						<e:Object headUrl="img_default_png"/>
+					</e:Array>
+				</e:ArrayCollection>
+				<e:layout>
+					<e:VerticalLayout horizontalAlign="center"/>
+				</e:layout>
+			</e:List>
+		</e:Group>
+		</e:Scroller>
+	</e:Group>
+</e:Skin>

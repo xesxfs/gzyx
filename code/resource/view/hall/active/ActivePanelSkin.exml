@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ActivePanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="1280"
+        height="655">
+	<e:Group top="0" bottom="0">
+		<e:Image source="tankuang_big_png" scale9Grid="115,77,690,466" width="1280" top="-2" bottom="2" x="1.67" />
+		<e:TabBar x="128" y="28" itemRendererSkinName="tabBarActive">
+			<e:ArrayCollection>
+				<e:Array>
+					<e:Object iconUpBg="left_button_busy_png" iconUp="word9_png" iconDownBg="left_button_idle_png" iconDown="word9_png" />
+					<e:Object iconUpBg="right_button_busy_png" iconUp="word8_png" iconDownBg="right_button_idle_png"
+					          iconDown="word8_png" />
+				</e:Array>
+			</e:ArrayCollection>
+			<e:layout>
+				<e:HorizontalLayout gap="-39" />
+			</e:layout>
+		</e:TabBar>
+		<e:Image source="other6_png" y="107.33" horizontalCenter="0.5" />
+		<e:Image source="other6_png" y="102.01" horizontalCenter="0" rotation="90" height="1000" />
+		<e:ViewStack x="65" y="111" selectedIndex="1">
+			<e:Group width="100%" height="100%" name="Group">
+				<e:Group x="18" y="0" scaleX="1" scaleY="1">
+					<e:Label text="当前累计充值：" x="0" y="5" size="20" fontFamily="Microsoft YaHei" textColor="0x7a7676" />
+					<e:Label text="0" x="167" y="0" textColor="0x5B2121" size="24" />
+					<e:Image source="yuan_png" x="254.5" y="1.5" />
+					<e:layout>
+						<e:HorizontalLayout verticalAlign="middle" gap="20" />
+					</e:layout>
+				</e:Group>
+				<e:Image source="other10_png" x="0" y="382" scaleX="1" scaleY="1" />
+				<e:Label text="活动期间，玩家累计充值达到一定额度，可获得对应次数的转盘机会；" x="18" y="398" anchorOffsetX="0" width="506.67" textColor="0x494949"
+				         size="20" fontFamily="Microsoft YaHei" lineSpacing="5" scaleX="1" scaleY="1" />
+				<e:Group x="0" y="36" scaleX="1" scaleY="1">
+					<e:Image source="other1_png" x="0" y="0" />
+					<e:Image source="other5_png" x="22.68" y="16.34" />
+					<e:Label text="充值额度" x="49.68" y="30.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" />
+					<e:Label text="次数" y="30.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" horizontalCenter="0" />
+					<e:Label text="领取" x="436" y="31.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" />
+					<e:Scroller height="220" x="22" y="82" anchorOffsetY="0" anchorOffsetX="0" width="512.67">
+						<e:Group>
+							<e:List height="224" itemRendererSkinName="ActiveItemSkin" anchorOffsetY="0" scaleX="1" scaleY="1">
+								<e:ArrayCollection>
+									<e:Array>
+										<e:Object recharge="30 元" num="0"/>
+										<e:Object recharge="50 元" num="0"/>
+										<e:Object recharge="100 元" num="1"/>
+										<e:Object recharge="200 元 " num="0"/>
+										<e:Object recharge="500 元" num="0"/>
+									</e:Array>
+								</e:ArrayCollection>
+
+								<e:layout>
+									<e:VerticalLayout/>
+								</e:layout>
+							</e:List>
+						</e:Group>
+					</e:Scroller>
+				</e:Group>
+				<e:Image source="other10_png" x="583.31" y="1" scale9Grid="67,15,405,97" anchorOffsetX="0"
+				         width="153.67" anchorOffsetY="0" height="33" scaleX="1" scaleY="1" />
+				<e:Group x="602.31" y="2" scaleX="1" scaleY="1">
+					<e:Label text="剩余：" x="0" y="5" size="20" fontFamily="Microsoft YaHei" textColor="0x7a7676" />
+					<e:Label text="0" x="167" y="0" textColor="0x5b2121" size="24" />
+					<e:Image x="254.5" y="1.5" source="ci_png" />
+					<e:layout>
+						<e:HorizontalLayout verticalAlign="middle" gap="10" />
+					</e:layout>
+				</e:Group>
+				<e:Image source="circle_wall_png" x="641.33" y="14" scaleX="1" scaleY="1" />
+				<e:Image source="circle_png" x="688.83" y="61" scaleX="1" scaleY="1" />
+				<e:Button label="" x="814.33" y="158" scaleX="1" scaleY="1">
+					<e:skinName>
+						<e:Skin states="up,down,disabled">
+							<e:Image width="100%" height="100%" source="go_up_png" source.down="go_down_png" />
+							<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+						</e:Skin>
+					</e:skinName>
+				</e:Button>
+			</e:Group>
+			<e:Group width="100%" height="100%" name="Group" x="0" y="0">
+				<e:Group x="18" y="0" scaleX="1" scaleY="1">
+					<e:Label text="当前英雄令：" x="0" y="5" size="20" fontFamily="Microsoft YaHei" textColor="0x7A7676" />
+					<e:Label text="0" x="167" y="0" textColor="0x5B2121" size="24" />
+					<e:Image source="hero_png" x="254.5" y="1.5" />
+					<e:layout>
+						<e:HorizontalLayout verticalAlign="middle" gap="20" />
+					</e:layout>
+				</e:Group>
+				<e:Image source="other10_png" x="0" y="382" scaleX="1" scaleY="1" />
+				<e:Label text="活动期间，玩家通过游戏行为可获得道具“英雄令”；使用英雄令可以兑换相应的奖品" x="18" y="398" anchorOffsetX="0" width="506.67" textColor="0x494949"
+				         size="20" fontFamily="Microsoft YaHei" lineSpacing="5" scaleX="1" scaleY="1" />
+				<e:Group x="0" y="36" scaleX="1" scaleY="1">
+					<e:Image source="other1_png" x="0" y="0" />
+					<e:Image source="other5_png" x="22.68" y="16.34" />
+					<e:Label text="获取方法" x="49.68" y="30.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" />
+					<e:Label text="次数" y="30.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" horizontalCenter="0" />
+					<e:Label text="领取" x="436" y="31.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" />
+					<e:Scroller height="220" x="22" y="82" anchorOffsetY="0" anchorOffsetX="0" width="512.67">
+						<e:Group>
+							<e:List height="224" itemRendererSkinName="ActiveItemSkin" anchorOffsetY="0" scaleX="1" scaleY="1">
+								<e:ArrayCollection>
+									<e:Array>
+										<e:Object recharge="每日充值" num="0 / 0" />
+										<e:Object recharge="每日登陆" num="0 / 0" />
+										<e:Object recharge="排位单局30分" num="0 / 0" />
+										<e:Object recharge="打出一个有效英雄鸡" num="0 / 0" />
+									</e:Array>
+								</e:ArrayCollection>
+								<e:layout>
+									<e:VerticalLayout/>
+								</e:layout>
+							</e:List>
+						</e:Group>
+					</e:Scroller>
+				</e:Group>
+			</e:Group>
+		</e:ViewStack>
+	</e:Group>
+</e:Skin>

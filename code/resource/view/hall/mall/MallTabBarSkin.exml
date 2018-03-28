@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="MallTabBarSkin" xmlns:e="http://ns.egret.com/eui" states="up,down">
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0" source.up="{data.iconUp}" source.down="{data.iconDown}"/>
+	<e:Label text="{data.txt}" horizontalCenter="0" verticalCenter="0" fontFamily="Microsoft YaHei"/>
+</e:Skin>

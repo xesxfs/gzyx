@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="EmailTabBarSkin" xmlns:e="http://ns.egret.com/eui" states="up,down" >
+	<e:Image source.up="{data.iconUpBg}" source.down="{data.iconDownBg}" source="btn_left_unSelected_png"/>
+	<e:Image source.up="{data.iconUp}" source.down="{data.iconDown}" horizontalCenter.up="0" verticalCenter.up="0" horizontalCenter="0" verticalCenter="0"/>
+</e:Skin>

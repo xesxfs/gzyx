@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="BackpackPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group>
-		<e:Image source="tankuang_big_png"/>
-		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>
-		<e:Label text="背包" y="57" textColor="0x000000" horizontalCenter="0" size="28"/>
+
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image source="tankuang_big_png" scale9Grid="115,77,690,466" width="1216" height="656"/>
+		<e:Image source="title_bg_png" y="25.99" horizontalCenter="1.5"/>
+		<e:Image source="bag_png" x="569" y="39"/>
+		<e:Image source="other2_png" x="44" y="100"/>
+		<e:Image source="other3_png" x="773.37" y="105.31"/>
+		<e:Image source="other4_png" x="778.4" y="265.59"/>
+		<e:Image source="item_null_png" x="807.33" y="122.27"/>
+		<e:Button id="userBtn" label="" x="876.5" y="446.5">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="use1_png" source.down="use2_png" source.disabled="use3_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<e:Label text="拥有：" x="958.03" y="199.33" textColor="0x587787" fontFamily="Microsoft YaHei" size="24"/>
+
 	</e:Group>
 </e:Skin>

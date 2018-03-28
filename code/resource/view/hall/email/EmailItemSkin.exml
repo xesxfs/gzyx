@@ -1,9 +1,17 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin states="up,down" class="EmailItemSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="650" height="136">
-	<e:Image width="650" height="136" x="0" y="0" source="hall_within_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="39,32,53,39"/>
-	<e:Label id="email_hard" text="房卡1张" x="160" y="0" anchorOffsetX="0" width="400" anchorOffsetY="0" height="68" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xb33318"/>
-	<e:Label id="email_time" text="2017-1-25" x="160" y="68" anchorOffsetX="0" width="400" anchorOffsetY="0" height="68" verticalAlign="middle" fontFamily="SimHei" size="25" textColor="0x7e5a3d"/>
-	<e:Image id="email_iamge" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="0.5" source="open_envelope_png" x="33"/>
-	<e:Image source="cutline_png" x="154" scale9Grid="169,0,279,4" width="350" verticalCenter="0"/>
-	<e:Image id="readedImg" source="email_readed_png" x="552.79" y="2.16"/>
+<e:Skin states="up,down" class="EmailItemSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:ToggleButton label="ToggleButton">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="mail_18_png" source.down="mail_13_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:ToggleButton>
+
+
+
+
+
+
 </e:Skin>

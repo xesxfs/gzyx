@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="tabBarActive" xmlns:e="http://ns.egret.com/eui" states="up,down">
+	<e:Image x="0" y="0" source.up="{data.iconUpBg}" source.down="{data.iconDownBg}"/>
+	<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0" source.up="{data.iconUp}" source.down="{data.iconDown}"/>
+</e:Skin>

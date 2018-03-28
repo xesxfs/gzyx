@@ -1,8 +1,43 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="EmailSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
-	<e:Group>
+
+	<e:Group horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tankuang_big_png"/>
-		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>
-		<e:Label text="邮件" y="57" textColor="0x000000" horizontalCenter="0" size="28"/>
+		<e:TabBar x="265" y="26.31" itemRendererSkinName="EmailTabBarSkin">
+			<e:ArrayCollection>
+				<e:Array>
+					<e:Object iconUpBg="btn_left_unSelected_png" iconUp="mail_03_png" iconDownBg="btn_left_selected_png" iconDown="mail_03_png"/>
+					<e:Object iconUpBg="btn_right_unselected_png" iconUp="mail_05_png" iconDownBg="btn_right_selected_png" iconDown="mail_05_png"/>
+				</e:Array>
+			</e:ArrayCollection>
+			<e:layout>
+				<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:TabBar>
+		<e:Image source="common_blue_bg_png" x="271" y="114" scale9Grid="27,26,46,50" anchorOffsetX="0" width="607" anchorOffsetY="0" height="452" locked="true"/>
+		<e:Image source="common_blue_bg_png" x="42" y="114" scale9Grid="27,26,46,50" anchorOffsetX="0" width="222" anchorOffsetY="0" height="452" locked="true"/>
+		<e:Image source="mail_22_png" x="280" y="122.3" scale9Grid="29,26,44,21" anchorOffsetX="0" width="589.2" locked="true"/>
+		<e:Scroller width="200" height="398" x="51" y="142.8" anchorOffsetY="0">
+			<e:Group>
+				<e:List itemRendererSkinName="EmailItemSkin">
+					<e:ArrayCollection>
+						<e:Array>
+							<e:Object title="null"/>
+							<e:Object title="null"/>
+							<e:Object title="null"/>
+							<e:Object title="null"/>
+							<e:Object title="null"/>
+							<e:Object title="null"/>
+						</e:Array>
+					</e:ArrayCollection>
+					<e:layout>
+						<e:VerticalLayout gap="2"/>
+					</e:layout>
+				</e:List>
+			</e:Group>
+		</e:Scroller>
+		<e:Label text="国庆回来开赛啦！" x="307.66" y="196" textColor="0x577687" size="20" fontFamily="Microsoft YaHei"/>
+
+
 	</e:Group>
 </e:Skin>

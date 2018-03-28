@@ -1,3 +1,11 @@
+//游戏状态
+enum State {
+    STATE_READY = 0,
+    STATE_MJ_FLASH = 1,
+    STATE_DING_QUE = 2, //定缺
+    STATE_PLAYING = 3,
+    STATE_END = 4,
+};
 /**
  * Socket通讯协议
  * @author  chen
@@ -685,14 +693,7 @@ enum CARD_TYPE {
     CARD_TYPE_SHA_BAO = 14, //杀报 
     CARD_TYPE_QINGLONGBEI = 15, //清龙背 (清一色 豪华七对)，30
 };
-//游戏状态
-enum State {
-    STATE_READY = 0,
-    STATE_MJ_FLASH = 1,
-    STATE_DING_QUE = 2, //定缺
-    STATE_PLAYING = 3,
-    STATE_END = 4,
-};
+
 //胡牌分数
 enum card_type_score {
     CARD_TYPE_PINGHU = 1,

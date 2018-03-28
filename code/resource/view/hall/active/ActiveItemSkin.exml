@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ActiveItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*">
+	<e:Image source="other5_png" x="0"/>
+	<e:Button label="" x="393" y="10" enabled="true">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="earn2_png" source.disabled="earn4_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label text="{data.recharge}" x="25" y="14" textColor="0xffb172"/>
+	<e:Label text="{data.num}" y="15" textColor="0xFFB172" horizontalCenter="0"/>
+</e:Skin>

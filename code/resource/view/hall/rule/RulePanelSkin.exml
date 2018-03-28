@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="RulePanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="1334" height="750">
-	<e:Group width="100%" height="100%">
+<e:Skin class="RulePanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="1280" height="720">
+	<e:Group>
 		<e:Image source="main_bg_jpg" width="100%" height="100%"/>
+		<e:Image source="Common_img_bg_png" x="88.5" y="39.97"/>
 		<e:Button id="backBtn" label="" left="10" top="14">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
@@ -10,5 +11,6 @@
 			</e:Skin>
 		</e:skinName>
 		</e:Button>
+		<e:Image source="h_Label_bg_png" x="268.5" y="9.99" scale9Grid="63,40,385,2" anchorOffsetX="0" width="740.33"/>
 	</e:Group>
 </e:Skin>

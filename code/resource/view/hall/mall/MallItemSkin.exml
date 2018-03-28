@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="MallItemSkin" width="640" height="144" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-    <e:Image width="640" height="144" x="0" source="hall_within_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="51,24,59,54" verticalCenter="0"/>
-	<e:Image id="iconImg" x="35" anchorOffsetX="0" anchorOffsetY="0" source="hall_some_card_png" verticalCenter="1"/>
-    <e:Label id="nameLab" text="局数卡X10" x="174" y="8" anchorOffsetX="0" width="244" anchorOffsetY="0" height="68" verticalAlign="middle" fontFamily="Microsoft YaHei" textColor="0xb33318"/>
-    <e:Label id="descLab" text="可以开设好友房" x="174" y="61" anchorOffsetX="0" width="270" anchorOffsetY="0" height="68" verticalAlign="middle" fontFamily="Microsoft YaHei" size="28" textColor="0x7e5a3d"/>
-    <e:Button id="priceBtn" label="" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="-1" right="31">
-    <e:skinName>
-        <e:Skin states="up,down,disabled">
-        <e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-        <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-	<e:Image width="30" height="30" x="102.5" source="hall_element_png" verticalCenter="-5"/>
-	<e:BitmapLabel id="priceBLab" text="68" anchorOffsetX="0" horizontalCenter="-14" verticalCenter="-5" font="new_mall_font_fnt"/>
-        </e:Skin>
-    </e:skinName>
-    </e:Button>
-	<e:Image source="cutline_png" x="166" width="260" verticalCenter="1" scale9Grid="242,0,117,4"/>
+<e:Skin class="MallItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="mallkuang_bg_png"/>
+	<e:Image id="iconImg" source="Gold1_png" x="31.67" y="17"/>
+	<e:Button id="bugBtn" label="Button" x="19.67" y="145">
+		<e:skinName>
+		<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="purchasebtn_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+		</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Label id="goldLab" text="0金币" x="5" y="120" textColor="0x587683" size="20" anchorOffsetX="0" width="190" textAlign="center" fontFamily="Microsoft YaHei"/>
+	<e:Image id="hotImg" source="re_png" x="-1" y="0"/>
+	<e:Group id="giveGrp" x="105" y="-2" visible="false">
+		<e:Image source="given_bg_png" x="0" y="0"/>
+		<e:Label text="送 6" x="40.64" y="4.6" strokeColor="0xff430a" stroke="1" fontFamily="Microsoft YaHei" size="18" rotation="45"/>
+	</e:Group>
+
+
+
+
+
+
 </e:Skin>

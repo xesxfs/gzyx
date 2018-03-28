@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="SoundHSliderSkin"
+        xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*" xmlns:w="http://ns.egret.com/wing" height="42">
+	<e:Image id="track"  verticalCenter="0" scale9Grid="6,3,7,6" source="img_processBg_png"/>
+	<e:Image id="trackHighlight" height="100%" y="0" scaleX="1" scaleY="1" source="img_processFg_png" x="0" scale9Grid="163,17,77,1"/>
+	<e:Group id="thumb" scaleX="1" scaleY="1" y="22" width="0" height="0" x="13">
+		<e:Image height="42" width="42" source="btn_process_png" anchorOffsetX="21" anchorOffsetY="20" scaleX="1" scaleY="1"/>
+
+	</e:Group>
+
+</e:Skin>
