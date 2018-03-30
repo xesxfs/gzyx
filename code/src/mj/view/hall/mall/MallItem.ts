@@ -1,37 +1,39 @@
-/**
- * 商城item
- * @author huanglong
- *  2017/03/09
- */
-
 class MallItem extends eui.ItemRenderer {
-
-    public iconImg:eui.Image;
-    public nameLab:eui.Label;
-    public descLab:eui.Label;
-    public priceBtn:eui.Button;
-
-    protected itemData:any;
+    public iconImg: eui.Image;
+    public buyBtn: eui.Button;
+    public goldLab: eui.Label;
+    public hotImg: eui.Image;
+    public giveGrp: eui.Group;
+    public giveLab: eui.Label;
 
     public constructor() {
-		super();
-		this.skinName = "MallItemSkin";
-	}
+        super();
+        this.skinName = "MallItemSkin";
+    }
 
-    public dataChanged():void{
-        var iData:MallItemData = this.itemData = this.data;
+    protected dataChanged() {
+        super.dataChanged();
+        console.log(this.data);
 
-        this.iconImg.source = iData.iconUrl;
-        this.nameLab.text = iData.goodsName;
-        this.descLab.text = iData.descStr;
-        (<eui.BitmapLabel>this.priceBtn.getChildAt(3)).text = iData.price.toString();
+        if (this.data["isG"]) {
+            this.buyBtn.getChildByName("diamond").visible = true;
+        }
+
+        if (this.data["hot_flag"] == 1) {
+            this.hotImg.visible = true;
+        }
+
+        if (this.data["give_num"] > 0) {
+            this.giveGrp.visible = true;
+            this.giveLab.text = this.data["give_num"];
+        }
     }
 
     protected childrenCreated() {
-        this.priceBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+        this.buyBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this)
     }
 
     private onTouch(e: egret.TouchEvent) {
-        App.getController("HallController").sendBuyProp(this.itemData.goodsId);
+
     }
 }

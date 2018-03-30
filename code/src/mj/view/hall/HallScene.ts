@@ -6,6 +6,7 @@
 class HallScene extends BaseScene {
     /**场景控制类*/
     protected ctrl: HallController;
+
     public activeBtn: eui.Button;
     public mallBtn: eui.Button;
     public shareBtn: eui.Button;
@@ -20,9 +21,12 @@ class HallScene extends BaseScene {
     public createBtn: eui.Button;
     public enterBtn: eui.Button;
     public personGroup: eui.Group;
+    public nameLab: eui.Label;
     public addDiaBtn: eui.Button;
+    public coinLab: eui.Label;
     public addGoldBtn: eui.Button;
-    public rankList: eui.List;
+    public goldLab: eui.Label;
+    public rankingPnl: HallRankingPanel;
 
     public constructor() {
         super();
@@ -30,8 +34,31 @@ class HallScene extends BaseScene {
     }
 
     protected childrenCreated() {
-
+        this.updateSelf()
+        this.requestRanking();
     }
+
+    private updateSelf() {
+        let user = App.DataCenter.UserInfo.selfUser;
+        this.nameLab.text = user.nickName;
+        this.coinLab.text = user.coin.toString();
+        this.goldLab.text = user.gold.toString();
+    }
+
+    /** 请求排行数据 */
+    private requestRanking() {
+        var httpsend = new HttpSender();
+        var loginData = ProtocolHttp.send_Rank;
+
+        httpsend.send(loginData, this.revRanking, this);
+    }
+
+    private revRanking(rev: any) {
+        let ranking = ProtocolHttp.rev_Rank;
+        ranking.data = rev.data
+        this.rankingPnl.update()
+    }
+
     protected onEnable() {
         this.addLister();
     }
@@ -50,11 +77,10 @@ class HallScene extends BaseScene {
     private onClick(e: egret.TouchEvent) {
         switch (e.target) {
             case this.activeBtn:
-                App.PanelManager.open(PanelConst.ActivePanel)
-                this.ctrl.registerSocket();
+                this.requestActive();
                 break;
             case this.mallBtn:
-                App.PanelManager.open(PanelConst.MallPanel)
+                this.requestDiamondsMall();
                 break;
             case this.shareBtn:
                 App.PanelManager.open(PanelConst.SharePanel)
@@ -84,7 +110,7 @@ class HallScene extends BaseScene {
                 break;
             case this.rankGameBtn:
                 let data = ProtocolData.Send102;
-                data.uid=App.DataCenter.UserInfo.selfUser.userID;
+                data.uid = App.DataCenter.UserInfo.selfUser.userID;
                 this.ctrl.sendJoinRoom(data);
                 break;
             case this.goldGameBtn:
@@ -102,7 +128,6 @@ class HallScene extends BaseScene {
 
     private onPersion() {
         App.PanelManager.open(PanelConst.UserInfoPanel);
-
     }
 
     private removeLiter() {
@@ -110,7 +135,35 @@ class HallScene extends BaseScene {
         this.personGroup.removeEventListener("touchTap", this.onPersion, this);
     }
 
+    // 请求活动列表
+    private requestActive() {
+        var httpsend = new HttpSender();
+        var rechargeData = ProtocolHttp.send_RechargeTaskList;
+        rechargeData.param.uid = App.DataCenter.UserInfo.selfUser.userID;
+        httpsend.send(rechargeData, this.revActive, this);
+    }
 
+    private revActive(rev: any) {
+        if (rev.data ) {
+            ProtocolHttp.rev_RechargeTaskList = rev.data;
+            if (!ProtocolHttp.rev_RechargeTaskList.task_list) ProtocolHttp.rev_RechargeTaskList.task_list = [];
+            App.PanelManager.open(PanelConst.ActivePanel);
+        }
+    }
+
+    // 请求钻石商城列表
+    private requestDiamondsMall() {
+        var httpsend = new HttpSender();
+        var mall = ProtocolHttp.send_DiamondsMall;
+        httpsend.send(mall, this.revDiamondsMall, this);
+    }
+
+    private revDiamondsMall(rev:any) {
+        if (rev.data) {
+            ProtocolHttp.rev_DiamondsMall = rev.data;
+            App.PanelManager.open(PanelConst.MallPanel);
+        }
+    }
 
 }
 

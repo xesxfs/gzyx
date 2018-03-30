@@ -2,15 +2,18 @@
 <e:Skin class="gameUserSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
 	<w:Config id="1594658eddc"/>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
-		<e:Image source="tankuang_small_png"/>
-		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>
-		<e:Label text="个人信息" y="57" textColor="0x000000" horizontalCenter="0" size="28"/>
-		<e:Label id="uid" text="Label" x="59.31" y="257.56"/>
-		<e:Label id="nickName" text="Label" x="210.82" y="121.6" anchorOffsetX="0" width="75.52"/>
-		<e:Label id="dia" text="Label" x="210.82" y="167.45"/>
-		<e:Label id="gold" text="Label" x="210.82" y="213.3" anchorOffsetX="0" width="75.52"/>
-		<e:Label id="score" text="1" x="210.82" y="260.15"/>
-		<e:Label id="duanwei" text="2" x="210.82" y="305.8" anchorOffsetX="0" width="75.52"/>
-		<e:Image id="headUrl" width="123.04" height="118.48" x="27.42" y="124.42" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Image source="tankuang_small_png" anchorOffsetX="0" width="530" anchorOffsetY="0" height="350" y="0" x="0"/>
+
+
+		<e:Label id="uid" text="ID:" x="50.64" y="227.95" textColor="0xc6872c" size="24"/>
+		<e:Label id="nickName" text="Label" x="210.82" y="62.24" anchorOffsetX="0" textColor="0x557685" fontFamily="Microsoft YaHei"/>
+		<e:Label id="dia" text="Label" x="286.82" y="109" textColor="0xfa9c29"/>
+		<e:Label id="gold" text="Label" x="286.82" y="175" anchorOffsetX="0" width="75.52" textColor="0xfa9c29"/>
+		<e:Label id="score" text="战绩：" x="211" y="230.83" textColor="0x557685" fontFamily="Microsoft YaHei" size="22"/>
+		<e:Label id="duanwei" text="段位：" x="211" y="273.8" anchorOffsetX="0" textColor="0x557685" fontFamily="Microsoft YaHei" size="22"/>
+		<e:Image source="userinfo_headBg_png" x="36.36" y="43.6"/>
+		<e:Image id="headUrl" width="123.04" height="118.48" x="53.98" y="64.37" anchorOffsetX="0" anchorOffsetY="0"/>
+		<e:Image source="ico_jewel_png" x="208" y="99"/>
+		<e:Image source="ico_gold_png" x="208" y="160"/>
 	</e:Group>
 </e:Skin>

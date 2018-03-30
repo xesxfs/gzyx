@@ -7,24 +7,24 @@ class ProtocolHttp {
 
     /**接收登录*/
     public static rev_z_login = {
-        ret:0,
-        desc:"",
-        data:{
-        uid: 0,//	integer	用户ID
-        nick_name: "",//	string	昵称
-        sex: 0,//	integer	性别 1.man 2.woman
-        avater_url: "",//	string	头像URL
-        room_ticket: 0,//	integer	用户有多少张房卡(废弃)
-        gold: 0,//integer	金币量
-        diamonds: 0,//	integer	钻石量
-        login_ip: "",//string	用户的IP地址
-        win_board: 0,//integer	胜利场数
-        lose_board: 0,//integer	失败场数
-        pin_board: 0,//integer	平局场数
-        skey: "",//	string	这是其它协议当Islogin为TRUE的时候必须传的一个参数
-        paiwei_score: 0,//	integer	排位分
-        paiwei_rank: 0,//integer	排位等级
-        paiwei_rank_name: "",//string	等级名称
+        ret: 0,
+        desc: "",
+        data: {
+            uid: 0,//	integer	用户ID
+            nick_name: "",//	string	昵称
+            sex: 0,//	integer	性别 1.man 2.woman
+            avater_url: "",//	string	头像URL
+            room_ticket: 0,//	integer	用户有多少张房卡(废弃)
+            gold: 0,//integer	金币量
+            diamonds: 0,//	integer	钻石量
+            login_ip: "",//string	用户的IP地址
+            win_board: 0,//integer	胜利场数
+            lose_board: 0,//integer	失败场数
+            pin_board: 0,//integer	平局场数
+            skey: "",//	string	这是其它协议当Islogin为TRUE的时候必须传的一个参数
+            paiwei_score: 0,//	integer	排位分
+            paiwei_rank: 0,//integer	排位等级
+            paiwei_rank_name: "",//string	等级名称
         }
     }
 
@@ -374,7 +374,63 @@ class ProtocolHttp {
 
     }
 
+    /** 查询英雄令任务 */
+    public static send_TaskList = {
+        action: "TaskList",
+        param: {
+            uid: 0,
+        }
+    }
 
+    public static rev_TaskList = {
+        hero_count: 0, //	integer	用户拥有的英雄令个数
+        uid: 0, //	integer	用户ID
+        task_list: [] //	array<task_info>	每日任务列表
+    }
+
+    public static task_info3 = {
+        task_id: 0, //	integer	任务ID
+        task_name: "",//	string	任务名称
+        limit: 0,//	integer	该任务每日可完成的次数
+        unclaimed: 0,    //	integer	该任务可领取奖励的次数
+        finished: 0, //	integer	该任务每日已经完成的次数
+        begin_time: "", //	string	活动开始时间
+        end_time: "",//	string	活动截止时间
+        reward_list: [],//	array< reward_info > 获得的奖品列表
+    }
+
+    /** 充值任务列表 */
+    public static send_RechargeTaskList = {
+        action: "RechargeTaskList",
+        param: {
+            uid: 0,  //用户ID
+        }
+    }
+
+    public static rev_RechargeTaskList = {
+        lottery_count: 0, //	integer	用户拥有的转盘抽奖次数
+        uid: 0,//	integer	用户ID
+        lottery_item: 0, //	integer	转盘抽奖道具的物品ID
+        item_rand: 0, //	integer	在转盘上的随机角度范围
+        task_list: [],//	array< task_info > 任务列表
+        item_rotate: [], //	array< rotate_info > 转盘停留角度列表
+        recharge_num: 0, //	integer	用户在活动时间内充值了多少钱
+    }
+
+    public static task_info2 = {
+        task_id: 0, //	integer	任务ID
+        task_name: "", //	string	任务名称
+        price: 0, //	integer	用户充值数量大于这个值时可以完成任务
+        begin_time: "", //string	活动开始时间
+        end_time: "",// string	活动截止时间
+        reward_list: [],    //	array<reward_info> 获得的奖品列表
+        is_finish: 0,//	integer	1.已经领取 2.等待领取 3.没资格领取
+    }
+
+    public static reward_info = {
+        itemid: 0, //	integer	物品ID
+        num: "",// string	获得的数量
+    }
 
     /*** 获取物品列表 */
     public static send_GetItemList = {

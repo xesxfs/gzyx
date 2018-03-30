@@ -29,11 +29,11 @@ class UserInfoPanel extends BasePanel {
 
     private update() {
         let user = App.DataCenter.UserInfo.selfUser;
-        this.uid.text = user.userID.toString();
+        this.uid.text = "ID:" + user.userID.toString();
         this.nickName.text = user.nickName;
-        this.dia.text=user.coin.toString();
-        this.gold.text=user.gold.toString();
-        this.headUrl.source=user.headUrl;
+        this.dia.text = user.coin.toString();
+        this.gold.text = user.gold.toString();
+        this.headUrl.source = user.headUrl;
 
     }
 

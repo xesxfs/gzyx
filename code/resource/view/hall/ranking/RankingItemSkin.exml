@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="RankingItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="111" height="111">
 	<e:Image source="head_bg_png" x="0" y="0"/>
-	<e:Image id="headImg" horizontalCenter="0" verticalCenter="0" source="{data.headUrl}"/>
-	<e:Image id="iconImg" source="img_rank1_png" x="-3" y="-7" scaleX="0.7" scaleY="0.7"/>
+	<e:Image id="maskImg" source="head_bg_png"/>
+	<e:Image id="headImg" source="{data.avater_url}" width="110" height="110" y="0" x="0"/>
+	<e:Image id="iconImg" source="img_rank1_png" x="-3" y="-7" scaleX="0.7" scaleY="0.7" visible="false"/>
+	<e:Label id="numLab" text="0" x="10.55" y="6.15" textColor="0xff0000" stroke="2" strokeColor="0xffffff" fontFamily="Arial" bold="true" visible="false"/>
 </e:Skin>

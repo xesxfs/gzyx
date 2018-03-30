@@ -3,7 +3,7 @@
         height="655">
 	<e:Group top="0" bottom="0">
 		<e:Image source="tankuang_big_png" scale9Grid="115,77,690,466" width="1280" top="-2" bottom="2" x="1.67" />
-		<e:TabBar x="128" y="28" itemRendererSkinName="tabBarActive">
+		<e:TabBar id="activeTab" x="128" y="28" itemRendererSkinName="tabBarActive">
 			<e:ArrayCollection>
 				<e:Array>
 					<e:Object iconUpBg="left_button_busy_png" iconUp="word9_png" iconDownBg="left_button_idle_png" iconDown="word9_png" />
@@ -17,11 +17,11 @@
 		</e:TabBar>
 		<e:Image source="other6_png" y="107.33" horizontalCenter="0.5" />
 		<e:Image source="other6_png" y="102.01" horizontalCenter="0" rotation="90" height="1000" />
-		<e:ViewStack x="65" y="111" selectedIndex="1">
+		<e:ViewStack id="activeVsk" x="65" y="111" selectedIndex="1">
 			<e:Group width="100%" height="100%" name="Group">
 				<e:Group x="18" y="0" scaleX="1" scaleY="1">
 					<e:Label text="当前累计充值：" x="0" y="5" size="20" fontFamily="Microsoft YaHei" textColor="0x7a7676" />
-					<e:Label text="0" x="167" y="0" textColor="0x5B2121" size="24" />
+					<e:Label id="rechargeLab" text="0" x="167" y="0" textColor="0x5B2121" size="24" />
 					<e:Image source="yuan_png" x="254.5" y="1.5" />
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle" gap="20" />
@@ -38,16 +38,7 @@
 					<e:Label text="领取" x="436" y="31.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" />
 					<e:Scroller height="220" x="22" y="82" anchorOffsetY="0" anchorOffsetX="0" width="512.67">
 						<e:Group>
-							<e:List height="224" itemRendererSkinName="ActiveItemSkin" anchorOffsetY="0" scaleX="1" scaleY="1">
-								<e:ArrayCollection>
-									<e:Array>
-										<e:Object recharge="30 元" num="0"/>
-										<e:Object recharge="50 元" num="0"/>
-										<e:Object recharge="100 元" num="1"/>
-										<e:Object recharge="200 元 " num="0"/>
-										<e:Object recharge="500 元" num="0"/>
-									</e:Array>
-								</e:ArrayCollection>
+							<e:List id="rechargeLst" itemRendererSkinName="ActiveItemSkin" anchorOffsetY="0" scaleX="1" scaleY="1">
 
 								<e:layout>
 									<e:VerticalLayout/>
@@ -60,7 +51,7 @@
 				         width="153.67" anchorOffsetY="0" height="33" scaleX="1" scaleY="1" />
 				<e:Group x="602.31" y="2" scaleX="1" scaleY="1">
 					<e:Label text="剩余：" x="0" y="5" size="20" fontFamily="Microsoft YaHei" textColor="0x7a7676" />
-					<e:Label text="0" x="167" y="0" textColor="0x5b2121" size="24" />
+					<e:Label id="lotteryLab" text="0" x="167" y="0" textColor="0x5b2121" size="24" />
 					<e:Image x="254.5" y="1.5" source="ci_png" />
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle" gap="10" />
@@ -68,7 +59,7 @@
 				</e:Group>
 				<e:Image source="circle_wall_png" x="641.33" y="14" scaleX="1" scaleY="1" />
 				<e:Image source="circle_png" x="688.83" y="61" scaleX="1" scaleY="1" />
-				<e:Button label="" x="814.33" y="158" scaleX="1" scaleY="1">
+				<e:Button id="lotteryBtn" label="" x="814.33" y="158" scaleX="1" scaleY="1">
 					<e:skinName>
 						<e:Skin states="up,down,disabled">
 							<e:Image width="100%" height="100%" source="go_up_png" source.down="go_down_png" />
@@ -80,7 +71,7 @@
 			<e:Group width="100%" height="100%" name="Group" x="0" y="0">
 				<e:Group x="18" y="0" scaleX="1" scaleY="1">
 					<e:Label text="当前英雄令：" x="0" y="5" size="20" fontFamily="Microsoft YaHei" textColor="0x7A7676" />
-					<e:Label text="0" x="167" y="0" textColor="0x5B2121" size="24" />
+					<e:Label id="heroLab" text="0" x="167" y="0" textColor="0x5B2121" size="24" />
 					<e:Image source="hero_png" x="254.5" y="1.5" />
 					<e:layout>
 						<e:HorizontalLayout verticalAlign="middle" gap="20" />
@@ -97,15 +88,8 @@
 					<e:Label text="领取" x="436" y="31.34" textColor="0x494949" size="28" fontFamily="Microsoft YaHei" />
 					<e:Scroller height="220" x="22" y="82" anchorOffsetY="0" anchorOffsetX="0" width="512.67">
 						<e:Group>
-							<e:List height="224" itemRendererSkinName="ActiveItemSkin" anchorOffsetY="0" scaleX="1" scaleY="1">
-								<e:ArrayCollection>
-									<e:Array>
-										<e:Object recharge="每日充值" num="0 / 0" />
-										<e:Object recharge="每日登陆" num="0 / 0" />
-										<e:Object recharge="排位单局30分" num="0 / 0" />
-										<e:Object recharge="打出一个有效英雄鸡" num="0 / 0" />
-									</e:Array>
-								</e:ArrayCollection>
+							<e:List id="heroTaskLst" itemRendererSkinName="ActiveItemSkin" anchorOffsetY="0" scaleX="1" scaleY="1">
+
 								<e:layout>
 									<e:VerticalLayout/>
 								</e:layout>

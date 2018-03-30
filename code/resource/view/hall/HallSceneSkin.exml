@@ -118,7 +118,7 @@
 		<e:Group id="personGroup" top="4" left="13">
 			<e:Image source="img_infoFrame_png" verticalCenter="0" scale9Grid="99,30,22,4" x="40"/>
 			<e:Image verticalCenter="0" width="100" height="100" source="img_touXiangFrame_png"/>
-			<e:Label text="sos" verticalCenter="0" x="140" textColor="0xffffff"/>
+			<e:Label id="nameLab" text="sos" verticalCenter="-5" x="93.33" textColor="0xffffff" anchorOffsetX="0" width="182" fontFamily="Microsoft JhengHei" textAlign="center"/>
 		</e:Group>
 		<e:Group x="360.13" top="13">
 			<e:Image source="img_infoFrame_png"/>
@@ -131,7 +131,7 @@
 				</e:Skin>
 			</e:skinName>
 			</e:Button>
-			<e:Label text="1111111" textColor="0xFCC83C" verticalCenter="0" x="60"/>
+			<e:Label id="coinLab" text="1111111" textColor="0xFCC83C" verticalCenter="0" x="63"/>
 		</e:Group>
 		<e:Group x="631.94" top="15">
 			<e:Image source="img_infoFrame_png" x="0"/>
@@ -144,9 +144,10 @@
 					</e:Skin>
 				</e:skinName>
 			</e:Button>
-			<e:Label text="1111111" textColor="0xfcc83c" verticalCenter="0" x="60"/>
+			<e:Label id="goldLab" text="1111111" textColor="0xfcc83c" verticalCenter="0" x="60"/>
 		</e:Group>
-		<e:Panel x="13" y="110" skinName="HallRankingSkin"/>
+		<ns1:HallRankingPanel id="rankingPnl" x="13" y="116" skinName="HallRankingSkin"/>
+
 
 
 	</e:Group>

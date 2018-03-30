@@ -25,7 +25,8 @@ class ServerInfo {
         } else if (App.DataCenter.debugInfo.isLocalPhp == 2) {
             return "http://192.168.1.192/majapi/api.php";
         } else {
-            return "http://yxjmj.heroscocks.com/http_api/api.php?ver=1.0&action=%1&uid=%2&skey=%3&param=%4";
+            // return "http://yxjmj.heroscocks.com/http_api/api.php?ver=1.0&action=%1&uid=%2&skey=%3&param=%4";
+            return "http://yxjmj.heroscocks.com:8383/%1?uid=%2&skey=%3&param=%4";
         }
     }
 }

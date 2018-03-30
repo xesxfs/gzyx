@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="MallItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image source="mallkuang_bg_png"/>
-	<e:Image id="iconImg" source="Gold1_png" x="31.67" y="17"/>
-	<e:Button id="bugBtn" label="Button" x="19.67" y="145">
+	<e:Image source="mallkuang_bg_png" />
+	<e:Image id="iconImg" x="31.67" y="17" source="{data.icon}" />
+	<e:Button id="buyBtn" label="{data.price}" x="19.67" y="145">
 		<e:skinName>
-		<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="purchasebtn_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-		</e:Skin>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="purchasebtn_png" />
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+				<e:Image source="ico_jewel_png" x="4" y="3"  visible="false"/>
+			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Label id="goldLab" text="0金币" x="5" y="120" textColor="0x587683" size="20" anchorOffsetX="0" width="190" textAlign="center" fontFamily="Microsoft YaHei"/>
-	<e:Image id="hotImg" source="re_png" x="-1" y="0"/>
+	<e:Label id="goldLab" text="{data.num}" x="5" y="120" textColor="0x587683" size="20" anchorOffsetX="0" width="190"
+	         textAlign="center" fontFamily="Microsoft YaHei" />
+	<e:Image id="hotImg" source="re_png" x="-1" y="0" visible="false" />
 	<e:Group id="giveGrp" x="105" y="-2" visible="false">
-		<e:Image source="given_bg_png" x="0" y="0"/>
-		<e:Label text="送 6" x="40.64" y="4.6" strokeColor="0xff430a" stroke="1" fontFamily="Microsoft YaHei" size="18" rotation="45"/>
+		<e:Image source="given_bg_png" x="0" y="0" />
+		<e:Label id="giveLab" text="送 6" x="40.64" y="4.6" strokeColor="0xff430a" stroke="1" fontFamily="Microsoft YaHei" size="18"
+		         rotation="45" />
 	</e:Group>
-
-
-
-
-
-
 </e:Skin>
