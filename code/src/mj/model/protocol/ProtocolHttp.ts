@@ -99,7 +99,7 @@ class ProtocolHttp {
     }
 
 
-    /**检查是否在游戏中 */
+    /**查询邮件列表 */
     public static send_MailList = {
         action: "MailList",
         param: {
@@ -439,7 +439,7 @@ class ProtocolHttp {
         }
     }
     public static rev_GetItemList = {
-        item_list: [],//	任务完成信息
+        item_list: [],
     }
 
     public static item_info = {
@@ -452,7 +452,7 @@ class ProtocolHttp {
 
 
 
-    /*** 获取物品列表 */
+    /*** 查看背包物品 */
     public static send_ViewBag = {
         action: "ViewBag",
         param: {
@@ -482,5 +482,25 @@ class ProtocolHttp {
 
     }
 
+    /** 使用背包物品 */
+    public static send_UseItem = {
+        action: "UseItem",
+        param: {
+            uid: 0,//	integer	用户ID
+            item_id: 0,//	integer	物品ID
+        }
+    }
 
+    public static rev_UseItem = {
+        uid: 0,  //	integer	用户ID
+        type: 0, //	integer	物品类型(0系统道具1抽奖2金币道具3钻石道具4兑换码道具)(4和0不可以被使用)
+        reward: 0,   //	integer	type为2和3时 使用道具获得的钱币数量
+        reward_info: [],    //	object< reward_info > type为1时 抽奖结果
+
+    }
+
+    public static reward_info2 = {
+        is_notice: 0,    //	integer	是否发送了全服广播
+        id: 0,   //	integer	用户抽奖获得了什么物品1个
+    }
 }

@@ -11,7 +11,7 @@ class HttpSender {
 	 * @param cb 回调函数
 	 * @param obj thisObject
 	 */
-    public send(paramObj: Object, cb: Function, obj: any, lock: boolean = true): void {
+    public send(paramObj: Object, cb: Function, obj: any, lock: boolean = false): void {
 
         let dataObj = paramObj["param"];
         let dataToSend = JSON.stringify(dataObj);
@@ -29,10 +29,11 @@ class HttpSender {
             var request = <egret.HttpRequest>e.currentTarget;
             console.log("requet.response:" + request.response);
             var re = JSON.parse(request.response);
-            if (re.code == 505) {
-                App.PanelManager.open(PanelConst.SocketClosePanel, null, null, false);
+            if (re.ret == 0) {
+                cb.call(obj, re);
+            } else {
+                Tips.error(re.desc);
             }
-            cb.call(obj, re);
         }, this);
 
         request.once(egret.IOErrorEvent.IO_ERROR, function (e) {

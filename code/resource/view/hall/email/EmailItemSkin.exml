@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin states="up,down" class="EmailItemSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:ToggleButton label="ToggleButton">
+	<e:ToggleButton id="titleBtn" label="{data.head}">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="mail_18_png" source.down="mail_13_png"/>

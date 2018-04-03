@@ -8,7 +8,7 @@
 		<e:Label id="uid" text="ID:" x="50.64" y="227.95" textColor="0xc6872c" size="24"/>
 		<e:Label id="nickName" text="Label" x="210.82" y="62.24" anchorOffsetX="0" textColor="0x557685" fontFamily="Microsoft YaHei"/>
 		<e:Label id="dia" text="Label" x="286.82" y="109" textColor="0xfa9c29"/>
-		<e:Label id="gold" text="Label" x="286.82" y="175" anchorOffsetX="0" width="75.52" textColor="0xfa9c29"/>
+		<e:Label id="gold" text="Label" x="286.82" y="175" anchorOffsetX="0" textColor="0xfa9c29"/>
 		<e:Label id="score" text="战绩：" x="211" y="230.83" textColor="0x557685" fontFamily="Microsoft YaHei" size="22"/>
 		<e:Label id="duanwei" text="段位：" x="211" y="273.8" anchorOffsetX="0" textColor="0x557685" fontFamily="Microsoft YaHei" size="22"/>
 		<e:Image source="userinfo_headBg_png" x="36.36" y="43.6"/>

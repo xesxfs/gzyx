@@ -72,13 +72,13 @@ class LoginPanel extends BasePanel {
     }
 
     private revLogin(data: any) {
-        this.hide();
-        let ctrl = App.getController(LoginController.NAME) as LoginController;
-        ctrl.bLogin = true;
-
         let json = ProtocolHttp.rev_z_login;
         json = data;
         if (json.ret == 0) {
+            this.hide();
+            let ctrl = App.getController(LoginController.NAME) as LoginController;
+            ctrl.bLogin = true;
+
             let suser = App.DataCenter.UserInfo.selfUser;
             suser.userID = json.data.uid;
             suser.nickName = json.data.nick_name;
@@ -89,10 +89,10 @@ class LoginPanel extends BasePanel {
             suser.IP = json.data.login_ip;
             suser.sex = json.data.sex;
             App.DataCenter.UserInfo.addUser(suser);
-
+            ctrl.startLoadHall();
+        } else {
+            Tips.error(json.desc);
         }
-        ctrl.startLoadHall();
-
     }
 
 

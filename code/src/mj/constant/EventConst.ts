@@ -18,4 +18,14 @@ class EventConst {
     public static GameStateChange: string = "GameStateChange";    
     /**游戏配置修改*/
     public static GameConfigChange:string ="GameConfigChange";
+
+
+	/** 更新金币 */
+	public static UpdateGold:string = "UpdateGold";
+	/** 更新钻石 */
+	public static UpdateDiamond:string = "UpdateDiamond";
+	/** 背包显示详细信息 */
+	public static ShowItemDesc:string = "ShowItemDesc";
+	/** 显示邮件详情 */
+	public static ShowMail:string = "ShowMail";
 }

@@ -60,7 +60,7 @@ class PanelManager extends SingleClass{
      	 //加载弹框所需资源后，再打开弹框
          var group = this.assetList[panelID];
      	 if(group != null){
-		   App.LoadingLock.lock();
+		//    App.LoadingLock.lock();
            App.ResUtils.loadGroup(group,this, ()=>{
 			   App.LoadingLock.unlock();
                if(callBack != null && thisObject != null){

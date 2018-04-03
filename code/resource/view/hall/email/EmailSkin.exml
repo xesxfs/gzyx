@@ -3,7 +3,7 @@
 
 	<e:Group horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tankuang_big_png"/>
-		<e:TabBar x="265" y="26.31" itemRendererSkinName="EmailTabBarSkin">
+		<e:TabBar id="mailTab" x="265" y="26.31" itemRendererSkinName="EmailTabBarSkin">
 			<e:ArrayCollection>
 				<e:Array>
 					<e:Object iconUpBg="btn_left_unSelected_png" iconUp="mail_03_png" iconDownBg="btn_left_selected_png" iconDown="mail_03_png"/>
@@ -19,7 +19,7 @@
 		<e:Image source="mail_22_png" x="280" y="122.3" scale9Grid="29,26,44,21" anchorOffsetX="0" width="589.2" locked="true"/>
 		<e:Scroller width="200" height="398" x="51" y="142.8" anchorOffsetY="0">
 			<e:Group>
-				<e:List itemRendererSkinName="EmailItemSkin">
+				<e:TabBar id="titleLst" itemRendererSkinName="EmailItemSkin">
 					<e:ArrayCollection>
 						<e:Array>
 							<e:Object title="null"/>
@@ -33,10 +33,20 @@
 					<e:layout>
 						<e:VerticalLayout gap="2"/>
 					</e:layout>
-				</e:List>
+				</e:TabBar>
 			</e:Group>
 		</e:Scroller>
-		<e:Label text="国庆回来开赛啦！" x="307.66" y="196" textColor="0x577687" size="20" fontFamily="Microsoft YaHei"/>
+		<e:Label id="contentLab" text="" x="307.66" y="196" textColor="0x577687" size="20" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="540" anchorOffsetY="0" height="282.67"/>
+		<e:Button id="receiveBtn" label="Button" x="515.2" y="465.8" enabled="false" visible="false">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="mail_10_png" source.disabled="mail_16_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" visible="false"/>
+	<e:Image source="mail_31_png" includeIn="disabled" horizontalCenter="0" verticalCenter="0"/>
+	<e:Image source="mail_35_png" includeIn="up" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
 
 
 	</e:Group>

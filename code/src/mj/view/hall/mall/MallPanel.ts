@@ -14,6 +14,7 @@ class MallPanel extends BasePanel {
 	}
 
 	protected childrenCreated() {
+		this.mallLst.itemRenderer = MallItem;
 		this.mallTab.addEventListener(egret.Event.CHANGE, this.tabChange, this);
 	}
 
@@ -39,7 +40,7 @@ class MallPanel extends BasePanel {
 		for (var i = 0; i < diamonds.length; i++) {
 			diamonds[i]["num"] = diamonds[i]["diamonds"] + "钻石";
 			diamonds[i]["price"] = "￥ " + diamonds[i]["rmb"];
-			diamonds[i]["icon"] = "diamond"+ (i + 1) +"_png";
+			diamonds[i]["icon"] = "diamond" + (i + 1) + "_png";
 		}
 
 		this.mallLst.dataProvider = new eui.ArrayCollection(diamonds);

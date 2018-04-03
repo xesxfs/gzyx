@@ -36,6 +36,7 @@ class HallScene extends BaseScene {
     protected childrenCreated() {
         this.updateSelf()
         this.requestRanking();
+        this.requestItemList();
     }
 
     private updateSelf() {
@@ -55,8 +56,8 @@ class HallScene extends BaseScene {
 
     private revRanking(rev: any) {
         let ranking = ProtocolHttp.rev_Rank;
-        ranking.data = rev.data
-        this.rankingPnl.update()
+        ranking.data = rev.data;
+        this.rankingPnl.update();
     }
 
     protected onEnable() {
@@ -71,7 +72,20 @@ class HallScene extends BaseScene {
         this.addEventListener("touchTap", this.onClick, this);
         this.personGroup.addEventListener("touchTap", this.onPersion, this);
 
+        App.EventManager.addEvent(EventConst.UpdateGold, this.onUpdateGold, this);
+        App.EventManager.addEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
+    }
 
+    //刷新金币信息
+    private onUpdateGold(data: any) {
+        App.DataCenter.UserInfo.selfUser.gold = data;
+        this.goldLab.text = data;
+    }
+
+    //刷新钻石信息
+    private onUpdateDiamond(data: any) {
+        App.DataCenter.UserInfo.selfUser.coin = data;
+        this.coinLab.text = data;
     }
 
     private onClick(e: egret.TouchEvent) {
@@ -86,7 +100,7 @@ class HallScene extends BaseScene {
                 App.PanelManager.open(PanelConst.SharePanel)
                 break;
             case this.bagBtn:
-                App.PanelManager.open(PanelConst.BackpackPanel)
+                this.requestBackpack();
                 break;
             case this.viewBtn:
                 break;
@@ -97,7 +111,7 @@ class HallScene extends BaseScene {
                 App.PanelManager.open(PanelConst.SetPanel)
                 break;
             case this.mailBtn:
-                App.PanelManager.open(PanelConst.EmailPanel)
+                this.requestMail();
                 break;
             case this.helpBtn:
                 App.PanelManager.open(PanelConst.RulePanel)
@@ -135,6 +149,26 @@ class HallScene extends BaseScene {
         this.personGroup.removeEventListener("touchTap", this.onPersion, this);
     }
 
+    //获取商品列表
+    private requestItemList() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_GetItemList;
+        httpsend.send(request, this.revItemList, this);
+    }
+
+    private revItemList(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_GetItemList.item_list = rev.data.item_list;
+
+            var arr = [];
+            ProtocolHttp.rev_GetItemList.item_list.forEach((item) => {
+                arr[item.id] = item;
+            });
+
+            App.DataCenter.BagInfo.itemList = arr;
+        }
+    }
+
     // 请求活动列表
     private requestActive() {
         var httpsend = new HttpSender();
@@ -144,7 +178,7 @@ class HallScene extends BaseScene {
     }
 
     private revActive(rev: any) {
-        if (rev.data ) {
+        if (rev.data) {
             ProtocolHttp.rev_RechargeTaskList = rev.data;
             if (!ProtocolHttp.rev_RechargeTaskList.task_list) ProtocolHttp.rev_RechargeTaskList.task_list = [];
             App.PanelManager.open(PanelConst.ActivePanel);
@@ -158,10 +192,43 @@ class HallScene extends BaseScene {
         httpsend.send(mall, this.revDiamondsMall, this);
     }
 
-    private revDiamondsMall(rev:any) {
+    private revDiamondsMall(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_DiamondsMall = rev.data;
             App.PanelManager.open(PanelConst.MallPanel);
+        }
+    }
+
+    //请求背包数据
+    private requestBackpack() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ViewBag;
+        request.param.uid = App.DataCenter.UserInfo.selfUser.userID;
+        httpsend.send(request, this.revBackpack, this);
+    }
+
+    private revBackpack(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_ViewBag = rev.data;
+
+            if (!ProtocolHttp.rev_ViewBag.item_list) ProtocolHttp.rev_ViewBag.item_list = [];
+            if (!ProtocolHttp.rev_ViewBag.discount_list) ProtocolHttp.rev_ViewBag.discount_list = [];
+
+            App.PanelManager.open(PanelConst.BackpackPanel);
+        }
+    }
+
+    //查询邮件列表
+    private requestMail() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_MailList;
+        httpsend.send(request, this.revMailList, this);
+    }
+
+    private revMailList(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_MailList.mail_list = rev.data.mail_list;
+            App.PanelManager.open(PanelConst.EmailPanel);
         }
     }
 

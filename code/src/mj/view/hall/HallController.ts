@@ -139,6 +139,4 @@ class HallController extends BaseController {
     private revJoinRoom() {
 
     }
-
-
 }

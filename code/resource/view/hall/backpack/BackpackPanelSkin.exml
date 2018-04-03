@@ -7,9 +7,9 @@
 		<e:Image source="bag_png" x="569" y="39"/>
 		<e:Image source="other2_png" x="44" y="100"/>
 		<e:Image source="other3_png" x="773.37" y="105.31"/>
-		<e:Image source="other4_png" x="778.4" y="265.59"/>
-		<e:Image source="item_null_png" x="807.33" y="122.27"/>
-		<e:Button id="userBtn" label="" x="876.5" y="446.5">
+		<e:Image source="other4_png" x="780" y="265.59"/>
+		<e:Image id="iconImg" source="item_null_png" x="807.33" y="122.27"/>
+		<e:Button id="userBtn" label="" x="876.5" y="446.5" enabled="false">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="use1_png" source.down="use2_png" source.disabled="use3_png"/>
@@ -17,7 +17,29 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
-		<e:Label text="拥有：" x="958.03" y="199.33" textColor="0x587787" fontFamily="Microsoft YaHei" size="24"/>
+		<e:Label id="haveLab" text="拥有：" x="958.03" y="199.33" textColor="0x587787" fontFamily="Microsoft YaHei" size="24"/>
+		<e:Label id="nameLab" text="" x="958.03" y="152.83" textColor="0xfdf0b9" fontFamily="Microsoft YaHei" size="30" stroke="1" strokeColor="0xb94a26" width="205" height="30"/>
+		<e:Label id="descLab" text="" x="804.5" y="284" textColor="0x587787" fontFamily="Microsoft YaHei" size="24" anchorOffsetX="0" width="342" anchorOffsetY="0" height="119"/>
+		<e:Label id="numLab" text="0" x="1030.03" y="200.66" textColor="0x587787" fontFamily="Microsoft YaHei" size="24"/>
+		<e:Scroller width="721.33" height="478.67" x="45" y="109" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Group>
+				<e:List id="itemLst" itemRendererSkinName="BackpackItemSkin" horizontalCenter="0">
+					<e:ArrayCollection>
+						<e:Array>
+							<e:Object icon="item_1_png" name="礼包"/>
+							<e:Object icon="null" name="null"/>
+							<e:Object icon="null" name="null"/>
+							<e:Object icon="null" name="null"/>
+							<e:Object icon="null" name="null"/>
+							<e:Object icon="null" name="null"/>
+						</e:Array>
+					</e:ArrayCollection>
+					<e:layout>
+						<e:TileLayout requestedColumnCount="4" horizontalGap="20" verticalGap="20"/>
+					</e:layout>
+				</e:List>
+			</e:Group>
+		</e:Scroller>
 
 	</e:Group>
 </e:Skin>

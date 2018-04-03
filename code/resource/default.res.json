@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "text_denglu_png,text_zhuce_png,weinx_png,weinx1_png,zhanghao_png,zhanghao1_png,img_text_bg_png,login_tankuang__png,logo_d_png,login_bg_png",
+			"keys": "text_denglu_png,text_zhuce_png,weinx_png,weinx1_png,zhanghao_png,zhanghao1_png,img_text_bg_png,login_tankuang__png,logo_d_png,login_bg_png,bisai_img_132_png",
 			"name": "preload"
 		},
 		{
@@ -4873,6 +4873,11 @@
 			"url": "assets/other/signin_1.png",
 			"type": "image",
 			"name": "signin_1_png"
+		},
+		{
+			"name": "bisai_img_132_png",
+			"type": "image",
+			"url": "assets/common/bisai_img_13.png"
 		}
 	]
 }
