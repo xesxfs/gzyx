@@ -73,8 +73,8 @@ class RulePanel extends BasePanel {
      */
     private setContenText() {
         //"fontFamily":"楷体"
-        var tetleTextStyleJson = { "size": 27.2, "textColor": 0xeacd11, "fontFamily": "微软雅黑" }
-        var contentTextStyleJson = { "size": 26.2, "textColor": 0xffffff, "fontFamily": "微软雅黑" }
+        var tetleTextStyleJson = { "size": 26, "textColor": 0xeacd11, "fontFamily": "微软雅黑" }
+        var contentTextStyleJson = { "size": 22, "textColor": 0xffffff, "fontFamily": "微软雅黑" }
 
         //常见问题
         this._commonDesc = <Array<egret.ITextElement>>[
@@ -85,19 +85,19 @@ class RulePanel extends BasePanel {
             , { text: "\nA:", style: contentTextStyleJson }
             , { text: "\n1、通过商城购买", style: contentTextStyleJson }
             , { text: "\n2、每日签到奖励", style: contentTextStyleJson }
-            , { text: "\n1、参加金币场比赛，赢得金币", style: contentTextStyleJson }
+            , { text: "\n3、参加金币场比赛，赢得金币", style: contentTextStyleJson }
             , { text: "\nQ: 我的游戏币为什么不见了", style: tetleTextStyleJson }
             , { text: "\nA:请及时通过官方Q群、客服等途径提交丢失游戏币的数量和时间，我们会尽快核查处理", style: contentTextStyleJson }
             , { text: "\nQ: 为什么我的牌局结算不正确？", style: tetleTextStyleJson }
-            , { text: "\nA:请及时通过官方Q群、客服等途径提交具体的牌局时间、输赢金币情形和手牌信息，若有截图请一并提交，我们会尽快核查处理", style: contentTextStyleJson }
+            , { text: "\nA:请及时通过官方Q群、客服等途径提交具体的牌局时间、输赢金币情形和手牌信息，若有截图请一并\n提交，我们会尽快核查处理", style: contentTextStyleJson }
         ];
 
         //基本玩法
         this._basicDesc = <Array<egret.ITextElement>>[
             { text: "一、玩法简介", style: tetleTextStyleJson }
-            , { text: "\n贵阳麻将起源于贵州地区，牌面只有万、条、筒三门，游戏中可碰杠，不可吃。除一般牌型外特色玩法如冲锋鸡、责任鸡、闷豆、明豆和转弯豆等，富有别致趣味性。目前游戏中有金币场比赛场和私人局玩法。", style: contentTextStyleJson }
+            , { text: "\n贵阳麻将起源于贵州地区，牌面只有万、条、筒三门，游戏中可碰杠，不可吃。除一般牌型外特色玩法\n如冲锋鸡、责任鸡、闷豆、明豆和转弯豆等，富有别致趣味性。\n目前游戏中有金币场比赛场和私人局玩法。", style: contentTextStyleJson }
             , { text: "\n1、金币场：玩家可以在金币场选择不同的场馆，和陌生玩家一较牌技高下，输赢结算为金币；", style: contentTextStyleJson }
-            , { text: "\n2、比赛场：玩家可以在比赛场选择不同的比赛报名参加，赢得比赛即可获得相应的奖励，具体玩法和奖励详见比赛场内介绍；", style: contentTextStyleJson }
+            , { text: "\n2、比赛场：玩家可以在比赛场选择不同的比赛报名参加，赢得比赛即可获得相应的奖励，具体玩法和\n奖励详见比赛场内介绍；", style: contentTextStyleJson }
             , { text: "\n3、私人局：可以创建自己喜欢的规则类型、牌局人数、打牌局数等，尽情享受与朋友的私密玩牌时间；", style: contentTextStyleJson }
         ];
 

@@ -7,17 +7,17 @@
 		<e:Image source="common_blue_bg_png" x="43.36" y="119.79" anchorOffsetX="0" width="467" anchorOffsetY="0" height="347" scale9Grid="26,40,48,25"/>
 		<e:Image source="common_blue_bg_png" x="533.67" y="267.43" anchorOffsetX="0" width="343" anchorOffsetY="0" height="206" scale9Grid="26,40,48,25"/>
 		<e:Image source="sgin_rqi_ht_png" x="54.85" y="171.33"/>
-		<e:Image source="signin_7_png" x="69.03" y="177.67"/>
-		<e:Image source="signin_1_png" x="135.03" y="177.67"/>
-		<e:Image source="signin_2_png" x="199.03" y="177.67"/>
-		<e:Image source="signin_3_png" x="265.03" y="177.67"/>
-		<e:Image source="signin_4_png" x="329.03" y="177.67"/>
-		<e:Image source="signin_5_png" x="394.03" y="177.67"/>
-		<e:Image source="signin_6_png" x="459.03" y="177.67"/>
-		<e:Label text="2018年03月" x="220.02" y="139.66" size="20" fontFamily="Microsoft YaHei" textColor="0x728f9b"/>
+		<e:Image id="week0Img" source="signin_7_png" x="69.03" y="177.67"/>
+		<e:Image id="week1Img" source="signin_1_png" x="135.03" y="177.67"/>
+		<e:Image id="week2Img" source="signin_2_png" x="199.03" y="177.67"/>
+		<e:Image id="week3Img" source="signin_3_png" x="265.03" y="177.67"/>
+		<e:Image id="week4Img" source="signin_4_png" x="329.03" y="177.67"/>
+		<e:Image id="week5Img" source="signin_5_png" x="394.03" y="177.67"/>
+		<e:Image id="week6Img" source="signin_6_png" x="459.03" y="177.67"/>
+		<e:Label id="yearMonthLab" text="2018年03月" x="220.02" y="139.66" size="20" fontFamily="Microsoft YaHei" textColor="0x728f9b"/>
 		<e:Image source="orange_bg_png" x="537.67" y="125.17"/>
 		<e:Label text="每日签到可领取1000金币，单月内累计签到指定天数，还可以获得宝箱奖励哦！点击宝箱即可查看奖励内容" x="543" y="136.33" width="320" size="18" fontFamily="Microsoft YaHei" textColor="0x728f9b" lineSpacing="25"/>
-		<e:Button label="签到" x="612" y="382.29">
+		<e:Button id="signBtn" label="签到" x="612" y="382.29" enabled="false">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_yellow_png"/>
@@ -26,17 +26,60 @@
 			</e:skinName>
 		</e:Button>
 		<e:Image source="userinfo_line_png" y="534" horizontalCenter="0" width="761"/>
-		<e:Image source="btn_box_gold_1_png" x="131.04" y="479"/>
-		<e:Image source="btn_box_gold_1_png" x="232.05" y="479"/>
-		<e:Image source="btn_box_gold_1_png" x="442.72" y="479"/>
-		<e:Image source="btn_box_gold_1_png" x="591.66" y="479"/>
-		<e:Image source="btn_box_gold_1_png" x="774.66" y="479"/>
-		<e:Label text="3天" x="156.04" y="566.5" textColor="0x728f9b" size="20"/>
-		<e:Label text="7天" x="272.5" y="566.5" textColor="0x728F9B" size="20"/>
-		<e:Label text="15天" x="469.03" y="566.5" textColor="0x728F9B" size="20"/>
-		<e:Label text="21天" x="633.03" y="567.5" textColor="0x728F9B" size="20"/>
-		<e:Label text="28天" x="807.66" y="567" textColor="0x728F9B" size="20"/>
-		<e:Image source="point_png" x="389.03" y="250.93"/>
+
+
+
+
+
+		<e:Label id="day0Lab" text="3天" x="156.04" y="566.5" textColor="0x728f9b" size="20"/>
+		<e:Label id="day1Lab" text="7天" x="272.5" y="566.5" textColor="0x728F9B" size="20"/>
+		<e:Label id="day2Lab" text="15天" x="469.03" y="566.5" textColor="0x728F9B" size="20"/>
+		<e:Label id="day3Lab" text="21天" x="633.03" y="567.5" textColor="0x728F9B" size="20"/>
+		<e:Label id="day4Lab" text="28天" x="807.66" y="567" textColor="0x728F9B" size="20"/>
+
+		<e:Group id="monthGrp" width="420" height="222" x="65" y="217" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Image id="nowImg" source="point_png" x="336.03" y="33.93000000000001" scaleX="1" scaleY="1"/>
+		</e:Group>
+		<e:ToggleButton id="box0Btn" label="" x="132.03" y="478" selected="false" enabled="true">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_box_gold_1_png" source.down="btn_box_gold_2_png" source.disabled="btn_box_gold_3_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:ToggleButton>
+		<e:ToggleButton id="box1Btn" label="" x="231.03" y="478" selected="false" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_box_gold_1_png" source.down="btn_box_gold_2_png" source.disabled="btn_box_gold_3_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:ToggleButton>
+		<e:ToggleButton id="box2Btn" label="" x="443" y="478" selected="false" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_box_gold_1_png" source.down="btn_box_gold_2_png" source.disabled="btn_box_gold_3_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:ToggleButton>
+		<e:ToggleButton id="box3Btn" label="" x="591.03" y="478" selected="false" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_box_gold_1_png" source.down="btn_box_gold_2_png" source.disabled="btn_box_gold_3_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:ToggleButton>
+		<e:ToggleButton id="box4Btn" label="" x="775.16" y="478" selected="false" enabled="true">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_box_gold_1_png" source.down="btn_box_gold_2_png" source.disabled="btn_box_gold_3_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:ToggleButton>
 
 	</e:Group>
 </e:Skin>

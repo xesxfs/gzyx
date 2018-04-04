@@ -105,7 +105,7 @@ class HallScene extends BaseScene {
             case this.viewBtn:
                 break;
             case this.signinBtn:
-                App.PanelManager.open(PanelConst.SignPanel)
+                this.sendMonthlyCalendar();
                 break;
             case this.setBtn:
                 App.PanelManager.open(PanelConst.SetPanel)
@@ -229,6 +229,20 @@ class HallScene extends BaseScene {
         if (rev.data) {
             ProtocolHttp.rev_MailList.mail_list = rev.data.mail_list;
             App.PanelManager.open(PanelConst.EmailPanel);
+        }
+    }
+
+    /** 获取签到日历信息 */
+    private sendMonthlyCalendar() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_MonthlyCalendar;
+        httpsend.send(request, this.revMonthlyCalendar, this);
+    }
+
+    private revMonthlyCalendar(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_MonthlyCalendar = rev.data;
+            App.PanelManager.open(PanelConst.SignPanel);
         }
     }
 

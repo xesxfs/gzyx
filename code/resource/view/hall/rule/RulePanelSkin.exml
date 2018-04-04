@@ -39,7 +39,7 @@
 		</e:Button>
 		<e:Scroller width="1004" height="504" x="138" y="127" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Group>
-				<e:Label id="contentLab" text="Label"/>
+				<e:Label id="contentLab" text="Label" lineSpacing="20" wordWrap="true"/>
 			</e:Group>
 		</e:Scroller>
 	</e:Group>

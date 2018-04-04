@@ -5,7 +5,7 @@
 			"name": "preload"
 		},
 		{
-			"keys": "bisai_btn_png,bottom_png,btn_addCoin_png,btn_help_png,btn_mall_png,btn_msg_png,btn_rank_png,btn_setting_png,btn_tiandao_png,circle_btn_png,ico_gold_png,ico_gold_x_png,icon_fd_png,icon_wx_png,img_Bg_png,img_fuhao_png,img_headPortrait_png,img_infoFrame_png,img_packg_png,img_paiwei_png,img_rank_w_png,img_red_png,img_touXiangFrame_png,join_btn_png,lobby_fenxiang_png,lobby_line_png,lobby_logo_png,lobby_made_png,lobby_niao_png,lobby_Ranking_bg_png,quick_btn_png,rank_num_png,achiev_dis_png,achiev_png,active_png,battery_A_png,battery_B_png,car_b_png,car_png,coin_match_png,create_room_font_png,create_png,enter_png,foot_png,head_bg_png,intro_png,join_room_font_png,mail_png,main_bg_jpg,mm_png,more_png,radio_dis_png,radio_png,rank_foot_png,rank_match_png,watch_b_png,watch_png,wifi_1_png,wifi_2_png,wifi_3_png,wifi_A_png,wifi_B_png,fcm_d_png,img_default_png,j_0_png,j_1_png,j_2_png,j_3_png,j_4_png,j_5_png,j_6_png,j_8_png,j_9_png,j_7_png",
+			"keys": "bisai_btn_png,bottom_png,btn_addCoin_png,btn_help_png,btn_mall_png,btn_msg_png,btn_rank_png,btn_setting_png,btn_tiandao_png,circle_btn_png,ico_gold_png,ico_gold_x_png,icon_fd_png,icon_wx_png,img_Bg_png,img_fuhao_png,img_headPortrait_png,img_infoFrame_png,img_packg_png,img_paiwei_png,img_rank_w_png,img_red_png,img_touXiangFrame_png,join_btn_png,lobby_fenxiang_png,lobby_line_png,lobby_logo_png,lobby_made_png,lobby_niao_png,lobby_Ranking_bg_png,quick_btn_png,rank_num_png,achiev_dis_png,achiev_png,active_png,battery_A_png,battery_B_png,car_b_png,car_png,coin_match_png,create_room_font_png,create_png,enter_png,foot_png,head_bg_png,intro_png,join_room_font_png,mail_png,main_bg_jpg,mm_png,more_png,radio_dis_png,radio_png,rank_foot_png,rank_match_png,watch_b_png,watch_png,wifi_1_png,wifi_2_png,wifi_3_png,wifi_A_png,wifi_B_png,fcm_d_png,img_default_png,j_0_png,j_1_png,j_2_png,j_3_png,j_4_png,j_5_png,j_6_png,j_8_png,j_9_png,j_7_png,point_png,sgin_img_tab_png",
 			"name": "hall"
 		},
 		{
@@ -4875,9 +4875,9 @@
 			"name": "signin_1_png"
 		},
 		{
-			"name": "bisai_img_132_png",
+			"url": "assets/common/bisai_img_13.png",
 			"type": "image",
-			"url": "assets/common/bisai_img_13.png"
+			"name": "bisai_img_132_png"
 		}
 	]
 }
