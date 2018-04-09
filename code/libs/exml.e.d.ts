@@ -24,6 +24,8 @@ declare class BottomMenuCSkin extends eui.Skin{
 }
 declare class BottomMenuDSkin extends eui.Skin{
 }
+declare class ButtonCloseSkin extends eui.Skin{
+}
 declare class MessageBoxASkin extends eui.Skin{
 }
 declare class MessageBoxBSkin extends eui.Skin{

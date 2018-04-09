@@ -1,37 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="MessageBoxASkin" width="750" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
-	<e:Rect width="750" height="1334" x="0" y="0" alpha="0.3"/>
-	<e:Group height="1334" width="750">
-		<e:Image verticalCenter="1" source="hall_big_box_png" scale9Grid="209,49,297,87" height="600" x="20"/>
-		<e:Image y="468" anchorOffsetX="0" width="640" anchorOffsetY="0" height="364" horizontalCenter="0" source="hall_within_box_png" scale9Grid="49,39,66,28"/>
-		<e:Image y="385" horizontalCenter="0" source="hall_door_png"/>
-		<e:Image y="392" horizontalCenter="0" source="tishi_png"/>
-		<e:Button id="closeBtn" label="" x="659" y="349" visible="false">
-			<e:skinName>
+<e:Skin class="MessageBoxASkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:how="how.*">
+	<e:Rect width="1280" height="720" x="0" y="0" alpha="0.3"/>
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image verticalCenter="0" horizontalCenter="0" scale9Grid="209,49,297,87" source="roome_Setting_tankuang_png"/>
+		<e:Image y="22.68" horizontalCenter="0" source="title_bg_png"/>
+		<e:Button id="closeBtn" label="" x="506" y="22.68" skinName="ButtonCloseSkin"/>
+		<e:Label id="msgLabel" text="解散房间不扣房卡，是否确定解散？" y="99.67" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="1" verticalAlign="middle" fontFamily="Microsoft YaHei" size="30" textAlign="center" lineSpacing="20" textColor="0x7E5A3D" height="167.34"/>
+		<e:Label text="提示" y="41.35" fontFamily="Microsoft YaHei" textColor="0x545454" horizontalCenter="0"/>
+		<how:Button id="okBtn" xmlns:how="how.*" label="确定" y="267.01" horizontalCenter="121">
+		<how:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="btn_yellow_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</how:skinName>
+		</how:Button>
+		<how:Button id="cancelBtn" label="取消" y="267.01" horizontalCenter="-121">
+			<how:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%"  horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+				<e:Image width="100%" height="100%" source="btn_blue_small_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="okBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="845" x="140">
-		<e:skinName>
-			<e:Skin states="up,down,disabled" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="word_qd_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-		</e:skinName>
-		</e:Button>
-		<e:Button id="cancelBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="845" x="430">
-		<e:skinName>
-			<e:Skin states="up,down,disabled" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="word_qx_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-		</e:skinName>
-		</e:Button>
-		<e:Label id="msgLabel" text="解散房间不扣房卡，是否确定解散？" y="478" anchorOffsetX="0" width="620" anchorOffsetY="0" height="339" horizontalCenter="0" verticalAlign="middle" fontFamily="Microsoft YaHei" size="30" textAlign="center" lineSpacing="20" textColor="0x7e5a3c"/>
+			</how:skinName>
+		</how:Button>
 	</e:Group>
+
+
 </e:Skin>

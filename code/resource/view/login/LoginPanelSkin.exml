@@ -69,9 +69,9 @@
 		<e:Image source="img_text_bg_png" x="184.85" y="223.9" scale9Grid="38,15,234,24" width="360"/>
 		<e:EditableText id="rgPhoneEdit" width="340" height="36" text="" x="204" y="138.44" size="30" textColor="0x000000" anchorOffsetX="0" prompt="请输入11位手机号码" promptColor="0xC2B5A0" maxChars="11" restrict="&quot;0-9&quot;" inputType="tel"/>
 		<e:EditableText id="rgPassEdit" width="340" height="36" text="" x="204" y="238.43" size="30" textColor="0x000000" anchorOffsetX="0" prompt="输入密码" displayAsPassword="true" promptColor="0xC2B5A0" restrict="&quot;a-zA-Z0-9&quot;" maxChars="16" inputType="password"/>
-		<e:Label text="昵称：" x="105" y="325.71" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" scaleX="1" scaleY="1" textColor="0x000000"/>
+		<e:Label text="昵称：" x="95" y="325.71" anchorOffsetX="0" anchorOffsetY="0" fontFamily="Microsoft YaHei" size="30" textAlign="left" scaleX="1" scaleY="1" textColor="0x000000"/>
 		<e:Image source="img_text_bg_png" x="184.85" y="310.25" scale9Grid="38,15,234,24" width="360"/>
-		<e:EditableText id="nickNameEdit" width="340" height="36" text="" x="198.85" y="324.19" size="30" textColor="0x000000" anchorOffsetX="0" prompt="输入昵称" displayAsPassword="true" promptColor="0xC2B5A0" maxChars="16" inputType="password"/>
+		<e:EditableText id="nickNameEdit" width="340" height="36" text="" x="198.85" y="324.19" size="30" textColor="0x000000" anchorOffsetX="0" prompt="输入昵称" displayAsPassword="false" promptColor="0xC2B5A0" maxChars="16" inputType="password"/>
 		<e:Button id="okBtn" label="确定" anchorOffsetX="0" anchorOffsetY="0" y="406.33" horizontalCenter="0.5" x="268" scaleX="1" scaleY="1">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">

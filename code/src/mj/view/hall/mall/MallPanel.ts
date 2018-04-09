@@ -7,6 +7,8 @@
 class MallPanel extends BasePanel {
 	public mallTab: eui.TabBar;
 	public mallLst: eui.List;
+	public mallType: MallType;
+	public closeBtn: eui.Button;
 
 	public constructor() {
 		super();
@@ -34,7 +36,7 @@ class MallPanel extends BasePanel {
 		}
 	}
 
-	private update() {
+	private updateDiamond() {
 		let diamonds = ProtocolHttp.rev_DiamondsMall.diamonds_mall;
 		//钻石商品列表
 		for (var i = 0; i < diamonds.length; i++) {
@@ -43,7 +45,10 @@ class MallPanel extends BasePanel {
 			diamonds[i]["icon"] = "diamond" + (i + 1) + "_png";
 		}
 
-		this.mallLst.dataProvider = new eui.ArrayCollection(diamonds);
+		if (this.mallType == MallType.Diamond) {
+			this.mallLst.dataProvider = new eui.ArrayCollection(diamonds);
+			this.mallTab.selectedIndex = MallType.Diamond;
+		}
 	}
 
 	// 请求金币商城列表
@@ -64,16 +69,33 @@ class MallPanel extends BasePanel {
 				golds[i]["icon"] = "Gold" + (i + 1) + "_png";
 				golds[i]["isG"] = true;
 			}
+
+			if (this.mallType == MallType.Gold) {
+				this.mallLst.dataProvider = new eui.ArrayCollection(ProtocolHttp.rev_GoldMall.gold_mall);
+				this.mallTab.selectedIndex = MallType.Gold;
+			}
 		}
 	}
 
 	protected onEnable() {
 		this.setCenter();
-		this.update();
+
+		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
+	}
+
+	public update(type) {
+		this.mallType = type;
+
+		this.updateDiamond();
 		this.requestGoldMall();
 	}
 
 	protected onRemove() {
-
+		this.closeBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
 	}
+}
+
+enum MallType {
+	Diamond,
+	Gold,
 }

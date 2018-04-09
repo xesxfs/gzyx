@@ -22,6 +22,7 @@
     "resource/view/common/BottomMenuBSkin.exml",
     "resource/view/common/BottomMenuCSkin.exml",
     "resource/view/common/BottomMenuDSkin.exml",
+    "resource/view/common/ButtonCloseSkin.exml",
     "resource/view/common/MessageBoxASkin.exml",
     "resource/view/common/MessageBoxBSkin.exml",
     "resource/view/common/MessageBoxCSkin.exml",

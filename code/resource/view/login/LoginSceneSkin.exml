@@ -3,7 +3,7 @@
 	<e:Image height="100%" y="0" left="0" right="0" source="login_bg_png"/>
 	<e:Image source="logo_d_png" horizontalCenter="0" top="0"/>
 
-	<e:Button id="wxBtn" label="" y="573" horizontalCenter="-262.5">
+	<e:Button id="wxBtn" label="" y="554" x="331">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="weinx_png" source.down="weinx1_png"/>
@@ -11,7 +11,7 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Button id="accountBtn" label="" y="567.85" horizontalCenter="171.5">
+	<e:Button id="accountBtn" label="" y="554" x="765">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="zhanghao_png" source.down="zhanghao1_png"/>

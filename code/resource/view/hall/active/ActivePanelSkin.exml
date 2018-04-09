@@ -3,6 +3,7 @@
         height="655">
 	<e:Group top="0" bottom="0">
 		<e:Image source="tankuang_big_png" scale9Grid="115,77,690,466" width="1280" top="-2" bottom="2" x="1.67" />
+		<e:Button id="closeBtn" label="" x="1188.66" y="24.01" skinName="ButtonCloseSkin"/>
 		<e:TabBar id="activeTab" x="128" y="28" itemRendererSkinName="tabBarActive">
 			<e:ArrayCollection>
 				<e:Array>

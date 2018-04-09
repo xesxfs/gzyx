@@ -12,12 +12,10 @@ class ActivePanel extends BasePanel {
 	public lotteryBtn: eui.Button;
 	public heroLab: eui.Label;
 	public heroTaskLst: eui.List;
+	public closeBtn: eui.Button;
 
 	protected childrenCreated() {
-		this.activeVsk.selectedIndex = 0;
-		this.activeTab.addEventListener(egret.Event.CHANGE, this.onTabChange, this);
 
-		this.requestYingXiong();
 	}
 
 	public update() {
@@ -73,15 +71,32 @@ class ActivePanel extends BasePanel {
 		}
 	}
 
+	private onTouch() {
+		if (parseInt(this.lotteryLab.text) == 0) {
+			let box = App.MsgBoxManager.getBoxB();
+			box.showMsg("物品不足")
+			return;
+		}
+	}
+
 	/**添加到场景中*/
 	protected onEnable() {
 		this.setCenter();
 		this.update();
+
+		this.activeVsk.selectedIndex = 0;
+		this.activeTab.addEventListener(egret.Event.CHANGE, this.onTabChange, this);
+		this.lotteryBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
+
+		this.requestYingXiong();
 	}
 
 	/**从场景中移除*/
 	protected onRemove() {
-
+		this.activeTab.removeEventListener(egret.Event.CHANGE, this.onTabChange, this);
+		this.lotteryBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
 	}
 }
 

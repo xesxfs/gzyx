@@ -55,7 +55,7 @@ class Main extends eui.UILayer {
 
     //主题文件加载完成,开始预加载
     private onThemeLoadComplete(): void {
-        App.ResUtils.loadGroup([AssetConst.LoadPanel,AssetConst.Login], this, this.onPreloadComplete, this.onProgress);
+        App.ResUtils.loadGroup([AssetConst.Preload,AssetConst.Login], this, this.onPreloadComplete, this.onProgress);
     }
     
     //preload资源组加载完成

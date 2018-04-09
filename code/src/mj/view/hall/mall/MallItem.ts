@@ -34,18 +34,12 @@ class MallItem extends eui.ItemRenderer {
 
     private onTouch(e: egret.TouchEvent) {
         if (this.data["isG"]) {
-            //钻石购买金币
-            var httpsender = new HttpSender();
-            var request = ProtocolHttp.send_BuyGold;
-            request.param.buy_id = this.data["id"];
-            httpsender.send(request, this.revBuyGold, this)
+            let box = App.MsgBoxManager.getBoxA();
+            box.showMsg("确实使用" + this.data["price"] + "钻石购买" + this.data["num"] + "？", this.onBuyGold, this)
         }
     }
 
-    private revBuyGold(rev:any) {
-        if (rev.data) {
-            App.EventManager.sendEvent(EventConst.UpdateGold, rev.data.cur_gold);
-            App.EventManager.sendEvent(EventConst.UpdateDiamond, rev.data.cur_diamonds);
-        }
+    private onBuyGold() {
+        (App.getController(HallController.NAME) as HallController).requstBuyGold(this.data["id"])
     }
 }

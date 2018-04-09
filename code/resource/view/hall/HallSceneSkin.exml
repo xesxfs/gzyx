@@ -1,85 +1,85 @@
 <?xml version='1.0' encoding='utf-8'?>
 
-<e:Skin class="HallSceneSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"  >
+<e:Skin class="HallSceneSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:how="how.*"  >
 
 
 	<e:Group height="100%" width="100%">
 		<e:Image source="main_bg_jpg" width="100%" height="100%" locked="true"/>
 		<e:Image bottom="-10" horizontalCenter="-17" source="bottom_png" locked="true"/>
 		<e:Image source="mm_png" bottom="0" right="0"/>
-		<e:Button id="activeBtn" label="" x="195.26" width="110" height="110" y="614">
+		<how:Button id="activeBtn" label="" x="195.26" width="110" height="110" y="614">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="action_down_png" source.down="action_up_png" source.disabled="action_off_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="mallBtn" label="" x="344.44" y="614">
+		</how:Button>
+		<how:Button id="mallBtn" label="" x="344.44" y="614">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_mall_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="shareBtn" label="" x="490.96" y="614">
+		</how:Button>
+		<how:Button id="shareBtn" label="" x="490.96" y="614">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="lobby_fenxiang_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="bagBtn" label="" x="650" y="614">
+		</how:Button>
+		<how:Button id="bagBtn" label="" x="650" y="614">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="item_png" source.down="unitem_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="viewBtn" label="" x="805.72" y="624" enabled="false">
+		</how:Button>
+		<how:Button id="viewBtn" label="" x="805.72" y="624" enabled="false">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="radio_png" source.disabled="radio_dis_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="signinBtn" label="" x="945.45" y="614">
+		</how:Button>
+		<how:Button id="signinBtn" label="" x="945.45" y="614">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_tiandao_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="helpBtn" label="" x="901.8" y="0">
+		</how:Button>
+		<how:Button id="helpBtn" label="" x="901.8" y="0">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_help_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="mailBtn" label="" x="986" y="0">
+		</how:Button>
+		<how:Button id="mailBtn" label="" x="986" y="0">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_msg_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="setBtn" label="" x="1070.29" y="0">
+		</how:Button>
+		<how:Button id="setBtn" label="" x="1070.29" y="0">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_setting_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="rankGameBtn" label="" y="108" x="151">
+		</how:Button>
+		<how:Button id="rankGameBtn" label="" y="108" x="151">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="rank_match_png"/>
@@ -87,8 +87,8 @@
 	<e:Image source="car_png" horizontalCenter="0" top="8"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="goldGameBtn" label="" y="110" x="666">
+		</how:Button>
+		<how:Button id="goldGameBtn" label="" y="110" x="666">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="coin_match_png"/>
@@ -96,8 +96,8 @@
 				<e:Image source="watch_png" horizontalCenter="0"/>
 			</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="createBtn" label="" y="107.73" right="4">
+		</how:Button>
+		<how:Button id="createBtn" label="" y="107.73" right="4">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="create_png"/>
@@ -105,8 +105,8 @@
 	<e:Image source="create_room_font_png" horizontalCenter="0.5" bottom="20"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button id="enterBtn" label="" y="394.73" right="4">
+		</how:Button>
+		<how:Button id="enterBtn" label="" y="394.73" right="4">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="enter_png"/>
@@ -114,36 +114,37 @@
 	<e:Image source="join_room_font_png" y="147" horizontalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
+		</how:Button>
 		<e:Group id="personGroup" top="4" left="13">
 			<e:Image source="img_infoFrame_png" verticalCenter="0" scale9Grid="99,30,22,4" x="40"/>
 			<e:Image verticalCenter="0" width="100" height="100" source="img_touXiangFrame_png"/>
 			<e:Label id="nameLab" text="sos" verticalCenter="-5" x="93.33" textColor="0xffffff" anchorOffsetX="0" width="182" fontFamily="Microsoft JhengHei" textAlign="center"/>
+			
 		</e:Group>
 		<e:Group x="360.13" top="13">
 			<e:Image source="img_infoFrame_png"/>
 			<e:Image verticalCenter="0" x="12" source="ico_jewel_png"/>
-			<e:Button id="addDiaBtn" label="" x="200">
+			<how:Button id="addDiaBtn" label="" x="200">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-			</e:Button>
+			</how:Button>
 			<e:Label id="coinLab" text="1111111" textColor="0xFCC83C" verticalCenter="0" x="63"/>
 		</e:Group>
 		<e:Group x="631.94" top="15">
 			<e:Image source="img_infoFrame_png" x="0"/>
 			<e:Image source="ico_gold_x_png" verticalCenter="0" x="12"/>
-			<e:Button id="addGoldBtn" label="" right="10">
+			<how:Button id="addGoldBtn" label="" right="10">
 				<e:skinName>
 					<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
 					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 					</e:Skin>
 				</e:skinName>
-			</e:Button>
+			</how:Button>
 			<e:Label id="goldLab" text="1111111" textColor="0xfcc83c" verticalCenter="0" x="60"/>
 		</e:Group>
 		<ns1:HallRankingPanel id="rankingPnl" x="13" y="116" skinName="HallRankingSkin"/>
