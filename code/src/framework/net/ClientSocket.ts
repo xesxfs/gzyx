@@ -101,6 +101,7 @@ class ClientSocket {
     //连接错误
     private onError(e: egret.IOErrorEvent): void {
         egret.log(this.name + " error");
+        Tips.error("服务器已关闭");
         // App.PanelManager.open(PanelConst.SocketClosePanel, null, null, false);
 
     }

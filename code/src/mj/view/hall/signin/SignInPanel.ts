@@ -25,6 +25,7 @@ class SignInPanel extends BasePanel {
 	public box2Btn: eui.ToggleButton;
 	public box3Btn: eui.ToggleButton;
 	public box4Btn: eui.ToggleButton;
+	public closeBtn: eui.Button;
 
 	public constructor() {
 		super();
@@ -33,13 +34,34 @@ class SignInPanel extends BasePanel {
 
 	protected childrenCreated() {
 		this.initMonthlyCalendar();
-		this.signBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 	}
 
-	private onTouch() {
-		var httpsend = new HttpSender();
-		var request = ProtocolHttp.send_SignIn;
-		httpsend.send(request, this.revSignIn, this);
+	/**添加到场景中*/
+	protected onEnable() {
+		this.setCenter();
+		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+	}
+
+	/**从场景中移除*/
+	protected onRemove() {
+		this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+	}
+
+	private onTouch(evt: egret.TouchEvent) {
+		switch (evt.target) {
+			case this.signBtn:
+				var httpsend = new HttpSender();
+				var request = ProtocolHttp.send_SignIn;
+				httpsend.send(request, this.revSignIn, this);
+				break;
+			case this.closeBtn:
+				this.hide();
+				break;
+
+			default:
+				break;
+		}
+
 	}
 
 	private revSignIn(rev: any) {
@@ -51,6 +73,10 @@ class SignInPanel extends BasePanel {
 			this.signBtn.label = "已签到";
 			ProtocolHttp.rev_SignIn.add_gold = rev.data.add_gold;
 			App.EventManager.sendEvent(EventConst.UpdateGold, App.DataCenter.UserInfo.selfUser.gold + ProtocolHttp.rev_SignIn.add_gold);
+
+			let tip = new ActiveTip();
+			tip.init(rev.data.add_gold);
+			App.PopUpManager.addPopUp(tip)
 		}
 	}
 
@@ -163,17 +189,6 @@ class SignInPanel extends BasePanel {
 		img.y = yn - 20;
 		this.monthGrp.addChild(img);
 	}
-
-	/**添加到场景中*/
-	protected onEnable() {
-		this.setCenter();
-	}
-
-	/**从场景中移除*/
-	protected onRemove() {
-
-	}
-
 
 	/**返回 */
 	private back() {

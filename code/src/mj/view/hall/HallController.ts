@@ -17,6 +17,7 @@ class HallController extends BaseController {
 
     private isLogin: boolean = false;
     private room_type: number;//房间类型
+    public static NOTICE_DELAY: number = 15000; //刷新广播的时间
 
     public constructor() {
         super();
@@ -26,8 +27,10 @@ class HallController extends BaseController {
     public onRegister() {
         this.addEvent(HallController.EVENT_SHOW_HALL, this.showHallScene, this);
         this.registerSocket();
-    }
 
+        //启动定时器刷新广播
+        egret.setInterval(this.sendQueryNotice, this, HallController.NOTICE_DELAY);
+    }
 
     //移除注册时调用
     public onRemove() {
@@ -210,6 +213,8 @@ class HallController extends BaseController {
         if (rev.data) {
             this.sendEvent(EventConst.UpdateGold, rev.data.cur_gold);
             this.sendEvent(EventConst.UpdateDiamond, rev.data.cur_diamonds);
+
+            App.MsgBoxManager.getBoxB().showMsg("购买成功");
         }
     }
 
@@ -225,8 +230,8 @@ class HallController extends BaseController {
         if (rev.data) {
             ProtocolHttp.rev_ViewBag = rev.data;
 
-            if (!ProtocolHttp.rev_ViewBag.item_list) ProtocolHttp.rev_ViewBag.item_list = [];
-            if (!ProtocolHttp.rev_ViewBag.discount_list) ProtocolHttp.rev_ViewBag.discount_list = [];
+            if (ProtocolHttp.rev_ViewBag.item_list == null) ProtocolHttp.rev_ViewBag.item_list = [];
+            if (ProtocolHttp.rev_ViewBag.discount_list == null) ProtocolHttp.rev_ViewBag.discount_list = [];
 
             App.PanelManager.open(PanelConst.BackpackPanel);
         }
@@ -257,6 +262,93 @@ class HallController extends BaseController {
         if (rev.data) {
             ProtocolHttp.rev_MonthlyCalendar = rev.data;
             App.PanelManager.open(PanelConst.SignPanel);
+        }
+    }
+
+    public sendGetLuckyDraw() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_GetLuckyDraw;
+        httpsend.send(request, this.revGetLuckyDraw, this);
+    }
+
+    private revGetLuckyDraw(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_GetLuckyDraw = rev.data;
+            let panel = App.PanelManager.getPanel(PanelConst.ActivePanel) as ActivePanel;
+            panel
+        }
+    }
+
+    /** 幸运大转盘抽奖 */
+    public requestHandleLuckyDraw() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_HandleLuckyDraw;
+        httpsend.send(request, this.revHandleLuckyDraw, this);
+    }
+
+    private revHandleLuckyDraw(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_HandleLuckyDraw = rev.data;
+            let panel = App.PanelManager.getPanel(PanelConst.ActivePanel) as ActivePanel;
+            panel.setGift();
+        }
+    }
+
+    /** 获取金币场的房间列表 */
+    public sendServerList() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ServerList;
+        httpsend.send(request, this.revServerList, this);
+    }
+
+    private revServerList(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_ServerList.server_list = rev.data.server_list;
+            App.PanelManager.open(PanelConst.GoldPanel);
+        }
+    }
+
+    /** 手动刷取浮动广播 */
+    private sendQueryNotice() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_QueryNotice;
+        request.param.period = HallController.NOTICE_DELAY;
+        httpsend.send(request, this.revQueryNotice, this);
+    }
+
+    private revQueryNotice(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_QueryNotice.message_arr = rev.data.message_arr;
+            this.sendEvent(EventConst.ShowNotice);
+        }
+    }
+
+    /** 背包使用物品 */
+    public sendUseItem(itemId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_UseItem;
+        request.param.item_id = itemId;
+        request.param.uid = App.DataCenter.UserInfo.selfUser.userID;
+        httpsend.send(request, this.revUseItem, this);
+    }
+
+    private revUseItem(rev: any) {
+        if (rev.data) {
+            App.EventManager.sendEvent(EventConst.UseItem, rev.data);
+        }
+    }
+
+    /** 加入房间，拿到服务器id获取服务器信息 */
+    public sendAddRoom(roomId: number) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_AddRoom;
+        request.param.room_pwd = roomId;
+        httpsend.send(request, this.revAddRoom, this);
+    }
+
+    private revAddRoom(rev:any) {
+        if (rev.data) {
+            
         }
     }
 }

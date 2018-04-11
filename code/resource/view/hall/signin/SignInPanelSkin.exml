@@ -80,6 +80,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:ToggleButton>
+		<e:Button id="closeBtn" label="" x="822.66" y="24.01" skinName="ButtonCloseSkin"/>
 
 	</e:Group>
 </e:Skin>

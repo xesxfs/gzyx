@@ -28,9 +28,19 @@ class HallScene extends BaseScene {
     public goldLab: eui.Label;
     public rankingPnl: HallRankingPanel;
 
+    public marquee: Marquee;
+
     public constructor() {
         super();
         this.skinName = "HallSceneSkin";
+    }
+
+    protected childrenCreated() {
+        this.marquee = new Marquee();
+        this.marquee.x = (App.StageUtils.stageWidth - this.marquee.width) / 2;
+        this.marquee.y = 80;
+        
+        this.addChild(this.marquee)
     }
 
     private updateSelf() {
@@ -50,6 +60,7 @@ class HallScene extends BaseScene {
         this.personGroup.removeEventListener("touchTap", this.onPersion, this);
         App.EventManager.removeEvent(EventConst.UpdateGold, this.onUpdateGold, this);
         App.EventManager.removeEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
+        App.EventManager.removeEvent(EventConst.ShowNotice, this.onShowNotice, this);
     }
 
     private addLister() {
@@ -57,6 +68,14 @@ class HallScene extends BaseScene {
         this.personGroup.addEventListener("touchTap", this.onPersion, this);
         App.EventManager.addEvent(EventConst.UpdateGold, this.onUpdateGold, this);
         App.EventManager.addEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
+        App.EventManager.addEvent(EventConst.ShowNotice, this.onShowNotice, this);
+    }
+
+    // 广告轮播
+    private onShowNotice() {
+        ProtocolHttp.rev_QueryNotice.message_arr.forEach((msg) => {
+            this.marquee.push(msg);
+        });
     }
 
     //刷新金币信息
@@ -111,7 +130,7 @@ class HallScene extends BaseScene {
                 this.ctrl.sendJoinRoom(data);
                 break;
             case this.goldGameBtn:
-                App.PanelManager.open(PanelConst.GoldPanel)
+                this.ctrl.sendServerList();
                 break;
             case this.createBtn:
                 App.PanelManager.open(PanelConst.CreateRoomPanel)

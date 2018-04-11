@@ -60,6 +60,7 @@
     "resource/view/hall/HallSceneSkin.exml",
     "resource/view/hall/active/ActiveItemSkin.exml",
     "resource/view/hall/active/ActivePanelSkin.exml",
+    "resource/view/hall/active/ActiveTipSkin.exml",
     "resource/view/hall/active/tabBarActive.exml",
     "resource/view/hall/backpack/BackpackItemSkin.exml",
     "resource/view/hall/backpack/BackpackPanelSkin.exml",

@@ -1,117 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="JoinRoomPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="JoinRoomPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
 	<e:Group id="numGroup" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="srf_img_tanKuang_png" x="-1"/>
-		<e:Button label="" x="97" y="164">
+		<how:Button label="" x="97" y="164" name="rNum_1">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_1_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="247" y="164">
+		</how:Button>
+		<how:Button label="" x="247" y="164" name="rNum_2">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_2_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="397" y="164">
+		</how:Button>
+		<how:Button label="" x="397" y="164" name="rNum_3">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_3_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="97" y="245">
+		</how:Button>
+		<how:Button label="" x="97" y="245" name="rNum_4">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_4_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="247" y="245">
+		</how:Button>
+		<how:Button label="" x="247" y="245" name="rNum_5">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_5_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="397" y="245">
+		</how:Button>
+		<how:Button label="" x="397" y="245" name="rNum_6">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_6_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="97" y="325">
+		</how:Button>
+		<how:Button label="" x="97" y="325" name="rNum_7">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_7_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="247" y="325">
+		</how:Button>
+		<how:Button label="" x="247" y="325" name="rNum_8">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_8_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="397" y="325">
+		</how:Button>
+		<how:Button label="" x="397" y="325" name="rNum_9">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_9_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="97" y="406">
+		</how:Button>
+		<how:Button id="resetBtn" label="" x="97" y="406">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_clean_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="247" y="406">
+		</how:Button>
+		<how:Button label="" x="247" y="406" name="rNum_0">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="j_0_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Button label="" x="397" y="406">
+		</how:Button>
+		<how:Button id="deleteBtn" label="" x="397" y="406">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
 				<e:Image width="100%" height="100%" source="btn_del_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
 			</e:skinName>
-		</e:Button>
-		<e:Label text="请输入房间邀请码" y="46" horizontalCenter="1" size="22" textColor="0x000000"/>
+		</how:Button>
+		<e:Label text="请输入房间邀请码" y="46" horizontalCenter="1" size="22" textColor="0xe2864d"/>
 		<e:Group id="roomIdGroup" width="435" y="82" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="1">
 			<e:Image source="img_timeKuang_png" x="0" y="0"/>
-			<e:Image source="img_timeKuang_png" x="76" y="0"/>
-			<e:Image source="img_timeKuang_png" x="152" y="0"/>
-			<e:Image source="img_timeKuang_png" x="227" y="0"/>
-			<e:Image source="img_timeKuang_png" x="303" y="0"/>
+			<e:Image source="img_timeKuang_png" x="75.8" y="0"/>
+			<e:Image source="img_timeKuang_png" x="151.60000000000002" y="0"/>
+			<e:Image source="img_timeKuang_png" x="227.40000000000003" y="0"/>
+			<e:Image source="img_timeKuang_png" x="303.20000000000005" y="0"/>
 			<e:Image source="img_timeKuang_png" y="0" right="0"/>
-			<e:Label text="0" x="9" y="9" anchorOffsetY="0" height="48" anchorOffsetX="0" width="39" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
-			<e:Label text="0" x="86" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
-			<e:Label text="0" x="162" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
-			<e:Label text="0" x="238" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
-			<e:Label text="2" x="314" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
-			<e:Label text="0" x="389" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x000000"/>
+			<e:Label text="" x="9" y="9" anchorOffsetY="0" height="48" anchorOffsetX="0" width="39" textAlign="center" verticalAlign="middle" textColor="0x486a7d"/>
+			<e:Label text="" x="85" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x486a7d"/>
+			<e:Label text="" x="161" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x486a7d"/>
+			<e:Label text="" x="237" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x486a7d"/>
+			<e:Label text="" x="313" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x486a7d"/>
+			<e:Label text="" x="388.5" y="9" width="39" height="48" anchorOffsetY="0" anchorOffsetX="0" textAlign="center" verticalAlign="middle" textColor="0x486a7d"/>
 		</e:Group>
 	</e:Group>
 </e:Skin>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ActiveTipSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Rect width="1280" height="720" x="0" y="0" alpha="0.3"/>
+	<e:Group horizontalCenter="0" verticalCenter="0" width="110" height="119">
+		<e:Image id="circleImg" source="guang_png" x="55" anchorOffsetX="55" anchorOffsetY="50" y="50"/>
+		<e:Image source="gold_png" x="14.6" y="19.2" scaleX="0.8" scaleY="0.8"/>
+		<e:Label id="goldLab" text="0" y="100.33" horizontalCenter="0.5" textColor="0xffffff"/>
+	</e:Group>
+</e:Skin>

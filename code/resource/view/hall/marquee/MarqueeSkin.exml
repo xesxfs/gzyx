@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="MarqueeSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="MarqueeSkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="572">
 	<e:Group>
-		<e:Image width="582" source="hall_marque_bg_png" scale9Grid="26,18,61,6"/>
+
 		<e:Rect id="rockMark" height="100%" width="535" x="37" verticalCenter="0"/>
 		<e:Label id="rockLab" text="【系统】：恭喜玩家你妹妹妹妹妹妹妹妹妹妹" x="41" size="26" textColor="0xFEEDB9" fontFamily="楷体" verticalCenter="0.5" height="26"/>
 	</e:Group>

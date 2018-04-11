@@ -11,6 +11,7 @@ class BackpackPanel extends BasePanel {
 	public numLab: eui.Label;
 	public itemLst: eui.List;
 	public haveLab: eui.Label;
+	public closeBtn: eui.Button;
 
 	public constructor() {
 		super();
@@ -18,45 +19,83 @@ class BackpackPanel extends BasePanel {
 	}
 
 	protected childrenCreated() {
+
+	}
+
+	protected onEnable() {
+		this.setCenter();
+		this.update();
+
 		App.EventManager.addEvent(EventConst.ShowItemDesc, this.onShowItem, this);
-		this.userBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+		App.EventManager.addEvent(EventConst.UseItem, this.revUseItem, this);
+		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 	}
 
-	private onTouch() {
-		//使用物品
-		if (this._focusItem) {
-			var httpsend = new HttpSender();
-			var request = ProtocolHttp.send_UseItem;
-			request.param.item_id = this._focusItem["id"];
-			request.param.uid = App.DataCenter.UserInfo.selfUser.userID;
-			httpsend.send(request, this.revUseItem, this);
-		}
-		this.userBtn.enabled = false;
+	protected onRemove() {
+		App.EventManager.removeEvent(EventConst.ShowItemDesc, this.onShowItem, this);
+		App.EventManager.removeEvent(EventConst.UseItem, this.revUseItem, this);
+		this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+		this.clearItemInfo();
 	}
 
-	private revUseItem(rev: any) {
-		if (rev.data) {
-			if (rev.data.type == ItemType.GOLD) {
-				//更新金币信息
-				App.EventManager.sendEvent(EventConst.UpdateGold, rev.data.reward);
-			} else if (rev.data.type == ItemType.DIAMOND) {
-				//更新钻石信息
-				App.EventManager.sendEvent(EventConst.UpdateDiamond, rev.data.reward)
-			}
-
-			//更新物品的数量
-			let num = this._focusItem["num"];
-			if (num > 0) {
-				console.log(num);
-				num--;
-				this._focusItem["num"] = num;
-				//清空显示信息
-				if (num == 0) {
-					this.clearItemInfo();
-				} else {
-					this.numLab.text = num + "";
-					this.userBtn.enabled = true;
+	private onTouch(evt: egret.TouchEvent) {
+		switch (evt.target) {
+			case this.userBtn:
+				//使用物品
+				if (this._focusItem) {
+					(App.getController(HallController.NAME) as HallController).sendUseItem(this._focusItem["id"]);
 				}
+				this.userBtn.enabled = false;
+				break;
+			case this.closeBtn:
+				this.hide();
+				break;
+
+			default:
+				break;
+		}
+
+	}
+
+	private revUseItem(data: any) {
+		let msg: string = "恭喜您获得";
+
+		if (data.type == ItemType.GOLD) {
+			msg += data.reward + "金币 ";
+			//更新金币信息
+			App.EventManager.sendEvent(EventConst.UpdateGold, data.reward);
+		} else if (data.type == ItemType.DIAMOND) {
+			msg += data.reward + "钻石 ";
+			//更新钻石信息
+			App.EventManager.sendEvent(EventConst.UpdateDiamond, data.reward)
+		}
+
+		// 提示获得物品信息
+		if (data.type == ItemType.LOTTERY) {
+			let arr: Array<Object> = data.reward_info;
+			let reward;
+			arr.forEach((item) => {
+				//获取物品名称
+				reward = App.DataCenter.BagInfo.itemList[item["id"]];
+				if (reward) {
+					msg += reward["name"] + "x1";
+				}
+			});
+		}
+
+		App.MsgBoxManager.getBoxB().showMsg(msg);
+
+		//更新物品的数量
+		let num = this._focusItem["num"];
+		if (num > 0) {
+			num--;
+			this._focusItem["num"] = num;
+			//清空显示信息
+			if (num == 0) {
+				this.clearItemInfo();
+			} else {
+				this.numLab.text = num + "";
+				this.userBtn.enabled = true;
 			}
 		}
 	}
@@ -88,15 +127,6 @@ class BackpackPanel extends BasePanel {
 		this.userBtn.enabled = false;
 	}
 
-	protected onEnable() {
-		this.setCenter();
-		this.update();
-	}
-
-	protected onRemove() {
-
-	}
-
 	private update() {
 		var nArr = []
 
@@ -105,7 +135,7 @@ class BackpackPanel extends BasePanel {
 		var arr2 = ProtocolHttp.rev_ViewBag.item_list.concat(ProtocolHttp.rev_ViewBag.discount_list);
 		arr2.forEach((element) => {
 			var item = {};
-			item["id"] = element["id"];
+			item["id"] = element["type"] == ItemType.EXCHANGE ? element["item_id"] : element["id"];
 			item["name"] = element["name"];
 			item["type"] = element["type"];
 

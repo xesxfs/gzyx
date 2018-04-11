@@ -4,15 +4,18 @@ class ActivePanel extends BasePanel {
 		this.skinName = "ActivePanelSkin";
 	}
 
+	public closeBtn: eui.Button;
 	public activeTab: eui.TabBar;
 	public activeVsk: eui.ViewStack;
 	public rechargeLab: eui.Label;
 	public rechargeLst: eui.List;
 	public lotteryLab: eui.Label;
+	public lotteryBox: eui.Group;
+	public warpCir: eui.Image;
+	public inCir: eui.Image;
 	public lotteryBtn: eui.Button;
 	public heroLab: eui.Label;
 	public heroTaskLst: eui.List;
-	public closeBtn: eui.Button;
 
 	protected childrenCreated() {
 
@@ -79,6 +82,11 @@ class ActivePanel extends BasePanel {
 		}
 	}
 
+	/** 设置奖品信息 */
+	public setGift() {
+
+	}
+
 	/**添加到场景中*/
 	protected onEnable() {
 		this.setCenter();
@@ -90,6 +98,8 @@ class ActivePanel extends BasePanel {
 		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
 
 		this.requestYingXiong();
+		this.requestLotteryInfo();
+		this.initLottery();
 	}
 
 	/**从场景中移除*/
@@ -97,6 +107,66 @@ class ActivePanel extends BasePanel {
 		this.activeTab.removeEventListener(egret.Event.CHANGE, this.onTabChange, this);
 		this.lotteryBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
+	}
+
+	// ****************** 抽奖模块代码 **********************
+	private requestLotteryInfo() {
+		let ctrl = App.getController(HallController.NAME) as HallController;
+		ctrl.sendGetLuckyDraw();
+	}
+
+	private deg: number;
+	private duration: number;
+	public static NUM: number = 10;	//奖品数量
+	// 初始化数据
+	private initLottery(): void {
+		this.deg = 0;
+		this.duration = 0;
+	}
+
+	// 霓虹灯动画
+	private lightAni(): void {
+
+		egret.Tween.get(this.warpCir, { loop: true })
+			.set({ source: RES.getRes('wrapcircle_bg2_png') })
+			.wait(300)
+			.set({ source: RES.getRes('wrapcircle_bg_png') })
+			.wait(300);
+	}
+
+	private onPostComplete(event?: egret.Event): void {
+
+		// 测试
+		let res = JSON.parse('{ "status": 1, "msg": "奖品5", "prize_id": 1, "prize_name": "iphone7" }');
+
+		if (res.status == 1) {
+			//目标
+			let prize_id = Math.floor(Math.random() * ActivePanel.NUM); // res.prize_id
+			prize_id = Math.floor(Math.random() * ActivePanel.NUM);
+			this.deg = Math.ceil(Math.random() * 4 + 1) * 360 - prize_id * 360 / ActivePanel.NUM; // 最少 720 -330 最多 5 * 360
+			//持续转动时间
+			this.duration = this.calcDuration(this.deg);
+			console.log("prize_id：", prize_id, "转动角度：", this.deg, "转动时间：", this.duration);
+			return this.startTurn(() => { //this.weiUI.showAlert(res.prize_name),this.lotteryDone() 
+			}); // 启动转盘
+		}
+	}
+
+	// 根据角度计算持续时间 deg -> duration
+	private calcDuration(deg: number): number {
+		return deg * 10;
+	}
+
+	// 抽奖动画
+	private startTurn(cb: Function): void {
+		this.lightAni();
+		this.lotteryBtn.touchEnabled = false;
+		egret.Tween.get(this.inCir)
+			//.to({ rotation: this.inCir.rotation - 20 }, 500, egret.Ease.sineIn)
+			.to({ rotation: this.deg }, this.duration, egret.Ease.quartInOut).call(() => {
+				this.lotteryBtn.touchEnabled = true;
+				//				cb(); // 回调
+			});
 	}
 }
 

@@ -102,6 +102,8 @@ declare class ActiveItemSkin extends eui.Skin{
 }
 declare class ActivePanelSkin extends eui.Skin{
 }
+declare class ActiveTipSkin extends eui.Skin{
+}
 declare class tabBarActive extends eui.Skin{
 }
 declare class BackpackItemSkin extends eui.Skin{

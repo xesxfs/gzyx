@@ -152,14 +152,16 @@ class ProtocolHttp {
     }
 
     public static server_info = {
-        server_flag: 0,//	integer	房间类型
-        server_name: "",//	string	房间名称
-        server_port: 0,//	integer	连接端口
-        player_num: 0,//	integer	房间已有人数
-        min_access: 0,//	integer	最小金币数量
-        max_access: 0,//	integer	最大金币数量
-        base_gold: 0,//	integer	基础分
-        tai_fee: 0,//	integer	每玩一局的固定扣费
+        server_flag: 0,  //	integer	房间类型
+        server_name: "",    //	string	房间名称
+        server_port: 0,  //	integer	连接端口
+        server_ip: "",   //	string	房间IP
+        status: 0,  //	integer	服务器状态 1.正常运行 2.停止运行 3.运行错误
+        player_num: 0,  //	integer	房间已有人数
+        min_access: 0,  //	integer	最小金币数量
+        max_access: 0,   //	integer	最大金币数量
+        base_gold: 0,    //	integer	基础分
+        tai_fee: 0,   //	integer	每玩一局的固定扣费
     }
 
 
@@ -502,5 +504,63 @@ class ProtocolHttp {
     public static reward_info2 = {
         is_notice: 0,    //	integer	是否发送了全服广播
         id: 0,   //	integer	用户抽奖获得了什么物品1个
+    }
+
+    public static send_GetLuckyDraw = {
+        action: "GetLuckyDraw",
+        param: {}
+    }
+
+    public static rev_GetLuckyDraw = {
+        uid: 0, //	integer	用户id
+        lottery_count: 0,   //	integer	抽奖次数
+        item_rand: 0,    //	integer	在转盘上的随机角度范围
+        item_rotate: []  //	array<rotate_info>	转盘停留角度列表
+    }
+
+    public static rotate_info = {
+        id: 0,  //	integer	奖品id
+        rotate: 0    //	integer	如果抽到这个物品 转盘停留的角度 = rotate ± item_rand
+    }
+
+    /** 幸运大转盘抽奖 */
+    public static send_HandleLuckyDraw = {
+        action: "HandleLuckyDraw",
+        param: {}
+    }
+
+    public static rev_HandleLuckyDraw = {
+        uid: 0,  //	integer	用户id
+        id: 0,  //	integer	奖品id
+        desc: "",   //	string	奖品id
+    }
+
+    public static send_Announcement = {
+        action: "Announcement",
+        param: {
+            mail_id: 0, //邮件ID
+        }
+    }
+
+    public static rev_Announcement = {
+        mail_list: [],  //	array<mail_info>	邮件列表
+    }
+
+    public static mall_info = {
+        gold: 0, //	integer	领取奖励之后的金币量
+        diamonds: 0, //	integer	领取奖励之后的钻石量
+    }
+
+    /** 加入房间 */
+    public static send_AddRoom = {
+        action: "AddRoom",
+        param: {
+            room_pwd: 0, //房间凭证(6位数字)
+        }
+    }
+
+    public static rev_AddRoom = {
+        room_id: 0,  //	integer	房间id
+        server_id: 0,    //	integer	服务器id
     }
 }
