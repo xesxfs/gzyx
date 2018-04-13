@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ClubRoomItemSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Group anchorOffsetX="0" width="812" anchorOffsetY="0" height="125">
+		<e:Image source="club_txk_png" x="8" y="6"/>
+		<e:Image x="13.25" y="12.33" anchorOffsetX="0" width="94" anchorOffsetY="0" height="100" source="{data.headUrl}"/>
+		<e:Label text="{data.type}" x="141.63" y="7" fontFamily="Microsoft YaHei" size="30"/>
+		<e:Label text="底分" x="144.63" y="83" fontFamily="Microsoft YaHei" size="30"/>
+		<e:Label text="{data.special}" x="365.63" y="83" fontFamily="Microsoft YaHei" size="30"/>
+		<e:Label x="365.63" y="7" fontFamily="Microsoft YaHei" size="30" text="{data.roomId}"/>
+		<e:Label x="513.93" y="7" fontFamily="Microsoft YaHei" size="30" anchorOffsetX="0" width="138" text="{data.player_num}"/>
+		<e:Label x="660.95" y="7" fontFamily="Microsoft YaHei" size="30" anchorOffsetX="0" width="142" text="{data.status_string}"/>
+		<e:Image source="club_right_line_png" x="22.48" y="124.33"/>
+	</e:Group>
+</e:Skin>

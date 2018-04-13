@@ -563,4 +563,209 @@ class ProtocolHttp {
         room_id: 0,  //	integer	房间id
         server_id: 0,    //	integer	服务器id
     }
+
+    // *********************************** 俱乐部http请求 ********************************************
+    /** 修改俱乐部名称 */
+    public static send_UpdateClubName = {
+        action: "UpdateClubName",
+        param: {
+            name: "",    //	string	俱乐部名称	必须
+            club_id: "", //int	俱乐部id	必须
+        }
+    }
+
+    /** 创建俱乐部 */
+    public static send_CreateClub = {
+        action: "CreateClub",
+        param: {
+            name: "",    //	string	俱乐部名称	必须
+        }
+    }
+
+    /** 创建房间 */
+    public static send_CreateRoom = {
+        action: "CreateRoom",
+        param: {
+            club_id: 0,  //	integer	俱乐部id	必须
+            player_num: 0,   //	integer	这个桌子可以坐多少人	必须
+            use_cards: 0,    //	integer	为了开这个房间，使用了多少张房卡	必须
+        }
+    }
+
+    public static rev_CreateRoom = {
+        result: 0,   //	integer	1:当前房卡数量不够 2.激活房间失败
+        room_info: [],  //	object<room_info>	房间信息 当result=0时存在
+    }
+
+    public static room_info = {
+        uid: 0,  //	integer	用户ID
+        board: 0,    //	integer	这个房间能玩几局
+        cost_ticket: 0,  //	integer	花了用户多少张房卡
+        room_id: 0,  //	integer	房间ID
+        room_pwd: "",    //	string	房间开启凭证
+    }
+
+    /** 加入俱乐部房间 */
+    public static send_AddClubRoom = {
+        action: "AddClubRoom",
+        param: {
+            room_pwd: 0, //	integer	房间号(6位进入房间凭证)	必须
+        }
+    }
+
+    public static rev_AddClubRoom = {
+        room_id: 0,  //	integer	房间id
+        server_id: 0,    //	integer	服务器id
+        ticket_id: 0,    //	integer	房卡流水id
+    }
+
+    /** 处理加入俱乐部的请求 */
+    public static send_HandleRequest = {
+        action: "HandleRequest",
+        param: {
+            club_id: 0,  //	integer	俱乐部id	必须
+            user_id: 0,  //	integer	申请加入的用户ID	必须
+            status: 0,   //	integer	处理状态(1同意2不同意)	必须
+        }
+    }
+
+    /** 查询俱乐部下所有的房间 */
+    public static send_ClubRoomList = {
+        action: "ClubRoomList",
+        param: {
+            club_id: 0,  //	integer	俱乐部id	必须
+        }
+    }
+
+    public static rev_ClubRoomList = {
+        room_list: [],
+    }
+
+    public static room_info2 = {
+        id: 0,   //	integer	房间ID
+        uid: 0,  //	integer	开房人
+        clubid: 0,   //	integer	所属俱乐部ID
+        service_id: 0,   //	integer	房间开在哪个服务器上
+        desk_id: 0,  //	integer	房间开在哪个桌子上
+        player_num: 0,   //	integer	这个桌子可以坐多少人
+        board_choose: 0, //	integer	这个房间可以玩几圈
+        use_cards: 0,    //	integer	为了开这个房间，使用了多少张房卡
+        password: 0, //	integer	开房凭证
+        status: 0,   //	integer	状态
+        online_count: 0, //	integer	房间在线人数
+        status_string: "",  //	string	状态转换的文字
+        type: "",    //	string	类型
+        special: "", //	string	特殊玩法
+        user: {},    //	object	状态转换的文字
+    }
+
+    public static user_info2 = {
+        id: 0,   //	integer	开房人ID
+        nick_name: "",   //	string	昵称
+        avater_url: "",  //	string	头像
+    }
+
+    /** 查询收到的俱乐部加入请求 */
+    public static send_ClubRequest = {
+        action: "ClubRequest",
+        param: {
+            club_id: 0,  //	integer	俱乐部id 为0则拉取所有的请求	必须
+        }
+    }
+
+    public static rev_ClubRequest = {
+        apply_list: []
+    }
+
+    public static apply_info = {
+        id: 0,   //	integer	请求表id
+        uid: 0,  //	integer	申请用户id
+        clubid: 0,   //	integer	要申请的俱乐部id
+        status: 0,   //	integer	申请后的处理状态
+        desc: "",    //	string	申请描述
+        create_time: "", //	string	申请时间
+        user: {},
+    }
+
+    /** 查看某俱乐部成员列表 */
+    public static send_ClubMembers = {
+        action: "ClubMembers",
+        param: {
+            club_id: 0,  //	integer	俱乐部id	必须
+        }
+    }
+
+    public static rev_ClubMembers = {
+        members: [],
+    }
+
+    /** 查看的俱乐部列表 */
+    public static send_ClubList = {
+        action: "ClubList",
+        param: {},
+    }
+
+    public static rev_ClubList = {
+        club_list: [],
+    }
+
+    public static club_info = {
+        id: 0,   //	integer	俱乐部id
+        uid: 0,  //	integer	创建人uid
+        name: "",    //	string	俱乐部名称
+        create_time: "", //	string	创建俱乐部时间
+        club_count: 0,   //	integer	俱乐部人数
+        room_count: 0,   //	integer	俱乐部房间数
+        user: {},   // object	创建人信息
+    }
+
+    /** 根据俱乐部id查找俱乐部 */
+    public static send_CheckClub = {
+        action: "CheckClub",
+        param: {
+            club_id: 0,  //	integer	俱乐部id	必须
+        }
+    }
+
+    public static rev_CheckClub = {
+        id: 0,   //	integer	俱乐部id
+        uid: 0,  //	integer	创建人uid
+        name: "",    //	string	俱乐部名称
+        avater_url: "",  //	string	创建人头像
+        create_time: "", //	string	创建俱乐部时间
+    }
+
+    /** 解散俱乐部 */
+    public static send_DissolveClub = {
+        action: "DissolveClub",
+        param: {
+            club_id: 0,	//integer	俱乐部id	必须
+        }
+    }
+
+    /** 解散房间 */
+    public static send_DissolutionRoom = {
+        action: "DissolutionRoom",
+        param: {
+            id: 0,   //	integer	房间id	必须
+        }
+    }
+
+    /** 加入俱乐部 */
+    public static send_JoinInClub = {
+        action: "JoinInClub",
+        param: {
+            club_id: 0,  //	integer	要加入的俱乐部id	必须
+            desc: "",   // string	申请加入俱乐部描述	必须
+        }
+    }
+
+    /** 退出俱乐部 */
+    public static send_ExitClub = {
+        action: "ExitClub",
+        param: {
+            club_id: 0,  //	integer	俱乐部id	必须
+            user_id: 0,  //	integer	用户ID，如果存在则是踢别人，否则就是自己退出	可选
+        }
+    }
 }

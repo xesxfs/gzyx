@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ClubMemberSkin" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*">
+	<e:Image source="club_mem_bg_png" x="0" y="0"/>
+	<how:Button label="删除成员" x="0.5" y="245" scaleX="1" scaleY="1">
+		<how:skinName>
+		<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
+			<e:Image width="100%" height="100%" source="club_mem_del_png"/>
+			<e:Label id="labelDisplay" verticalCenter="1" x="96" fontFamily="Microsoft YaHei"/>
+		</e:Skin>
+		</how:skinName>
+	</how:Button>
+	<how:Button label="同意加入" x="0.5" y="245" scaleX="1" scaleY="1" visible="false">
+		<how:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="club_msg_addbtn_png"/>
+			<e:Label id="labelDisplay" verticalCenter="1" x="96" fontFamily="Microsoft YaHei" xmlns:w="http://ns.egret.com/wing"/>
+			</e:Skin>
+		</how:skinName>
+	</how:Button>
+	<e:Scroller width="222" height="216" x="3" y="30" anchorOffsetX="0" anchorOffsetY="0">
+		<e:Group>
+			<e:List width="100%" itemRendererSkinName="ClubMemberItemSkin">
+				<e:ArrayCollection>
+					<e:Array>
+						<e:Object head="null"/>
+						<e:Object head="null"/>
+						<e:Object head="null"/>
+						<e:Object head="null"/>
+						<e:Object head="null"/>
+					</e:Array>
+				</e:ArrayCollection>
+			</e:List>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>

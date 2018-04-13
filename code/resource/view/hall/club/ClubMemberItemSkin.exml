@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ClubMemberItemSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Group>
+		<e:Image source="club_mem_sel_png" x="0" y="0" visible="false"/>
+		<e:Image source="club_mem_txk_png" x="2.72" y="4"/>
+		<e:Image source="club_mem_line_png" x="14.5" y="70"/>
+		<e:Label text="昵称" x="67.5" y="15" textColor="0x3F3F3F" size="14" fontFamily="Microsoft YaHei"/>
+		<e:Label text="ID：" x="67.5" y="40.5" textColor="0x3F3F3F" size="14" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+</e:Skin>

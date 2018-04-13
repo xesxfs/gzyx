@@ -205,8 +205,10 @@ enum PanelConst {
     /**
     * 金币
     */
-    GoldPanel
-
+    GoldPanel,
+    /** 
+     * 俱乐部 */
+    ClubPanel
 }
 
 

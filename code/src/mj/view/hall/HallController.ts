@@ -346,9 +346,213 @@ class HallController extends BaseController {
         httpsend.send(request, this.revAddRoom, this);
     }
 
-    private revAddRoom(rev:any) {
+    private revAddRoom(rev: any) {
         if (rev.data) {
-            
+
+        }
+    }
+
+    /** 查询俱乐部列表 */
+    public sendClubList() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ClubList;
+        httpsend.send(request, this.revClubList, this);
+    }
+
+    private revClubList(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_ClubList.club_list = rev.data;
+            App.PanelManager.open(PanelConst.ClubPanel);
+        }
+    }
+
+    /** 查询俱乐部下的所有房间 */
+    public sendClubRoomList(clubId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ClubRoomList;
+        request.param.club_id = clubId;
+        httpsend.send(request, this.revClubRoomList, this);
+    }
+
+    private revClubRoomList(rev: any) {
+        if (!rev.data) rev.data = [];
+        ProtocolHttp.rev_ClubRoomList.room_list = rev.data;
+        let panel = App.PanelManager.getPanel(PanelConst.ClubPanel) as ClubPanel;
+    }
+
+    /** 更改俱乐部名称 */
+    public sendUpdateClubName(clubId: string, clubName: string) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_UpdateClubName;
+        request.param.club_id = clubId;
+        request.param.name = clubName;
+        httpsend.send(request, this.revUpdateClubName, this);
+    }
+
+    private revUpdateClubName(rev: any) {
+        if (rev.data) {
+
+        }
+    }
+
+    /** 创建俱乐部 */
+    public sendCreateClub(clubName: string) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_CreateClub;
+        request.param.name = clubName;
+        httpsend.send(request, this.revCreateClub, this);
+    }
+
+    private revCreateClub(rev: any) {
+        if (rev.data) {
+
+        }
+    }
+
+    /** 创建房间 */
+    public sendCreateRoom(clubId, playerNum, useCards) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_CreateRoom;
+        request.param.club_id = clubId;
+        request.param.player_num = playerNum;
+        request.param.use_cards = useCards;
+        httpsend.send(request, this.revCreateRoom, this);
+    }
+
+    private revCreateRoom(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_CreateRoom = rev.data;
+        }
+    }
+
+    /** 加入俱乐部房间 */
+    public sendAddClubRoom(pwd) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_AddClubRoom;
+        request.param.room_pwd = pwd;
+        httpsend.send(request, this.revAddClubRoom, this);
+    }
+
+    private revAddClubRoom(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_AddClubRoom = rev.data;
+        }
+    }
+
+    /** 处理加入俱乐部的请求 */
+    public sendHandleRequest(clubId, status, userId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_HandleRequest;
+        request.param.club_id = clubId;
+        request.param.status = status;
+        request.param.user_id = userId;
+        httpsend.send(request, this.revHandleRequest, this);
+    }
+
+    private revHandleRequest(rev: any) {
+        if (rev.data) {
+
+        }
+    }
+
+    /** 查看俱乐部申请请求 */
+    public sendClubRequest(clubId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ClubRequest;
+        request.param.club_id = clubId;
+        httpsend.send(request, this.revClubRequest, this);
+    }
+
+    private revClubRequest(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_ClubRequest.apply_list = rev.data;
+        }
+    }
+
+    /** 查看俱乐部的成员列表 */
+    public sendClubMembers(clubId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ClubMembers;
+        request.param.club_id = clubId;
+        httpsend.send(request, this.revClubMembers, this);
+    }
+
+    private revClubMembers(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_ClubMembers.members = rev.data;
+        }
+    }
+
+    /** 根据id查找俱乐部 */
+    public sendCheckClub(clubId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_CheckClub;
+        request.param.club_id = clubId;
+        httpsend.send(request, this.revCheckClub, this);
+    }
+
+    private revCheckClub(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_CheckClub = rev.data;
+            (App.PanelManager.getPanel(PanelConst.ClubPanel) as ClubPanel).showClubInfo(rev.data);
+        }
+    }
+
+    /** 解散俱乐部 */
+    public sendDissolveClub(clubId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_DissolveClub;
+        request.param.club_id = clubId;
+        httpsend.send(request, this.revDissolveClub, this);
+    }
+
+    private revDissolveClub(rev: any) {
+        if (rev.data) {
+
+        }
+    }
+
+    /** 解散房间 */
+    public sendDissolutionRoom(roomId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_DissolutionRoom;
+        request.param.id = roomId;
+        httpsend.send(request, this.revDissolutionRoom, this);
+    }
+
+    private revDissolutionRoom(rev: any) {
+        if (rev.data) {
+
+        }
+    }
+
+    /** 加入俱乐部 */
+    public sendJoinInClub(clubId, desc) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_JoinInClub;
+        request.param.club_id = clubId;
+        request.param.desc = desc;
+        httpsend.send(request, this.revJoinInClub, this);
+    }
+
+    private revJoinInClub(rev: any) {
+        if (rev.data) {
+
+        }
+    }
+
+    /** 退出俱乐部 */
+    public sendExitClub(clubId, userId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ExitClub;
+        request.param.club_id = clubId;
+        request.param.user_id = userId;
+        httpsend.send(request, this.revExitClub, this);
+    }
+
+    private revExitClub(rev: any) {
+        if (rev.data) {
+
         }
     }
 }

@@ -32,4 +32,6 @@ class EventConst {
 	public static ShowMail: string = "ShowMail";
 	/** 广告轮播 */
 	public static ShowNotice: string = "ShowNotice";
+	/** 显示俱乐部的房间列表 */
+	public static showRoom:string = "showRoom";
 }

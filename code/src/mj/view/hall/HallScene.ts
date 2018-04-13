@@ -26,8 +26,9 @@ class HallScene extends BaseScene {
     public coinLab: eui.Label;
     public addGoldBtn: eui.Button;
     public goldLab: eui.Label;
-    public rankingPnl: HallRankingPanel;
+    public clubBtn: eui.Button;
 
+    public rankingPnl: HallRankingPanel;
     public marquee: Marquee;
 
     public constructor() {
@@ -39,7 +40,7 @@ class HallScene extends BaseScene {
         this.marquee = new Marquee();
         this.marquee.x = (App.StageUtils.stageWidth - this.marquee.width) / 2;
         this.marquee.y = 80;
-        
+
         this.addChild(this.marquee)
     }
 
@@ -56,16 +57,16 @@ class HallScene extends BaseScene {
     }
 
     protected onRemove() {
-        this.removeEventListener("touchTap", this.onClick, this);
-        this.personGroup.removeEventListener("touchTap", this.onPersion, this);
+        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
+        this.personGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPersion, this);
         App.EventManager.removeEvent(EventConst.UpdateGold, this.onUpdateGold, this);
         App.EventManager.removeEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
         App.EventManager.removeEvent(EventConst.ShowNotice, this.onShowNotice, this);
     }
 
     private addLister() {
-        this.addEventListener("touchTap", this.onClick, this);
-        this.personGroup.addEventListener("touchTap", this.onPersion, this);
+        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
+        this.personGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onPersion, this);
         App.EventManager.addEvent(EventConst.UpdateGold, this.onUpdateGold, this);
         App.EventManager.addEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
         App.EventManager.addEvent(EventConst.ShowNotice, this.onShowNotice, this);
@@ -138,6 +139,9 @@ class HallScene extends BaseScene {
             case this.enterBtn:
                 App.PanelManager.open(PanelConst.JoinRoomPanel)
                 break;
+            case this.clubBtn:
+                this.ctrl.sendClubList();
+                break;
 
         }
     }
@@ -147,8 +151,8 @@ class HallScene extends BaseScene {
     }
 
     private removeLiter() {
-        this.removeEventListener("touchTap", this.onClick, this);
-        this.personGroup.removeEventListener("touchTap", this.onPersion, this);
+        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
+        this.personGroup.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onPersion, this);
     }
 }
 

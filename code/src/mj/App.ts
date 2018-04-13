@@ -56,10 +56,10 @@ class App extends BaseApp {
         panel.register(PanelConst.LookRlue, LookRlue);                              //游戏内查看规则
         panel.register(PanelConst.ModifyRlueT, ModifyRlueT);                        //游戏内修改规则
         panel.register(PanelConst.SignPanel, SignInPanel);                        //游戏内修改规则
-       
+
         panel.register(PanelConst.RulePanel, RulePanel); //玩法说明面板
         panel.register(PanelConst.EmailPanel, EmailPanel);         //邮件面板
-      
+
         panel.register(PanelConst.PreloadPanel, PreloadPanel);                     //加载
         panel.register(PanelConst.SetPanel, SetPanel);//设置
         panel.register(PanelConst.ActivePanel, ActivePanel);//活动
@@ -75,11 +75,12 @@ class App extends BaseApp {
         panel.register(PanelConst.SocketClosePanel, SocketClosePanel);//socket重连弹窗
         panel.register(PanelConst.InvitePanelT, InvitePanelT);//好友房邀请好友
         panel.register(PanelConst.LoginPanel, LoginPanel);//登录界面
-      
+
         panel.register(PanelConst.ShareResultPanel, ShareResultPanel);//结算分享界面
         panel.register(PanelConst.AllRecord, AllRecord);      //总结算面板
         panel.register(PanelConst.LoginChoosePanel, LoginChoosePanel);      //登录选择
         panel.register(PanelConst.BindPanel, BindPanel);      //绑定
+        panel.register(PanelConst.ClubPanel, ClubPanel);
 
 
         //显示登录界面
@@ -92,7 +93,7 @@ class App extends BaseApp {
         App.GameConfig.initUserConfig();
     }
 
-  
+
     private onSocketClose() {
         App.PanelManager.open(PanelConst.SocketClosePanel, null, null, false);
     }

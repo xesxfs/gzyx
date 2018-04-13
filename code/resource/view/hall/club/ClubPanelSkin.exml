@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ClubPanelSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*"
+        xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+    <w:Config id="162b3cd65aa" />
+    <e:Image x="0" source="main_bg_jpg" />
+    <e:Group width="1280" height="720" x="0">
+        <how:Button id="backMyBtn" label="" x="57" y="18.33" scaleX="1" scaleY="1">
+            <how:skinName>
+                <e:Skin states="up,down,disabled">
+                    <e:Image width="100%" height="100%" source="club_btn_back_png" />
+                    <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                </e:Skin>
+            </how:skinName>
+        </how:Button>
+        <how:Button id="addBtn" label="" x="303.34" y="18.33" scaleX="1" scaleY="1">
+            <how:skinName>
+                <e:Skin states="up,down,disabled">
+                    <e:Image width="100%" height="100%" source="club_btn_add_png" />
+                    <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                </e:Skin>
+            </how:skinName>
+        </how:Button>
+        <how:Button id="msgBtn" label="" x="1049" y="26" scaleX="1" scaleY="1">
+            <how:skinName>
+                <e:Skin states="up,down,disabled">
+                    <e:Image width="100%" height="100%" source="club_btn_msg_png" />
+                    <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                </e:Skin>
+            </how:skinName>
+        </how:Button>
+        <how:Button id="memberBtn" label="" x="1119.5" y="26" scaleX="1" scaleY="1">
+            <how:skinName>
+                <e:Skin states="up,down,disabled">
+                    <e:Image width="100%" height="100%" source="club_btn_cy_png" />
+                    <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                </e:Skin>
+            </how:skinName>
+        </how:Button>
+        <how:Button id="setBtn" label="" x="1190" y="26" scaleX="1" scaleY="1">
+            <how:skinName>
+                <e:Skin states="up,down,disabled">
+                    <e:Image width="100%" height="100%" source="club_btn_set_png" />
+                    <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                </e:Skin>
+            </how:skinName>
+        </how:Button>
+        <how:Button id="createRoomBtn" label="" x="652.98" y="637.33" scaleX="1" scaleY="1">
+            <how:skinName>
+                <e:Skin states="up,down,disabled">
+                    <e:Image width="100%" height="100%" source="club_btn_cjfj_png" />
+                    <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                </e:Skin>
+            </how:skinName>
+        </how:Button>
+        <how:Button id="refreshBtn" label="" x="962.69" y="638.68" scaleX="1" scaleY="1">
+            <how:skinName>
+                <e:Skin states="up,down,disabled">
+                    <e:Image width="100%" height="100%" source="club_btn_sx_png" />
+                    <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                </e:Skin>
+            </how:skinName>
+        </how:Button>
+        <e:Image source="club_left_hdi_png" x="136.35" y="22.16" scaleX="1" scaleY="1" />
+        <e:Image source="club_right_hdi_png" x="427" y="17.15" scaleX="1" scaleY="1" />
+        <e:Label id="myClubLab" text="我的俱乐部" x="160.85" y="46.15" size="24" fontFamily="Microsoft YaHei" scaleX="1"
+                 scaleY="1" />
+        <e:Label id="clubNameLab" text="" x="509.85" y="46.15" size="24" fontFamily="Microsoft YaHei" scaleX="1"
+                 scaleY="1"  anchorOffsetX="0" width="218" height="24"/>
+        <e:Label text="俱乐部ID：" x="754.85" y="46.33" size="24" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" />
+        <e:Label id="clubIdLab" text="" x="881" y="46.33" size="24" fontFamily="Microsoft YaHei" scaleX="1"
+                 scaleY="1"  anchorOffsetX="0" width="140" height="24"/>
+        <e:Image source="club_bigkuang_bg_png" x="25" y="110" scaleX="1" scaleY="1" />
+        <e:Image source="club_right_di_png" x="432" y="110" scaleX="1" scaleY="1" />
+        <e:Scroller id="clubScl" width="366" height="516" x="32" y="116" anchorOffsetX="0" anchorOffsetY="0" scaleX="1"
+                    scaleY="1">
+            <e:Group>
+                <e:List id="clubLst" width="366" anchorOffsetX="0" itemRendererSkinName="ClubItemSkin">
+                    <e:ArrayCollection>
+                        <e:Array>
+                            <e:Object headUrl="null" name="null" club_count="null" room_count="null" />
+                        </e:Array>
+                    </e:ArrayCollection>
+                </e:List>
+            </e:Group>
+        </e:Scroller>
+        <e:Scroller width="812" height="516" x="441" y="117" anchorOffsetX="0" anchorOffsetY="0" scaleX="1" scaleY="1">
+            <e:Group>
+                <e:List id="roomLst" width="812" itemRendererSkinName="ClubRoomItemSkin" anchorOffsetX="0">
+									<e:ArrayCollection>
+										<e:Array>
+											<e:Object type="null" player_num="null" special="null" status_string="null" roomId="1"/>
+										</e:Array>
+									</e:ArrayCollection>
+                    <e:layout>
+                        <e:VerticalLayout/>
+                    </e:layout>
+                </e:List>
+            </e:Group>
+        </e:Scroller>
+        <e:Group id="createClubGrp" width="368" height="515" x="32" y="117" anchorOffsetX="0" anchorOffsetY="0"
+                 visible="false">
+            <e:Label text="创建俱乐部" y="35.32" fontFamily="Microsoft YaHei" size="42" horizontalCenter="0" />
+            <e:Image source="club_create_srk_png" x="-0.69" y="112.17" />
+            <e:EditableText id="clubNameTxt" width="357" text="" x="5.34" y="142" background="false"
+                            backgroundColor="0x542222" prompt="请输入俱乐部名字" anchorOffsetX="0" anchorOffsetY="0" size="44"
+                            fontFamily="Microsoft YaHei" textColor="0x000000" height="60" />
+            <how:Button id="createOkBtn" label="确定" x="105.67" y="323">
+                <how:skinName>
+                    <e:Skin states="up,down,disabled">
+                        <e:Image width="100%" height="100%" source="club_create_qd_png" />
+                        <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                    </e:Skin>
+                </how:skinName>
+            </how:Button>
+            <how:Button id="createBackBtn" label="返回" x="105.67" y="408.5">
+                <how:skinName>
+                    <e:Skin states="up,down,disabled">
+                        <e:Image width="100%" height="100%" source="club_create_back_png" />
+                        <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                    </e:Skin>
+                </how:skinName>
+            </how:Button>
+        </e:Group>
+        <e:Group id="joinClubGrp" width="368" height="515" x="32" y="117" anchorOffsetX="0" anchorOffsetY="0"
+                 visible="false">
+            <e:Label text="加入俱乐部" y="35.32" fontFamily="Microsoft YaHei" size="42" horizontalCenter="0" />
+            <e:Image source="club_create_srk_png" x="-0.69" y="112.17" />
+            <e:EditableText id="clubIdTxt" width="357" text="" x="5.34" y="142" background="false"
+                            backgroundColor="0x542222" prompt="请输入俱乐部ID" anchorOffsetX="0" anchorOffsetY="0" size="44"
+                            fontFamily="Microsoft YaHei" textColor="0x000000" height="60"  restrict="0-9"/>
+            <how:Button id="joinOkBtn" label="确定" x="106" y="323">
+                <how:skinName>
+                    <e:Skin states="up,down,disabled">
+                        <e:Image width="100%" height="100%" source="club_create_qd_png" />
+                        <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                    </e:Skin>
+                </how:skinName>
+            </how:Button>
+            <how:Button id="joinBackBtn" label="返回" x="106" y="408.5">
+                <how:skinName>
+                    <e:Skin states="up,down,disabled">
+                        <e:Image width="100%" height="100%" source="club_create_back_png" />
+                        <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                    </e:Skin>
+                </how:skinName>
+            </how:Button>
+            <how:Button id="joinBtn" label="加入" x="106" y="323.65" visible="false">
+                <how:skinName>
+                    <e:Skin states="up,down,disabled">
+                        <e:Image width="100%" height="100%" source="club_add_jr_png" />
+                        <e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+                    </e:Skin>
+                </how:skinName>
+            </how:Button>
+					<e:Group id="searchGrp" x="1" y="217.17" visible="false">
+						<e:Image id="headImg" source="club_txk_png" x="0" y="0" anchorOffsetX="0" width="94" anchorOffsetY="0" height="106.33"/>
+						<e:Label id="searchClubLab" text="Label" x="103" y="23.16" size="26" fontFamily="Microsoft YaHei"/>
+						<e:Label id="searchMgrIdLab" text="管理员：" x="103" y="58.76" size="26" fontFamily="Microsoft YaHei"/>
+					</e:Group>
+        </e:Group>
+        <ns1:ClubMember id="clubMenber" x="978.6" y="95" skinName="ClubMemberSkin" scaleX="1" scaleY="1" visible="false" />
+        <ns1:ClubMenu id="clubMenu" skinName="ClubMenuSkin"  visible="false"/>
+    </e:Group>
+</e:Skin>

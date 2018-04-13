@@ -110,6 +110,18 @@ declare class BackpackItemSkin extends eui.Skin{
 }
 declare class BackpackPanelSkin extends eui.Skin{
 }
+declare class ClubItemSkin extends eui.Skin{
+}
+declare class ClubMemberItemSkin extends eui.Skin{
+}
+declare class ClubMemberSkin extends eui.Skin{
+}
+declare class ClubMenuSkin extends eui.Skin{
+}
+declare class ClubPanelSkin extends eui.Skin{
+}
+declare class ClubRoomItemSkin extends eui.Skin{
+}
 declare class PageViewSkin extends eui.Skin{
 }
 declare class EmailItemSkin extends eui.Skin{
