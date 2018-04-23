@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ClubItemSkin" xmlns:e="http://ns.egret.com/eui">
+<e:Skin class="ClubItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group width="368" height="130" anchorOffsetX="0" anchorOffsetY="0">
-		<e:Image source="club_mem_sel_png" left="0" right="0" top="0" bottom="0" visible="false"/>
+		<e:Image id="selectImg" source="club_mem_sel_png" left="0" right="0" top="0" bottom="0" visible="false"/>
 		<e:Image source="club_txk_png" x="12.27000000000001" y="9.800000000000011" scaleX="1" scaleY="1"/>
 		<e:Image x="18.44" y="15.34" scaleX="1" scaleY="1" source="{data.headUrl}" width="94" height="101"/>
 		<e:Label x="176.20000000000002" y="12" fontFamily="Microsoft YaHei" scaleX="1" scaleY="1" anchorOffsetX="0" width="184" text="{data.name}"/>

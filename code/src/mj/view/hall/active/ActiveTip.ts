@@ -13,7 +13,7 @@ class ActiveTip extends BasePanel {
 
 		this.goldLab.text = "+" + num.toString();
 
-		egret.setTimeout(this.onRemove, this, 6000);
+		egret.setTimeout(this.onRemove, this, 3000);
 	}
 
 	protected onRemove() {

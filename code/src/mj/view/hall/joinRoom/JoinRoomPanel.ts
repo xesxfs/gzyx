@@ -40,15 +40,15 @@ class JoinRoomPanel extends BasePanel {
 					let arr = evt.target.name.split("_");
 					let lab;
 					if (arr && arr[0] == "rNum") {
-						lab = this.roomIdGroup.getChildAt(this._focus + 6) as eui.Label;
+						lab = this.roomIdGroup.getChildAt(this._focus) as eui.Label;
 						lab.text = arr[1];
 						this._focus++;
 					}
 
 					if (this._focus == 6) {
 						// 查询服务器信息，请求进入游戏
-						console.log("request");
-						
+						let roomId = this.getRoomId();
+						(App.getController(HallController.NAME) as HallController).sendAddRoom(roomId);
 					}
 				}
 
@@ -59,7 +59,7 @@ class JoinRoomPanel extends BasePanel {
 	private _focus: number = 0;
 
 	private resetRoomID() {
-		for (let i = 6; i <= 11; i++) {
+		for (let i = 0; i <= 5; i++) {
 			let lab = this.roomIdGroup.getChildAt(i) as eui.Label;
 			lab.text = "";
 		}
@@ -70,27 +70,18 @@ class JoinRoomPanel extends BasePanel {
 	private deleteRoomID() {
 		if (this._focus > 0) {
 			this._focus--;
-			let lab = this.roomIdGroup.getChildAt(this._focus + 6) as eui.Label;
+			let lab = this.roomIdGroup.getChildAt(this._focus) as eui.Label;
 			lab.text = "";
 		}
 	}
 
-	private join() {
-		let ctrl = App.getController(HallController.NAME) as HallController;
-		let data = ProtocolData.Send102;
-		// data.roomid=this.getRoomId();
-		ctrl.sendJoinRoom(data);
-		this.hide();
-	}
-
 	private getRoomId(): number {
-		let roomId = 0;
+		let roomId = "";
 		for (let i = 0; i < 6; i++) {
-			let lab = this.roomIdGroup.getChildAt(i + 5) as eui.Label;
-			let num = parseInt(lab.text);
-			roomId += i * 10 * num;
+			let lab = this.roomIdGroup.getChildAt(i) as eui.Label;
+			roomId += lab.text;
 		}
-		return roomId;
+		return parseInt(roomId);
 	}
 
 

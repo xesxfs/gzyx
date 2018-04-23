@@ -1,38 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="MallPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<w:Config id="1626581fa76"/>
-
+<e:Skin class="MallPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+	<w:Config id="1626581fa76" />
 	<e:Group horizontalCenter="0" verticalCenter="0">
-		<e:Image source="tankuang_big_png" scaleX="1" scaleY="1" scale9Grid="166,116,575,394" width="100%" height="100%"/>
-		<e:Button id="closeBtn" label="" x="818" y="36" skinName="ButtonCloseSkin"/>
-		<e:Image source="title_bg_png" y="44.67" horizontalCenter="0.5"/>
-		<e:Image source="mall_txt_png" x="418.67" y="52"/>
+		<e:Image source="tankuang_big_png" scaleX="1" scaleY="1" scale9Grid="166,116,575,394" width="100%" height="100%" />
+		<how:Button id="closeBtn" label="" x="818" y="36" skinName="ButtonCloseSkin" />
+		<e:Image source="title_bg_png" y="44.67" horizontalCenter="0.5" />
+		<e:Image source="mall_txt_png" x="418.67" y="52" />
 		<e:TabBar id="mallTab" x="35.17" y="157" itemRendererSkinName="MallTabBarSkin">
 			<e:ArrayCollection>
 				<e:Array>
-					<e:Object txt="钻石" iconUp="mall_tab_btn2_png" iconUpBg="" iconDown="mall_tab_btn_png" iconDownBg=""/>
-					<e:Object txt="金币" iconUp="mall_tab_btn2_png" iconUpBg="" iconDown="mall_tab_btn_png" iconDownBg=""/>
+					<e:Object txt="钻石" iconUp="mall_tab_btn2_png" iconUpBg="" iconDown="mall_tab_btn_png" iconDownBg="" />
+					<e:Object txt="金币" iconUp="mall_tab_btn2_png" iconUpBg="" iconDown="mall_tab_btn_png" iconDownBg="" />
+					<e:Object txt="房卡" iconUp="mall_tab_btn2_png" iconUpBg="null" iconDown="mall_tab_btn_png" iconDownBg="null" />
 				</e:Array>
 			</e:ArrayCollection>
 			<e:layout>
-				<e:VerticalLayout horizontalAlign="left" gap="28"/>
+				<e:VerticalLayout horizontalAlign="left" gap="28" />
 			</e:layout>
 		</e:TabBar>
 		<e:Scroller width="651" height="447" x="237" y="139.8" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Group>
 				<e:List id="mallLst" width="100%" height="100%" itemRendererSkinName="MallItemSkin">
-
 					<e:layout>
-						<e:TileLayout horizontalGap="20" verticalGap="4"/>
+						<e:TileLayout horizontalGap="20" verticalGap="4" />
 					</e:layout>
 					<e:ArrayCollection>
 						<e:Array>
-							<e:Object icon="Gold1_png" num="100 钻石" price="￥ 1000"/>
+							<e:Object icon="Gold1_png" num="100 钻石" price="￥ 1000" />
 						</e:Array>
 					</e:ArrayCollection>
 				</e:List>
 			</e:Group>
 		</e:Scroller>
-
 	</e:Group>
 </e:Skin>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ActivePanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="1280"
+<e:Skin class="ActivePanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*" width="1280"
         height="655">
 	<e:Group top="0" bottom="0">
 		<e:Image source="tankuang_big_png" scale9Grid="115,77,690,466" width="1280" top="-2" bottom="2" x="1.67" />
-		<e:Button id="closeBtn" label="" x="1188.66" y="24.01" skinName="ButtonCloseSkin"/>
+		<how:Button id="closeBtn" label="" x="1188.66" y="24.01" skinName="ButtonCloseSkin"/>
 		<e:TabBar id="activeTab" x="128" y="28" itemRendererSkinName="tabBarActive">
 			<e:ArrayCollection>
 				<e:Array>

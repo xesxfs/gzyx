@@ -156,6 +156,7 @@ class ProtocolHttp {
         server_name: "",    //	string	房间名称
         server_port: 0,  //	integer	连接端口
         server_ip: "",   //	string	房间IP
+        websocket_port: 0,
         status: 0,  //	integer	服务器状态 1.正常运行 2.停止运行 3.运行错误
         player_num: 0,  //	integer	房间已有人数
         min_access: 0,  //	integer	最小金币数量
@@ -570,7 +571,7 @@ class ProtocolHttp {
         action: "UpdateClubName",
         param: {
             name: "",    //	string	俱乐部名称	必须
-            club_id: "", //int	俱乐部id	必须
+            club_id: 0, //int	俱乐部id	必须
         }
     }
 
@@ -594,7 +595,7 @@ class ProtocolHttp {
 
     public static rev_CreateRoom = {
         result: 0,   //	integer	1:当前房卡数量不够 2.激活房间失败
-        room_info: [],  //	object<room_info>	房间信息 当result=0时存在
+        room_info: {},  //	object<room_info>	房间信息 当result=0时存在
     }
 
     public static room_info = {
@@ -603,6 +604,18 @@ class ProtocolHttp {
         cost_ticket: 0,  //	integer	花了用户多少张房卡
         room_id: 0,  //	integer	房间ID
         room_pwd: "",    //	string	房间开启凭证
+    }
+
+    public static send_ServerDetail = {
+        action: "ServerDetail",
+        param: {
+            id: 0,   //	integer	服务器ID 如果不为0 则只返回一个与对应的服务器
+            game_flag: 0,    //	integer	服务器类型 如果id为0 则返回一个游戏类型为game_flag 而且压力最小的服务器地址
+        }
+    }
+
+    public static rev_ServerDetail = {
+        server_info: {},
     }
 
     /** 加入俱乐部房间 */
@@ -767,5 +780,38 @@ class ProtocolHttp {
             club_id: 0,  //	integer	俱乐部id	必须
             user_id: 0,  //	integer	用户ID，如果存在则是踢别人，否则就是自己退出	可选
         }
+    }
+
+    /** 获取房卡列表 */
+    public static send_TicketMall = {
+        action: "TicketMall",
+        param: {
+
+        }
+    }
+
+    public static rev_TicketMall = {
+        ticket_mall: [], //	array<ticket_info>	商品列表
+        uid: 0,  //	integer	用户ID
+    }
+
+    public static tocket_info = {
+        id: 0,   //	integer	商品ID
+        name: "",    //	string	商品名称
+        hot_flag: 0, //	integer	是否热销的标记
+        price: 0,    //	integer	需要多少钻石才能购买
+        num: 0,  //	integer	可以买多少张开房卡
+    }
+
+    public static send_BuyTicket = {
+        action: "BuyTicket",
+        param: {
+            id: 0,   //	integer	需要兑换的道具ID
+        }
+    }
+
+    public static rev_BuyTicket = {
+        currentDiamonds: 0, //	integer	当前钻石
+        currentRoomCards: 0, //	integer	当前房卡
     }
 }

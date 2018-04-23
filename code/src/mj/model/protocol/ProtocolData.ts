@@ -47,8 +47,10 @@ class ProtocolData {
     public static Send101 = {
         cmd: 101,//	integer	协议ID
         uid: 0,//	integer	开房用户ID
-        board_choose: 0,//	integer	游戏局数
-        player_num: 0,//	integer	游戏有几个座位
+        // board_choose: 0,//	integer	游戏局数
+        // player_num: 0,//	integer	游戏有几个座位
+        ticket_id: 0, //	integer	房卡消费流水ID
+        password: 0, //	integer	开房间凭证
     }
 
 

@@ -9,7 +9,7 @@ class ServerInfo {
     /**Python推送服务器IP地址*/
     public PUSH_SERVER_URL: string;
     //游戏服务器
-    public GAME_SERVER: string="ws://139.224.16.203:18004";
+    public GAME_SERVER: string;
     //游戏断口
     public GAME_PORT: number;
     /**密码MD5码*/

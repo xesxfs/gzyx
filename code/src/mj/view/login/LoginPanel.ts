@@ -83,11 +83,18 @@ class LoginPanel extends BasePanel {
             suser.userID = json.data.uid;
             suser.nickName = json.data.nick_name;
             suser.skey = json.data.skey;
-            suser.headUrl = json.data.avater_url;
+            suser.headUrl = json.data.avater_url ? json.data.avater_url : "img_default_png";
             suser.coin = json.data.diamonds;
             suser.gold = json.data.gold;
             suser.IP = json.data.login_ip;
             suser.sex = json.data.sex;
+            suser.roomCard = json.data.room_ticket ? json.data.room_ticket : 0;
+            suser.win_board = json.data.win_board ? json.data.win_board : 0;
+            suser.lose_board = json.data.lose_board ? json.data.lose_board : 0;
+            suser.pin_board = json.data.pin_board ? json.data.pin_board : 0;
+            suser.paiwei_rank = json.data.paiwei_rank;
+            suser.paiwei_rank_name = json.data.paiwei_rank_name;
+            suser.paiwei_score = json.data.paiwei_score;
             App.DataCenter.UserInfo.addUser(suser);
             ctrl.startLoadHall();
         } else {
@@ -123,8 +130,8 @@ class LoginPanel extends BasePanel {
     private sendRegist() {
         var httpsend = new HttpSender();
         var register = ProtocolHttp.send_z_regist;
-        register.param.user = this.phoneEdit.text;
-        register.param.password = this.passEdit.text;
+        register.param.user = this.rgPhoneEdit.text;
+        register.param.password = this.rgPassEdit.text;
         register.param.nick_name = this.nickNameEdit.text;
         httpsend.send(register, this.revLogin, this);
     }

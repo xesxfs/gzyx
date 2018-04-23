@@ -4,28 +4,35 @@
 		"native": 1,
 		"path": "bin-release"
 	},
-	"egret_version": "4.0.3",
+	"egret_version": "5.0.15",
 	"modules": [
 		{
-			"name": "egret"
+			"name": "egret",
+			"path": "${EGRET_APP_DATA}/5.0.15"
 		},
 		{
-			"name": "eui"
+			"name": "eui",
+			"path": "${EGRET_APP_DATA}/5.0.15"
 		},
 		{
-			"name": "res"
+			"name": "res",
+			"path": "${EGRET_APP_DATA}/5.0.15"
 		},
 		{
-			"name": "socket"
+			"name": "socket",
+			"path": "${EGRET_APP_DATA}/5.0.15"
 		},
 		{
-			"name": "tween"
+			"name": "tween",
+			"path": "${EGRET_APP_DATA}/5.0.15"
 		},
 		{
-			"name": "game"
+			"name": "game",
+			"path": "${EGRET_APP_DATA}/5.0.15"
 		},
 		{
-			"name": "dragonbones"
+			"name": "dragonbones",
+			"path": "${EGRET_APP_DATA}/5.0.15"
 		},
 		{
 			"name": "particle",

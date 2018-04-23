@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="ClubMenuSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="1280" height="720">
 	<e:Rect id="rect" left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
-	<e:Group x="166" y="95">
+	<e:Group id="menuGrp" x="166" y="95">
 		<e:Image source="club_msg_kuang_png" x="0" y="0"/>
 		<e:Group id="myClubGrp" x="17" y="70" visible="false">
 			<e:Label id="changeNameLab" text="修改俱乐部名称" x="0" y="0" textColor="0x4B4847" fontFamily="Microsoft YaHei" size="28"/>

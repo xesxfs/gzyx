@@ -27,6 +27,9 @@ class HallScene extends BaseScene {
     public addGoldBtn: eui.Button;
     public goldLab: eui.Label;
     public clubBtn: eui.Button;
+    public addCardBtn: how.Button;
+    public cardLab: eui.Label;
+    public headUrl: eui.Image;
 
     public rankingPnl: HallRankingPanel;
     public marquee: Marquee;
@@ -49,6 +52,8 @@ class HallScene extends BaseScene {
         this.nameLab.text = user.nickName;
         this.coinLab.text = user.coin.toString();
         this.goldLab.text = user.gold.toString();
+        this.cardLab.text = user.roomCard.toString();
+        this.headUrl.source = user.headUrl;
     }
 
     protected onEnable() {
@@ -62,6 +67,7 @@ class HallScene extends BaseScene {
         App.EventManager.removeEvent(EventConst.UpdateGold, this.onUpdateGold, this);
         App.EventManager.removeEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
         App.EventManager.removeEvent(EventConst.ShowNotice, this.onShowNotice, this);
+        App.EventManager.removeEvent(EventConst.UpdateCard, this.onUpdateCard, this);
     }
 
     private addLister() {
@@ -70,6 +76,7 @@ class HallScene extends BaseScene {
         App.EventManager.addEvent(EventConst.UpdateGold, this.onUpdateGold, this);
         App.EventManager.addEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
         App.EventManager.addEvent(EventConst.ShowNotice, this.onShowNotice, this);
+        App.EventManager.addEvent(EventConst.UpdateCard, this.onUpdateCard, this);
     }
 
     // 广告轮播
@@ -91,13 +98,18 @@ class HallScene extends BaseScene {
         this.coinLab.text = data;
     }
 
+    private onUpdateCard(data: any) {
+        App.DataCenter.UserInfo.selfUser.roomCard = data;
+        this.cardLab.text = data;
+    }
+
     private onClick(e: egret.TouchEvent) {
         switch (e.target) {
             case this.activeBtn:
                 this.ctrl.requestActive();
                 break;
             case this.mallBtn:
-                this.ctrl.requestMall(MallType.Diamond);
+                (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Diamond);
                 break;
             case this.shareBtn:
                 App.PanelManager.open(PanelConst.SharePanel)
@@ -120,21 +132,25 @@ class HallScene extends BaseScene {
                 App.PanelManager.open(PanelConst.RulePanel)
                 break;
             case this.addGoldBtn:
-                this.ctrl.requestMall(MallType.Gold);
+                (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Gold);
                 break;
             case this.addDiaBtn:
-                this.ctrl.requestMall(MallType.Diamond);
+                (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Diamond);
+                break;
+            case this.addCardBtn:
+                (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Ticket);
                 break;
             case this.rankGameBtn:
                 let data = ProtocolData.Send102;
                 data.uid = App.DataCenter.UserInfo.selfUser.userID;
-                this.ctrl.sendJoinRoom(data);
+                this.ctrl.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
                 break;
             case this.goldGameBtn:
-                this.ctrl.sendServerList();
+                // this.ctrl.sendServerList();
+                App.PanelManager.open(PanelConst.GoldPanel);
                 break;
             case this.createBtn:
-                App.PanelManager.open(PanelConst.CreateRoomPanel)
+                App.PanelManager.open(PanelConst.CreateRoomPanel);
                 break;
             case this.enterBtn:
                 App.PanelManager.open(PanelConst.JoinRoomPanel)

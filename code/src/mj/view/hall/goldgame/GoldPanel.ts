@@ -55,10 +55,9 @@ class GoldPanel extends BasePanel {
 		let arr = ProtocolHttp.rev_ServerList.server_list;
 		ProtocolHttp.server_info = arr[n];
 		if (arr[n] && ProtocolHttp.server_info.status == 1) {
-			App.DataCenter.ServerInfo.GAME_SERVER = "ws://" + ProtocolHttp.server_info.server_ip + ":" + ProtocolHttp.server_info.server_port;
 			let data = ProtocolData.Send102;
 			data.uid = App.DataCenter.UserInfo.selfUser.userID;
-			(App.getController(HallController.NAME) as HallController).sendJoinRoom(data);
+			(App.getController(HallController.NAME) as HallController).sendJoinRoom(data, ProtocolHttp.server_info.server_ip + ":" + ProtocolHttp.server_info.websocket_port);
 		} else {
 			Tips.error("服务器已关闭");
 		}

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GrabItemSkin" xmlns:e="http://ns.egret.com/eui">
+	<e:Image source="kqs_sp_kuang_png"/>
+	<e:Image source="kqs_sp_1_png" x="15" y="13"/>
+	<e:Label text="新秀丽双肩包" x="21" y="197.5" anchorOffsetX="0" width="170.5" textAlign="center" size="22" fontFamily="Microsoft YaHei"/>
+</e:Skin>

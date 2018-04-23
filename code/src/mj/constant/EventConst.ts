@@ -24,6 +24,8 @@ class EventConst {
 	public static UpdateGold: string = "UpdateGold";
 	/** 更新钻石 */
 	public static UpdateDiamond: string = "UpdateDiamond";
+	/** 更新房卡 */
+	public static UpdateCard:string = "UpdateCard";
 	/** 背包使用物品 */
 	public static UseItem: string = "UseItem";
 	/** 背包显示详细信息 */
@@ -32,6 +34,8 @@ class EventConst {
 	public static ShowMail: string = "ShowMail";
 	/** 广告轮播 */
 	public static ShowNotice: string = "ShowNotice";
-	/** 显示俱乐部的房间列表 */
-	public static showRoom:string = "showRoom";
+	/** 选中俱乐部显示房间 */
+	public static SelectedClub:string = "SelectedClub";
+	/** 俱乐部选中成员 */
+	public static SelectedMember:string = "SelectedMember";
 }

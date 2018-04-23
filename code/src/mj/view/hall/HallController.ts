@@ -41,8 +41,9 @@ class HallController extends BaseController {
     private showHallScene() {
         this.hallScene = App.SceneManager.runScene(SceneConst.HallScene, this) as HallScene;
 
-        this.requestRanking();
-        this.requestItemList();
+        this.requestRanking();  //获取排行榜信息
+        this.requestItemList(); //获取物品列表的基本信息
+        this.sendServerList();
     }
 
     //注册socket
@@ -100,7 +101,7 @@ class HallController extends BaseController {
         var gameSocket: ClientSocket = App.gameSocket;
         gameSocket.dataBuffer = data;
         this.addEvent(EventConst.SocketConnect, this.onOpenRoom, this);
-        gameSocket.startConnect(App.DataCenter.ServerInfo.GAME_SERVER);
+        gameSocket.startConnect("ws://" + App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
 
     }
 
@@ -115,11 +116,11 @@ class HallController extends BaseController {
 
 
     /**** 进入房间*/
-    public sendJoinRoom(data) {
+    public sendJoinRoom(data, server) {
         var gameSocket: ClientSocket = App.gameSocket;
         gameSocket.dataBuffer = data;
         this.addEvent(EventConst.SocketConnect, this.onJoinRoom, this);
-        gameSocket.startConnect(App.DataCenter.ServerInfo.GAME_SERVER);
+        gameSocket.startConnect("ws://" + server);
     }
 
     private onJoinRoom(socket: ClientSocket) {
@@ -184,10 +185,8 @@ class HallController extends BaseController {
         }
     }
 
-    private _mallType = MallType.Diamond;   // 默认钻石
-    /** 请求钻石商城列表 */
-    public requestMall(type: MallType) {
-        this._mallType = type;
+    /** 请求钻石商城 */
+    public sendDiamondsMall() {
         var httpsend = new HttpSender();
         var mall = ProtocolHttp.send_DiamondsMall;
         httpsend.send(mall, this.revDiamondsMall, this);
@@ -196,8 +195,52 @@ class HallController extends BaseController {
     private revDiamondsMall(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_DiamondsMall = rev.data;
-            let panel = App.PanelManager.open(PanelConst.MallPanel) as MallPanel;
-            panel.update(this._mallType);
+            (App.PanelManager.getPanel(PanelConst.MallPanel) as MallPanel).updateDiamond();
+        }
+    }
+
+    /** 请求金币商城 */
+    public sendGoldMall() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_GoldMall;
+        httpsend.send(request, this.revGoldMall, this);
+    }
+
+    private revGoldMall(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_GoldMall = rev.data;
+            (App.PanelManager.getPanel(PanelConst.MallPanel) as MallPanel).updateGold();
+        }
+    }
+
+    /** 购买房卡 */
+    public sendBuyTicket(ticketId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_BuyTicket;
+        request.param.id = ticketId;
+        httpsend.send(request, this.revBuyTicket, this);
+    }
+
+    private revBuyTicket(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_BuyTicket = rev.data;
+            App.EventManager.sendEvent(EventConst.UpdateDiamond, ProtocolHttp.rev_BuyTicket.currentDiamonds);
+            App.EventManager.sendEvent(EventConst.UpdateCard, ProtocolHttp.rev_BuyTicket.currentRoomCards);
+            Tips.info("购买成功...");
+        }
+    }
+
+    /** 请求房卡商城 */
+    public sendTicketMall() {
+        var httpsend = new HttpSender();
+        var mall = ProtocolHttp.send_TicketMall;
+        httpsend.send(mall, this.revTicketMall, this);
+    }
+
+    private revTicketMall(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_TicketMall = rev.data;
+            (App.PanelManager.getPanel(PanelConst.MallPanel) as MallPanel).updateTicket()
         }
     }
 
@@ -214,7 +257,8 @@ class HallController extends BaseController {
             this.sendEvent(EventConst.UpdateGold, rev.data.cur_gold);
             this.sendEvent(EventConst.UpdateDiamond, rev.data.cur_diamonds);
 
-            App.MsgBoxManager.getBoxB().showMsg("购买成功");
+            // App.MsgBoxManager.getBoxB().showMsg("购买成功");
+            Tips.info("购买成功...");
         }
     }
 
@@ -294,7 +338,7 @@ class HallController extends BaseController {
         }
     }
 
-    /** 获取金币场的房间列表 */
+    /** 获取服务器房间列表 */
     public sendServerList() {
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_ServerList;
@@ -304,7 +348,11 @@ class HallController extends BaseController {
     private revServerList(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_ServerList.server_list = rev.data.server_list;
-            App.PanelManager.open(PanelConst.GoldPanel);
+
+            //取出开房类型的服务器地址
+            ProtocolHttp.server_info = ProtocolHttp.rev_ServerList.server_list[0];
+            App.DataCenter.ServerInfo.GAME_SERVER = ProtocolHttp.server_info.server_ip;
+            App.DataCenter.ServerInfo.GAME_PORT = ProtocolHttp.server_info.websocket_port;
         }
     }
 
@@ -340,6 +388,8 @@ class HallController extends BaseController {
 
     /** 加入房间，拿到服务器id获取服务器信息 */
     public sendAddRoom(roomId: number) {
+        console.log(roomId);
+        
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_AddRoom;
         request.param.room_pwd = roomId;
@@ -348,7 +398,34 @@ class HallController extends BaseController {
 
     private revAddRoom(rev: any) {
         if (rev.data) {
+            ProtocolHttp.rev_AddRoom = rev.data;
+            if (ProtocolHttp.rev_AddRoom.server_id == 0) {
+                //选取开房类型的服务器进行开房
+                let data = ProtocolData.Send101;
+                data.uid = App.DataCenter.UserInfo.selfUser.userID;
+                data.password = ProtocolHttp.rev_CreateRoom.room_info["room_pwd"];
+                this.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
+            } else {
+                this.sendServerDetail(ProtocolHttp.rev_AddRoom.server_id);
+            }
+        }
+    }
 
+    /** 获取服务器信息 */
+    public sendServerDetail(serverId) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ServerDetail;
+        request.param.id = serverId;
+        request.param.game_flag = 0;
+        httpsend.send(request, this.revServerDetail, this);
+    }
+
+    private revServerDetail(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.server_info = rev.data.server_info;
+            let data = ProtocolData.Send102;
+            data.uid = App.DataCenter.UserInfo.selfUser.userID;
+            this.sendJoinRoom(data, ProtocolHttp.server_info.server_ip + ":" + ProtocolHttp.server_info.websocket_port);
         }
     }
 
@@ -362,7 +439,8 @@ class HallController extends BaseController {
     private revClubList(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_ClubList.club_list = rev.data;
-            App.PanelManager.open(PanelConst.ClubPanel);
+            let panel = App.PanelManager.open(PanelConst.ClubPanel) as ClubPanel;
+            panel.initData();
         }
     }
 
@@ -378,10 +456,11 @@ class HallController extends BaseController {
         if (!rev.data) rev.data = [];
         ProtocolHttp.rev_ClubRoomList.room_list = rev.data;
         let panel = App.PanelManager.getPanel(PanelConst.ClubPanel) as ClubPanel;
+        panel.updateClubRoom();
     }
 
     /** 更改俱乐部名称 */
-    public sendUpdateClubName(clubId: string, clubName: string) {
+    public sendUpdateClubName(clubId: number, clubName: string) {
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_UpdateClubName;
         request.param.club_id = clubId;
@@ -390,8 +469,8 @@ class HallController extends BaseController {
     }
 
     private revUpdateClubName(rev: any) {
-        if (rev.data) {
-
+        if (rev["ret"] == 0) {
+            Tips.info("名称修改成功");
         }
     }
 
@@ -404,13 +483,16 @@ class HallController extends BaseController {
     }
 
     private revCreateClub(rev: any) {
-        if (rev.data) {
-
+        if (rev["ret"] == 0) {
+            this.sendClubList();
         }
     }
 
+    private _clubId: number; //标志开房类型 有值代表俱乐部房间，无代表普通房间
     /** 创建房间 */
     public sendCreateRoom(clubId, playerNum, useCards) {
+        this._clubId = clubId;
+
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_CreateRoom;
         request.param.club_id = clubId;
@@ -421,7 +503,14 @@ class HallController extends BaseController {
 
     private revCreateRoom(rev: any) {
         if (rev.data) {
-            ProtocolHttp.rev_CreateRoom = rev.data;
+            ProtocolHttp.rev_CreateRoom.room_info = rev.data.room_info;
+
+            if (this._clubId) {
+                //加入俱乐部房间，拿到服务器id获取服务器信息
+                this.sendAddClubRoom(ProtocolHttp.rev_CreateRoom.room_info["room_pwd"]);
+            } else {
+                this.sendAddRoom(ProtocolHttp.rev_CreateRoom.room_info["room_pwd"]);
+            }
         }
     }
 
@@ -436,6 +525,16 @@ class HallController extends BaseController {
     private revAddClubRoom(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_AddClubRoom = rev.data;
+            if (ProtocolHttp.rev_AddClubRoom.room_id == 0 && ProtocolHttp.rev_AddClubRoom.server_id == 0) {
+                // 选择一个开房类型 开房
+                let data = ProtocolData.Send101;
+                data.uid = App.DataCenter.UserInfo.selfUser.userID;
+                data.ticket_id = ProtocolHttp.rev_AddClubRoom.ticket_id;
+                data.password = ProtocolHttp.rev_CreateRoom.room_info["room_pwd"];
+                this.sendOpenRoom(data);
+            } else {
+                this.sendServerDetail(ProtocolHttp.rev_AddClubRoom.server_id)
+            }
         }
     }
 
@@ -450,8 +549,9 @@ class HallController extends BaseController {
     }
 
     private revHandleRequest(rev: any) {
-        if (rev.data) {
-
+        if (rev["ret"] == 0) {
+            this.clubPanel.applySucc();
+            Tips.info("同意加入...");
         }
     }
 
@@ -466,6 +566,7 @@ class HallController extends BaseController {
     private revClubRequest(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_ClubRequest.apply_list = rev.data;
+            this.clubPanel.showClubRequest();
         }
     }
 
@@ -480,6 +581,8 @@ class HallController extends BaseController {
     private revClubMembers(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_ClubMembers.members = rev.data;
+
+            this.clubPanel.showMember();
         }
     }
 
@@ -494,7 +597,7 @@ class HallController extends BaseController {
     private revCheckClub(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_CheckClub = rev.data;
-            (App.PanelManager.getPanel(PanelConst.ClubPanel) as ClubPanel).showClubInfo(rev.data);
+            this.clubPanel.showClubInfo(rev.data);
         }
     }
 
@@ -507,8 +610,10 @@ class HallController extends BaseController {
     }
 
     private revDissolveClub(rev: any) {
-        if (rev.data) {
-
+        if (rev["ret"] == 0) {
+            //解散成功，清除页面数据
+            this.clubPanel.clearClubInfo();
+            Tips.error("解散成功");
         }
     }
 
@@ -536,8 +641,9 @@ class HallController extends BaseController {
     }
 
     private revJoinInClub(rev: any) {
-        if (rev.data) {
-
+        if (rev["ret"] == 0) {
+            Tips.error("申请成功，请等待管理员审核");
+            this.clubPanel.backClubList();
         }
     }
 
@@ -551,8 +657,13 @@ class HallController extends BaseController {
     }
 
     private revExitClub(rev: any) {
-        if (rev.data) {
-
+        if (rev["ret"] == 0) {
+            Tips.info("删除成功");
+            this.clubPanel.deleteSucc();
         }
+    }
+
+    public get clubPanel(): ClubPanel {
+        return App.PanelManager.getPanel(PanelConst.ClubPanel) as ClubPanel;
     }
 }

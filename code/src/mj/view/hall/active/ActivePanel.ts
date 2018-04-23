@@ -84,7 +84,7 @@ class ActivePanel extends BasePanel {
 
 	/** 设置奖品信息 */
 	public setGift() {
-
+		
 	}
 
 	/**添加到场景中*/

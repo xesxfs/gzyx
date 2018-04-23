@@ -1,35 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ClubMemberSkin" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*">
-	<e:Image source="club_mem_bg_png" x="0" y="0"/>
-	<how:Button label="删除成员" x="0.5" y="245" scaleX="1" scaleY="1">
-		<how:skinName>
-		<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
-			<e:Image width="100%" height="100%" source="club_mem_del_png"/>
-			<e:Label id="labelDisplay" verticalCenter="1" x="96" fontFamily="Microsoft YaHei"/>
-		</e:Skin>
-		</how:skinName>
-	</how:Button>
-	<how:Button label="同意加入" x="0.5" y="245" scaleX="1" scaleY="1" visible="false">
-		<how:skinName>
+<e:Skin class="ClubMemberSkin" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*" xmlns:w="http://ns.egret.com/wing" width="1280" height="720">
+	<e:Rect id="rect" left="0" right="0" top="0" bottom="0" fillAlpha="0.2"/>
+	<e:Group id="memberGrp" x="980" y="95">
+		<e:Image source="club_mem_bg_png" x="0" y="0"/>
+		<how:Button id="deleteBtn" label="删除成员" x="0.5" y="245" scaleX="1" scaleY="1" width="228" height="75">
+			<how:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="club_msg_addbtn_png"/>
-			<e:Label id="labelDisplay" verticalCenter="1" x="96" fontFamily="Microsoft YaHei" xmlns:w="http://ns.egret.com/wing"/>
+				<e:Image width="100%" height="100%" source="club_mem_del_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1" x="96" fontFamily="Microsoft YaHei"/>
 			</e:Skin>
-		</how:skinName>
-	</how:Button>
-	<e:Scroller width="222" height="216" x="3" y="30" anchorOffsetX="0" anchorOffsetY="0">
-		<e:Group>
-			<e:List width="100%" itemRendererSkinName="ClubMemberItemSkin">
+			</how:skinName>
+		</how:Button>
+		<how:Button id="agreeBtn" label="同意加入" x="0.5" y="245" scaleX="1" scaleY="1" width="228" height="75" visible="false">
+			<how:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="club_msg_addbtn_png"/>
+				<e:Label id="labelDisplay" verticalCenter="1" x="96" fontFamily="Microsoft YaHei"/>
+			</e:Skin>
+			</how:skinName>
+		</how:Button>
+		<e:Scroller width="222" height="216" x="3" y="30" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Group>
+			<e:List id="membersLst" width="100%" itemRendererSkinName="ClubMemberItemSkin">
 				<e:ArrayCollection>
-					<e:Array>
-						<e:Object head="null"/>
-						<e:Object head="null"/>
-						<e:Object head="null"/>
-						<e:Object head="null"/>
-						<e:Object head="null"/>
-					</e:Array>
+				<e:Array>
+					<e:Object head="null"/>
+					<e:Object head="null"/>
+					<e:Object head="null"/>
+					<e:Object head="null"/>
+					<e:Object head="null"/>
+				</e:Array>
 				</e:ArrayCollection>
 			</e:List>
-		</e:Group>
-	</e:Scroller>
+			</e:Group>
+		</e:Scroller>
+	</e:Group>
 </e:Skin>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GrabPanelSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+	<e:Group width="100%" height="100%">
+		<e:Image source="main_bg_jpg" width="100%" height="100%" locked="true"/>
+		<e:Group x="785.14" y="20">
+			<e:Image source="img_infoFrame_png" y="0" width="180"/>
+			<e:Image x="12" source="ico_jewel_png" verticalCenter="0"/>
+			<how:Button id="addDiaBtn" xmlns:how="how.*" label="" left="175">
+			<how:skinName>
+				<e:Skin states="up,down,disabled" xmlns:ns1="*">
+				<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</how:skinName>
+			</how:Button>
+			<e:Label id="coinLab" text="1111111" textColor="0xFCC83C" verticalCenter="0" x="65" width="100" size="28" fontFamily="Arial"/>
+		</e:Group>
+		<e:Group x="1026" y="20">
+			<e:Image source="img_infoFrame_png" x="0" y="0" width="180"/>
+			<e:Image x="12" verticalCenter="0" source="kqs_icon_png"/>
+			<how:Button id="addGoldBtn" xmlns:how="how.*" label="" left="175">
+			<how:skinName>
+				<e:Skin states="up,down,disabled" xmlns:ns1="*">
+				<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</how:skinName>
+			</how:Button>
+			<e:Label id="goldLab" text="1111111" textColor="0xFCC83C" verticalCenter="0" x="72" width="100" size="28" fontFamily="Arial"/>
+		</e:Group>
+		<e:Button id="backBtn" label="" x="21" y="14">
+		<e:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+			<e:Image width="100%" height="100%" source="btn_back_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+		</e:Button>
+		<e:Image source="kqs_bgkuang_1_png" x="21" y="121"/>
+		<e:Image x="1060" y="121" source="kqs_bgkuang_2_png"/>
+		<e:Scroller width="1008" height="558" x="31" y="129" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Group>
+				<e:Image source="kqs_bgkuang_3_png" x="-0.990000000000002" y="0.3499999999999659" scaleX="1" scaleY="1"/>
+				<e:Image source="lbt_1_png" x="-1" y="0" scaleX="1" scaleY="1"/>
+				<e:Image source="kqs_bgkuang_line_png" x="-0.990000000000002" y="364" scaleX="1" scaleY="1"/>
+				<how:Button label="" x="9" y="161" scaleX="1" scaleY="1">
+					<how:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="lbt_jtl_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+					</how:skinName>
+				</how:Button>
+				<how:Button label="" x="625" y="161" scaleX="1" scaleY="1">
+					<how:skinName>
+					<e:Skin states="up,down,disabled">
+						<e:Image width="100%" height="100%" source="lbt_jtr_png"/>
+						<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+					</how:skinName>
+				</how:Button>
+				<e:Image source="lbt_curd_png" x="590" y="388" scaleX="1" scaleY="1"/>
+				<e:Image source="lbt_otherd_png" x="633" y="391" scaleX="1" scaleY="1"/>
+				<e:Image source="lbt_ms_png" x="27" y="432" scaleX="1" scaleY="1"/>
+				<e:Label text="边玩边抢海量好物" x="57.5" y="429.5" textColor="0x4F3A2D" fontFamily="Microsoft YaHei" size="22" scaleX="1" scaleY="1"/>
+				<e:Image source="lbt_ms_png" x="27" y="474" scaleX="1" scaleY="1"/>
+				<e:Label text="每天准备上线最低价商品" x="57.5" y="471.5" textColor="0x4F3A2D" fontFamily="Microsoft YaHei" size="22" scaleX="1" scaleY="1"/>
+				<e:List width="200" height="558" x="682" anchorOffsetY="0"/>
+			</e:Group>
+		</e:Scroller>
+	</e:Group>
+</e:Skin>

@@ -120,6 +120,8 @@ declare class ClubMenuSkin extends eui.Skin{
 }
 declare class ClubPanelSkin extends eui.Skin{
 }
+declare class ClubRenameSkin extends eui.Skin{
+}
 declare class ClubRoomItemSkin extends eui.Skin{
 }
 declare class PageViewSkin extends eui.Skin{

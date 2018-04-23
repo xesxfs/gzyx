@@ -14,7 +14,7 @@ class MallItem extends eui.ItemRenderer {
     protected dataChanged() {
         super.dataChanged();
 
-        if (this.data["isG"]) {
+        if (this.data["type"] != MallType.Diamond) {
             this.buyBtn.getChildByName("diamond").visible = true;
         }
 
@@ -33,13 +33,16 @@ class MallItem extends eui.ItemRenderer {
     }
 
     private onTouch(e: egret.TouchEvent) {
-        if (this.data["isG"]) {
+        if (this.data["type"] == MallType.Gold || this.data["type"] == MallType.Ticket) {
             let box = App.MsgBoxManager.getBoxA();
-            box.showMsg("确实使用" + this.data["price"] + "钻石购买" + this.data["num"] + "？", this.onBuyGold, this)
+            let msg = "确实使用" + this.data["price"] + "钻石购买" + this.data["num"] + "？";
+            box.showMsg(msg, this.onBuyGold, this);
         }
     }
 
     private onBuyGold() {
-        (App.getController(HallController.NAME) as HallController).requstBuyGold(this.data["id"])
+        let ctrl = App.getController(HallController.NAME) as HallController;
+        if (this.data["type"] == MallType.Gold) ctrl.requstBuyGold(this.data["id"]) //钻石购买金币
+        else ctrl.sendBuyTicket(this.data["id"]);   //钻石购买房卡
     }
 }

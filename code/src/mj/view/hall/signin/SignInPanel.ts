@@ -74,9 +74,13 @@ class SignInPanel extends BasePanel {
 			ProtocolHttp.rev_SignIn.add_gold = rev.data.add_gold;
 			App.EventManager.sendEvent(EventConst.UpdateGold, App.DataCenter.UserInfo.selfUser.gold + ProtocolHttp.rev_SignIn.add_gold);
 
+			//获得提示效果
 			let tip = new ActiveTip();
 			tip.init(rev.data.add_gold);
 			App.PopUpManager.addPopUp(tip)
+
+			this._signDay++;
+			this.checkBoxStatus();
 		}
 	}
 
@@ -102,6 +106,7 @@ class SignInPanel extends BasePanel {
 	}
 
 	private _focusLab;
+	private _signDay = 0;	//签到的天数
 	private setData() {
 		let data = ProtocolHttp.rev_MonthlyCalendar;
 		this.yearMonthLab.text = data.year_month;
@@ -137,9 +142,9 @@ class SignInPanel extends BasePanel {
 		}
 
 		//获取已经签到的天数
-		let signDay = 0;
+
 		data.sign_in.forEach((n) => {
-			if (n == 1) signDay++;
+			if (n == 1) this._signDay++;
 		});
 
 		let btn: eui.ToggleButton;
@@ -151,14 +156,39 @@ class SignInPanel extends BasePanel {
 					btn.enabled = false;
 				} else {
 					//未领取状态
-					if (signDay > data.box_info[i]["id"]) {
+					if (this._signDay >= data.box_info[i]["id"]) {
 						// 达到条件可以领宝箱
-						btn.selected = true;
 						btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onReceiveTouch, this);
+						btn.selected = true;
 						btn.name = "id_" + data.box_info[i]["id"];
 					}
 				}
+				
 				this["day" + i + "Lab"].text = data.box_info[i]["id"] + "天";
+			}
+		}
+	}
+
+	/** 检测宝箱的状态是否可以开启 */
+	private checkBoxStatus() {
+		let data = ProtocolHttp.rev_MonthlyCalendar;
+		let btn: eui.ToggleButton;
+		//宝箱的状态
+		if (data.box_info) {
+			for (var i = 0; i < data.box_info.length; i++) {
+				btn = this["box" + i + "Btn"];
+				if (data.box_info[i]["get_flag"] == 1) {
+					btn.enabled = false;
+				} else {
+					//未领取状态
+					if (this._signDay >= data.box_info[i]["id"]) {
+						// 达到条件可以领宝箱
+						btn.selected = true;
+						if (!btn.hasEventListener(egret.TouchEvent.TOUCH_TAP)) {
+							btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onReceiveTouch, this);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -179,6 +209,8 @@ class SignInPanel extends BasePanel {
 			ProtocolHttp.rev_RewardBox = rev.data;
 			App.EventManager.sendEvent(EventConst.UpdateGold, ProtocolHttp.rev_RewardBox.gold);
 			App.EventManager.sendEvent(EventConst.UpdateDiamond, ProtocolHttp.rev_RewardBox.diamonds);
+
+			Tips.info("恭喜您获得金币 +" + ProtocolHttp.rev_RewardBox.gold.toString() + "，钻石 +" + ProtocolHttp.rev_RewardBox.diamonds.toString());
 		}
 	}
 

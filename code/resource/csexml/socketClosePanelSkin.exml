@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="socketClosePanelSkin" width="755" height="1334" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image height="740" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" width="711" scale9Grid="313,78,54,31" horizontalCenter="0.5" verticalCenter="1"/>
-	<e:Button id="okBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="908" horizontalCenter="0.5">
-		<e:skinName>
-		<e:Skin states="up,down,disabled" xmlns:ns1="*">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-			<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="word_qd_png"/>
+<e:Skin class="socketClosePanelSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+
+
+
+
+
+
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image verticalCenter="0" horizontalCenter="0" scale9Grid="209,49,297,87" source="roome_Setting_tankuang_png"/>
+		<e:Image y="22.68" horizontalCenter="0" source="title_bg_png"/>
+		<e:Button id="closeBtn" label="" x="506" y="22.68" skinName="ButtonCloseSkin"/>
+		<e:Label text="提示" y="41.35" fontFamily="Microsoft YaHei" textColor="0x545454" horizontalCenter="0"/>
+		<how:Button id="okBtn" xmlns:how="how.*" label="确定" y="267.01" horizontalCenter="0">
+		<how:skinName>
+			<e:Skin states="up,down,disabled" xmlns:ns1="*">
+			<e:Image width="100%" height="100%" source="btn_yellow_png"/>
 			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-		</e:Skin>
-		</e:skinName>
-	</e:Button>
-	<e:Image y="310.68" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0.5"/>
-	<e:Image y="318.49" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0.5" source="tishi_png"/>
-	<e:Image source="hall_within_box_png" y="399.68" scale9Grid="37,34,86,36" anchorOffsetX="0" width="675" anchorOffsetY="0" height="494.15" horizontalCenter="0"/>
-	<e:Label text="您与服务器断开连接啦~~" y="594" size="35" textAlign="left" fontFamily="Microsoft YaHei" horizontalCenter="0.5" textColor="0x7e5a3d"/>
-	<e:Label text="点击确定重新连接" y="653" size="35" fontFamily="Microsoft YaHei" horizontalCenter="-31.5" textColor="0x7e5a3d"/>
+			</e:Skin>
+		</how:skinName>
+		</how:Button>
+		<e:Label text="您与服务器断开连接啦~~" y="113.5" size="35" textAlign="left" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0x7e5a3d"/>
+		<e:Label text="点击确定重新连接" y="172.5" size="35" fontFamily="Microsoft YaHei" horizontalCenter="0" textColor="0x7e5a3d"/>
+	</e:Group>
 </e:Skin>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ClubRenameSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image verticalCenter="0" horizontalCenter="0" scale9Grid="209,49,297,87" source="roome_Setting_tankuang_png"/>
+		<e:Image y="22.68" horizontalCenter="0" source="title_bg_png"/>
+		<e:Button id="closeBtn" label="" x="506" y="22.68" skinName="ButtonCloseSkin"/>
+		<e:Label text="更改俱乐部名称" y="41.35" fontFamily="Microsoft YaHei" textColor="0x545454" horizontalCenter="0"/>
+		<how:Button id="okBtn" xmlns:how="how.*" label="确定" y="267.01" horizontalCenter="0">
+		<how:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+			<e:Image width="100%" height="100%" source="btn_yellow_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</how:skinName>
+		</how:Button>
+		<e:EditableText id="nameTxt" width="422" height="53" text="" x="84" y="151" anchorOffsetX="0" anchorOffsetY="0" prompt="请输入名称" fontFamily="Microsoft YaHei"/>
+	</e:Group>
+</e:Skin>
