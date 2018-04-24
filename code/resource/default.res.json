@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "text_denglu_png,text_zhuce_png,weinx_png,weinx1_png,zhanghao_png,zhanghao1_png,img_text_bg_png,logo_d_png,login_bg_png,bisai_img_132_png,login_tankuang__png,kqs_icon_png,game_jpg",
+			"keys": "text_denglu_png,text_zhuce_png,weinx_png,weinx1_png,zhanghao_png,zhanghao1_png,img_text_bg_png,logo_d_png,login_bg_png,bisai_img_132_png,login_tankuang__png,kqs_icon_png,game_jpg,game2_jpg",
 			"name": "preload"
 		},
 		{
@@ -31,6 +31,10 @@
 		{
 			"keys": "loading_2_tex_png,loading_2_tex_json,loading_2_ske_json",
 			"name": "login"
+		},
+		{
+			"keys": "bgkuang_3_png,bgkuang_line_png,kqs_bgkuang_1_png,kqs_bgkuang_2_png,kqs_bgkuang_3_png,kqs_bgkuang_line_png,kqs_line_1_png,kqs_line_2_png,kqs_sp_1_png,kqs_sp_10_png,kqs_sp_2_png,kqs_sp_3_png,kqs_sp_4_png,kqs_sp_5_png,kqs_sp_6_png,kqs_sp_7_png,kqs_sp_8_png,kqs_sp_9_png,kqs_sp_kuang_png,lbt_1_png,lbt_2_png,lbt_curd_png,lbt_jtl_png,lbt_jtr_png,lbt_ms_png,lbt_otherd_png,sp_1_png,sp_10_png,sp_2_png,sp_3_png,sp_4_png,sp_5_png,sp_6_png,sp_7_png,sp_8_png,sp_9_png,sp_kuang_png",
+			"name": "grab"
 		}
 	],
 	"resources": [
@@ -5210,14 +5214,19 @@
 			"name": "club_png"
 		},
 		{
-			"name": "kqs_icon_png",
+			"url": "assets/lobby_new/kqs_icon.png",
 			"type": "image",
-			"url": "assets/lobby_new/kqs_icon.png"
+			"name": "kqs_icon_png"
 		},
 		{
-			"name": "game_jpg",
+			"url": "game.jpg",
 			"type": "image",
-			"url": "game.jpg"
+			"name": "game_jpg"
+		},
+		{
+			"url": "game.jpg",
+			"type": "image",
+			"name": "game2_jpg"
 		}
 	]
 }

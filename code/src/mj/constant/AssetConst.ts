@@ -75,4 +75,5 @@ class AssetConst{
     public static Qrcode: string = "qrcode";
     /**加载界面资源 */
     public static LoadPanel: string = "load_res";
+    public static Grab:string = "grab";
 }
