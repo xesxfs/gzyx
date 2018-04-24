@@ -38,8 +38,8 @@ class Card extends egret.DisplayObjectContainer {
         } else if (userPos == UserPosition.R) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg1_png");
             this.cardImg.bitmapData = null;
-            this.scaleX = -1;
-            this.scaleY = 1;
+            this.scaleX = -0.7;
+            this.scaleY = 0.7;
         } else if (userPos == UserPosition.Up) {
             this.cardBg.bitmapData = RES.getRes("card_bgup_png");
             this.cardImg.bitmapData = null;
@@ -48,8 +48,8 @@ class Card extends egret.DisplayObjectContainer {
         } else if (userPos == UserPosition.L) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg1_png");
             this.cardImg.bitmapData = null;
-            // this.scaleX = 0.85;
-            // this.scaleY = 0.85;
+            this.scaleX = 0.7;
+            this.scaleY = 0.7;
         }
 
     }
@@ -67,35 +67,24 @@ class Card extends egret.DisplayObjectContainer {
             this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
             this.cardImg.x = 13;
             this.cardImg.y = 8;
-            // this.scaleX = 1;
-            // this.scaleY = 1;
-            // this.width =58;
-            // this.height = 81;
+
         } else if (userPos == UserPosition.R) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg0_png");
             this.cardImg.bitmapData = RES.getRes("card_right_" + cardValue + "_png");
             this.cardImg.x = 10;
             this.cardImg.y = 2;
-            // this.scaleX = 0.7;
-            // this.scaleY = 0.7;
-            // this.width =64;
-            // this.height = 53;
+
         } else if (userPos == UserPosition.Up) {
             this.cardBg.bitmapData = RES.getRes("card_midself_bg_png");
             this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
             this.cardImg.x = 13;
             this.cardImg.y = 8;
-            // this.width =58;
-            // this.height = 81;
+
         } else if (userPos == UserPosition.L) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg0_png");
             this.cardImg.bitmapData = RES.getRes("card_left_" + cardValue + "_png");
             this.cardImg.x = 10;
             this.cardImg.y = 2;
-            // this.width =64;
-            // this.height = 53;
-            // this.scaleX = 0.7;
-            // this.scaleY = 0.7;
         }
     }
 
@@ -107,33 +96,54 @@ class Card extends egret.DisplayObjectContainer {
     public setEatSkin(cardValue: number, userPos: UserPosition) {
         this.cardValue = cardValue;
         this.userPos = userPos;
-        this.cardBg.bitmapData = RES.getRes("card_big_bg0_png");
-        this.cardImg.bitmapData = RES.getRes("card_big_" + cardValue + "_png");
-        
-        this.scaleX = 0.7;
-        this.scaleY = 0.7;
-        // this.cardImg.scaleX = 0.8;
-        // this.cardImg.scaleY = 0.8;
-        // this.cardImg.x = 5;
-        // this.cardImg.y = -12;
+        if (userPos == UserPosition.Down) {
+            this.cardBg.bitmapData = RES.getRes("card_big_bg0_png");
+            this.cardImg.bitmapData = RES.getRes("card_big_" + cardValue + "_png");
+            this.cardImg.scaleX = 0.8;
+            this.cardImg.scaleY = 0.8;
+            this.cardImg.y = -8
+
+        } else if (userPos == UserPosition.R) {
+            this.cardBg.bitmapData = RES.getRes("card_left_bg0_png");
+            this.cardImg.bitmapData = RES.getRes("card_right_" + cardValue + "_png");
+            this.cardImg.x = 10;
+            this.cardImg.y = 2;
+            this.scaleX = 0.7;
+            this.scaleY = 0.7;
+
+        } else if (userPos == UserPosition.Up) {
+            this.cardBg.bitmapData = RES.getRes("card_midself_bg_png");
+            this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
+            this.cardImg.x = 13;
+            this.cardImg.y = 8;
+
+        } else if (userPos == UserPosition.L) {
+            this.cardBg.bitmapData = RES.getRes("card_left_bg0_png");
+            this.cardImg.bitmapData = RES.getRes("card_left_" + cardValue + "_png");
+            this.cardImg.x = 10;
+            this.cardImg.y = 2;
+            this.scaleX = 0.7;
+            this.scaleY = 0.7;
+        }
+
     }
 
     /**
      * 设置上家吃碰杠牌皮肤
      */
-    public setUpEatSkin(cardValue: number, userPos: UserPosition) {
-        this.cardValue = cardValue;
-        this.cardBg.bitmapData = RES.getRes("card_bgup2_png");
-        this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
-        // this.scaleX = 0.7;
-        // this.scaleY = 0.7;
-        // this.cardBg.scaleX = 1.1;
-        // this.cardBg.scaleY = 1.1;
-        // this.cardImg.x = 8;
-        // this.cardImg.y = 5
-        // this.scaleX = 1.2;
-        // this.scaleY = 1.2;
-    }
+    // public setUpEatSkin(cardValue: number, userPos: UserPosition) {
+    //     this.cardValue = cardValue;
+    //     this.cardBg.bitmapData = RES.getRes("card_bgup2_png");
+    //     this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
+    //     this.scaleX = 0.7;
+    //     this.scaleY = 0.7;
+    //     this.cardBg.scaleX = 1.1;
+    //     this.cardBg.scaleY = 1.1;
+    //     this.cardImg.x = 8;
+    //     this.cardImg.y = 5
+    //     this.scaleX = 1.2;
+    //     this.scaleY = 1.2;
+    // }
 
 
     //设置暗杠皮肤
@@ -148,20 +158,19 @@ class Card extends egret.DisplayObjectContainer {
         } else if (userPos == UserPosition.R) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg2_png");
             this.cardImg.bitmapData = null;
-            this.scaleX = 0.933;
-            this.scaleY = 0.87;
+            this.scaleX = 0.7;
+            this.scaleY = 0.7;
 
         } else if (userPos == UserPosition.Up) {
             this.cardBg.bitmapData = RES.getRes("card_big_bg2_png");
             this.cardImg.bitmapData = null;
-            this.cardBg.scaleX = 0.7;
-            this.cardBg.scaleY = 0.7;
+
 
         } else if (userPos == UserPosition.L) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg2_png");
             this.cardImg.bitmapData = null;
-            this.scaleX = 0.933;
-            this.scaleY = 0.87;
+            this.cardBg.scaleX = 0.7;
+            this.cardBg.scaleY = 0.7;
         }
     }
 
