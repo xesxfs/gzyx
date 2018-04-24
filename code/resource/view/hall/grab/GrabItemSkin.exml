@@ -2,6 +2,6 @@
 <e:Skin class="GrabItemSkin" xmlns:e="http://ns.egret.com/eui">
 	<e:Image source="kqs_sp_kuang_png"/>
 	<e:Image source="kqs_sp_1_png" x="15" y="13"/>
-	<e:Label text="新秀丽双肩包" x="21" y="197.5" anchorOffsetX="0" width="170.5" textAlign="center" size="22" fontFamily="Microsoft YaHei"/>
+	<e:Label text="新秀丽双肩包" x="21" y="200" anchorOffsetX="0" width="170" textAlign="center" size="22" fontFamily="Microsoft YaHei" textColor="0x814d38"/>
 	<e:Label text="2018.04.23" x="21" y="244" anchorOffsetX="0" width="170" textAlign="center" size="22" fontFamily="Microsoft YaHei" textColor="0x814D38"/>
 </e:Skin>
