@@ -389,7 +389,7 @@ class HallController extends BaseController {
     /** 加入房间，拿到服务器id获取服务器信息 */
     public sendAddRoom(roomId: number) {
         console.log(roomId);
-        
+
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_AddRoom;
         request.param.room_pwd = roomId;
@@ -660,6 +660,58 @@ class HallController extends BaseController {
         if (rev["ret"] == 0) {
             Tips.info("删除成功");
             this.clubPanel.deleteSucc();
+        }
+    }
+
+    /** 刷新快抢赛门票 */
+    public sendQuicklyGrabTicket() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_QuicklyGrabTicket;
+        httpsend.send(request, this.revQuicklyGrabTicket, this);
+    }
+
+    private revQuicklyGrabTicket(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_QuicklyGrabTicket.grab_info = rev.data;
+        }
+    }
+
+    /** 快抢赛列表 */
+    public sendQuicklyGrab() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_QuicklyGrab;
+        httpsend.send(request, this.revQuicklyGrab, this);
+    }
+
+    private revQuicklyGrab(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_QuicklyGrab.match_infos = rev.data;
+        }
+    }
+
+    /** 钻石兑换快抢赛基本次数 */
+    public sendExchangeTicket() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ExchangeTicket;
+        httpsend.send(request, this.revExchangeTicket, this);
+    }
+
+    private revExchangeTicket(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_ExchangeTicket.exchange_info = rev.data;
+        }
+    }
+
+    /** 获取最近获奖列表 */
+    public sendQuicklyGrabRecord() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_QuicklyGrabRecord;
+        httpsend.send(request, this.revQuicklyGrabRecord, this);
+    }
+
+    private revQuicklyGrabRecord(rev:any) {
+        if (rev.data) {
+            ProtocolHttp.rev_QuicklyGrabRecord.grab_record = rev.data;
         }
     }
 

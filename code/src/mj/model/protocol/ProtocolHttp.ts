@@ -803,6 +803,7 @@ class ProtocolHttp {
         num: 0,  //	integer	可以买多少张开房卡
     }
 
+    /** 购买房卡 */
     public static send_BuyTicket = {
         action: "BuyTicket",
         param: {
@@ -813,5 +814,85 @@ class ProtocolHttp {
     public static rev_BuyTicket = {
         currentDiamonds: 0, //	integer	当前钻石
         currentRoomCards: 0, //	integer	当前房卡
+    }
+
+    /** 刷新快抢赛门票 */
+    public static send_QuicklyGrabTicket = {
+        action: "QuicklyGrabTicket",
+        param: {
+
+        }
+    }
+
+    public static rev_QuicklyGrabTicket = {
+        grab_info: {},
+    }
+
+    public static grab_info = {
+        total_charge_count: 0,   //	integer	总充值次数
+        count: 0,    //	integer	快抢赛次数
+        charge_count: 0, //	integer	今日已经充值的次数
+        surplus_charge_count: 0, //	integer	今日剩余的充值次数
+        next_recharge: 0,    //	integer	下次购买快抢赛所需的钻石数量, 如果返回-1证明今日已经不能购买了
+    }
+
+    /** 快抢赛列表 */
+    public static send_QuicklyGrab = {
+        action: "QuicklyGrab",
+        param: {
+
+        }
+    }
+
+    public static rev_QuicklyGrab = {
+        match_infos: [],    //快抢赛事
+    }
+
+    public static match_info = {
+        id: 0,   //	integer	id
+        name: "",    //	string	快抢赛名称
+        status: 0,   //	integer	快抢赛状态, 0禁用, 1待开始, 2已开始
+        icon_url: "",   //	string	图片
+        desc: "",    //	string	描述
+        code_count: 0,  //	integer	生成码总数
+        surplus_code_count: 0,   //	integer	生成码剩余数量
+        start_time: "",  //	string	开始时间
+        end_time: "",    //	string	结束时间
+        create_time: "", //	string	创建时间
+        expire_time: "", //	string	过期时间
+    }
+
+    /** 钻石兑换快抢赛基本次数 */
+    public static send_ExchangeTicket = {
+        action: "ExchangeTicket",
+        param: {
+
+        }
+    }
+
+    public static rev_ExchangeTicket = {
+        exchange_info: {},
+    }
+
+    public static exchange_info = {
+        front_count: 0,  //	integer	兑换前的快抢赛次数
+        later_count: 0,  //	integer	兑换后的快抢赛次数
+    }
+
+    /** 获取最近获奖列表 */
+    public static send_QuicklyGrabRecord = {
+        action: "QuicklyGrabRecord",
+        param: {
+            length: 0,   //	integer	最近成功获得优惠券的返回记录数	不可空
+        }
+    }
+
+    public static rev_QuicklyGrabRecord = {
+        grab_record: {},
+    }
+
+    public static grab_record = {
+        nickname: "",    //	string	用户昵称
+        match_name: "",  //	string	快抢赛名称
     }
 }

@@ -208,7 +208,9 @@ enum PanelConst {
     GoldPanel,
     /** 
      * 俱乐部 */
-    ClubPanel
+    ClubPanel,
+    /** 快抢赛页面 */
+    GrabPanel,
 }
 
 

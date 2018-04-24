@@ -99,7 +99,7 @@
 		"bin-debug/mj/view/game/gameui/LeftCardShowUI.js",
 		"bin-debug/mj/view/game/gameui/LeftCardShowUISkin.g.js",
 		"bin-debug/mj/view/game/gameui/OutCardTipUI.js",
-		"bin-debug/mj/view/login/LoginScene.js",
+		"bin-debug/framework/adapter/AssetAdapter.js",
 		"bin-debug/mj/view/game/gameui/TuoGuanShowUI.js",
 		"bin-debug/mj/view/game/gameui/TuoGuanShowUISkin.g.js",
 		"bin-debug/mj/view/game/invite/InvitePanelT.js",
@@ -166,6 +166,7 @@
 		"bin-debug/mj/view/hall/friend/FriendPanelT.js",
 		"bin-debug/mj/view/hall/goldgame/GoldPanel.js",
 		"bin-debug/mj/view/hall/goldgame/GoldPanelSkin.g.js",
+		"bin-debug/mj/view/hall/grab/GrabPanel.js",
 		"bin-debug/mj/view/hall/joinRoom/JoinRoomPanel.js",
 		"bin-debug/mj/view/hall/mall/MallItem.js",
 		"bin-debug/mj/view/hall/mall/MallItemData.js",
@@ -187,6 +188,6 @@
 		"bin-debug/mj/view/login/LoginChoosePanel.js",
 		"bin-debug/mj/view/login/LoginController.js",
 		"bin-debug/mj/view/login/LoginPanel.js",
-		"bin-debug/framework/adapter/AssetAdapter.js"
+		"bin-debug/mj/view/login/LoginScene.js"
 	]
 }

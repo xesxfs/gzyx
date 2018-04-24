@@ -18,6 +18,7 @@ class HallScene extends BaseScene {
     public setBtn: eui.Button;
     public rankGameBtn: eui.Button;
     public goldGameBtn: eui.Button;
+    public grabGameBtn: how.Button;
     public createBtn: eui.Button;
     public enterBtn: eui.Button;
     public personGroup: eui.Group;
@@ -143,11 +144,22 @@ class HallScene extends BaseScene {
             case this.rankGameBtn:
                 let data = ProtocolData.Send102;
                 data.uid = App.DataCenter.UserInfo.selfUser.userID;
-                this.ctrl.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
+
+                ProtocolHttp.rev_ServerList.server_list.forEach((element) => {
+                    if (element["server_flag"] == 2000001) {
+                        // 排位赛
+                        this.ctrl.sendJoinRoom(data, element["server_ip"] + ":" + element["websocket_port"]);
+                    }
+                })
+
+                
                 break;
             case this.goldGameBtn:
                 // this.ctrl.sendServerList();
                 App.PanelManager.open(PanelConst.GoldPanel);
+                break;
+            case this.grabGameBtn:
+                App.PanelManager.open(PanelConst.GrabPanel);
                 break;
             case this.createBtn:
                 App.PanelManager.open(PanelConst.CreateRoomPanel);
