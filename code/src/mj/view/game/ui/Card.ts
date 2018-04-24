@@ -32,9 +32,9 @@ class Card extends egret.DisplayObjectContainer {
         if (userPos == UserPosition.Down) {
             this.cardBg.bitmapData = RES.getRes("card_big_bg1_png");
             this.cardImg.bitmapData = RES.getRes("card_big_" + cardValue + "_png");
-            this.cardImg.x = 3
-            this.scaleX = .8;
-            this.scaleY = .8;
+            // this.cardImg.x = 3
+            // this.scaleX = .8;
+            // this.scaleY = .8;
         } else if (userPos == UserPosition.R) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg1_png");
             this.cardImg.bitmapData = null;
@@ -67,8 +67,8 @@ class Card extends egret.DisplayObjectContainer {
             this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
             this.cardImg.x = 13;
             this.cardImg.y = 8;
-            this.scaleX = 1;
-            this.scaleY = 1;
+            // this.scaleX = 1;
+            // this.scaleY = 1;
             // this.width =58;
             // this.height = 81;
         } else if (userPos == UserPosition.R) {
@@ -76,8 +76,8 @@ class Card extends egret.DisplayObjectContainer {
             this.cardImg.bitmapData = RES.getRes("card_right_" + cardValue + "_png");
             this.cardImg.x = 10;
             this.cardImg.y = 2;
-            this.scaleX = 1;
-            this.scaleY = 1;
+            // this.scaleX = 0.7;
+            // this.scaleY = 0.7;
             // this.width =64;
             // this.height = 53;
         } else if (userPos == UserPosition.Up) {
@@ -85,8 +85,6 @@ class Card extends egret.DisplayObjectContainer {
             this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
             this.cardImg.x = 13;
             this.cardImg.y = 8;
-            this.scaleX = 1;
-            this.scaleY = 1;
             // this.width =58;
             // this.height = 81;
         } else if (userPos == UserPosition.L) {
@@ -96,8 +94,8 @@ class Card extends egret.DisplayObjectContainer {
             this.cardImg.y = 2;
             // this.width =64;
             // this.height = 53;
-            this.scaleX = 1;
-            this.scaleY = 1;
+            // this.scaleX = 0.7;
+            // this.scaleY = 0.7;
         }
     }
 
@@ -111,10 +109,13 @@ class Card extends egret.DisplayObjectContainer {
         this.userPos = userPos;
         this.cardBg.bitmapData = RES.getRes("card_big_bg0_png");
         this.cardImg.bitmapData = RES.getRes("card_big_" + cardValue + "_png");
-        this.cardImg.scaleX = 0.8;
-        this.cardImg.scaleY = 0.8;
-        this.cardImg.x = 5;
-        this.cardImg.y = -12;
+        
+        this.scaleX = 0.7;
+        this.scaleY = 0.7;
+        // this.cardImg.scaleX = 0.8;
+        // this.cardImg.scaleY = 0.8;
+        // this.cardImg.x = 5;
+        // this.cardImg.y = -12;
     }
 
     /**
@@ -124,12 +125,14 @@ class Card extends egret.DisplayObjectContainer {
         this.cardValue = cardValue;
         this.cardBg.bitmapData = RES.getRes("card_bgup2_png");
         this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
-        this.cardBg.scaleX = 1.1;
-        this.cardBg.scaleY = 1.1;
-        this.cardImg.x = 8;
-        this.cardImg.y = 5
-        this.scaleX = 1.2;
-        this.scaleY = 1.2;
+        // this.scaleX = 0.7;
+        // this.scaleY = 0.7;
+        // this.cardBg.scaleX = 1.1;
+        // this.cardBg.scaleY = 1.1;
+        // this.cardImg.x = 8;
+        // this.cardImg.y = 5
+        // this.scaleX = 1.2;
+        // this.scaleY = 1.2;
     }
 
 

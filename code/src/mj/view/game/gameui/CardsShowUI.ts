@@ -155,7 +155,7 @@ class CardsShowUI extends eui.Component {
 			var point = new egret.Point(co.x, co.y);
 			outPointList.push(point);
 		}
-	
+
 
 	}
 
@@ -263,7 +263,7 @@ class CardsShowUI extends eui.Component {
 		this.cardGroups[pos].addChild(card);
 		// }
 		this.curTakeCard = card;
-		if(pos==UserPosition.Down){
+		if (pos == UserPosition.Down) {
 			this.noticeOutCard();
 		}
 	}
@@ -281,7 +281,7 @@ class CardsShowUI extends eui.Component {
 		this.outList[pos].forEach((card) => {
 			this.cardGroups[pos + this.playNum].addChild(card);
 		});
-		(App.SceneManager.getCurScene() as GameScene).outFlagUI.show(card,pos);
+		(App.SceneManager.getCurScene() as GameScene).outFlagUI.show(card, pos);
 	}
 
 	/**吃碰杠移动位置 从手牌拿出一张放到摸牌位置，其他手牌往前移动*/
@@ -579,8 +579,8 @@ class CardsShowUI extends eui.Component {
 		return false;
 	}
 
-	private doAction(cardValue:number) {
-		let ctrl:GameController = App.getController(GameController.NAME);
+	private doAction(cardValue: number) {
+		let ctrl: GameController = App.getController(GameController.NAME);
 		ctrl.sendOutCard(cardValue);
 		// var data = [act, cardList];
 		// this.dispatchEventWith("cardAction", false, data)
