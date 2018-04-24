@@ -152,14 +152,14 @@ class HallScene extends BaseScene {
                     }
                 })
 
-                
                 break;
             case this.goldGameBtn:
                 // this.ctrl.sendServerList();
                 App.PanelManager.open(PanelConst.GoldPanel);
                 break;
             case this.grabGameBtn:
-                App.PanelManager.open(PanelConst.GrabPanel);
+                // App.PanelManager.open(PanelConst.GrabPanel);
+                this.ctrl.sendQuicklyGrab();
                 break;
             case this.createBtn:
                 App.PanelManager.open(PanelConst.CreateRoomPanel);

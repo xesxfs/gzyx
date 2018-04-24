@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="GrabItemSkin" xmlns:e="http://ns.egret.com/eui">
 	<e:Image source="kqs_sp_kuang_png"/>
-	<e:Image source="kqs_sp_1_png" x="15" y="13"/>
-	<e:Label text="新秀丽双肩包" x="21" y="200" anchorOffsetX="0" width="170" textAlign="center" size="22" fontFamily="Microsoft YaHei" textColor="0x814d38"/>
-	<e:Label text="2018.04.23" x="21" y="244" anchorOffsetX="0" width="170" textAlign="center" size="22" fontFamily="Microsoft YaHei" textColor="0x814D38"/>
+	<e:Image x="15" y="13" source="{data.icon_url}" width="179" height="163"/>
+	<e:Label x="12.5" y="200" anchorOffsetX="0" width="184.5" textAlign="center" size="22" fontFamily="Microsoft YaHei" textColor="0x814d38" text="{data.name}"/>
+	<e:Label x="2.5" y="244" anchorOffsetX="0" width="203" textAlign="center" size="20" fontFamily="Microsoft YaHei" textColor="0x814D38" text="{data.desc}"/>
 </e:Skin>

@@ -673,6 +673,7 @@ class HallController extends BaseController {
     private revQuicklyGrabTicket(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_QuicklyGrabTicket.grab_info = rev.data;
+            (App.PanelManager.getPanel(PanelConst.GrabPanel) as GrabPanel).updateGrabTick();
         }
     }
 
@@ -686,6 +687,7 @@ class HallController extends BaseController {
     private revQuicklyGrab(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_QuicklyGrab.match_infos = rev.data;
+            App.PanelManager.open(PanelConst.GrabPanel);
         }
     }
 

@@ -81,7 +81,7 @@ class App extends BaseApp {
         panel.register(PanelConst.LoginChoosePanel, LoginChoosePanel);      //登录选择
         panel.register(PanelConst.BindPanel, BindPanel);      //绑定
         panel.register(PanelConst.ClubPanel, ClubPanel);
-        panel.register(PanelConst.GrabPanel, GrabPanel);
+        panel.register(PanelConst.GrabPanel, GrabPanel, AssetConst.Grab);
 
 
 
