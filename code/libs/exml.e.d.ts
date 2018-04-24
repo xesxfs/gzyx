@@ -136,6 +136,10 @@ declare class EmailTwoSkin extends eui.Skin{
 }
 declare class FriendPanelTSkin extends eui.Skin{
 }
+declare class GrabItemSkin extends eui.Skin{
+}
+declare class GrabPanelSkin extends eui.Skin{
+}
 declare class JoinNumberSkin extends eui.Skin{
 }
 declare class JoinRoomPanelSkin extends eui.Skin{

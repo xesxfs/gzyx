@@ -21,7 +21,7 @@ class ServerInfo {
     public get WEB_URL() {
         // 判断是否本地测试php地址 
         if (App.DataCenter.debugInfo.isLocalPhp == 1) {
-            return "http://192.168.0.222:8070/majapi/api.php";
+            return "http://test.heroscocks.com/%1?uid=%2&skey=%3&param=%4";
         } else if (App.DataCenter.debugInfo.isLocalPhp == 2) {
             return "http://192.168.1.192/majapi/api.php";
         } else {

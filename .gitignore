@@ -1,3 +1,15 @@
 
 *.js
 *.map
+code/manifest.json
+code/manifest.json
+code/index.html
+code/libs/exml.e.d.ts
+code/libs/modules/dragonBones/dragonBones.d.ts
+code/libs/modules/egret/egret.d.ts
+code/libs/modules/eui/eui.d.ts
+code/libs/modules/game/game.d.ts
+code/libs/modules/res/res.d.ts
+code/libs/modules/socket/socket.d.ts
+code/libs/modules/tween/tween.d.ts
+code/manifest.json

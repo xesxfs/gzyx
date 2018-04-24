@@ -141,9 +141,7 @@ class HallScene extends BaseScene {
                 (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Ticket);
                 break;
             case this.rankGameBtn:
-                let data = ProtocolData.Send102;
-                data.uid = App.DataCenter.UserInfo.selfUser.userID;
-                this.ctrl.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
+                this.joinRankRoom();
                 break;
             case this.goldGameBtn:
                 // this.ctrl.sendServerList();
@@ -160,6 +158,12 @@ class HallScene extends BaseScene {
                 break;
 
         }
+    }
+
+    private joinRankRoom() {
+        let data = ProtocolData.Send102;
+        data.uid = App.DataCenter.UserInfo.selfUser.userID;
+        this.ctrl.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
     }
 
     private onPersion() {
