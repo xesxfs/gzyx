@@ -86,14 +86,13 @@ class HallController extends BaseController {
             myuser.seatID = json.seatid;
         }
         this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
-
     }
 
     /****断线重连 */
     private revReBind(data) {
         let json = ProtocolData.Rev2021;
         json = data;
-
+        this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
     }
 
     /******开房****** */
@@ -144,7 +143,6 @@ class HallController extends BaseController {
     private revRanking(rev: any) {
         let ranking = ProtocolHttp.rev_Rank;
         ranking.data = rev.data;
-
         let scene = App.SceneManager.getCurScene() as HallScene;
         scene.rankingPnl.update();
     }
@@ -159,7 +157,6 @@ class HallController extends BaseController {
     private revItemList(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_GetItemList.item_list = rev.data.item_list;
-
             var arr = [];
             ProtocolHttp.rev_GetItemList.item_list.forEach((item) => {
                 arr[item.id] = item;
@@ -709,7 +706,7 @@ class HallController extends BaseController {
         httpsend.send(request, this.revQuicklyGrabRecord, this);
     }
 
-    private revQuicklyGrabRecord(rev:any) {
+    private revQuicklyGrabRecord(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_QuicklyGrabRecord.grab_record = rev.data;
         }
