@@ -48,14 +48,19 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_BEGIN_ROBOT_OP_BC, this.revTuoGuang, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_CANCEL_ROBOT_OP_SUCC_BC, this.revCancleTuoGuang, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM, this.revQuiteGame, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_END_BC, this.revEndResult, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_READY_STAGE_BC, this.revReady, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.revReady, this);
 
     }
 
     public unRegisterSocket() {
         var socket: ClientSocket = App.gameSocket;
         // socket.unRegister(ProtocolHead.Rev100145);
+    }
+
+
+    public continueGame() {
+        this.sendReady();
+        this.gameScene.resetScene();
     }
 
 
@@ -146,8 +151,6 @@ class GameController extends BaseController {
                 this.gameScene.selectActUI.updateInfo(actList, json.getin_mj);
                 this.gameScene.selectActUI.show();
             }
-
-
         }
 
     }
@@ -195,7 +198,6 @@ class GameController extends BaseController {
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
         this.gameScene.cardShowUI.dealCPGAction(ACT_act.Act_Gang, pos, [json.mj], 1);
-
     }
 
     private revFangGang(data) {
@@ -227,8 +229,10 @@ class GameController extends BaseController {
     }
 
     private revGameOver(data) {
+        console.log("+++++++++++++++++++++revGameOver---------------")
         let json = ProtocolData.Rev2020;
         json = data;
+        (App.PanelManager.open(PanelConst.GameResultPanel) as GameResultPanel).update(json);
     }
 
     private revChongFengJi(data) {
@@ -241,16 +245,11 @@ class GameController extends BaseController {
         json = data;
     }
 
-
     private revReady(data) {
         let json = ProtocolData.Rev2019;
         json = data;
     }
 
-    private revEndResult(data) {
-        let json = ProtocolData.Rev2020;
-        json = data;
-    }
 
     private revQuiteGame(data) {
         let json = ProtocolData.Rev2038;
@@ -259,6 +258,7 @@ class GameController extends BaseController {
         if (pos == UserPosition.Down) {
             App.DataCenter.UserInfo.deleteAllUserExcptMe();
             this.sendEvent(HallController.EVENT_SHOW_HALL);
+            App.PanelManager.closeAllPanel();
         } else {
             this.gameScene.headShowUI.hideHeadUI(pos);
             App.DataCenter.UserInfo.deleteUser(json.uid);
@@ -270,7 +270,6 @@ class GameController extends BaseController {
     public sendReady() {
         let json = ProtocolData.Send1001;
         App.gameSocket.send(json);
-
     }
 
     public sendPeng() {

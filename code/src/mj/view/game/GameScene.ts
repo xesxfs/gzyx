@@ -51,7 +51,10 @@ class GameScene extends BaseScene {
     }
 
     public resetScene() {
-
+        this.cardShowUI.reset();
+        this.touGuanShowUI.hideTuoGuan();
+        this.outFlagUI.hide();;
+        this.discShowUI.hideAllLight();
     }
 
 

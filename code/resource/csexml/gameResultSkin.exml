@@ -1,86 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="gameResultSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="750" height="1334">
-	<e:Image width="712" height="1118" source="hall_big_box_png" anchorOffsetX="0" anchorOffsetY="0" scale9Grid="212,52,331,54" horizontalCenter="0" verticalCenter="0"/>
-	<e:Image y="125" source="hall_door_png" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0"/>
-	<e:Button id="backBtn" label="" x="656" y="100.3" anchorOffsetX="0" anchorOffsetY="0">
+<e:Skin class="gameResultSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*" width="1270" height="720">
+	<e:Image source="bg_png" width="100%" height="100%"/>
+	<e:Image source="bg_center_lose_png" horizontalCenter="0" bottom="0"/>
+	<e:Image source="bg_center_png" horizontalCenter="0" bottom="0"/>
+	<ns1:GameResultItem skinName="gameResultItemSkin" y="30.4" x="45.45"/>
+	<ns1:GameResultItem skinName="gameResultItemSkin" y="30.4" x="348"/>
+	<ns1:GameResultItem skinName="gameResultItemSkin" y="30.4" x="651"/>
+	<ns1:GameResultItem skinName="gameResultItemSkin" y="30.4" x="954.23"/>
+	<e:Label text="底分：" y="666.07" x="590"/>
+	<e:Label id="scoreLab" text="500" y="666.07" x="685"/>
+	<e:Button id="ksyxBtn" label="" x="973.08" y="633.46">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_close_png"/>
+			<e:Image width="100%" height="100%" source="ksyx_btn_png"/>
 			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Image y="135.34" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0.5" source="result_title_1_png"/>
-	<e:Scroller id="resultScoller" width="660" height="855" y="209" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
-		<e:List id="resultList" width="100%" height="100%" x="0" y="-20" anchorOffsetY="0" >
-			<e:layout>
-			<e:VerticalLayout paddingTop="3" gap="3"/>
-			</e:layout>
-		</e:List>
-	</e:Scroller>
-	<e:Scroller id="zongScroller" width="660" height="855" y="209" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0">
-		<e:List id="zongList" width="100%" height="100%" x="0" y="-20" anchorOffsetY="0">
-		<e:layout>
-			<e:VerticalLayout paddingTop="3" gap="3"/>
-		</e:layout>
-		</e:List>
-	</e:Scroller>
-	<e:Group id="matchGroup" x="150" y="1087">
-		<e:Button id="changDeskBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="0" x="0">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt2_png"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="result_changedesk_png" verticalCenter="-3"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="continueBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="0" x="270">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" source="result_continue_png" verticalCenter="-3"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-	</e:Group>
-	<e:Group id="friendGroup" x="150" y="1087">
-		<e:Button id="shareBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="0" x="0">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt2_png"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="cs_share_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="chakanBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="0" x="270">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="cs_chakanzj_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="xujuBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="0" x="270">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="cs_xuju_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-		<e:Button id="jixuBtn" label="" anchorOffsetX="0" anchorOffsetY="0" y="0" x="270">
-			<e:skinName>
-			<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" horizontalCenter="0" verticalCenter="0" width.down="95%" height.down="95%" source="hall_two_bt_png"/>
-				<e:Image anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="-3" source="result_continue_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-			</e:Skin>
-			</e:skinName>
-		</e:Button>
-	</e:Group>
+	<how:Button id="closeBtn" label="Button" x="1198.71" y="1.09" skinName="ButtonCloseSkin"/>
+
+
+
+
+
+
+
+
 </e:Skin>

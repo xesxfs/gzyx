@@ -348,8 +348,8 @@ class CardsShowUI extends eui.Component {
 				card = this.handleList[pos].shift();
 			} else {
 				card = this.handleList[pos].pop();
+				console.log("rmOtherEndCard", pos, card.x, card.y)
 			}
-
 			card && card.recycle();
 		}
 	}
@@ -444,7 +444,6 @@ class CardsShowUI extends eui.Component {
 
 			//二次出牌,吃碰杠
 		} else {
-
 			console.log("吃碰没有拿牌——+——+——+——+——+——+")
 			if (pos == UserPosition.Down) {
 				//移除要出的手牌
@@ -512,7 +511,10 @@ class CardsShowUI extends eui.Component {
 				this.noticeOutCard();
 				this.offsetHandCard(pos);
 			}
-
+		} else {
+			if (act == ACT_act.Act_Chi || act == ACT_act.Act_Peng) {
+				this.offsetHandCard(pos);
+			}
 		}
 
 
