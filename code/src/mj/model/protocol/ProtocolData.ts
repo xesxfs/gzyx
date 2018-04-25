@@ -58,7 +58,8 @@ class ProtocolData {
     public static Send102 = {
         cmd: 102,//	integer	协议ID
         uid: 0,
-        //    roomid: 0,//	integer	房间号就是100000~999999之间的随机密码
+        roomid: 0,//	integer	房间号就是100000~999999之间的随机密码
+        match_id: 0,    //快抢赛号,只有快抢赛时有效
     }
 
 

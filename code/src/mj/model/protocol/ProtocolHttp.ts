@@ -888,7 +888,7 @@ class ProtocolHttp {
     }
 
     public static rev_QuicklyGrabRecord = {
-        grab_record: {},
+        grab_record: [],
     }
 
     public static grab_record = {
