@@ -5,7 +5,7 @@
 		<e:Image verticalCenter="0" horizontalCenter="0" scale9Grid="209,49,297,87" source="roome_Setting_tankuang_png"/>
 		<e:Image y="22.68" horizontalCenter="0" source="title_bg_png"/>
 		<e:Button id="closeBtn" label="" x="506" y="22.68" skinName="ButtonCloseSkin"/>
-		<e:Label id="msgLabel" text="解散房间不扣房卡，是否确定解散？" y="99.67" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="1" verticalAlign="middle" fontFamily="Microsoft YaHei" size="30" textAlign="center" lineSpacing="20" textColor="0x7E5A3D" height="167.34"/>
+		<e:Label id="msgLabel" text="解散房间不扣房卡，是否确定解散？" y="99.67" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="1" verticalAlign="middle" fontFamily="Microsoft YaHei" size="30" textAlign="center" lineSpacing="20" textColor="0x7E5A3D" height="167.34" wordWrap="true"/>
 		<e:Label text="提示" y="41.35" fontFamily="Microsoft YaHei" textColor="0x545454" horizontalCenter="0"/>
 		<how:Button id="okBtn" xmlns:how="how.*" label="确定" y="267.01" horizontalCenter="121">
 		<how:skinName>

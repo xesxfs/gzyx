@@ -705,12 +705,14 @@ class HallController extends BaseController {
     public sendQuicklyGrabRecord() {
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_QuicklyGrabRecord;
+        request.param.length = 30;
         httpsend.send(request, this.revQuicklyGrabRecord, this);
     }
 
     private revQuicklyGrabRecord(rev: any) {
         if (rev.data) {
             ProtocolHttp.rev_QuicklyGrabRecord.grab_record = rev.data;
+            (App.PanelManager.getPanel(PanelConst.GrabPanel) as GrabPanel).updateGrabRecord();
         }
     }
 
