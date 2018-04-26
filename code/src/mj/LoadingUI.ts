@@ -31,8 +31,8 @@ class LoadingUI extends eui.Component {
 
     public constructor() {
         super();
-        this.width = 750;
-        this.height = 1334;
+        this.width = 1280;
+        this.height = 720;
         this.createView();
     }
 
@@ -41,7 +41,7 @@ class LoadingUI extends eui.Component {
     private createView():void {
 
         let bg = new eui.Image();
-        bg.source = "resource/assets/hall/hall_bg.jpg"
+        bg.source = "resource/assets/login/main_bg.jpg"
         egret.Tween.get(this).wait(100)
         .call(()=>{
             this.addChildAt(bg, 0);
@@ -49,8 +49,8 @@ class LoadingUI extends eui.Component {
 
         this.loadLabel = new eui.Label();
         this.addChildAt(this.loadLabel, 1);
-        this.loadLabel.size = 40;
-        this.loadLabel.textColor = 0x7ee50d;
+        this.loadLabel.size = 20;
+        // this.loadLabel.textColor = 0x7ee50d;
         this.loadLabel.verticalCenter = 0;
         this.loadLabel.horizontalCenter = 0;
         this.loadLabel.text = "Loading...";

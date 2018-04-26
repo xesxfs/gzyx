@@ -1,46 +1,49 @@
 {
-	"publish": {
-		"web": 0,
-		"native": 1,
-		"path": "bin-release"
-	},
-	"egret_version": "5.0.15",
-	"modules": [
-		{
-			"name": "egret",
-			"path": "${EGRET_APP_DATA}/5.0.15"
-		},
-		{
-			"name": "eui",
-			"path": "${EGRET_APP_DATA}/5.0.15"
-		},
-		{
-			"name": "res",
-			"path": "${EGRET_APP_DATA}/5.0.15"
-		},
-		{
-			"name": "socket",
-			"path": "${EGRET_APP_DATA}/5.0.15"
-		},
-		{
-			"name": "tween",
-			"path": "${EGRET_APP_DATA}/5.0.15"
-		},
-		{
-			"name": "game",
-			"path": "${EGRET_APP_DATA}/5.0.15"
-		},
-		{
-			"name": "dragonbones",
-			"path": "${EGRET_APP_DATA}/5.0.15"
-		},
-		{
-			"name": "particle",
-			"path": "../modules/particle"
-		},
-		{
-			"name": "md5",
-			"path": "../modules/md5"
-		}
-	]
+  "publish": {
+    "web": 0,
+    "native": 1,
+    "path": "./../../hero_chicken_h5_release"
+  },
+  "egret_version": "5.0.15",
+  "modules": [
+    {
+      "name": "egret",
+      "path": "${EGRET_APP_DATA}/5.0.15"
+    },
+    {
+      "name": "eui",
+      "path": "${EGRET_APP_DATA}/5.0.15"
+    },
+    {
+      "name": "res",
+      "path": "${EGRET_APP_DATA}/5.0.15"
+    },
+    {
+      "name": "socket",
+      "path": "${EGRET_APP_DATA}/5.0.15"
+    },
+    {
+      "name": "tween",
+      "path": "${EGRET_APP_DATA}/5.0.15"
+    },
+    {
+      "name": "game",
+      "path": "${EGRET_APP_DATA}/5.0.15"
+    },
+    {
+      "name": "dragonbones",
+      "path": "${EGRET_APP_DATA}/5.0.15"
+    },
+    {
+      "name": "particle",
+      "path": "../modules/particle"
+    },
+    {
+      "name": "md5",
+      "path": "../modules/md5"
+    }
+  ],
+  "target": {
+    "current": "web"
+  }
 }

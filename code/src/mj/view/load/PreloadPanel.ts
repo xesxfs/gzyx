@@ -14,6 +14,10 @@ class PreloadPanel extends BasePanel {
 
     protected onEnable() {
         this.setProgress(0);
+        this.play();
+    }
+
+    public play () {
         this.animator.play(this.animator.defentAnimationName);
     }
 

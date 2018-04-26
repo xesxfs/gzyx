@@ -1,22 +1,24 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="LoginSceneSkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image height="100%" y="0" left="0" right="0" source="login_bg_png"/>
+<e:Skin class="LoginSceneSkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+	<e:Image height="100%" y="0" left="0" right="0" source="main_bg_jpg"/>
 	<e:Image source="logo_d_png" horizontalCenter="0" top="0"/>
 
-	<e:Button id="wxBtn" label="" y="554" x="331">
+	<how:Button id="wxBtn" label="" y="554" x="331">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="weinx_png" source.down="weinx1_png"/>
+			<e:Image width="100%" height="100%" source="weinx_png"/>
 			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
 		</e:skinName>
-	</e:Button>
-	<e:Button id="accountBtn" label="" y="554" x="765">
+
+	</how:Button>
+	<how:Button id="accountBtn" label="" y="554" x="765">
 		<e:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="zhanghao_png" source.down="zhanghao1_png"/>
+			<e:Image width="100%" height="100%" source="zhanghao_png"/>
 			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
 		</e:skinName>
-	</e:Button>
+
+	</how:Button>
 </e:Skin>

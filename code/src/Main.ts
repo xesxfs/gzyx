@@ -60,13 +60,13 @@ class Main extends eui.UILayer {
     
     //preload资源组加载完成
     private onPreloadComplete(event:RES.ResourceEvent):void {
-        //this.stage.removeChild(this.loadingView);
+        // this.stage.removeChild(this.loadingView);
         this.startCreateScene();
     }
 
     //加载进度
     private onProgress(event:RES.ResourceEvent) {
-        //this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
+        // this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
     }
 
     //创建场景界面

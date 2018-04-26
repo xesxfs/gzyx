@@ -1,40 +1,36 @@
 {
 	"groups": [
 		{
-			"keys": "text_denglu_png,text_zhuce_png,weinx_png,weinx1_png,zhanghao_png,zhanghao1_png,img_text_bg_png,logo_d_png,login_bg_png,bisai_img_132_png,login_tankuang__png,kqs_icon_png,game_jpg,game2_jpg",
+			"keys": "loading_2_tex_png,loading_2_tex_json,loading_2_ske_json,main_bg_jpg",
 			"name": "preload"
 		},
 		{
-			"keys": "bisai_btn_png,bottom_png,btn_addCoin_png,btn_help_png,btn_mall_png,btn_msg_png,btn_rank_png,btn_setting_png,btn_tiandao_png,circle_btn_png,ico_gold_png,ico_gold_x_png,icon_fd_png,icon_wx_png,img_Bg_png,img_fuhao_png,img_headPortrait_png,img_infoFrame_png,img_packg_png,img_paiwei_png,img_rank_w_png,img_red_png,img_touXiangFrame_png,join_btn_png,lobby_fenxiang_png,lobby_line_png,lobby_logo_png,lobby_made_png,lobby_niao_png,lobby_Ranking_bg_png,quick_btn_png,rank_num_png,achiev_dis_png,achiev_png,active_png,battery_A_png,battery_B_png,car_b_png,car_png,coin_match_png,create_room_font_png,create_png,enter_png,foot_png,head_bg_png,intro_png,join_room_font_png,mail_png,main_bg_jpg,mm_png,more_png,radio_dis_png,radio_png,rank_foot_png,rank_match_png,watch_b_png,watch_png,wifi_1_png,wifi_2_png,wifi_3_png,wifi_A_png,wifi_B_png,j_0_png,j_1_png,j_2_png,j_3_png,j_4_png,j_5_png,j_6_png,j_8_png,j_9_png,j_7_png,point_png,sgin_img_tab_png,bisai_img_03-31_png,bisai_img_03_png,bisai_img_06_png,bisai_img_103_png,bisai_img_107_png,bisai_img_109_png,bisai_img_112_png,bisai_img_115-57_png,bisai_img_115-59_png,bisai_img_13_png,bisai_img_135_png,bisai_img_138_png,bisai_img_142_png,bisai_img_145_png,bisai_img_151_png,bisai_img_155_png,bisai_img_16_png,bisai_img_24_png,bisai_img_27_png,bisai_img_29_png,bisai_img_49_png,bisai_img_55_png,bisai_img_57_png,bisai_img_60_png,bisai_img_65_png,bisai_img_66_png,bisai_img_69_png,bisai_img_71_png,bisai_img_75_png,bisai_img_79_png,bisai_img_81_png,bisai_img_85_png,bisai_img_91_png,bisai_img_93_png,bisai_img_95_png,bisai_tanguangbg_png,huafeisai_png,huafeisai2_png,match_enrollbtn_png,match_gobtn_png,match_h_bg_png,match_nobtn_png,match_ran_number_png,match_ran_number2_png,reward_no_1_png,reward_no_2_png,reward_no_3_png,time_th_png,zhizunsai_png,zhizunsai2_png,zuanshisai_png,zuanshisai2_png,btn_clean_png,btn_del_png,cjfj_tx_png,gy_normal_png,gy_select_png,ico_jewel_png,img_check_png,img_diKuang_png,img_sigle_png,img_timeKuang_png,line0_png,line2_png,sdg_normal_png,sdg_select_png,srf_img_tanKuang_png,srf_img_tanKuang2_png,yxj_select_png,zy_normal_png,zy_select_png,chuji_png,dashi_png,difen_b_png,gaoji_png,gold_c_bg_png,gold_heap_png,gold_site_img_png,ico_ren_png,Label_png,number_png,create_room_btn_png,jbc_btn_png,join_room_btn_png,kqs_btn_png,club_png",
-			"name": "hall"
+			"keys": "lobby_Ranking_bg_png,lobby_niao_png,lobby_made_png,lobby_logo_png,lobby_line_png,lobby_fenxiang_png,join_btn_png,img_touXiangFrame_png,img_red_png,img_rank_w_png,img_paiwei_png,img_packg_png,img_infoFrame_png,img_headPortrait_png,img_fuhao_png,img_default_png,img_Bg_png,icon_wx_png,icon_fd_png,ico_gold_png,ico_gold_x_png,fcm_d_png,club_png,circle_btn_png,btn_tiandao_png,btn_setting_png,btn_rank_png,btn_msg_png,btn_mall_png,btn_help_png,btn_addCoin_png,bottom_png,bisai_btn_png,wifi_B_png,wifi_A_png,wifi_3_png,wifi_2_png,wifi_1_png,watch_png,watch_b_png,rank_match_png,rank_foot_png,radio_png,radio_dis_png,more_png,mm_png,mail_png,kqs_icon_png,kqs_btn_png,join_room_font_png,join_room_btn_png,jbc_btn_png,intro_png,head_bg_png,foot_png,enter_png,create_png,create_room_font_png,create_room_btn_png,coin_match_png,car_png,car_b_png,battery_B_png,battery_A_png,active_png,achiev_png,achiev_dis_png",
+			"name": "lobby"
 		},
 		{
 			"keys": "card_bgup_png,card_bgup1_png,card_bgup2_png,card_big_17_png,card_big_18_png,card_big_19_png,card_big_33_png,card_big_34_png,card_big_35_png,card_big_36_png,card_big_37_png,card_big_38_png,card_big_39_png,card_big_51_png,card_big_52_png,card_big_53_png,card_big_54_png,card_big_55_png,card_big_56_png,card_big_57_png,card_big_bg_3_png,card_big_bg0_png,card_big_bg1_png,card_big_bg2_png,card_left_17_png,card_left_18_png,card_left_19_png,card_left_33_png,card_left_34_png,card_left_35_png,card_left_36_png,card_left_37_png,card_left_38_png,card_left_39_png,card_left_51_png,card_left_52_png,card_left_53_png,card_left_54_png,card_left_55_png,card_left_56_png,card_left_57_png,card_left_bg0_png,card_left_bg1_png,card_left_bg2_png,card_mid_bg0_png,card_midself_bg_png,card_right_17_png,card_right_18_png,card_right_19_png,card_right_33_png,card_right_34_png,card_right_35_png,card_right_36_png,card_right_37_png,card_right_38_png,card_right_39_png,card_right_51_png,card_right_52_png,card_right_53_png,card_right_54_png,card_right_55_png,card_right_56_png,card_right_57_png,card_small_17_png,card_small_18_png,card_small_19_png,card_small_33_png,card_small_34_png,card_small_35_png,card_small_36_png,card_small_37_png,card_small_51_png,card_small_52_png,card_small_53_png,card_small_54_png,card_small_55_png,card_small_56_png,card_small_57_png,card_small_bg0_png,card_small_bg1_png,card_small_bg2_png,card_big_11_png,card_big_12_png,card_big_13_png,card_big_14_png,card_big_15_png,card_big_16_png,card_big_31_png,card_big_32_png,card_big_58_png,card_big_59_png,card_big_71_png,card_big_81_png,card_big_91_png,card_left_11_png,card_left_12_png,card_left_13_png,card_left_14_png,card_left_15_png,card_left_16_png,card_left_31_png,card_left_32_png,card_left_58_png,card_left_59_png,card_left_71_png,card_left_81_png,card_left_91_png,card_right_11_png,card_right_12_png,card_right_13_png,card_right_14_png,card_right_15_png,card_right_16_png,card_right_31_png,card_right_32_png,card_right_58_png,card_right_59_png,card_right_71_png,card_right_81_png,card_right_91_png,card_small_11_png,card_small_12_png,card_small_13_png,card_small_14_png,card_small_15_png,card_small_16_png,card_small_31_png,card_small_32_png,card_small_39_png,card_small_58_png,card_small_59_png,card_small_71_png,card_small_81_png,card_small_91_png,card_small_38_png,tin_jiant_png,baoting-btnnormal_png,baoting-btnpress_png,gang_btnnormal_png,gang_btnpress_png,hu_btnnormal_png,hu_btnpress_png,pass_btnnormal_png,pass_btnpress_png,peng_btnnormal_png,peng_btnpress_png,ting_btnnormal_png,ting_btnpress_png",
 			"name": "game"
 		},
 		{
-			"keys": "",
-			"name": "sound_bgm"
-		},
-		{
-			"keys": "",
-			"name": "chatFace"
-		},
-		{
 			"keys": "common_blue_bg_png,return_btn_png,roome_Setting_tankuang_png,tankuang_big_png,tankuang_small_png,title_bg_png,volumeBig_png,volumeSmall_png,btn_back_png,btn_blue_big_png,btn_blue_small_png,btn_close_png,btn_left_selected_png,btn_left_unSelected_png,btn_right_selected_png,btn_right_unselected_png,btn_yellow_png,btn_yellow_big_png",
 			"name": "common"
 		},
 		{
-			"keys": "",
-			"name": "card"
+			"keys": "bgkuang_3_png,bgkuang_line_png,kqs_bgkuang_1_png,kqs_bgkuang_2_png,kqs_bgkuang_3_png,kqs_bgkuang_line_png,kqs_line_1_png,kqs_line_2_png,kqs_sp_kuang_png,lbt_1_png,lbt_2_png,lbt_curd_png,lbt_jtl_png,lbt_jtr_png,lbt_ms_png,lbt_otherd_png,sp_kuang_png",
+			"name": "grab"
 		},
 		{
-			"keys": "loading_2_tex_png,loading_2_tex_json,loading_2_ske_json",
+			"keys": "zhanghao_png,text_zhuce_png,logo_d_png,img_text_bg_png,login_tankuang__png,text_denglu_png,weinx_png",
 			"name": "login"
 		},
 		{
-			"keys": "bgkuang_3_png,bgkuang_line_png,kqs_bgkuang_1_png,kqs_bgkuang_2_png,kqs_bgkuang_3_png,kqs_bgkuang_line_png,kqs_line_1_png,kqs_line_2_png,kqs_sp_1_png,kqs_sp_10_png,kqs_sp_2_png,kqs_sp_3_png,kqs_sp_4_png,kqs_sp_5_png,kqs_sp_6_png,kqs_sp_7_png,kqs_sp_8_png,kqs_sp_9_png,kqs_sp_kuang_png,lbt_1_png,lbt_2_png,lbt_curd_png,lbt_jtl_png,lbt_jtr_png,lbt_ms_png,lbt_otherd_png,sp_1_png,sp_10_png,sp_2_png,sp_3_png,sp_4_png,sp_5_png,sp_6_png,sp_7_png,sp_8_png,sp_9_png,sp_kuang_png",
-			"name": "grab"
+			"keys": "club_add_jr_png,club_add_srk_png,club_bigkuang_bg_png,club_btn_add_png,club_btn_back_png,club_btn_cjfj_png,club_btn_cy_png,club_btn_msg_png,club_btn_set_png,club_btn_sx_png,club_create_back_png,club_create_qd_png,club_create_srk_png,club_left_hdi_png,club_left_line_png,club_lm_fz_png,club_lm_rt_png,club_mem_bg_png,club_mem_del_png,club_mem_line_png,club_mem_sel_png,club_mem_txk_png,club_msg_addbtn_png,club_msg_kuang_png,club_right_di_png,club_right_hdi_png,club_right_line_png,club_txk_png",
+			"name": "club"
+		},
+		{
+			"keys": "diamond1_png,diamond2_png,diamond3_png,diamond4_png,diamond5_png,diamond6_png,fk1_png,fk2_png,fk3_png,fk4_png,fk5_png,fk6_png,fk7_png,given_atl_png,given_bg_png,given_flag_png,Gold1_png,Gold2_png,Gold3_png,Gold4_png,Gold5_png,Gold6_png,mall_tab_btn_png,mall_tab_btn2_png,mall_txt_png,mallkuang_bg_png,new_png,purchasebtn_png,re_png",
+			"name": "mall"
 		}
 	],
 	"resources": [
@@ -614,19 +610,9 @@
 			"name": "weinx_png"
 		},
 		{
-			"url": "assets/login/weinx1.png",
-			"type": "image",
-			"name": "weinx1_png"
-		},
-		{
 			"url": "assets/login/zhanghao.png",
 			"type": "image",
 			"name": "zhanghao_png"
-		},
-		{
-			"url": "assets/login/zhanghao1.png",
-			"type": "image",
-			"name": "zhanghao1_png"
 		},
 		{
 			"url": "assets/login/img_text_bg.png",
@@ -812,11 +798,6 @@
 			"url": "assets/lobby_new/mail.png",
 			"type": "image",
 			"name": "mail_png"
-		},
-		{
-			"url": "assets/lobby_new/main_bg.jpg",
-			"type": "image",
-			"name": "main_bg_jpg"
 		},
 		{
 			"url": "assets/lobby_new/mm.png",
@@ -1469,26 +1450,6 @@
 			"name": "ltjl_txt_png"
 		},
 		{
-			"url": "assets/Default/ImageFile.png",
-			"type": "image",
-			"name": "ImageFile_png"
-		},
-		{
-			"url": "assets/Default/Sprite.png",
-			"type": "image",
-			"name": "Sprite_png"
-		},
-		{
-			"url": "assets/Default/Button_Press.png",
-			"type": "image",
-			"name": "Button_Press_png"
-		},
-		{
-			"url": "assets/Default/Button_Disable.png",
-			"type": "image",
-			"name": "Button_Disable_png"
-		},
-		{
 			"url": "assets/help/card_01.png",
 			"type": "image",
 			"name": "card_01_png"
@@ -1564,21 +1525,6 @@
 			"name": "ico_jewel_png"
 		},
 		{
-			"url": "assets/login/loading.json",
-			"type": "json",
-			"name": "loading_json"
-		},
-		{
-			"url": "assets/login/loading.atlas",
-			"type": "bin",
-			"name": "loading_atlas"
-		},
-		{
-			"url": "assets/login/loading.png",
-			"type": "image",
-			"name": "loading_png"
-		},
-		{
 			"url": "assets/mail_notice/mail_10.png",
 			"type": "image",
 			"name": "mail_10_png"
@@ -1607,11 +1553,6 @@
 			"url": "assets/mail_notice/mail_29.png",
 			"type": "image",
 			"name": "mail_29_png"
-		},
-		{
-			"url": "assets/mail_notice/MailNoticeItmeNode.udf",
-			"type": "bin",
-			"name": "MailNoticeItmeNode_udf"
 		},
 		{
 			"url": "assets/mail_notice/mail_31.png",
@@ -4084,11 +4025,6 @@
 			"name": "j_7_png"
 		},
 		{
-			"url": "assets/login/login_bg.png",
-			"type": "image",
-			"name": "login_bg_png"
-		},
-		{
 			"url": "assets/card/card_bgup.png",
 			"type": "image",
 			"name": "card_bgup_png"
@@ -5064,56 +5000,6 @@
 			"name": "kqs_line_2_png"
 		},
 		{
-			"url": "assets/grab/kqs_sp_1.png",
-			"type": "image",
-			"name": "kqs_sp_1_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_10.png",
-			"type": "image",
-			"name": "kqs_sp_10_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_2.png",
-			"type": "image",
-			"name": "kqs_sp_2_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_3.png",
-			"type": "image",
-			"name": "kqs_sp_3_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_4.png",
-			"type": "image",
-			"name": "kqs_sp_4_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_5.png",
-			"type": "image",
-			"name": "kqs_sp_5_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_6.png",
-			"type": "image",
-			"name": "kqs_sp_6_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_7.png",
-			"type": "image",
-			"name": "kqs_sp_7_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_8.png",
-			"type": "image",
-			"name": "kqs_sp_8_png"
-		},
-		{
-			"url": "assets/grab/kqs_sp_9.png",
-			"type": "image",
-			"name": "kqs_sp_9_png"
-		},
-		{
 			"url": "assets/grab/kqs_sp_kuang.png",
 			"type": "image",
 			"name": "kqs_sp_kuang_png"
@@ -5154,56 +5040,6 @@
 			"name": "lbt_otherd_png"
 		},
 		{
-			"url": "assets/grab/sp_1.png",
-			"type": "image",
-			"name": "sp_1_png"
-		},
-		{
-			"url": "assets/grab/sp_10.png",
-			"type": "image",
-			"name": "sp_10_png"
-		},
-		{
-			"url": "assets/grab/sp_2.png",
-			"type": "image",
-			"name": "sp_2_png"
-		},
-		{
-			"url": "assets/grab/sp_3.png",
-			"type": "image",
-			"name": "sp_3_png"
-		},
-		{
-			"url": "assets/grab/sp_4.png",
-			"type": "image",
-			"name": "sp_4_png"
-		},
-		{
-			"url": "assets/grab/sp_5.png",
-			"type": "image",
-			"name": "sp_5_png"
-		},
-		{
-			"url": "assets/grab/sp_6.png",
-			"type": "image",
-			"name": "sp_6_png"
-		},
-		{
-			"url": "assets/grab/sp_7.png",
-			"type": "image",
-			"name": "sp_7_png"
-		},
-		{
-			"url": "assets/grab/sp_8.png",
-			"type": "image",
-			"name": "sp_8_png"
-		},
-		{
-			"url": "assets/grab/sp_9.png",
-			"type": "image",
-			"name": "sp_9_png"
-		},
-		{
 			"url": "assets/grab/sp_kuang.png",
 			"type": "image",
 			"name": "sp_kuang_png"
@@ -5219,14 +5055,9 @@
 			"name": "kqs_icon_png"
 		},
 		{
-			"url": "game.jpg",
+			"url": "assets/login/main_bg.jpg",
 			"type": "image",
-			"name": "game_jpg"
-		},
-		{
-			"url": "game.jpg",
-			"type": "image",
-			"name": "game2_jpg"
+			"name": "main_bg_jpg"
 		}
 	]
 }

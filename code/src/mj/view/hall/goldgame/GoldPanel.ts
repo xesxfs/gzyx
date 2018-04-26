@@ -66,7 +66,7 @@ class GoldPanel extends BasePanel {
 	private initData() {
 		let arr = ProtocolHttp.rev_ServerList.server_list;
 
-		for (var i = 1; i < arr.length; i++) {
+		for (var i = 1; i <= 3; i++) {
 			this["baseLab" + (i - 1)].text = arr[i]["base_gold"];
 			this["numLab" + (i - 1)].text = arr[i]["player_num"] + "人";
 			this["goldLab" + (i - 1)].text = this.goldRange(arr[i]["min_access"], arr[i]["max_access"]);

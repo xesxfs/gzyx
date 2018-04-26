@@ -47,7 +47,7 @@ class App extends BaseApp {
         panel.register(PanelConst.ResultPanel, ResultPanel);                        //结算面板
         panel.register(PanelConst.ResultPanel1, ResultPanel);                        //结算面板
         panel.register(PanelConst.SharePanel, SharePanel);                           //分享面板
-        panel.register(PanelConst.MallPanel, MallPanel);                            //商城面板
+        panel.register(PanelConst.MallPanel, MallPanel, AssetConst.Mall);                            //商城面板
         panel.register(PanelConst.PaymentPanel, PaymentPanel);                      //支付面板
         panel.register(PanelConst.PaymentMethod, PaymentMethod);                    //选择支付面板
         panel.register(PanelConst.BackpackPanel, BackpackPanel);                    //背包面板
@@ -80,7 +80,7 @@ class App extends BaseApp {
         panel.register(PanelConst.AllRecord, AllRecord);      //总结算面板
         panel.register(PanelConst.LoginChoosePanel, LoginChoosePanel);      //登录选择
         panel.register(PanelConst.BindPanel, BindPanel);      //绑定
-        panel.register(PanelConst.ClubPanel, ClubPanel);
+        panel.register(PanelConst.ClubPanel, ClubPanel, AssetConst.Club);
         panel.register(PanelConst.GrabPanel, GrabPanel, AssetConst.Grab);
 
 

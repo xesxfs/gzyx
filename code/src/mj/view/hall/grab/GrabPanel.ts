@@ -136,7 +136,7 @@ class GrabPanel extends BasePanel {
 			Tips.info("今日已经不能购买了");
 			return;
 		}
-		let msg = "今日第" + grabInfo["charge_count"] + "次购买快抢赛次数，本次购买消耗" + grabInfo["next_recharge"] + "钻石，确定购买吗？";
+		let msg = "今日第" + (grabInfo["charge_count"] + 1) + "次购买快抢赛次数，\n本次购买消耗" + grabInfo["next_recharge"] + "钻石，\n确定购买吗？";
 
 		App.MsgBoxManager.getBoxA().showMsg(msg, () => {
 			this.ctrl.sendExchangeTicket();
