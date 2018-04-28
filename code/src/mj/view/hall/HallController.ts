@@ -53,6 +53,7 @@ class HallController extends BaseController {
         gameSocket.register(ProtocolHead.open_room_type_command.CLIENT_OPEN_ROOM_REQ, this.revOpenRoom, this);
         gameSocket.register(ProtocolHead.open_room_type_command.CLIENT_JOIN_ROOM_REQ, this.revJoinRoom, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_REBIND_UC, this.revReBind, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ERROR_UC, this.revError, this);
 
         //socket连接错误事件
         this.addEvent(EventConst.SocketIOError, this.onSocketError, this);
@@ -86,6 +87,15 @@ class HallController extends BaseController {
             myuser.seatID = json.seatid;
         }
         this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
+        App.PanelManager.closeAllPanel();
+    }
+
+
+    private revError(data) {
+        let json = ProtocolData.Rev2022;
+        json = data;
+        console.log(json.err_msg);
+        TipsLog.hallInfo(json.err_msg);
     }
 
     /****断线重连 */
@@ -385,15 +395,17 @@ class HallController extends BaseController {
 
     /** 加入房间，拿到服务器id获取服务器信息 */
     public sendAddRoom(roomId: number) {
-        console.log(roomId);
-
+        console.log("roomId:", roomId);
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_AddRoom;
         request.param.room_pwd = roomId;
+        ProtocolData.Send102.roomid = roomId;
         httpsend.send(request, this.revAddRoom, this);
+
     }
 
     private revAddRoom(rev: any) {
+        console.log("revAddRoom", rev);
         if (rev.data) {
             ProtocolHttp.rev_AddRoom = rev.data;
             if (ProtocolHttp.rev_AddRoom.server_id == 0) {
@@ -401,6 +413,7 @@ class HallController extends BaseController {
                 let data = ProtocolData.Send101;
                 data.uid = App.DataCenter.UserInfo.selfUser.userID;
                 data.password = ProtocolHttp.rev_CreateRoom.room_info["room_pwd"];
+
                 this.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
             } else {
                 this.sendServerDetail(ProtocolHttp.rev_AddRoom.server_id);
@@ -489,7 +502,6 @@ class HallController extends BaseController {
     /** 创建房间 */
     public sendCreateRoom(clubId, playerNum, useCards) {
         this._clubId = clubId;
-
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_CreateRoom;
         request.param.club_id = clubId;
@@ -498,14 +510,17 @@ class HallController extends BaseController {
         httpsend.send(request, this.revCreateRoom, this);
     }
 
+
+
     private revCreateRoom(rev: any) {
+        console.log("revCreateRoom:", rev);
         if (rev.data) {
             ProtocolHttp.rev_CreateRoom.room_info = rev.data.room_info;
-
             if (this._clubId) {
                 //加入俱乐部房间，拿到服务器id获取服务器信息
                 this.sendAddClubRoom(ProtocolHttp.rev_CreateRoom.room_info["room_pwd"]);
             } else {
+                ProtocolData.Send101.ticket_id = ProtocolHttp.rev_CreateRoom.room_info["room_id"]
                 this.sendAddRoom(ProtocolHttp.rev_CreateRoom.room_info["room_pwd"]);
             }
         }

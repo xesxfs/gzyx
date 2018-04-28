@@ -39,7 +39,6 @@ class CreateRoomPanel extends BasePanel {
 			case this.okBtn:
 				this.createRoom();
 				break;
-
 			default:
 				break;
 		}

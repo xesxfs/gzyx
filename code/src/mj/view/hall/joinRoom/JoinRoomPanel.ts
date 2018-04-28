@@ -82,6 +82,7 @@ class JoinRoomPanel extends BasePanel {
 			roomId += lab.text;
 		}
 		return parseInt(roomId);
+
 	}
 
 
