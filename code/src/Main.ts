@@ -39,8 +39,8 @@ class Main extends eui.UILayer {
         this.stage.registerImplementation("eui.IThemeAdapter",new ThemeAdapter());
 
         //设置加载进度界面
-        // this.loadingView = new LoadingUI();
-        // this.stage.addChild(this.loadingView);
+        this.loadingView = new LoadingUI();
+        this.stage.addChild(this.loadingView);
 
         //Resource资源加载库
         App.ResUtils.addConfig("resource/default.res.json", "resource/");
@@ -61,12 +61,13 @@ class Main extends eui.UILayer {
     //preload资源组加载完成
     private onPreloadComplete(event:RES.ResourceEvent):void {
         // this.stage.removeChild(this.loadingView);
+        this.loadingView.hideLab();
         this.startCreateScene();
     }
 
     //加载进度
     private onProgress(event:RES.ResourceEvent) {
-        // this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
+        this.loadingView.setProgress(event.itemsLoaded, event.itemsTotal);
     }
 
     //创建场景界面

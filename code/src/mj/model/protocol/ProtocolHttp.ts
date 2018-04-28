@@ -590,6 +590,7 @@ class ProtocolHttp {
             club_id: 0,  //	integer	俱乐部id	必须
             player_num: 0,   //	integer	这个桌子可以坐多少人	必须
             use_cards: 0,    //	integer	为了开这个房间，使用了多少张房卡	必须
+            board_choose:0, //这个房间可以玩几圈	必须
         }
     }
 

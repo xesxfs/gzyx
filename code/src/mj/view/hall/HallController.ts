@@ -401,7 +401,7 @@ class HallController extends BaseController {
         request.param.room_pwd = roomId;
         ProtocolData.Send102.roomid = roomId;
         httpsend.send(request, this.revAddRoom, this);
-
+        
     }
 
     private revAddRoom(rev: any) {
@@ -500,12 +500,13 @@ class HallController extends BaseController {
 
     private _clubId: number; //标志开房类型 有值代表俱乐部房间，无代表普通房间
     /** 创建房间 */
-    public sendCreateRoom(clubId, playerNum, useCards) {
+    public sendCreateRoom(clubId, playerNum, board, useCards) {
         this._clubId = clubId;
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_CreateRoom;
         request.param.club_id = clubId;
         request.param.player_num = playerNum;
+        request.param.board_choose = board;
         request.param.use_cards = useCards;
         httpsend.send(request, this.revCreateRoom, this);
     }

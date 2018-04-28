@@ -36,16 +36,16 @@ class LoadingUI extends eui.Component {
         this.createView();
     }
 
-    private loadLabel:eui.Label;
+    private loadLabel: eui.Label;
 
-    private createView():void {
+    private createView(): void {
 
         let bg = new eui.Image();
-        bg.source = "resource/assets/login/main_bg.jpg"
+        bg.source = "resource/assets/login/main_bg.jpg";
         egret.Tween.get(this).wait(100)
-        .call(()=>{
-            this.addChildAt(bg, 0);
-        },this);
+            .call(() => {
+                this.addChildAt(bg, 0);
+            }, this);
 
         this.loadLabel = new eui.Label();
         this.addChildAt(this.loadLabel, 1);
@@ -56,7 +56,11 @@ class LoadingUI extends eui.Component {
         this.loadLabel.text = "Loading...";
     }
 
-    public setProgress(current:number, total:number):void {
+    public hideLab() {
+        this.loadLabel.visible = false;
+    }
+
+    public setProgress(current: number, total: number): void {
         this.loadLabel.text = `Loading...${current}/${total}`;
     }
 }

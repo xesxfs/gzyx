@@ -52,7 +52,7 @@ class HallScene extends BaseScene {
         let user = App.DataCenter.UserInfo.selfUser;
         this.nameLab.text = user.nickName;
         this.coinLab.text = user.coin.toString();
-        this.goldLab.text = user.gold.toString();
+        this.goldLab.text = NumberTool.formatMoney(user.gold);
         this.cardLab.text = user.roomCard.toString();
         this.headUrl.source = user.headUrl;
     }

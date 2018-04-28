@@ -14,7 +14,7 @@ class PreloadPanel extends BasePanel {
 
     protected onEnable() {
         this.setProgress(0);
-        this.play();
+        egret.setTimeout(()=>{ this.play(); }, this, 100)
     }
 
     public play () {

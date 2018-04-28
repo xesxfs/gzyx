@@ -55,7 +55,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:RadioButton>
-		<e:RadioButton label="标准玩法" x="401" y="275" groupName="wanfa" selected="true">
+		<e:RadioButton id="num4RabBtn" label="标准玩法" x="401" y="275" groupName="wanfa" selected="true">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image source="img_check_png" source.down="img_sigle_png"/>
@@ -63,7 +63,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:RadioButton>
-		<e:RadioButton label="三丁拐" x="569" y="275" groupName="wanfa">
+		<e:RadioButton id="num3RabBtn" label="三丁拐" x="569" y="275" groupName="wanfa">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image source="img_check_png" source.down="img_sigle_png"/>
@@ -71,7 +71,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:RadioButton>
-		<e:RadioButton label="二丁拐" x="713.53" y="275" groupName="wanfa">
+		<e:RadioButton id="num2RabBtn" label="二丁拐" x="713.53" y="275" groupName="wanfa">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image source="img_check_png" source.down="img_sigle_png"/>

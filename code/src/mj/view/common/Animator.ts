@@ -98,8 +98,6 @@ module how {
                     this.play(defentAnimationName, 1);
                 } else {
                     this.play(defentAnimationName);
-                    console.log(defentAnimationName);
-                    
                 }
             }
             if (!Animator.isAdvanceTime) {

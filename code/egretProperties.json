@@ -1,49 +1,59 @@
 {
-  "publish": {
-    "web": 0,
-    "native": 1,
-    "path": "./../../hero_chicken_h5_release"
-  },
-  "egret_version": "5.0.15",
-  "modules": [
-    {
-      "name": "egret",
-      "path": "${EGRET_APP_DATA}/5.0.15"
-    },
-    {
-      "name": "eui",
-      "path": "${EGRET_APP_DATA}/5.0.15"
-    },
-    {
-      "name": "res",
-      "path": "${EGRET_APP_DATA}/5.0.15"
-    },
-    {
-      "name": "socket",
-      "path": "${EGRET_APP_DATA}/5.0.15"
-    },
-    {
-      "name": "tween",
-      "path": "${EGRET_APP_DATA}/5.0.15"
-    },
-    {
-      "name": "game",
-      "path": "${EGRET_APP_DATA}/5.0.15"
-    },
-    {
-      "name": "dragonbones",
-      "path": "${EGRET_APP_DATA}/5.0.15"
-    },
-    {
-      "name": "particle",
-      "path": "../modules/particle"
-    },
-    {
-      "name": "md5",
-      "path": "../modules/md5"
-    }
-  ],
-  "target": {
-    "current": "web"
-  }
+	"publish": {
+		"web": 0,
+		"native": 1,
+		"path": "./../../hero_chicken_h5_release"
+	},
+	"egret_version": "5.0.12",
+	"eui": {
+		"exmlRoot": [
+			"resource/csexml",
+			"resource/view"
+		],
+		"themes": [
+			"resource/default.thm.json"
+		],
+		"exmlPublishPolicy": "content"
+	},
+	"modules": [
+		{
+			"name": "egret"
+		},
+		{
+			"name": "eui"
+		},
+		{
+			"name": "res"
+		},
+		{
+			"name": "socket"
+		},
+		{
+			"name": "tween"
+		},
+		{
+			"name": "game"
+		},
+		{
+			"name": "dragonbones"
+		},
+		{
+			"name": "particle",
+			"path": "../modules/particle"
+		},
+		{
+			"name": "md5",
+			"path": "../modules/md5"
+		},
+		{
+			"name": "promise",
+			"path": "./promise"
+		}
+	],
+	"target": {
+		"current": "web"
+	},
+	"native": {
+		"android_path": "../../../adt-bundle-windows-x86_64-20140624/gzyx"
+	}
 }

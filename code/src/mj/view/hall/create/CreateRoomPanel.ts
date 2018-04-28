@@ -6,6 +6,9 @@ class CreateRoomPanel extends BasePanel {
 	}
 	public fourRadBtn: eui.RadioButton;
 	public okBtn: eui.Button;
+	public num4RabBtn: eui.RadioButton;
+	public num3RabBtn: eui.RadioButton;
+	public num2RabBtn: eui.RadioButton;
 
 	private _clubId: number;
 	protected childrenCreated() {
@@ -45,8 +48,15 @@ class CreateRoomPanel extends BasePanel {
 	}
 
 	private createRoom() {
+		let num = 0;
+		if (this.num2RabBtn.selected) num = 2;
+		if (this.num3RabBtn.selected) num = 3;
+		if (this.num4RabBtn.selected) num = 4;
+
 		let ctrl = App.getController(HallController.NAME) as HallController;
-		ctrl.sendCreateRoom(this._clubId, this.fourRadBtn.selected ? 4 : 8, 1);
+		ctrl.sendCreateRoom(this._clubId, num, this.fourRadBtn.selected ? 4 : 8, 1);
+
+		this.hide();
 	}
 
 	//删除场景

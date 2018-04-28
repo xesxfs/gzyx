@@ -9249,17 +9249,9 @@ declare namespace egret {
          */
         update(datas: FPSData): void;
         /**
-         * 插入一条log信息
+         * 插入一条日志信息
          */
         updateInfo(info: string): void;
-        /**
-         * 插入一条warn信息
-         */
-        updateWarn(info: string): void;
-        /**
-         * 插入一条error信息
-         */
-        updateError(info: string): void;
     }
     /**
      * @private
@@ -9397,8 +9389,6 @@ declare namespace egret.sys {
      * @private
      */
     let $logToFPS: (info: string) => void;
-    let $warnToFPS: (info: string) => void;
-    let $errorToFPS: (info: string) => void;
 }
 declare namespace egret {
     /**
@@ -10240,8 +10230,6 @@ declare namespace egret.sys {
         $texture: WebGLTexture;
         $textureWidth: number;
         $textureHeight: number;
-        $canvasScaleX: number;
-        $canvasScaleY: number;
         /**
          * 清除非绘制的缓存数据
          */

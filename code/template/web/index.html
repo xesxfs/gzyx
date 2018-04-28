@@ -19,23 +19,13 @@
             margin: 0;
             height: 100%;
         }
-         #loading{
-		text-align: center;
-            margin-top:auto;
-            margin-bottom:auto;
-			-webkit-animation:circle 1s infinite linear;/*匀速 循环*/
-		}
-		@-webkit-keyframes circle{
-            0%{ transform:rotate(0deg); }
-            100%{ transform:rotate(360deg); }
-		}
     </style>
 </head>
 
 <body>
     <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
          data-entry-class="Main"
-         data-orientation="landscapeFlipped"
+         data-orientation="landscape"
          data-scale-mode="showAll"
          data-frame-rate="30"
          data-content-width="1280"
@@ -45,11 +35,6 @@
          data-show-fps="false" data-show-log="false"
          data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
     </div>
-
-     <div id="loadingDiv" style="margin: -40px 0 0 -40px;position:absolute;width: 481px;height: 481px;top: 50%;left: 50%;display:block">
-        <img id="loading" src="resource/loading.png" />
-    </div>
-
 <script>
     var loadScript = function (list, callback) {
         var loaded = 0;
@@ -87,13 +72,21 @@
         loadScript(list, function () {
             /**
              * {
-             * "renderMode":, //引擎渲染模式，"canvas" 或者 "webgl"
-             * "audioType": 0 //使用的音频类型，0:默认，2:web audio，3:audio
-             * "antialias": //WebGL模式下是否开启抗锯齿，true:开启，false:关闭，默认为false
-             * "retina": //是否基于devicePixelRatio缩放画布
+             * "renderMode":, //Engine rendering mode, "canvas" or "webgl"
+             * "audioType": 0 //Use the audio type, 0: default, 2: web audio, 3: audio
+             * "antialias": //Whether the anti-aliasing is enabled in WebGL mode, true: on, false: off, defaults to false
+             * "calculateCanvasScaleFactor": //a function return canvas scale factor
              * }
              **/
-            egret.runEgret({ renderMode: "webgl", audioType: 0 });
+            egret.runEgret({ renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor:function(context) {
+                var backingStore = context.backingStorePixelRatio ||
+                    context.webkitBackingStorePixelRatio ||
+                    context.mozBackingStorePixelRatio ||
+                    context.msBackingStorePixelRatio ||
+                    context.oBackingStorePixelRatio ||
+                    context.backingStorePixelRatio || 1;
+                return (window.devicePixelRatio || 1) / backingStore;
+            }});
         });
     });
     xhr.send(null);

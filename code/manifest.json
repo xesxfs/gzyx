@@ -7,7 +7,8 @@
 		"libs/modules/socket/socket.js",
 		"libs/modules/tween/tween.js",
 		"libs/modules/game/game.js",
-		"libs/modules/dragonBones/dragonBones.js"
+		"libs/modules/dragonBones/dragonBones.js",
+		"promise/bin/promise.js"
 	],
 	"game": [
 		"bin-debug/framework/base/BaseUI.js",
@@ -100,7 +101,7 @@
 		"bin-debug/mj/view/game/gameui/LeftCardShowUISkin.g.js",
 		"bin-debug/mj/view/game/gameui/OutCardTipUI.js",
 		"bin-debug/mj/view/game/gameui/OutCardTipUISkin.g.js",
-		"bin-debug/framework/adapter/AssetAdapter.js",
+		"bin-debug/mj/view/login/LoginScene.js",
 		"bin-debug/mj/view/game/gameui/TuoGuanShowUISkin.g.js",
 		"bin-debug/mj/view/game/invite/InvitePanelT.js",
 		"bin-debug/mj/view/game/jiesan/JiesanHead.js",
@@ -189,6 +190,6 @@
 		"bin-debug/mj/view/login/LoginChoosePanel.js",
 		"bin-debug/mj/view/login/LoginController.js",
 		"bin-debug/mj/view/login/LoginPanel.js",
-		"bin-debug/mj/view/login/LoginScene.js"
+		"bin-debug/framework/adapter/AssetAdapter.js"
 	]
 }

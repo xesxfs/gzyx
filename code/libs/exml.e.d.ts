@@ -38,6 +38,20 @@ declare class SideMenuSkin extends eui.Skin{
 }
 declare class FanTypeItemSkin extends eui.Skin{
 }
+declare class ActShowUISkin extends eui.Skin{
+}
+declare class CardsShowSkin extends eui.Skin{
+}
+declare class DiscShowUISkin extends eui.Skin{
+}
+declare class HeadShowUISkin extends eui.Skin{
+}
+declare class LeftCardShowUISkin extends eui.Skin{
+}
+declare class OutCardTipUISkin extends eui.Skin{
+}
+declare class TuoGuanShowUISkin extends eui.Skin{
+}
 declare class InvitePanelTSkin extends eui.Skin{
 }
 declare class jiesanHeadSKin extends eui.Skin{
@@ -126,6 +140,8 @@ declare class ClubRoomItemSkin extends eui.Skin{
 }
 declare class PageViewSkin extends eui.Skin{
 }
+declare class CreateRoomPanelSkin extends eui.Skin{
+}
 declare class EmailItemSkin extends eui.Skin{
 }
 declare class EmailSkin extends eui.Skin{
@@ -135,6 +151,8 @@ declare class EmailTabBarSkin extends eui.Skin{
 declare class EmailTwoSkin extends eui.Skin{
 }
 declare class FriendPanelTSkin extends eui.Skin{
+}
+declare class GoldPanelSkin extends eui.Skin{
 }
 declare class GrabItemSkin extends eui.Skin{
 }
@@ -185,22 +203,4 @@ declare class LoginChoosePanelSkin extends eui.Skin{
 declare class LoginPanelSkin extends eui.Skin{
 }
 declare class LoginSceneSkin extends eui.Skin{
-}
-declare class ActShowUISkin extends eui.Skin{
-}
-declare class CardsShowSkin extends eui.Skin{
-}
-declare class DiscShowUISkin extends eui.Skin{
-}
-declare class HeadShowUISkin extends eui.Skin{
-}
-declare class LeftCardShowUISkin extends eui.Skin{
-}
-declare class OutCardTipUISkin extends eui.Skin{
-}
-declare class TuoGuanShowUISkin extends eui.Skin{
-}
-declare class CreateRoomPanelSkin extends eui.Skin{
-}
-declare class GoldPanelSkin extends eui.Skin{
 }

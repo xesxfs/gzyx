@@ -48,19 +48,19 @@ class LoginController extends BaseController {
 
 	/**开始加载登录界面*/
 	private startLoadLogin() {
-		// App.PanelManager.open(PanelConst.PreloadPanel);
+		App.PanelManager.open(PanelConst.PreloadPanel) as PreloadPanel;
 		App.ResUtils.loadGroup(AssetConst.Login, this, this.loadLoginComplete, this.loadLoginProgress);
 	}
 
 	/**加载登录界面进度*/
 	private loadLoginProgress(e: RES.ResourceEvent) {
-		// var preloadPanel:PreloadPanel = App.PanelManager.getPanel(PanelConst.PreloadPanel);
-		// preloadPanel.setProgress(Math.round(e.itemsLoaded/e.itemsTotal*100));
+		var preloadPanel:PreloadPanel = App.PanelManager.getPanel(PanelConst.PreloadPanel);
+		preloadPanel.setProgress(Math.round(e.itemsLoaded/e.itemsTotal*100));
 	}
 
 	/**加载登录界面完成*/
 	private loadLoginComplete() {
-		// App.PanelManager.close(PanelConst.PreloadPanel);
+		App.PanelManager.close(PanelConst.PreloadPanel);
 		this.loginScene = App.SceneManager.runScene(SceneConst.LoginScene) as LoginScene;
 		this.loginScene.setController(this);
 	}

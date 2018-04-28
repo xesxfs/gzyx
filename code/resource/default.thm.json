@@ -2,15 +2,15 @@
   "autoGenerateExmlsList": true,
   "exmls": [
     "resource/csexml/AllRecordSkin.exml",
-    "src/mj/view/game/gameui/CardsShowSkin.exml",
+    "resource/view/game/gameui/CardsShowSkin.exml",
     "resource/csexml/headUISkin1.exml",
-    "src/mj/view/game/gameui/HeadShowUISkin.exml",
-    "src/mj/view/game/gameui/DiscShowUISkin.exml",
-    "src/mj/view/game/gameui/OutCardTipUISkin.exml",
+    "resource/view/game/gameui/HeadShowUISkin.exml",
+    "resource/view/game/gameui/DiscShowUISkin.exml",
+    "resource/view/game/gameui/OutCardTipUISkin.exml",
     "resource/view/game/ui/SelectActBtnSkin.exml",
     "resource/view/game/ui/SelectActUISkin.exml",
-    "src/mj/view/game/gameui/TuoGuanShowUISkin.exml",
-    "src/mj/view/game/gameui/LeftCardShowUISkin.exml",
+    "resource/view/game/gameui/TuoGuanShowUISkin.exml",
+    "resource/view/game/gameui/LeftCardShowUISkin.exml",
     "resource/csexml/GameSceneSkin1.exml",
     "resource/csexml/gameResultItem2Skin.exml",
     "resource/csexml/gameResultItemSkin.exml",
@@ -29,6 +29,8 @@
     "resource/view/common/MessageBoxDSkin.exml",
     "resource/view/common/SideMenuSkin.exml",
     "resource/view/game/fanType/FanTypeItemSkin.exml",
+    "resource/view/game/ui/EatComboUISkin.exml",
+    "resource/view/game/gameui/ActShowUISkin.exml",
     "resource/view/game/invite/InvitePanelTSkin.exml",
     "resource/view/game/jiesan/jiesanHeadSKin.exml",
     "resource/view/game/jiesan/jiesanPanelSkin.exml",
@@ -52,7 +54,6 @@
     "resource/view/game/share/ShareTotalItemSkin.exml",
     "resource/view/game/tape/TapePanelSkin.exml",
     "resource/view/game/ui/DiceAnimSkin.exml",
-    "resource/view/game/ui/EatComboUISkin.exml",
     "resource/view/game/ui/SwapCardUISkin.exml",
     "resource/view/game/ui/huTypeItemSkin.exml",
     "resource/view/game/ui/huTypeSkin.exml",
@@ -72,11 +73,13 @@
     "resource/view/hall/club/ClubRenameSkin.exml",
     "resource/view/hall/club/ClubRoomItemSkin.exml",
     "resource/view/hall/command/PageViewSkin.exml",
+    "resource/view/hall/create/CreateRoomPanelSkin.exml",
     "resource/view/hall/email/EmailItemSkin.exml",
     "resource/view/hall/email/EmailSkin.exml",
     "resource/view/hall/email/EmailTabBarSkin.exml",
     "resource/view/hall/email/EmailTwoSkin.exml",
     "resource/view/hall/friend/FriendPanelTSkin.exml",
+    "resource/view/hall/gold/GoldPanelSkin.exml",
     "resource/view/hall/grab/GrabItemSkin.exml",
     "resource/view/hall/grab/GrabPanelSkin.exml",
     "resource/view/hall/joinRoom/JoinNumberSkin.exml",
@@ -99,12 +102,6 @@
     "resource/view/login/BindPanelSkin.exml",
     "resource/view/login/LoginChoosePanelSkin.exml",
     "resource/view/login/LoginPanelSkin.exml",
-    "resource/view/login/LoginSceneSkin.exml",
-    "src/mj/view/game/gameui/ActShowUISkin.exml",
-    "src/mj/view/hall/create/CreateRoomPanelSkin.exml",
-    "src/mj/view/hall/goldgame/GoldPanelSkin.exml"
-  ],
-  "skins": {
-    "EatComboUISkin": "resource/eui_skins/EatComboUISkin.exml"
-  }
+    "resource/view/login/LoginSceneSkin.exml"
+  ]
 }
