@@ -26,12 +26,12 @@
 		<e:Image source="card_left_bg1_png" x="1159" scaleX="-0.7" y="205.26" scaleY="0.7"/>
 		<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1159" y="233.26" scaleY="0.7"/>
 		<e:Image source="card_left_bg1_png" x="1159" scaleX="-0.7" y="261.26" scaleY="0.7"/>
-		<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1160" y="288.26" scaleY="0.7"/>
+		<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1159" y="288.26" scaleY="0.7"/>
 		<e:Image source="card_left_bg1_png" x="1159" scaleX="-0.7" y="313.26" scaleY="0.7"/>
-		<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1160" y="340.26" scaleY="0.7"/>
-			<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1160" y="368.26" scaleY="0.7"/>
-			<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1160" y="396.26" scaleY="0.7"/>
-			<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1160" y="424.26" scaleY="0.7"/>
+		<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1159" y="340.26" scaleY="0.7"/>
+			<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1159" y="368.26" scaleY="0.7"/>
+			<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1159" y="396.26" scaleY="0.7"/>
+			<e:Image source="card_left_bg1_png" scaleX="-0.7" x="1159" y="424.26" scaleY="0.7"/>
 		<e:Image id="hand1_end1" source="card_left_bg1_png" scaleX="-0.7" x="1159" y="451.26" scaleY="0.7"/>
 		</e:Group>
 		<e:Group id="hand2" x="0" touchThrough="false" y="0" touchEnabled="false" touchChildren="false" width="100%" height="100%">
