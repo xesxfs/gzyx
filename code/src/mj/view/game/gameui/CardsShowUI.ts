@@ -291,6 +291,9 @@ class CardsShowUI extends eui.Component {
 		let firstCard = handCardList[0]
 		firstCard.x = takePoint.x;
 		firstCard.y = takePoint.y;
+		if(pos==UserPosition.L){			
+			return;
+		}
 		let handPoint = this.handlePointList[pos];
 		let len = handCardList.length
 		let card;

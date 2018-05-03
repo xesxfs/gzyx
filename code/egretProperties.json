@@ -4,7 +4,7 @@
 		"native": 1,
 		"path": "./../../hero_chicken_h5_release"
 	},
-	"egret_version": "5.0.12",
+	"egret_version": "5.0.15",
 	"eui": {
 		"exmlRoot": [
 			"resource/csexml",
