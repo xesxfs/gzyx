@@ -243,13 +243,29 @@ class ClientSocket {
 
     }
 
+    // private XORfunc(str: string): string {
+    //     var KEY = 13;
+    //     var strLen = (str.length);
+    //     var temp: string = "";
+    //     for (let i = 0; i < strLen; i++) {
+    //         temp += String.fromCharCode(str.charCodeAt(i) ^ KEY);
+    //     }
+    //     return temp;
+    // }
+
     private XORfunc(str: string): string {
         var KEY = 13;
-        var strLen = (str.length);
+        var from:egret.ByteArray = new egret.ByteArray();
+        var to:egret.ByteArray = new egret.ByteArray();
+        from.writeUTFBytes(str);
+        from.position = 0;
+        var strLen = (from.length);
         var temp: string = "";
         for (let i = 0; i < strLen; i++) {
-            temp += String.fromCharCode(str.charCodeAt(i) ^ KEY);
+            to.writeByte(from.readUnsignedByte() ^ KEY);
         }
+        to.position = 0;
+        temp = to.readUTFBytes(strLen);
         return temp;
     }
 

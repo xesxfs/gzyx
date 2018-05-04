@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="LoginPanelSkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui"
+<e:Skin class="LoginPanelSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui"
         xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
 	<e:Group id="loginGro" anchorOffsetY="0" anchorOffsetX="0" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="login_tankuang__png" scale9Grid="76,64,457,391" />

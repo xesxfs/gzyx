@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <e:Skin class="SetPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*"
-        xmlns:how="how.*">
+        xmlns:how="how.*" width="733" height="618">
 	<e:Group verticalCenter="0" horizontalCenter="0">
 		<e:Image source="tankuang_big_png" anchorOffsetX="0" width="733" anchorOffsetY="0" height="618" />
 		<e:Image source="title_bg_png" y="29" horizontalCenter="0" />

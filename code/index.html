@@ -9,6 +9,7 @@
     <meta name="screen-orientation" content="portrait"/>
     <meta name="x5-fullscreen" content="true"/>
     <meta name="360-fullscreen" content="true"/>
+	<meta charset="utf-8">
     <style>
         html, body {
             -ms-touch-action: none;
@@ -45,7 +46,7 @@
 	<script egret="lib" src="bin-debug/framework/base/BaseController.js"></script>
 	<script egret="lib" src="bin-debug/framework/base/BasePanel.js"></script>
 	<script egret="lib" src="bin-debug/framework/base/BaseScene.js"></script>
-	<script egret="lib" src="bin-debug/mj/view/game/gameui/TuoGuanShowUI.js"></script>
+	<script egret="lib" src="bin-debug/mj/view/game/gameui/OutCardTipUISkin.g.js"></script>
 	<script egret="lib" src="bin-debug/Main.js"></script>
 	<script egret="lib" src="bin-debug/framework/adapter/ThemeAdapter.js"></script>
 	<script egret="lib" src="bin-debug/framework/display/BitmapMovie.js"></script>
@@ -73,6 +74,7 @@
 	<script egret="lib" src="bin-debug/framework/utils/StringTool.js"></script>
 	<script egret="lib" src="bin-debug/framework/utils/Tips.js"></script>
 	<script egret="lib" src="bin-debug/framework/utils/TipsLog.js"></script>
+	<script egret="lib" src="bin-debug/framework/utils/WxApiUtil.js"></script>
 	<script egret="lib" src="bin-debug/mj/App.js"></script>
 	<script egret="lib" src="bin-debug/mj/LoadingUI.js"></script>
 	<script egret="lib" src="bin-debug/mj/constant/AssetConst.js"></script>
@@ -128,8 +130,8 @@
 	<script egret="lib" src="bin-debug/mj/view/game/gameui/LeftCardShowUI.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/gameui/LeftCardShowUISkin.g.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/gameui/OutCardTipUI.js"></script>
-	<script egret="lib" src="bin-debug/mj/view/game/gameui/OutCardTipUISkin.g.js"></script>
-	<script egret="lib" src="bin-debug/framework/adapter/AssetAdapter.js"></script>
+	<script egret="lib" src="bin-debug/mj/view/login/LoginScene.js"></script>
+	<script egret="lib" src="bin-debug/mj/view/game/gameui/TuoGuanShowUI.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/gameui/TuoGuanShowUISkin.g.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/invite/InvitePanelT.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/jiesan/JiesanHead.js"></script>
@@ -218,7 +220,7 @@
 	<script egret="lib" src="bin-debug/mj/view/login/LoginChoosePanel.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/login/LoginController.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/login/LoginPanel.js"></script>
-	<script egret="lib" src="bin-debug/mj/view/login/LoginScene.js"></script>
+	<script egret="lib" src="bin-debug/framework/adapter/AssetAdapter.js"></script>
 	<!--game_files_end-->
 </head>
 <body>
@@ -239,7 +241,7 @@
     <script>
    	
 	  	var version = "1.0.99";    	
-      	egret.runEgret({renderMode:"canvas"});
+      	egret.runEgret({renderMode:"webgl"});
     </script>
 </body>
 </html>

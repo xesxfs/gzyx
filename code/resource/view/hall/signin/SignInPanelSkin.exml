@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="SignInPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="SignInPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" width="920" height="620">
 	<e:Group horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tankuang_big_png"/>
 		<e:Image source="title_bg_png" y="34" horizontalCenter="0"/>

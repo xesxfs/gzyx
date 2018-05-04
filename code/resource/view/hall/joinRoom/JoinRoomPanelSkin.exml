@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="JoinRoomPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+<e:Skin class="JoinRoomPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*" width="609" height="520">
 	<e:Group id="numGroup" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="srf_img_tanKuang_png" x="-1"/>
 		<how:Button label="" x="97" y="164" name="rNum_1">

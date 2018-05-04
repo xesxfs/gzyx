@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="BackpackPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+<e:Skin class="BackpackPanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*" width="1216" height="656">
 
 	<e:Group horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tankuang_big_png" scale9Grid="115,77,690,466" width="1216" height="656"/>

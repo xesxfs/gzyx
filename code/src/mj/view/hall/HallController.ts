@@ -94,8 +94,8 @@ class HallController extends BaseController {
     private revError(data) {
         let json = ProtocolData.Rev2022;
         json = data;
-        console.log(json.err_msg);
-        TipsLog.hallInfo(json.err_msg);
+        // console.log(json.err_msg);
+        TipsLog.info(json.err_msg);
     }
 
     /****断线重连 */

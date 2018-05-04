@@ -17,7 +17,7 @@
 		"bin-debug/framework/base/BaseController.js",
 		"bin-debug/framework/base/BasePanel.js",
 		"bin-debug/framework/base/BaseScene.js",
-		"bin-debug/mj/view/game/gameui/TuoGuanShowUI.js",
+		"bin-debug/mj/view/game/gameui/OutCardTipUISkin.g.js",
 		"bin-debug/Main.js",
 		"bin-debug/framework/adapter/ThemeAdapter.js",
 		"bin-debug/framework/display/BitmapMovie.js",
@@ -45,6 +45,7 @@
 		"bin-debug/framework/utils/StringTool.js",
 		"bin-debug/framework/utils/Tips.js",
 		"bin-debug/framework/utils/TipsLog.js",
+		"bin-debug/framework/utils/WxApiUtil.js",
 		"bin-debug/mj/App.js",
 		"bin-debug/mj/LoadingUI.js",
 		"bin-debug/mj/constant/AssetConst.js",
@@ -100,8 +101,8 @@
 		"bin-debug/mj/view/game/gameui/LeftCardShowUI.js",
 		"bin-debug/mj/view/game/gameui/LeftCardShowUISkin.g.js",
 		"bin-debug/mj/view/game/gameui/OutCardTipUI.js",
-		"bin-debug/mj/view/game/gameui/OutCardTipUISkin.g.js",
-		"bin-debug/framework/adapter/AssetAdapter.js",
+		"bin-debug/mj/view/login/LoginScene.js",
+		"bin-debug/mj/view/game/gameui/TuoGuanShowUI.js",
 		"bin-debug/mj/view/game/gameui/TuoGuanShowUISkin.g.js",
 		"bin-debug/mj/view/game/invite/InvitePanelT.js",
 		"bin-debug/mj/view/game/jiesan/JiesanHead.js",
@@ -190,6 +191,6 @@
 		"bin-debug/mj/view/login/LoginChoosePanel.js",
 		"bin-debug/mj/view/login/LoginController.js",
 		"bin-debug/mj/view/login/LoginPanel.js",
-		"bin-debug/mj/view/login/LoginScene.js"
+		"bin-debug/framework/adapter/AssetAdapter.js"
 	]
 }
