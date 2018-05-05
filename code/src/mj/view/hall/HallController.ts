@@ -100,6 +100,7 @@ class HallController extends BaseController {
 
     /****断线重连 */
     private revReBind(data) {
+        console.log("*断线重连");
         let json = ProtocolData.Rev2021;
         json = data;
         this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
