@@ -58,6 +58,7 @@ class GoldPanel extends BasePanel {
 			let data = ProtocolData.Send102;
 			data.uid = App.DataCenter.UserInfo.selfUser.userID;
 			// data.roomid = 
+			 GameInfo.curGameType = GAME_TYPE.GoldGame;
 			(App.getController(HallController.NAME) as HallController).sendJoinRoom(data, ProtocolHttp.server_info.server_ip + ":" + ProtocolHttp.server_info.websocket_port);
 		} else {
 			Tips.error("服务器已关闭");

@@ -32,6 +32,7 @@ class CreateRoomPanel extends BasePanel {
 		// data.player_num = 3;
 		// data.board_choose = this.fourRadBtn.selected ? 4 : 8;
 		data.uid = App.DataCenter.UserInfo.selfUser.userID;
+		GameInfo.curGameType = GAME_TYPE.RoomCardGame;
 		ctrl.sendOpenRoom(data);
 		this.hide();
 
@@ -52,7 +53,7 @@ class CreateRoomPanel extends BasePanel {
 		if (this.num2RabBtn.selected) num = 2;
 		if (this.num3RabBtn.selected) num = 3;
 		if (this.num4RabBtn.selected) num = 4;
-
+		GameInfo.curGameType = GAME_TYPE.RoomCardGame;
 		let ctrl = App.getController(HallController.NAME) as HallController;
 		ctrl.sendCreateRoom(this._clubId, num, this.fourRadBtn.selected ? 4 : 8, 1);
 

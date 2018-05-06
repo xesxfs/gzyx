@@ -519,8 +519,6 @@ class CardsShowUI extends eui.Component {
 				this.offsetHandCard(pos);
 			}
 		}
-
-
 	}
 
 	private createCPGCard(pos: UserPosition, act: ACT_act, cardsValue: Array<number>): Array<Card> {

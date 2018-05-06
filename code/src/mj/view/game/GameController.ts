@@ -47,347 +47,14 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_OTHERS_PUTOUT_MJ, this.revPassiveAction, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_BEGIN_ROBOT_OP_BC, this.revTuoGuang, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_CANCEL_ROBOT_OP_SUCC_BC, this.revCancleTuoGuang, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM, this.revQuiteGame, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM, this.revGoldRoomQuiteGame, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.revReady, this);
+
+        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
+
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 
     public unRegisterSocket() {
         var socket: ClientSocket = App.gameSocket;
@@ -399,7 +66,6 @@ class GameController extends BaseController {
         this.sendReady();
         this.gameScene.resetScene();
     }
-
 
     /***************************************接收数据****************************************** */
 
@@ -451,6 +117,7 @@ class GameController extends BaseController {
         let cardValue = json.mj;
         this.gameScene.takeCard(pos, cardValue);
         this.gameScene.discShowUI.showLight(pos);
+        this.gameScene.selectActUI.hide();
     }
 
 
@@ -542,7 +209,6 @@ class GameController extends BaseController {
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
         this.gameScene.cardShowUI.dealCPGAction(ACT_act.Act_Gang, pos, [json.mj], 3);
-
     }
 
     private revZMHu(data) {
@@ -588,7 +254,20 @@ class GameController extends BaseController {
     }
 
 
-    private revQuiteGame(data) {
+    /***广播解散房间（房卡游戏） */
+    private revBCQiteGame(data) {
+        let json = ProtocolData.Rev203;
+        json = data;
+        if (json.result) {
+            App.DataCenter.UserInfo.deleteAllUserExcptMe();
+            App.PanelManager.closeAllPanel();
+            this.sendEvent(HallController.EVENT_SHOW_HALL);
+        }
+
+    }
+
+
+    private revGoldRoomQuiteGame(data) {
         let json = ProtocolData.Rev2038;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -685,7 +364,13 @@ class GameController extends BaseController {
     public sendQuiteGame() {
         let data = ProtocolData.Send1051;
         App.gameSocket.send(data);
-
     }
+
+    public sendWangExitGame() {
+        let data = ProtocolData.Send103;
+        App.gameSocket.send(data);
+    }
+
+
 
 }

@@ -8,7 +8,8 @@
 	</e:Group>
 	<e:Group id="gameUIGroup" touchEnabled="false" left="0" right="0" top="0" bottom="0">
 		<ns1:CardsShowUI id="cardShowUI" skinName="CardsShowSkin"/>
-		<e:Group id="outFlagGroup" width="100%" height="100%" touchThrough="true"/>
+		<e:Group id="outFlagGroup" width="100%" height="100%" touchThrough="true">
+		</e:Group>
 		<ns1:HeadShowUI id="headShowUI" skinName="HeadShowUISkin"/>
 
 
@@ -20,6 +21,34 @@
 		<ns1:SelectActUI id="selectActUI" x="662" y="482" skinName="SelectActUISkin"/>
 		<ns1:TuoGuanShowUI id="touGuanShowUI" skinName="TuoGuanShowUISkin" bottom="0" width="100%"/>
 		<ns1:LeftCardShowUI id="leftCardShowUI" skinName="LeftCardShowUISkin" left="25" top="9"/>
+		<e:Group id="optionGroup" y="8.01" right="10" anchorOffsetY="0" height="151">
+			<e:Image source="exitBg_png" scale9Grid="16,39,20,89" anchorOffsetY="0" x="0" height="100%"/>
+			<e:Button id="chatBtn" label="" y="9.31" x="1.33">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="chat_btn_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="exitBtn" label="" y="60" x="1.33">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="exit_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+			<e:Button id="setBtn" label="" y="105.31" x="1.33">
+				<e:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="setting_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</e:skinName>
+			</e:Button>
+		</e:Group>
+		<e:Label id="roomLab" text="房间号:123456" x="190" y="22" size="20"/>
 
 
 

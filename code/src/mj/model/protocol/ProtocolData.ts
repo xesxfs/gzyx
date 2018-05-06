@@ -223,9 +223,7 @@ class ProtocolData {
     /** 请求退出房间*/
     public static Send1051 = {
         cmd: 1051,
-
     }
-
 
     /** 取消托管操作*/
     public static Send1052 = {
@@ -348,6 +346,12 @@ class ProtocolData {
         //  ting_flag: 0,//integer	是否可以听牌 1.可以 0.不可以
         //  an_gang_mj_choose: [],//	array<integer>	有哪些暗杠牌可以选择 当an_gang_flag=1时有效
         // ting_mj_choose: [],//	array<integer>	有哪些听牌可以选择 当ting_flag=1时有效
+    }
+    /***广播退出房间 */
+    public static Rev203 = {
+        cmd: 203,
+        result: 0,
+        roomid: 0,
     }
 
 
@@ -543,7 +547,7 @@ class ProtocolData {
         banker_seatid: 0,//	integer	庄家的座位 state>0时有效
         dice: [],//	array	两颗骰子的点数 state>0时有效
         //base_gold	: 0,//integer	基础分倍数 state>0时有效
-        players: {},//	array<player_info>	所有用户信息
+        players: [],//	array<player_info>	所有用户信息
     }
 
     public static player_info4 = {
