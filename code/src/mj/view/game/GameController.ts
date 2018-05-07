@@ -97,7 +97,7 @@ class GameController extends BaseController {
         let zhuangPos = CardLogic.getInstance().changeSeat(json.banker_seatid)
         this.gameScene.headShowUI.showZhuang(zhuangPos);
         this.gameScene.cardShowUI.createHandCard(json.players);
-
+        this.gameScene.diceAnim.playAnim(json.dice[0], json.dice[1]);
     }
 
     private revOutCard(data) {

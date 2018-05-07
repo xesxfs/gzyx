@@ -17,6 +17,7 @@
 
 
 		<ns1:DiscShowUI id="discShowUI" skinName="DiscShowUISkin" horizontalCenter="0" verticalCenter="-13.5"/>
+		<ns1:DiceAnim id="diceAnim" skinName="DiceAnimSkin" y="281" x="578"/>
 		<ns1:OutCardTipUI id="outCardTipUI" skinName="OutCardTipUISkin"/>
 		<ns1:SelectActUI id="selectActUI" x="662" y="482" skinName="SelectActUISkin"/>
 		<ns1:TuoGuanShowUI id="touGuanShowUI" skinName="TuoGuanShowUISkin" bottom="0" width="100%"/>

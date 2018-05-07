@@ -13,6 +13,8 @@ class GameScene extends BaseScene {
     public outFlagUI: OutFlagUI;
     private outFlagGroup: eui.Group;
     public selectActUI: SelectActUI;
+    public diceAnim:DiceAnim;
+
     public optionGroup: eui.Group;
     public chatBtn: eui.Button;
     public exitBtn: eui.Button;
