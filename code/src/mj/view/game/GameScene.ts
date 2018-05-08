@@ -13,13 +13,15 @@ class GameScene extends BaseScene {
     public outFlagUI: OutFlagUI;
     private outFlagGroup: eui.Group;
     public selectActUI: SelectActUI;
-    public diceAnim:DiceAnim;
+    public diceAnim: DiceAnim;
 
     public optionGroup: eui.Group;
     public chatBtn: eui.Button;
     public exitBtn: eui.Button;
     public setBtn: eui.Button;
     public roomLab: eui.Label;
+
+    private chongjiMc: egret.MovieClip;
 
 
 
@@ -66,6 +68,7 @@ class GameScene extends BaseScene {
     }
 
     protected onEnable() {
+        this.initRes();
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
         this.roomLab.visible = false;
         if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
@@ -93,7 +96,26 @@ class GameScene extends BaseScene {
             default:
                 TipsLog.hallInfo("功能未实现！！")
         }
+    }
 
+    private initRes() {
+        var resName = "hero_chongfengji"
+        var data = RES.getRes(resName + "_mc_json");
+        var img = RES.getRes(resName + "_tex_png");
+        var mcFactory: egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data, img);
+        this.chongjiMc = new egret.MovieClip(mcFactory.generateMovieClipData(resName));
+
+    }
+    /**播放冲锋鸡动画 */
+    public playChongFengJi() {
+        if (this.chongjiMc) {
+            this.chongjiMc.play();
+            this.addChild(this.chongjiMc);
+            setTimeout(() => {
+                this.chongjiMc.stop();
+                this.chongjiMc.parent&& this.chongjiMc.parent.removeChild(this.chongjiMc);
+            },1000);
+        }
     }
 
 

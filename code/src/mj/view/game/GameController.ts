@@ -245,6 +245,7 @@ class GameController extends BaseController {
     private revChongFengJi(data) {
         let json = ProtocolData.Rev2025;
         json = data;
+        this.gameScene.playChongFengJi();
     }
 
     private revZRenJi(data) {
