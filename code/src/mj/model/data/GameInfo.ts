@@ -11,6 +11,8 @@ class GameInfo {
 
     public static curRoomNo: number;
 
+    public static curRoomId: number;
+
     //聊天信息
     public Chat_Msg = [
         "大家好，很高兴见到各位！",

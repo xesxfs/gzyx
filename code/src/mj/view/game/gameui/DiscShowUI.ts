@@ -2,14 +2,14 @@ class DiscShowUI extends eui.Component {
     public constructor() {
         super();
     }
-    private lightFlashTime: number = 400;  //中间圆盘光的闪烁时间ms
+    private lightFlashTime: number = 500;  //中间圆盘光的闪烁时间ms
     private discGroup: eui.Group;
     private cdLabel: eui.BitmapLabel;
     private outTimer: DateTimer = new DateTimer(1000); //出牌计时器
     private redDiscList = [];    //圆盘红色指示块 
     private redDiscBGList = [];  //圆盘红色指示块底图
     private curOutTimeLimit = 0;   //当前出牌计时
-    private outTime:number=15;
+    private outTime: number = 15;
 
     protected childrenCreated() {
         this.init();
@@ -17,8 +17,8 @@ class DiscShowUI extends eui.Component {
 
     private init() {
         for (let i = 0; i < 4; i++) {
-            this.redDiscList.push(this.discGroup.getChildAt(i + 3));
             this.redDiscBGList.push(this.discGroup.getChildAt(i + 2));
+            this.redDiscList.push(this.discGroup.getChildAt(i + 3));
         }
 
     }
@@ -29,7 +29,7 @@ class DiscShowUI extends eui.Component {
         this.redDiscList[pos].visible = true;
         this.redDiscBGList[pos].visible = true;
         egret.Tween.removeTweens(this.redDiscList[pos]);
-        egret.Tween.get(this.redDiscList[pos], { loop: true }).to({ alpha: 1 }, this.lightFlashTime + 100).wait(this.lightFlashTime - 200).to({ alpha: 0.5 }, this.lightFlashTime + 100);
+        egret.Tween.get(this.redDiscList[pos], { loop: true }).to({ alpha: 0 }, this.lightFlashTime);
     }
 
     /***隐藏所有光*/

@@ -524,7 +524,7 @@ class HallController extends BaseController {
                 //加入俱乐部房间，拿到服务器id获取服务器信息
                 this.sendAddClubRoom(ProtocolHttp.rev_CreateRoom.room_info["room_pwd"]);
             } else {
-                ProtocolData.Send101.ticket_id = ProtocolHttp.rev_CreateRoom.room_info["room_id"]
+                GameInfo.curRoomId = ProtocolData.Send101.ticket_id = ProtocolHttp.rev_CreateRoom.room_info["room_id"]
                 this.sendAddRoom(ProtocolHttp.rev_CreateRoom.room_info["room_pwd"]);
             }
         }

@@ -49,8 +49,12 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_CANCEL_ROBOT_OP_SUCC_BC, this.revCancleTuoGuang, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM, this.revGoldRoomQuiteGame, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.revReady, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU, this.revCheckQiangGan, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.revAfterPeng, this);
 
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
+
+
 
 
     }
@@ -261,9 +265,19 @@ class GameController extends BaseController {
         if (json.result) {
             App.DataCenter.UserInfo.deleteAllUserExcptMe();
             App.PanelManager.closeAllPanel();
-            this.sendEvent(HallController.EVENT_SHOW_HALL);
+            this.sendDissolutionRoom(GameInfo.curRoomId);
         }
 
+    }
+
+    private revCheckQiangGan(data) {
+        let json = ProtocolData.Rev2010;
+        json = data;
+    }
+
+    private revAfterPeng(data) {
+        let json = ProtocolData.Rev2009;
+        json = data;
     }
 
 
@@ -281,7 +295,6 @@ class GameController extends BaseController {
         }
 
     }
-
 
     public sendReady() {
         let json = ProtocolData.Send1001;
@@ -370,6 +383,20 @@ class GameController extends BaseController {
         let data = ProtocolData.Send103;
         App.gameSocket.send(data);
     }
+
+
+    public sendDissolutionRoom(roomId: number) {
+        var httpsend = new HttpSender();
+        var disRoomData = ProtocolHttp.send_DissolutionRoom;
+        disRoomData.param.id = roomId;
+        httpsend.send(disRoomData, this.revDisslutionRoom, this);
+    }
+
+    private revDisslutionRoom(rev: any) {
+        this.sendEvent(HallController.EVENT_SHOW_HALL);
+    }
+
+
 
 
 

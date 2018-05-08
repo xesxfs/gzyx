@@ -55,7 +55,7 @@
         CLIENT_CANCEL_ROBOT_OP_REQ = 1052, //取消托管操作
         CLIENT_ROBOT_AUTO_OUT_MJ_REQ = 1053, //机器人自动出一张牌
     };
-    //游戏逻辑玩法基本应答指令
+    //游戏逻辑玩法基本应答指令  
     export enum server_command {
         SERVER_ENTER_ROOM_UC = 2001,//进入房间成功
         SERVER_ROOM_INFO_BC = 2002,//房间信息

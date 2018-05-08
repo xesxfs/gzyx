@@ -70,7 +70,7 @@ class GameScene extends BaseScene {
         this.roomLab.visible = false;
         if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
             this.roomLab.visible = true;
-            this.roomLab.text = "房间号:" + GameInfo.curRoomNo.toString();
+            this.roomLab.text = "房号:" + GameInfo.curRoomNo.toString();
         }
     }
 
