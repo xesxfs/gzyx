@@ -25,9 +25,6 @@ class GameScene extends BaseScene {
 
 
 
-
-
-
     public constructor() {
         super();
         this.skinName = "GameSceneSkin1";
@@ -39,6 +36,7 @@ class GameScene extends BaseScene {
         this.cardFactory = CardFactory.getInstance();
         this.outFlagUI = new OutFlagUI();
         this.outFlagGroup.addChild(this.outFlagUI);
+        this.setRoomNo(GameInfo.curRoomNo);
         console.log("childrenCreated");
         /***断线重连恢复数据 */
         if (GameInfo.isReConnection) {
@@ -50,6 +48,10 @@ class GameScene extends BaseScene {
     /***断线恢复数据 */
     private reBuildData() {
         let json = ProtocolData.Rev2021;
+        json = GameInfo.reBuildData;
+        GameInfo.curRoomNo = json.roomid;
+        GameInfo.curGameType = json.game_flag;
+        this.setRoomNo(GameInfo.curRoomNo);
         for (let i = 0; i < json.players.length; i++) {
             let player = ProtocolData.player_info4
             player = json.players[i];
@@ -70,6 +72,15 @@ class GameScene extends BaseScene {
     protected onEnable() {
         this.initRes();
         this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+    }
+
+    protected onRemove() {
+        App.SoundManager.stopBGM();
+        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+    }
+
+
+    public setRoomNo(roomNo: number) {
         this.roomLab.visible = false;
         if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
             this.roomLab.visible = true;
@@ -77,9 +88,12 @@ class GameScene extends BaseScene {
         }
     }
 
-    protected onRemove() {
-        App.SoundManager.stopBGM();
-        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+    public setPlayers(nPlay:number){
+
+        if(nPlay==2){
+
+        }
+
     }
 
     private onOptionTouch(e: egret.TouchEvent) {
@@ -113,8 +127,8 @@ class GameScene extends BaseScene {
             this.addChild(this.chongjiMc);
             setTimeout(() => {
                 this.chongjiMc.stop();
-                this.chongjiMc.parent&& this.chongjiMc.parent.removeChild(this.chongjiMc);
-            },1000);
+                this.chongjiMc.parent && this.chongjiMc.parent.removeChild(this.chongjiMc);
+            }, 1000);
         }
     }
 

@@ -104,6 +104,7 @@ class HallController extends BaseController {
         let json = ProtocolData.Rev2021;
         json = data;
         GameInfo.isReConnection = true;
+        GameInfo.reBuildData = json;
         this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
     }
 
@@ -406,6 +407,7 @@ class HallController extends BaseController {
         var request = ProtocolHttp.send_AddRoom;
         request.param.room_pwd = roomId;
         ProtocolData.Send102.roomid = roomId;
+        GameInfo.curRoomNo = roomId;
         httpsend.send(request, this.revAddRoom, this);
     }
 
@@ -418,7 +420,6 @@ class HallController extends BaseController {
                 let data = ProtocolData.Send101;
                 data.uid = App.DataCenter.UserInfo.selfUser.userID;
                 data.password = ProtocolHttp.rev_CreateRoom.room_info["room_pwd"];
-                GameInfo.curRoomNo = data.password;
                 this.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
             } else {
                 this.sendServerDetail(ProtocolHttp.rev_AddRoom.server_id);

@@ -12,6 +12,8 @@ class GameInfo {
     public static curRoomNo: number;
 
     public static curRoomId: number;
+    /***重连数据 */
+    public static reBuildData: any;
 
     //聊天信息
     public Chat_Msg = [
@@ -226,10 +228,11 @@ enum GS_GAME_STATION {
 
 //游戏配置中，游戏类型
 enum GAME_TYPE {
-    RankGame = 1,          // 排位赛
-    QuickGame = 2,         // 快抢赛
+    RoomCardGame = 1,      // 房卡赛
+    RankGame = 2,          // 排位赛
     GoldGame = 3,          // 金币赛
-    RoomCardGame = 4       // 房卡赛
+    QuickGame = 4,         // 快抢赛
+
 };
 
 

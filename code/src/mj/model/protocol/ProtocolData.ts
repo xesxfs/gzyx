@@ -559,6 +559,9 @@ class ProtocolData {
         score: 0,//integer	游戏得分
         sex: 0,//integer	性别 1.男 0.女
         gold: 0,//integer	黄金数量
+        form_mjs: [],
+        hole_mjs: [],   //手牌
+        out_mjs: [],    //打出去的牌
         diamonds: 0,//	integer	钻石数量
         status: 0,//	integer	玩家状态标志 0未准备 1准备 2游戏中没轮到操作 3游戏中轮到操作未操作 4游戏中轮到操作已经操作(已经打出牌了)
         online: 0,//	integer	1.在线 0.离线
