@@ -100,8 +100,10 @@ class HallController extends BaseController {
 
     /****断线重连 */
     private revReBind(data) {
+        console.log("*断线重连");
         let json = ProtocolData.Rev2021;
         json = data;
+        GameInfo.isReConnection = true;
         this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
     }
 
@@ -110,7 +112,9 @@ class HallController extends BaseController {
         var gameSocket: ClientSocket = App.gameSocket;
         gameSocket.dataBuffer = data;
         this.addEvent(EventConst.SocketConnect, this.onOpenRoom, this);
+        GameInfo.curGameType = GAME_TYPE.RoomCardGame;
         gameSocket.startConnect("ws://" + App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
+
 
     }
 
@@ -401,7 +405,6 @@ class HallController extends BaseController {
         request.param.room_pwd = roomId;
         ProtocolData.Send102.roomid = roomId;
         httpsend.send(request, this.revAddRoom, this);
-        
     }
 
     private revAddRoom(rev: any) {
@@ -413,7 +416,7 @@ class HallController extends BaseController {
                 let data = ProtocolData.Send101;
                 data.uid = App.DataCenter.UserInfo.selfUser.userID;
                 data.password = ProtocolHttp.rev_CreateRoom.room_info["room_pwd"];
-
+                GameInfo.curRoomNo = data.password;
                 this.sendJoinRoom(data, App.DataCenter.ServerInfo.GAME_SERVER + ":" + App.DataCenter.ServerInfo.GAME_PORT);
             } else {
                 this.sendServerDetail(ProtocolHttp.rev_AddRoom.server_id);

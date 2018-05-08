@@ -1,7 +1,7 @@
 /**
  * 骰子动画
- * @author chenkai 
- * @date 2016/6/30
+ * @author  
+ * 
  */
 class DiceAnim extends eui.Component{
 	private anim0:BitmapMovie;//骰子动画
@@ -26,13 +26,7 @@ class DiceAnim extends eui.Component{
 	private initRes(){
 	}
 
-	/**
-	 * 播放骰子动画
-	 * @point0 骰子点数
-	 * @point1 
-	 */
-	public playAnim(point0:number, point1:number){
-	}
+
 
 	/**初始化序列帧 */
 	private initMovieClip() {
@@ -85,11 +79,9 @@ class DiceAnim extends eui.Component{
 		this.anim0.stop();
 		this.removeChild(this.anim0);
 		this.addChild(this.sz0List[this.point0-1]);
-
 		this.anim1.stop();
 		this.removeChild(this.anim1);
 		this.addChild(this.sz1List[this.point1-1]);
-
 		this.dispatchEvent(new egret.Event(egret.Event.COMPLETE));
 	}
 

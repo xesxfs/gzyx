@@ -48,6 +48,7 @@ class JoinRoomPanel extends BasePanel {
 					if (this._focus == 6) {
 						// 查询服务器信息，请求进入游戏
 						let roomId = this.getRoomId();
+						GameInfo.curGameType = GAME_TYPE.RoomCardGame;
 						(App.getController(HallController.NAME) as HallController).sendAddRoom(roomId);
 					}
 				}

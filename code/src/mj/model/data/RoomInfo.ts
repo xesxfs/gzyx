@@ -111,13 +111,9 @@ class RoomInfo {
             }    
         }
       console.log("no find deskNo:",deskNo);        
-    }
-
-
-	
+    }	
 }
     enum RoomType{
         FriendRoom=1,
         MatchRoom = 2
-
     }

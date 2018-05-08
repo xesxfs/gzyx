@@ -132,10 +132,6 @@ class SelectActUI extends eui.Component {
 	}
 
 	public hide() {
-		// for(var key in this.btnList){
-		// this.btnList[key].stopAnim();
-		// }
-
 		this.visible = false;
 	}
 }

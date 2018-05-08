@@ -149,6 +149,7 @@ class HallScene extends BaseScene {
                     if (element["server_flag"] == 2000001) {
                         // 排位赛
                         this.ctrl.sendJoinRoom(data, element["server_ip"] + ":" + element["websocket_port"]);
+                        GameInfo.curGameType = GAME_TYPE.RankGame;
                     }
                 })
 

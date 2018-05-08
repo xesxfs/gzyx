@@ -519,22 +519,27 @@ class CardsShowUI extends eui.Component {
 				this.offsetHandCard(pos);
 			}
 		}
-
-
 	}
 
 	private createCPGCard(pos: UserPosition, act: ACT_act, cardsValue: Array<number>): Array<Card> {
 
 		var cardList = [];
+		let i = 0;
 		cardsValue.forEach((value) => {
+			i++;
 			switch (act) {
 				case ACT_act.Act_Chi:
 				case ACT_act.Act_Peng:
 				case ACT_act.Act_Gang:
-					cardList.push(this.cardFactory.getEatCard(value, pos))
+					cardList.push(this.cardFactory.getEatCard(value, pos));
 					break;
 				case ACT_act.Act_AnGang:
-					cardList.push(this.cardFactory.getAnGangCard(value, pos))
+					if (i == 3 && pos == UserPosition.Down) {
+						cardList.push(this.cardFactory.getEatCard(value, pos));
+					} else {
+						cardList.push(this.cardFactory.getAnGangCard(value, pos));
+					}
+
 					break;
 			}
 		})

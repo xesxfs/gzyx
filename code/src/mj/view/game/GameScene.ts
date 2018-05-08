@@ -13,6 +13,16 @@ class GameScene extends BaseScene {
     public outFlagUI: OutFlagUI;
     private outFlagGroup: eui.Group;
     public selectActUI: SelectActUI;
+    public diceAnim:DiceAnim;
+
+    public optionGroup: eui.Group;
+    public chatBtn: eui.Button;
+    public exitBtn: eui.Button;
+    public setBtn: eui.Button;
+    public roomLab: eui.Label;
+
+
+
 
 
 
@@ -28,14 +38,62 @@ class GameScene extends BaseScene {
         this.outFlagUI = new OutFlagUI();
         this.outFlagGroup.addChild(this.outFlagUI);
         console.log("childrenCreated");
+        /***断线重连恢复数据 */
+        if (GameInfo.isReConnection) {
+            GameInfo.isReConnection = false;
+            this.reBuildData();
+        }
+    }
+
+    /***断线恢复数据 */
+    private reBuildData() {
+        let json = ProtocolData.Rev2021;
+        for (let i = 0; i < json.players.length; i++) {
+            let player = ProtocolData.player_info4
+            player = json.players[i];
+            let user = new UserVO();
+            user.IP = player.login_ip;
+            user.nickName = player.nick_name;
+            user.seatID = player.seatid;
+            user.gold = player.gold;
+            user.coin = player.diamonds;
+            user.headUrl = player.avater_url;
+            user.sex = player.sex;
+            user.state = player.status;
+            App.DataCenter.UserInfo.addUser(user);
+            this.headShowUI.updateUserHead(user);
+        }
     }
 
     protected onEnable() {
-
+        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+        this.roomLab.visible = false;
+        if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
+            this.roomLab.visible = true;
+            this.roomLab.text = "房间号:" + GameInfo.curRoomNo.toString();
+        }
     }
 
     protected onRemove() {
         App.SoundManager.stopBGM();
+        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+    }
+
+    private onOptionTouch(e: egret.TouchEvent) {
+        console.log(e.target)
+        switch (e.target) {
+            case this.exitBtn:
+                if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
+                    App.MsgBoxManager.getBoxA().showMsg("解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
+                } else {
+                    App.MsgBoxManager.getBoxA().showMsg("你确定退出房间,退出房间后你将托管？", this.ctrl.sendQuiteGame, this.ctrl);
+                }
+
+                break;
+            default:
+                TipsLog.hallInfo("功能未实现！！")
+        }
+
     }
 
 

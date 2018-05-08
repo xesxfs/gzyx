@@ -29,7 +29,6 @@ class HeadShowUI extends eui.Component {
 
 		for (let i = 0; i < 4; i++) {
 			this.readyList.push(this.readyGroup.getChildAt(i));
-
 		}
 
 	}
@@ -61,7 +60,6 @@ class HeadShowUI extends eui.Component {
 	public hideHeadUI(pos:UserPosition) {
 		var headUI: HeadUI = this.headList[pos];
 		headUI.hide();
-
 	}
 
 	/**清理所有玩家头像UI*/
