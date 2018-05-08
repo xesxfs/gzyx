@@ -364,6 +364,8 @@ class HallController extends BaseController {
             ProtocolHttp.server_info = ProtocolHttp.rev_ServerList.server_list[0];
             App.DataCenter.ServerInfo.GAME_SERVER = ProtocolHttp.server_info.server_ip;
             App.DataCenter.ServerInfo.GAME_PORT = ProtocolHttp.server_info.websocket_port;
+
+            this.sendCheckPlayerIfGame();
         }
     }
 
@@ -438,6 +440,7 @@ class HallController extends BaseController {
             ProtocolHttp.server_info = rev.data.server_info;
             let data = ProtocolData.Send102;
             data.uid = App.DataCenter.UserInfo.selfUser.userID;
+            data.roomid = ProtocolHttp.rev_AddRoom.room_id; //重新
             this.sendJoinRoom(data, ProtocolHttp.server_info.server_ip + ":" + ProtocolHttp.server_info.websocket_port);
         }
     }
@@ -737,5 +740,22 @@ class HallController extends BaseController {
 
     public get clubPanel(): ClubPanel {
         return App.PanelManager.getPanel(PanelConst.ClubPanel) as ClubPanel;
+    }
+
+    /** 检测玩家是否在游戏中 */
+    public sendCheckPlayerIfGame() {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_CheckPlayerIfGame;
+        httpsend.send(request, this.revCheckPlayerIfGame, this);
+    }
+
+    private revCheckPlayerIfGame(rev: any) {
+        if (rev.data) {
+            ProtocolHttp.rev_CheckPlayerIfGame = rev.data;
+            let data = ProtocolHttp.rev_CheckPlayerIfGame;
+            if (data.server_id != 0) {
+                this.sendServerDetail(data.server_id);
+            }
+        }
     }
 }
