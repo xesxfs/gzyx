@@ -98,6 +98,7 @@ class CardsShowUI extends eui.Component {
 		this.initCPG();
 	}
 
+	/** 初始化吃碰杠的位置数据 */
 	private initCPG() {
 		for (let i = 0; i < this.playNum; i++) {
 			var cpgGroup = this.rectGroup.getChildAt(i + this.playNum * 2) as eui.Group;
@@ -113,17 +114,15 @@ class CardsShowUI extends eui.Component {
 
 	private initDown() {
 		var len = this.hand0.numChildren;
-		var locateGet = this.hand0.getChildAt(len - 1);
+		var locateGet = this.hand0.getChildAt(len - 1);						//获取拿牌
 		var locateGetPoint = new egret.Point(locateGet.x, locateGet.y);
-		this.takePointList.push(locateGetPoint);
+		this.takePointList.push(locateGetPoint);							//保存拿牌的位置
 
 		for (let i = len - 2; i >= 0; i--) {
-			var op = this.hand0.getChildAt(i);
+			var op = this.hand0.getChildAt(i);								//获取其他手牌的位置
 			var p = new egret.Point(op.x, op.y);
 			this.handlePointList[0].push(p);
-			// console.log("_+_+_+_+_+_+",p.x,p.y);
 		}
-
 
 		var out = this.out0
 		var olen = out.numChildren;
@@ -131,7 +130,7 @@ class CardsShowUI extends eui.Component {
 		for (let i = 0; i < olen; i++) {
 			var co = out.getChildAt(i);
 			var point = new egret.Point(co.x, co.y);
-			outPointList.push(point);
+			outPointList.push(point);										//保存发牌的位置数据
 		}
 	}
 
@@ -207,6 +206,7 @@ class CardsShowUI extends eui.Component {
 
 	}
 
+	/** 获取某个位置的全部手牌 */
 	public getHandleCard(pos: UserPosition): Array<Card> {
 		return this.handleList[pos];
 	}
@@ -291,7 +291,7 @@ class CardsShowUI extends eui.Component {
 		let firstCard = handCardList[0]
 		firstCard.x = takePoint.x;
 		firstCard.y = takePoint.y;
-		if(pos==UserPosition.L){			
+		if (pos == UserPosition.L) {
 			return;
 		}
 		let handPoint = this.handlePointList[pos];

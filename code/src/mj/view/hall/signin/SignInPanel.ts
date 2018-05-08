@@ -186,6 +186,7 @@ class SignInPanel extends BasePanel {
 						btn.selected = true;
 						if (!btn.hasEventListener(egret.TouchEvent.TOUCH_TAP)) {
 							btn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onReceiveTouch, this);
+							btn.name = "id_" + data.box_info[i]["id"];
 						}
 					}
 				}
