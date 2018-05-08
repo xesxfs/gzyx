@@ -94,8 +94,9 @@ class ProtocolHttp {
     }
 
     public static rev_CheckPlayerIfGame = {
-        if_game: 0,//	integer	用户是否在房间中 0：不在 else：房间ID
-        uid: 0,//	integer	
+        server_id: 0,   //	integer	服务器ID
+        room_id: 0,  //	integer	房间ID    
+        uid: 0,//	integer	用户ID
     }
 
 
@@ -590,7 +591,7 @@ class ProtocolHttp {
             club_id: 0,  //	integer	俱乐部id	必须
             player_num: 0,   //	integer	这个桌子可以坐多少人	必须
             use_cards: 0,    //	integer	为了开这个房间，使用了多少张房卡	必须
-            board_choose:0, //这个房间可以玩几圈	必须
+            board_choose: 0, //这个房间可以玩几圈	必须
         }
     }
 

@@ -17,8 +17,6 @@ class GameController extends BaseController {
     /**显示游戏*/
     private showGameScene() {
         this.gameScene = <GameScene>App.SceneManager.runScene(SceneConst.GameScene, this);
-
-
     }
     /***注销模块时调用*/
     public onRemove() {
@@ -51,20 +49,15 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.revReady, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU, this.revCheckQiangGan, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.revAfterPeng, this);
-
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
 
 
-
-
     }
-
 
     public unRegisterSocket() {
         var socket: ClientSocket = App.gameSocket;
         // socket.unRegister(ProtocolHead.Rev100145);
     }
-
 
     public continueGame() {
         this.sendReady();
