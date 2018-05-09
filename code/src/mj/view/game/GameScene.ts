@@ -14,6 +14,7 @@ class GameScene extends BaseScene {
     private outFlagGroup: eui.Group;
     public selectActUI: SelectActUI;
     public diceAnim: DiceAnim;
+    public dinQueUI: DinQueSelectUI;
 
     public optionGroup: eui.Group;
     public chatBtn: eui.Button;
@@ -22,6 +23,7 @@ class GameScene extends BaseScene {
     public roomLab: eui.Label;
 
     private chongjiMc: egret.MovieClip;
+
 
 
 

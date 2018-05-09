@@ -51,9 +51,8 @@ class Card extends egret.DisplayObjectContainer {
             this.scaleX = 0.7;
             this.scaleY = 0.7;
         }
-
     }
-
+    
 	/**
 	 * 设置出牌皮肤
 	 * @param cardValue 牌值
@@ -172,6 +171,14 @@ class Card extends egret.DisplayObjectContainer {
             this.cardBg.scaleX = 0.7;
             this.cardBg.scaleY = 0.7;
         }
+    }
+
+    public setUnSelect(){
+        this.touchEnabled=false;
+    }
+
+    public resetSelect(){
+        this.touchEnabled=true;
     }
 
     /**弹起*/

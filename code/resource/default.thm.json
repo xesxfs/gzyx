@@ -103,5 +103,8 @@
     "resource/view/login/LoginChoosePanelSkin.exml",
     "resource/view/login/LoginPanelSkin.exml",
     "resource/view/login/LoginSceneSkin.exml"
-  ]
+  ],
+  "skins": {
+    "DinQueSelectUI": "resource/eui_skins/DinQueSelectUI.exml"
+  }
 }

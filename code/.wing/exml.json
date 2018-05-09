@@ -1,37 +1,42 @@
 {
-  "global": {
-    "globalBindingDataTestObj": [],
-    "globalAutoLayerMarkEnable": false,
-    "globalAdsorbEnable": true,
-    "globalRulerEnable": true
-  },
-  "157fa6ac118": {
-    "bindingDataTestObj": []
-  },
-  "1594658eddc": {
-    "bindingDataTestObj": []
-  },
-  "15b285966ed": {
-    "guideLinesEnabled": true
-  },
-  "162398a87bf": {
-    "guideLines": [
-      {
-        "type": "h",
-        "pos": 138
-      }
-    ]
-  },
-  "1626581fa76": {
-    "guideLines": [
-      {
-        "type": "v",
-        "pos": 4
-      }
-    ]
-  },
-  "162b3cd65aa": {
-    "guideLinesEnabled": true,
-    "bindingDataTestObj": []
-  }
+    "global": {
+        "globalBindingDataTestObj": [],
+        "globalAutoLayerMarkEnable": false,
+        "globalAdsorbEnable": true,
+        "globalRulerEnable": true
+    },
+    "157fa6ac118": {
+        "bindingDataTestObj": []
+    },
+    "1594658eddc": {
+        "bindingDataTestObj": []
+    },
+    "15b285966ed": {
+        "guideLinesEnabled": true
+    },
+    "162398a87bf": {
+        "guideLines": [
+            {
+                "type": "h",
+                "pos": 138
+            }
+        ]
+    },
+    "1626581fa76": {
+        "guideLines": [
+            {
+                "type": "v",
+                "pos": 4
+            }
+        ]
+    },
+    "162b3cd65aa": {
+        "guideLinesEnabled": true,
+        "bindingDataTestObj": []
+    },
+    "16344410b7c": {
+        "path": "mj\\view\\game\\gameui\\DinQueSelectUI.ts",
+        "class": "DinQueSelectUI",
+        "parentPath": ""
+    }
 }
