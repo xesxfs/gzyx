@@ -55,7 +55,10 @@ class GameScene extends BaseScene {
         for (let i = 0; i < json.players.length; i++) {
             let player = ProtocolData.player_info4
             player = json.players[i];
-            let user = new UserVO();
+            let user: UserVO = new UserVO();
+            if (player.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
+                user = App.DataCenter.UserInfo.getMyUserVo();
+            }
             user.IP = player.login_ip;
             user.nickName = player.nick_name;
             user.seatID = player.seatid;
@@ -64,9 +67,33 @@ class GameScene extends BaseScene {
             user.headUrl = player.avater_url;
             user.sex = player.sex;
             user.state = player.status;
+            user.userID = player.uid;
             App.DataCenter.UserInfo.addUser(user);
             this.headShowUI.updateUserHead(user);
+
+            /***恢复手牌******/
+            var cardList = player.hole_mjs;
+            var pos = this.cardLogic.changeSeat(player.seatid);  //获取位置
+
+
+            /***有14张牌 拿出一张放到摸牌位置 */
+            if (cardList.length == 14) {
+                this.takeCard(pos, cardList.shift());
+            }
+
+            for (var j = 0; j < cardList.length; j++) {
+                this.cardShowUI.pushHandCard(cardList[j], pos);
+            }
+            this.cardShowUI.showHandCard(pos);
+            /**************/
+
+
+            /****恢复出牌 */
+            var outCardList = player.out_mjs;
+            this.cardShowUI.createOutCard(pos, outCardList);
+            /*********** */
         }
+
     }
 
     protected onEnable() {
@@ -79,21 +106,12 @@ class GameScene extends BaseScene {
         this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
     }
 
-
     public setRoomNo(roomNo: number) {
         this.roomLab.visible = false;
         if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
             this.roomLab.visible = true;
             this.roomLab.text = "房号:" + GameInfo.curRoomNo.toString();
         }
-    }
-
-    public setPlayers(nPlay:number){
-
-        if(nPlay==2){
-
-        }
-
     }
 
     private onOptionTouch(e: egret.TouchEvent) {

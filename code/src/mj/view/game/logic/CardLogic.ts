@@ -4,32 +4,32 @@
  * @date 2016/6/29
  */
 class CardLogic {
-    private static instance:CardLogic;
-    public static getInstance():CardLogic{
-        if(this.instance == null){
+    private static instance: CardLogic;
+    public static getInstance(): CardLogic {
+        if (this.instance == null) {
             this.instance = new CardLogic();
         }
         return this.instance;
     }
-    
+
     /**
      * 排序手牌, 万、索、筒字排序  (万0x11 索0x21 筒0x31  东南西北0x41 中发门0x51)
      * 由大到小排列
      * @arr 手牌数组
-     */ 
-    public sortHandCard(arr:Array<Card>){
+     */
+    public sortHandCard(arr: Array<Card>) {
         var len = arr.length;
-        var cardA:Card;
-        var cardB:Card;
-        var temp:Card;
-        for(var i=0;i<len;i++){
-            for(var j=i+1;j<len;j++){
+        var cardA: Card;
+        var cardB: Card;
+        var temp: Card;
+        for (var i = 0; i < len; i++) {
+            for (var j = i + 1; j < len; j++) {
                 cardA = arr[i];
                 cardB = arr[j];
-                if(cardA.cardValue < cardB.cardValue){
-                   temp = arr[i];
-                   arr[i] = arr[j];
-                   arr[j] = temp;
+                if (cardA.cardValue < cardB.cardValue) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
@@ -39,45 +39,76 @@ class CardLogic {
      * 排序手牌, 万、筒、索、字排序  (万0x11 索0x21 筒0x31  东南西北0x41 中发门0x51)
      * 由小到大排列
      * @arr 手牌数组
-     */ 
-    public sortHandCardAB(arr:Array<Card>){
+     */
+    public sortHandCardAB(arr: Array<Card>) {
         var len = arr.length;
-        var cardA:Card;
-        var cardB:Card;
-        var temp:Card;
-        for(var i=0;i<len;i++){
-            for(var j=i+1;j<len;j++){
+        var cardA: Card;
+        var cardB: Card;
+        var temp: Card;
+        for (var i = 0; i < len; i++) {
+            for (var j = i + 1; j < len; j++) {
                 cardA = arr[i];
                 cardB = arr[j];
-                if(cardA.cardValue > cardB.cardValue){
-                   temp = arr[i];
-                   arr[i] = arr[j];
-                   arr[j] = temp;
+                if (cardA.cardValue > cardB.cardValue) {
+                    temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
                 }
             }
         }
     }
 
 
-    
+
     /**
      * 转变座位号，将seatID转变成桌子固定的上下左右位置。逆时针计算，自己位置是0，右边1，对面2，左边3。
      * @seatID 座位号
      * @return 固定位置
      */
-    public changeSeat(seatID:number):UserPosition{
+    public changeSeat(seatID: number): UserPosition {
         var mySeatID: number = App.DataCenter.UserInfo.getMyUserVo().seatID;
-        var pos:UserPosition;
-        if(seatID == mySeatID){
-            pos = 0;
-        }else if(seatID > mySeatID){
-             pos = seatID - mySeatID;
-        }else{
-            pos = 4 - mySeatID + seatID;
+        var pos: UserPosition;
+        switch (GameInfo.playerNumber) {
+            case 4:
+
+                if (seatID == mySeatID) {
+                    pos = 0;
+                } else if (seatID > mySeatID) {
+                    pos = seatID - mySeatID;
+                } else {
+                    pos = 4 - mySeatID + seatID;
+                }
+
+                break;
+            case 3:
+
+                if (seatID == mySeatID) {
+                    pos = 0;
+                } else if (seatID > mySeatID) {
+                    pos = seatID - mySeatID;
+                } else {
+                    pos = 3 - mySeatID + seatID;
+                }
+                if (pos == 2) {
+                    pos++;
+                }
+
+
+                break;
+            case 2:
+                if (seatID == mySeatID) {
+                    pos = 0;
+                } else {
+                    pos = 2;
+                }
+
+                break;
+
         }
+
         return pos;
     }
-    
+
 
 
     /**
@@ -104,15 +135,15 @@ class CardLogic {
      * @Act_state
      * @return Act_act
      */
-    public changeStateToAct(state){  	 
-        var act = 1; 
-        for(var i=0;i<8;i++){
-            var temp = act<<i;
-            if(temp == state){
+    public changeStateToAct(state) {
+        var act = 1;
+        for (var i = 0; i < 8; i++) {
+            var temp = act << i;
+            if (temp == state) {
                 break;
             }
         }
-  	     return i;
+        return i;
     }
 
     /**
@@ -135,20 +166,20 @@ class CardLogic {
      * @cardNum 相同张数
      * @return 返回结果列表 
      */
-    public getSameList(cardList, cardNum:number){
+    public getSameList(cardList, cardNum: number) {
         var len = cardList.length;
         var resultList = [];
-        for(var i=0;i<len;i++){
+        for (var i = 0; i < len; i++) {
             var count = 1;
             var cardValue = cardList[i].cardValue;
-            for(var j=i+1;j<len;j++){
-                if(cardValue == cardList[j].cardValue){
+            for (var j = i + 1; j < len; j++) {
+                if (cardValue == cardList[j].cardValue) {
                     count++;
                 }
             }
-            if(count >= cardNum){
-               resultList.push(cardValue);
-            }    
+            if (count >= cardNum) {
+                resultList.push(cardValue);
+            }
         }
         return resultList;
     }
@@ -160,15 +191,15 @@ class CardLogic {
      * @cardNum 张数
      * @return 结果
      */
-    public checkSameByValue(cardList, cardValue:number, cardNum:number):boolean{
+    public checkSameByValue(cardList, cardValue: number, cardNum: number): boolean {
         var len = cardList.length;
         var count = 0;
-        for(var i=0;i<len;i++){
-            if(cardList[i].cardValue == cardValue){
+        for (var i = 0; i < len; i++) {
+            if (cardList[i].cardValue == cardValue) {
                 count++;
             }
         }
-        if(count >= cardNum){
+        if (count >= cardNum) {
             return true;
         }
         return false;
@@ -180,27 +211,27 @@ class CardLogic {
      * @eatList  已吃(碰杠)牌列表
      * @return 能够补杠的牌值列表  [cardValue,...]
      */
-    public getBuGang(handList, eatList){
+    public getBuGang(handList, eatList) {
         var totalEatList = [];
         var resultList = [];
         //获取多个吃牌数组的集合
         var eatLen = eatList.length;
-        for(var i=0;i<eatLen;i++){
+        for (var i = 0; i < eatLen; i++) {
             totalEatList = totalEatList.concat(eatList[i]);
         }
         //遍历手牌，如果已碰牌中有相同牌值>=3张的，则可以补杠
         eatLen = totalEatList.length;
         var handLen = handList.length;
-        for(var i=0;i<handLen;i++){
+        for (var i = 0; i < handLen; i++) {
             var count = 0;
             var handValue = handList[i].cardValue;
-            for(var j=0;j<eatLen;j++){
-                if(totalEatList[j]&&totalEatList[j].cardValue == handValue){
+            for (var j = 0; j < eatLen; j++) {
+                if (totalEatList[j] && totalEatList[j].cardValue == handValue) {
                     count++;
                 }
             }
-            if(count >= 3){
-               resultList.push(handValue);
+            if (count >= 3) {
+                resultList.push(handValue);
             }
         }
         return resultList;
@@ -211,7 +242,7 @@ class CardLogic {
      * @feng 风位or风圈
      * @return 风位or风圈中文
      */
-    public getFengStr(feng:MJ_FENG_POINT){
+    public getFengStr(feng: MJ_FENG_POINT) {
         switch (feng) {
             case MJ_FENG_POINT.DONG:
                 return "东";
@@ -230,22 +261,22 @@ class CardLogic {
      * @isBaoSanJia 是否包三家
      * @return 胡牌类型描述
      */
-    public getHuStr(huType:MJ_TYPE){
+    public getHuStr(huType: MJ_TYPE) {
         var str = App.DataCenter.GameInfo.huTypeList[huType];
-        if(str != null){
+        if (str != null) {
             return str;
-        }   
+        }
         return "";
     }
-    
-   
+
+
 
     /**
      * 获取游戏配置的描述数组
      * @gameConfig 游戏配置
      * @return 描述数组
      */
-    public  getGameConfigStr(gameConfig){
+    public getGameConfigStr(gameConfig) {
         var ruleDict = {};
         ruleDict["杠上开花"] = gameConfig.hasGangShangKaiHua;
         ruleDict["海底捞月"] = gameConfig.hasHaiDiLaoYue;
@@ -266,10 +297,10 @@ class CardLogic {
      * @fengwei 庄家风位
      * @return 东风所在位置pos
      */
-    public getDongPos(seatID, fengwei){
+    public getDongPos(seatID, fengwei) {
         var pos = this.changeSeat(seatID);
         var fengWeiOffer = fengwei - MJ_FENG_POINT.DONG; //庄家和东风位偏移 = 当前庄家风位-东风
-        var dongPos = (pos - fengWeiOffer + 4)%4;        //东风位置 = 庄家位置-偏移
+        var dongPos = (pos - fengWeiOffer + 4) % 4;        //东风位置 = 庄家位置-偏移
         return dongPos;
     }
 
@@ -279,16 +310,16 @@ class CardLogic {
      * @fengwei 庄家风位
      * @return 自己风位
      */
-    public getMyFengWei(seatID, fengwei){
+    public getMyFengWei(seatID, fengwei) {
         var posOffer = seatID - App.DataCenter.UserInfo.getMyUserVo().seatID; //我和庄家位置偏移
-        var myFengWei = (fengwei - posOffer + 4)%4;                       //我的风位
-        myFengWei = (myFengWei == 0)?4:myFengWei;
+        var myFengWei = (fengwei - posOffer + 4) % 4;                       //我的风位
+        myFengWei = (myFengWei == 0) ? 4 : myFengWei;
         return myFengWei;
     }
 
     /**根据换庄次数，获取当前风位 */
-    public getCurFengWei(changeCnt){
-        return (changeCnt%4+1);
+    public getCurFengWei(changeCnt) {
+        return (changeCnt % 4 + 1);
     }
 
     /**
@@ -297,13 +328,13 @@ class CardLogic {
      * @handList 手牌数组
      * @return 索引
      */
-    public getJoinCardPos(addCard:Card, handList){
+    public getJoinCardPos(addCard: Card, handList) {
         var len = handList.length - 1;  //最后一张是摸牌，不和自己比较
         var addValue = addCard.cardValue;
-        var handCard:Card;
-        for(var i=0;i<len;i++){
+        var handCard: Card;
+        for (var i = 0; i < len; i++) {
             handCard = handList[i];
-            if(addValue >= handCard.cardValue){
+            if (addValue >= handCard.cardValue) {
                 break;
             }
         }

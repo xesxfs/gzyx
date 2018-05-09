@@ -86,6 +86,7 @@ class HallController extends BaseController {
         let json = ProtocolData.Rev2001;
         json = data;
         let myuser = App.DataCenter.UserInfo.selfUser;
+        GameInfo.playerNumber = json.player_num;
         if (myuser.userID == json.uid) {
             myuser.seatID = json.seatid;
         }
@@ -108,6 +109,7 @@ class HallController extends BaseController {
         json = data;
         GameInfo.isReConnection = true;
         GameInfo.reBuildData = json;
+        GameInfo.playerNumber = json.player_num;
         this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
     }
 

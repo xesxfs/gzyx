@@ -17,8 +17,9 @@ class DiscShowUI extends eui.Component {
 
     private init() {
         for (let i = 0; i < 4; i++) {
-            this.redDiscBGList.push(this.discGroup.getChildAt(i + 2));
-            this.redDiscList.push(this.discGroup.getChildAt(i + 3));
+            this.redDiscBGList.push(this.discGroup.getChildAt(i * 2 + 2));
+            this.redDiscList.push(this.discGroup.getChildAt(i * 2 + 3));
+            // console.log(i, (this.redDiscList[i] as eui.Image).source);
         }
 
     }
@@ -29,6 +30,7 @@ class DiscShowUI extends eui.Component {
         this.redDiscList[pos].visible = true;
         this.redDiscBGList[pos].visible = true;
         egret.Tween.removeTweens(this.redDiscList[pos]);
+        // console.log(pos, (this.redDiscList[pos] as eui.Image).source);
         egret.Tween.get(this.redDiscList[pos], { loop: true }).to({ alpha: 0 }, this.lightFlashTime);
     }
 
