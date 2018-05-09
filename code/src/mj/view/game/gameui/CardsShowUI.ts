@@ -284,6 +284,22 @@ class CardsShowUI extends eui.Component {
 		(App.SceneManager.getCurScene() as GameScene).outFlagUI.show(card, pos);
 	}
 
+	/***创建出牌 */
+	public createOutCard(pos: UserPosition, cardList: Array<number>) {
+		var card: Card;
+		for (let i = 0; i < cardList.length; i++) {
+			card = this.cardFactory.getOutCard(cardList[i], pos);
+			this.outList[pos].push(card);
+			var op = this.outPointList[pos][this.outList[pos].length - 1]
+			card.x = op.x;
+			card.y = op.y;
+			this.outList[pos].forEach((card) => {
+				this.cardGroups[pos + this.playNum].addChild(card);
+			});
+		}
+
+	}
+
 	/**吃碰杠移动位置 从手牌拿出一张放到摸牌位置，其他手牌往前移动*/
 	public offsetHandCard(pos: UserPosition) {
 		let takePoint = this.takePointList[pos];

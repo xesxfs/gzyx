@@ -49,7 +49,16 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.revReady, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU, this.revCheckQiangGan, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.revAfterPeng, this);
+
+        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC, this.revBCQiteGame, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.revBCQiteGame, this);
+
+
+
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
+
+
+
 
 
     }
@@ -69,6 +78,7 @@ class GameController extends BaseController {
     private revRoomInfo(data) {
         let json = ProtocolData.Rev2002;
         json = data;
+        GameInfo.playerNumber = json.player_num;
         let playerInfo = json.players;
         for (let i = 0; i < playerInfo.length; i++) {
             let player = ProtocolData.player_info2;
@@ -251,7 +261,6 @@ class GameController extends BaseController {
         json = data;
     }
 
-
     /***广播解散房间（房卡游戏） */
     private revBCQiteGame(data) {
         let json = ProtocolData.Rev203;
@@ -261,7 +270,23 @@ class GameController extends BaseController {
             App.PanelManager.closeAllPanel();
             this.sendDissolutionRoom(GameInfo.curRoomId);
         }
+    }
 
+    /***所有玩家定却完成 */
+    private revDinQueSuccess(data) {
+        let json = ProtocolData.Rev2041;
+        json = data;
+    }
+
+    /***进入定却 */
+    private revEnterDinQue(data) {
+        let json = ProtocolData.Rev2023;
+        json = data;
+    }
+    /****定却广播 */
+    private revBCDinQue(data) {
+        let json = ProtocolData.Rev2024;
+        json = data;
     }
 
     private revCheckQiangGan(data) {
@@ -338,6 +363,13 @@ class GameController extends BaseController {
     public sendPass2() {
         let json = ProtocolData.Send1008;
         json.uid = App.DataCenter.UserInfo.selfUser.userID;
+        App.gameSocket.send(json);
+    }
+
+    public sendDinQue(dq_val: number) {
+        let json = ProtocolData.Send1012;
+        json.uid = App.DataCenter.UserInfo.selfUser.userID;
+        json.dq_val = dq_val;
         App.gameSocket.send(json);
     }
 

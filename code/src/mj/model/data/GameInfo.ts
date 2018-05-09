@@ -14,6 +14,8 @@ class GameInfo {
     public static curRoomId: number;
     /***重连数据 */
     public static reBuildData: any;
+    /***玩家数量 */
+    public static playerNumber: number = 4;
 
     //聊天信息
     public Chat_Msg = [
