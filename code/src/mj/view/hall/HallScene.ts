@@ -31,6 +31,7 @@ class HallScene extends BaseScene {
     public addCardBtn: how.Button;
     public cardLab: eui.Label;
     public headUrl: eui.Image;
+    public maskImg:eui.Image;
 
     public rankingPnl: HallRankingPanel;
     public marquee: Marquee;
@@ -44,6 +45,7 @@ class HallScene extends BaseScene {
         this.marquee = new Marquee();
         this.marquee.x = (App.StageUtils.stageWidth - this.marquee.width) / 2;
         this.marquee.y = 80;
+        this.headUrl.mask = this.maskImg;
 
         this.addChild(this.marquee)
     }

@@ -31,57 +31,49 @@ class LoginController extends BaseController {
 		this.bHallLoaded = false;
 		this.bLogin = false;
 
-		//测试账号登录  从浏览器获取账号，发送登录请求
-		// if(App.DataCenter.debugInfo.isDebug){
-		//     this.sendDebugLoginReq(App.DataCenter.debugInfo.account, App.DataCenter.debugInfo.password);
-		// 	this.startLoadHall();
-		//     return;
-		// }	
-		this.startLoadLogin();
-	}
-
-	/**显示登录场景 */
-	public runLoginScene() {
-		this.loginScene = App.SceneManager.runScene(SceneConst.LoginScene) as LoginScene;
-		this.loginScene.setController(this);
-	}
-
-	/**开始加载登录界面*/
-	private startLoadLogin() {
 		App.PanelManager.open(PanelConst.PreloadPanel) as PreloadPanel;
-		App.ResUtils.loadGroup(AssetConst.Login, this, this.loadLoginComplete, this.loadLoginProgress);
+		App.ResUtils.loadGroup(AssetConst.Login, this, this.loadLoginComplete);
 	}
 
 	/**加载登录界面进度*/
 	private loadLoginProgress(e: RES.ResourceEvent) {
-		var preloadPanel:PreloadPanel = App.PanelManager.getPanel(PanelConst.PreloadPanel);
-		preloadPanel.setProgress(Math.round(e.itemsLoaded/e.itemsTotal*100));
-	}
-
-	/**加载登录界面完成*/
-	private loadLoginComplete() {
-		App.PanelManager.close(PanelConst.PreloadPanel);
-		this.loginScene = App.SceneManager.runScene(SceneConst.LoginScene) as LoginScene;
-		this.loginScene.setController(this);
-	}
-
-	/**开始加载大厅*/
-	public startLoadHall() {
-		var preloadPanel = App.PanelManager.open(PanelConst.PreloadPanel) as PreloadPanel;
-		App.ResUtils.loadGroup([AssetConst.Lobby, AssetConst.Common, AssetConst.Game], this, this.loadHallComplete, this.loadHallProgress);
-	}
-
-	/**加载大厅界面进度*/
-	private loadHallProgress(e: RES.ResourceEvent) {
 		var preloadPanel: PreloadPanel = App.PanelManager.getPanel(PanelConst.PreloadPanel);
 		preloadPanel.setProgress(Math.round(e.itemsLoaded / e.itemsTotal * 100));
 	}
 
-	/**加载大厅界面完成*/
-	private loadHallComplete() {
-		this.bHallLoaded = true;
-		this.gotoHall();
+	/**加载登录界面完成*/
+	private loadLoginComplete() {
+		// 加载进入大厅必须的素材
+		App.ResUtils.loadGroup([AssetConst.Lobby, AssetConst.Common, AssetConst.Game], this, this.loadHallComplete);
+
+		this.loginScene = App.SceneManager.runScene(SceneConst.LoginScene) as LoginScene;
+		this.loginScene.setController(this);
 	}
+
+	private loadHallComplete() {
+		App.PanelManager.close(PanelConst.PreloadPanel);
+
+		this.bHallLoaded = true;
+		this.loginScene.showLogin();
+	}
+
+	/**开始加载大厅*/
+	// public startLoadHall() {
+	// 	var preloadPanel = App.PanelManager.open(PanelConst.PreloadPanel) as PreloadPanel;
+	// 	App.ResUtils.loadGroup([AssetConst.Lobby, AssetConst.Common, AssetConst.Game], this, this.loadHallComplete, this.loadHallProgress);
+	// }
+
+	/**加载大厅界面进度*/
+	// private loadHallProgress(e: RES.ResourceEvent) {
+	// 	var preloadPanel: PreloadPanel = App.PanelManager.getPanel(PanelConst.PreloadPanel);
+	// 	preloadPanel.setProgress(Math.round(e.itemsLoaded / e.itemsTotal * 100));
+	// }
+
+	/**加载大厅界面完成*/
+	// private loadHallComplete() {
+	// 	this.bHallLoaded = true;
+	// 	this.gotoHall();
+	// }
 
 	/**测试账号登录*/
 	public sendDebugLoginReq(account, password) {
@@ -133,7 +125,7 @@ class LoginController extends BaseController {
 
 
 	/**去大厅*/
-	private gotoHall() {
+	public gotoHall() {
 		if (this.bHallLoaded && this.bLogin) {
 			console.log("显示大厅");
 			App.PanelManager.close(PanelConst.PreloadPanel);

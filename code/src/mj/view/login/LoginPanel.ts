@@ -96,7 +96,7 @@ class LoginPanel extends BasePanel {
             suser.paiwei_rank_name = json.data.paiwei_rank_name;
             suser.paiwei_score = json.data.paiwei_score;
             App.DataCenter.UserInfo.addUser(suser);
-            ctrl.startLoadHall();
+            ctrl.gotoHall();
         } else {
             Tips.error(json.desc);
         }

@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "global": {
         "globalBindingDataTestObj": [],
         "globalAutoLayerMarkEnable": false,
@@ -39,4 +40,41 @@
         "class": "DinQueSelectUI",
         "parentPath": ""
     }
+=======
+  "global": {
+    "globalBindingDataTestObj": [],
+    "globalAutoLayerMarkEnable": true,
+    "globalAdsorbEnable": true,
+    "globalRulerEnable": true
+  },
+  "157fa6ac118": {
+    "bindingDataTestObj": []
+  },
+  "1594658eddc": {
+    "bindingDataTestObj": []
+  },
+  "15b285966ed": {
+    "guideLinesEnabled": true
+  },
+  "162398a87bf": {
+    "guideLines": [
+      {
+        "type": "h",
+        "pos": 138
+      }
+    ]
+  },
+  "1626581fa76": {
+    "guideLines": [
+      {
+        "type": "v",
+        "pos": 4
+      }
+    ]
+  },
+  "162b3cd65aa": {
+    "guideLinesEnabled": true,
+    "bindingDataTestObj": []
+  }
+>>>>>>> 5b0d365cbc8b73822cb379bbfaa794b82b4c9fef
 }

@@ -1,5 +1,5 @@
 /**
- * 预加载面板
+ * 预加载动画效果
  * @author chenwei
  * @date 2016/07/14
  */
@@ -18,7 +18,7 @@ class PreloadPanel extends BasePanel {
     }
 
     public play () {
-        this.animator.play(this.animator.defentAnimationName);
+        this.animator.play(this.animator.defentAnimationName, 0);
     }
 
     protected onRemove() {

@@ -1,17 +1,8 @@
 class GoldPanel extends BasePanel {
 	public backBtn: eui.Button;
 	public roomBtn0: how.Button;
-	public baseLab0: eui.Label;
-	public numLab0: eui.Label;
-	public goldLab0: eui.Label;
 	public roomBtn1: how.Button;
-	public baseLab1: eui.Label;
-	public numLab1: eui.Label;
-	public goldLab1: eui.Label;
 	public roomBtn2: how.Button;
-	public baseLab2: eui.Label;
-	public numLab2: eui.Label;
-	public goldLab2: eui.Label;
 
 	public constructor() {
 		super();
@@ -58,7 +49,7 @@ class GoldPanel extends BasePanel {
 			let data = ProtocolData.Send102;
 			data.uid = App.DataCenter.UserInfo.selfUser.userID;
 			// data.roomid = 
-			 GameInfo.curGameType = GAME_TYPE.GoldGame;
+			GameInfo.curGameType = GAME_TYPE.GoldGame;
 			(App.getController(HallController.NAME) as HallController).sendJoinRoom(data, ProtocolHttp.server_info.server_ip + ":" + ProtocolHttp.server_info.websocket_port);
 		} else {
 			Tips.error("服务器已关闭");
@@ -68,10 +59,16 @@ class GoldPanel extends BasePanel {
 	private initData() {
 		let arr = ProtocolHttp.rev_ServerList.server_list;
 
+		let room:eui.Button;
+		let lbl:eui.Label;
 		for (var i = 1; i <= 3; i++) {
-			this["baseLab" + (i - 1)].text = arr[i]["base_gold"];
-			this["numLab" + (i - 1)].text = arr[i]["player_num"] + "人";
-			this["goldLab" + (i - 1)].text = this.goldRange(arr[i]["min_access"], arr[i]["max_access"]);
+			room = this["roomBtn" + (i - 1)] as eui.Button;
+			lbl = room.getChildAt(6) as eui.Label;
+			lbl.text = arr[i]["base_gold"];
+			lbl = room.getChildAt(7) as eui.Label;
+			lbl.text = arr[i]["player_num"] + "人";
+			lbl = room.getChildAt(8) as eui.Label;
+			lbl.text = this.goldRange(arr[i]["min_access"], arr[i]["max_access"]);
 		}
 	}
 

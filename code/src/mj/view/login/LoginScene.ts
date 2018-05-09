@@ -6,8 +6,9 @@
 class LoginScene extends BaseScene {
     /**控制模块*/
     protected ctrl: LoginController;
-    public wxBtn: eui.Button;
-    public accountBtn: eui.Button;
+    public loginGrp: eui.Group;
+    public wxBtn: how.Button;
+    public accountBtn: how.Button;
 
     public constructor() {
         super();
@@ -39,6 +40,11 @@ class LoginScene extends BaseScene {
         App.PanelManager.open(PanelConst.LoginPanel);
     }
 
-
+    public showLogin() {
+        this.loginGrp.alpha = 0;
+        this.loginGrp.visible = true;
+        this.loginGrp.scaleX = this.loginGrp.scaleY = 0.5;
+        egret.Tween.get(this.loginGrp).to({ alpha: 1, scaleX:1, scaleY:1}, 100);
+    }
 
 }

@@ -133,6 +133,8 @@ class BackpackPanel extends BasePanel {
 		var itemList = App.DataCenter.BagInfo.itemList;
 		// 商品商品列表和兑换卷
 		var arr2 = ProtocolHttp.rev_ViewBag.item_list.concat(ProtocolHttp.rev_ViewBag.discount_list);
+		console.log(arr2);
+		
 		arr2.forEach((element) => {
 			var item = {};
 			item["id"] = element["type"] == ItemType.EXCHANGE ? element["item_id"] : element["id"];
