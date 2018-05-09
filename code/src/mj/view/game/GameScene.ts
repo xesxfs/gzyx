@@ -55,7 +55,10 @@ class GameScene extends BaseScene {
         for (let i = 0; i < json.players.length; i++) {
             let player = ProtocolData.player_info4
             player = json.players[i];
-            let user = new UserVO();
+            let user: UserVO = new UserVO();
+            if (player.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
+                user = App.DataCenter.UserInfo.getMyUserVo();
+            }
             user.IP = player.login_ip;
             user.nickName = player.nick_name;
             user.seatID = player.seatid;
@@ -64,13 +67,14 @@ class GameScene extends BaseScene {
             user.headUrl = player.avater_url;
             user.sex = player.sex;
             user.state = player.status;
+            user.userID = player.uid;
             App.DataCenter.UserInfo.addUser(user);
             this.headShowUI.updateUserHead(user);
 
             /***恢复手牌******/
             var cardList = player.hole_mjs;
             var pos = this.cardLogic.changeSeat(player.seatid);  //获取位置
-      
+
 
             /***有14张牌 拿出一张放到摸牌位置 */
             if (cardList.length == 14) {

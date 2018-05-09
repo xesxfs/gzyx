@@ -20,8 +20,8 @@ class UserVO {
     public IP: string = "";
     /**用户位置 0-3  0下 1右 2中上 3左*/
     public userPos: UserPosition;
-    /**玩家座位号*/
-    public seatID: number = 0;
+    /**玩家座位号-1没有座位*/
+    public seatID: number = -1;
     /**是否是桌子拥有者*/
     public deskOwner: boolean = false;
     /**玩家状态*/
