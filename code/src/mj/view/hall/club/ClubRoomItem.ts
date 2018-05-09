@@ -11,6 +11,6 @@ class ClubRoomItem extends eui.ItemRenderer {
 	private onTouch() {
 		//点击房间进入游戏
 		let ctrl = App.getController(HallController.NAME) as HallController;
-		ctrl.sendAddRoom(this.data["password"]);	
+		ctrl.sendAddRoom(this.data["password"]);
 	}
 }

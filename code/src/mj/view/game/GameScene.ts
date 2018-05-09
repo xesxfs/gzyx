@@ -49,7 +49,7 @@ class GameScene extends BaseScene {
     private reBuildData() {
         let json = ProtocolData.Rev2021;
         json = GameInfo.reBuildData;
-        GameInfo.curRoomNo = json.roomid;
+        GameInfo.curRoomNo = json.room_pwd;
         GameInfo.curGameType = json.game_flag;
         this.setRoomNo(GameInfo.curRoomNo);
         for (let i = 0; i < json.players.length; i++) {

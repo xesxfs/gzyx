@@ -1,24 +1,28 @@
 <?xml version='1.0' encoding='utf-8'?>
-<e:Skin class="LoginSceneSkin" width="1334" height="750" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+<e:Skin class="LoginSceneSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
 	<e:Image height="100%" y="0" left="0" right="0" source="main_bg_jpg"/>
-	<e:Image source="logo_d_png" horizontalCenter="0" top="0"/>
 
-	<how:Button id="wxBtn" label="" y="554" x="331">
-		<e:skinName>
+
+
+	<e:Group id="loginGrp" y="308" anchorOffsetX="364" anchorOffsetY="307" horizontalCenter="0.5" visible="false">
+		<e:Image source="logo_d_png" x="82" y="0"/>
+		<how:Button id="wxBtn" label="" y="508.54" x="0">
+			<e:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="weinx_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image width="100%" height="100%" source="weinx_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
-		</e:skinName>
-
-	</how:Button>
-	<how:Button id="accountBtn" label="" y="554" x="765">
-		<e:skinName>
+			</e:skinName>
+		</how:Button>
+		<how:Button id="accountBtn" label="" y="508.54" x="434">
+			<e:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="zhanghao_png"/>
-			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				<e:Image width="100%" height="100%" source="zhanghao_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
-		</e:skinName>
-
-	</how:Button>
+			</e:skinName>
+		</how:Button>
+	</e:Group>
+	<e:Image source="fcm_d_png" y="610" x="173"/>
+	<e:Label text="本游戏适合年满18岁以上的用户使用。为了您的健康，请合理控制游戏时间。\n抵制不良游戏，拒绝盗版游戏。注意自我保护，谨防上当受骗。适度游戏益脑，沉迷游戏上身。合理安排时间，享受健康生活。\n审批文号：新广出审[2016]3835号 出版号：ISBN 978-7-7979-2417-7 软著登字第：1397016号\n软著登记号：2016SR218399 出版社单位：北京艺术与科学电子出版社" x="48" y="645.19" size="21" fontFamily="Microsoft YaHei" textAlign="center" lineSpacing="5"/>
 </e:Skin>

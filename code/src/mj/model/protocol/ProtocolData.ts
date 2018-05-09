@@ -533,7 +533,7 @@ class ProtocolData {
         cmd: 2021,//integer	协议ID
         uid: 0,//integer	用户ID
         seatid: 0,//integer	座位ID
-        roomid: 0,//	integer	房间号
+        room_pwd: 0,//	integer	房间号
         state: State,//integer<STATE>	用户重连时的游戏状态
         do_dissolution: 0,//integer	是否同意解散房间 1.同意 0.不同意
         board_choose: 0,//	integer	房间可玩局数

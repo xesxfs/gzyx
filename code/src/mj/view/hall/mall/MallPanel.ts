@@ -20,6 +20,7 @@ class MallPanel extends BasePanel {
 	}
 
 	private tabChange() {
+		this.mallLst.dataProvider = new eui.ArrayCollection([]);
 		switch (this.mallTab.selectedIndex) {
 			case MallType.Diamond:
 				//钻石商城
@@ -74,7 +75,7 @@ class MallPanel extends BasePanel {
 			golds[i]["type"] = MallType.Gold;
 		}
 
-		this.mallLst.dataProvider = new eui.ArrayCollection(ProtocolHttp.rev_GoldMall.gold_mall);
+		this.mallLst.dataProvider = new eui.ArrayCollection(golds);
 		this.mallTab.selectedIndex = MallType.Gold;
 	}
 
@@ -92,7 +93,6 @@ class MallPanel extends BasePanel {
 	protected onEnable() {
 		this.setCenter();
 
-		this.mallLst.dataProvider = new eui.ArrayCollection([]);
 		this.closeBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
 		this.mallTab.addEventListener(egret.Event.CHANGE, this.tabChange, this);
 	}
@@ -119,6 +119,8 @@ class MallPanel extends BasePanel {
 	protected onRemove() {
 		this.closeBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.hide, this);
 		this.mallTab.removeEventListener(egret.Event.CHANGE, this.tabChange, this);
+
+		this.mallLst.dataProvider = new eui.ArrayCollection([]);
 	}
 }
 

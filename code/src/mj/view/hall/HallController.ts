@@ -28,18 +28,21 @@ class HallController extends BaseController {
         this.addEvent(HallController.EVENT_SHOW_HALL, this.showHallScene, this);
         this.registerSocket();
 
-        //启动定时器刷新广播
-        egret.setInterval(this.sendQueryNotice, this, HallController.NOTICE_DELAY);
+
     }
 
     //移除注册时调用
     public onRemove() {
-
+        egret.clearInterval(this._noticeDelay);
     }
 
+    private _noticeDelay;
     /**显示大厅*/
     private showHallScene() {
         this.hallScene = App.SceneManager.runScene(SceneConst.HallScene, this) as HallScene;
+
+        //启动定时器刷新广播
+        this._noticeDelay = egret.setInterval(this.sendQueryNotice, this, HallController.NOTICE_DELAY);
 
         this.requestRanking();  //获取排行榜信息
         this.requestItemList(); //获取物品列表的基本信息
@@ -366,7 +369,7 @@ class HallController extends BaseController {
             App.DataCenter.ServerInfo.GAME_SERVER = ProtocolHttp.server_info.server_ip;
             App.DataCenter.ServerInfo.GAME_PORT = ProtocolHttp.server_info.websocket_port;
 
-            this.sendCheckPlayerIfGame();
+            // this.sendCheckPlayerIfGame();
         }
     }
 

@@ -137,6 +137,7 @@
 			<e:Image verticalCenter="0" source="img_touXiangFrame_png"/>
 			<e:Label id="nameLab" text="sos" verticalCenter="-5" x="93.33" textColor="0xffffff" anchorOffsetX="0" width="182" fontFamily="Microsoft JhengHei" textAlign="center"/>
 			<e:Image id="headUrl" source="img_default_png" x="10" y="11"/>
+			<e:Image id="maskImg" source="img_mask_png" x="0" y="0"/>
 			
 		</e:Group>
 		<e:Group x="315.81" y="20">
