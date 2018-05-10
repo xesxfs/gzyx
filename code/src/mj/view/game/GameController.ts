@@ -277,16 +277,21 @@ class GameController extends BaseController {
     private revReady(data) {
         let json = ProtocolData.Rev2019;
         json = data;
+
+        this.gameScene.showExit();  //准备阶段可以发起退出房间
     }
 
     /***广播解散房间（房卡游戏） */
     private revBCQiteGame(data) {
         let json = ProtocolData.Rev203;
         json = data;
-        if (json.result) {
+        if (json.result == 1) {
             App.DataCenter.UserInfo.deleteAllUserExcptMe();
             App.PanelManager.closeAllPanel();
-            this.sendDissolutionRoom(GameInfo.curRoomId);
+
+            if (json.ticket_id != 0 && json.roomid != 0) {
+                this.sendDissolutionRoom(GameInfo.curRoomId);
+            }
         }
     }
 
@@ -446,9 +451,4 @@ class GameController extends BaseController {
     private revDisslutionRoom(rev: any) {
         this.sendEvent(HallController.EVENT_SHOW_HALL);
     }
-
-
-
-
-
 }
