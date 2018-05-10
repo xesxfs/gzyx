@@ -264,9 +264,7 @@ class GameController extends BaseController {
     private revNextGame(data) {
         let json = ProtocolData.Rev2019;
         json = data;
-        if (json.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
-            this.gameScene.readyBtn.visible = true;
-        }
+        this.gameScene.readyBtn.visible = true;
     }
 
     private revGameOver(data) {

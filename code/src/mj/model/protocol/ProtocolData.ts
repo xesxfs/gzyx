@@ -476,8 +476,6 @@ class ProtocolData {
     /** 游戏进入下一局开始准备阶段的全房间广播*/
     public static Rev2019 = {
         cmd: 2004,   //	integer	协议ID
-        uid: 0,  //	integer	用户的ID
-        seatid: 0,   //	integer	哪个座位准备好了
         roomid: 0,   //	integer	房间号
     }
 
