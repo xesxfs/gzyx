@@ -94,6 +94,7 @@
 		"bin-debug/mj/view/game/gameui/ActShowUISkin.g.js",
 		"bin-debug/mj/view/game/gameui/CardsShowSkin.g.js",
 		"bin-debug/mj/view/game/gameui/CardsShowUI.js",
+		"bin-debug/mj/view/game/gameui/DinQueSelectUI.js",
 		"bin-debug/mj/view/game/gameui/DiscShowUI.js",
 		"bin-debug/mj/view/game/gameui/DiscShowUISkin.g.js",
 		"bin-debug/mj/view/game/gameui/HeadShowUI.js",

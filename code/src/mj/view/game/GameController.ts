@@ -50,9 +50,8 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU, this.revCheckQiangGan, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.revAfterPeng, this);
 
-        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC, this.revBCQiteGame, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.revBCQiteGame, this);
-
+        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC, this.revEnterDinQue, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.revDinQueSuccess, this);
 
 
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
@@ -282,11 +281,15 @@ class GameController extends BaseController {
     private revEnterDinQue(data) {
         let json = ProtocolData.Rev2023;
         json = data;
+        this.gameScene.dinQueUI.show();
     }
     /****定却广播 */
     private revBCDinQue(data) {
         let json = ProtocolData.Rev2024;
         json = data;
+        if(json.seatid==UserPosition.Down){
+            this.gameScene.dinQueUI.hide();
+        }
     }
 
     private revCheckQiangGan(data) {
