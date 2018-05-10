@@ -347,13 +347,14 @@ class ProtocolData {
         //  an_gang_mj_choose: [],//	array<integer>	有哪些暗杠牌可以选择 当an_gang_flag=1时有效
         // ting_mj_choose: [],//	array<integer>	有哪些听牌可以选择 当ting_flag=1时有效
     }
-    /***广播退出房间 */
+    /***广播解散房间结果 */
     public static Rev203 = {
         cmd: 203,
-        result: 0,
-        roomid: 0,
+        result: 0,   //	integer	解散结果 1.成功 0.失败
+        roomid: 0,   //	integer	准备解散的房间号
+        ticket_id: 0,    //	integer	房间流水号 当可以解散的时候才会有这个字段
+        uid: 0,  //	integer	这个房间的主人
     }
-
 
     /** 玩家打出一张麻将牌后的其他玩家可操作提示板*/
     public static Rev2008 = {
@@ -474,8 +475,10 @@ class ProtocolData {
 
     /** 游戏进入下一局开始准备阶段的全房间广播*/
     public static Rev2019 = {
-        cmd: 2019,//	integer	协议ID
-        roomid: 0,//	
+        cmd: 2004,   //	integer	协议ID
+        uid: 0,  //	integer	用户的ID
+        seatid: 0,   //	integer	哪个座位准备好了
+        roomid: 0,   //	integer	房间号
     }
 
 

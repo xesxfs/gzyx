@@ -128,7 +128,7 @@ class GameScene extends BaseScene {
 
                 break;
             default:
-                TipsLog.hallInfo("功能未实现！！")
+                // TipsLog.hallInfo("功能未实现！！")
         }
     }
 
@@ -152,6 +152,13 @@ class GameScene extends BaseScene {
         }
     }
 
+    public showExit() {
+        this.exitBtn.visible = true;
+
+        //开房类型可以发起解散房间
+
+        //排位赛金币赛可以退出房间
+    }
 
     /*******************************************************************************
      ****************************UI Action start************************************/
