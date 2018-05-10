@@ -5,6 +5,8 @@ class GameController extends BaseController {
     public static EVENT_SHOW_GAME_SCENE: string = "EVENT_SHOW_GAME_SCENE";
     /**游戏场景*/
     public gameScene: GameScene;
+    /***定缺值1，3，5 万 条 筒 */
+    public dq_val: number = 0;
 
     public constructor() {
         super();
@@ -113,6 +115,11 @@ class GameController extends BaseController {
         let cardValue = json.out_mj;
         this.gameScene.outCard(pos, cardValue);
         this.gameScene.outCardTipUI.showOutEffect(cardValue, pos);
+        if (pos == UserPosition.Down) {
+            if (this.dq_val > 0) {
+                this.gameScene.cardShowUI.resetDinQueFlag();
+            }
+        }
     }
 
     private revGetCard(data) {
@@ -124,6 +131,11 @@ class GameController extends BaseController {
         this.gameScene.takeCard(pos, cardValue);
         this.gameScene.discShowUI.showLight(pos);
         this.gameScene.selectActUI.hide();
+        if (pos == UserPosition.Down) {
+            if (this.dq_val > 0) {
+                this.gameScene.cardShowUI.setDinQueFlag(this.dq_val);
+            }
+        }
     }
 
 
@@ -294,6 +306,8 @@ class GameController extends BaseController {
         json = data;
         if (json.seatid == UserPosition.Down) {
             this.gameScene.dinQueUI.hide();
+            this.dq_val = json.dq_val;
+            this.gameScene.cardShowUI.setDinQueFlag(this.dq_val);
         }
     }
 
