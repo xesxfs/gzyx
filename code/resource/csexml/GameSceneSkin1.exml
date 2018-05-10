@@ -51,7 +51,15 @@
 			</e:Button>
 		</e:Group>
 		<e:Label id="roomLab" text="房间号:123456" x="190" y="22" size="20"/>
-		<ns1:DinQueSelectUI id="dinQueUI" y="425" horizontalCenter="0"/>
+		<e:Button id="readyBtn" label="" y="464.85" horizontalCenter="0" visible="false">
+			<e:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="ok_btn_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</e:skinName>
+		</e:Button>
+		<ns1:DinQueSelectUI id="dinQueUI" y="425" horizontalCenter="0" visible="false"/>
 
 
 

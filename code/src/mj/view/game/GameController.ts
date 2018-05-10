@@ -27,6 +27,11 @@ class GameController extends BaseController {
     /**** 注册socket*/
     public registerSocket() {
         var gameSocket: ClientSocket = App.gameSocket;
+
+
+        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_REQ_BC, this.revBCPlayWantExit, this);
+        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_CONFIRM_BC, this.revBCExitStaus, this);
+
         gameSocket.register(ProtocolHead.server_command.SERVER_ROOM_INFO_BC, this.revRoomInfo, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_GAME_START_BC, this.revGameStart, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_GET_ONE_MJ, this.revGetCard, this);
@@ -94,12 +99,17 @@ class GameController extends BaseController {
             user.headUrl = player.avater_url;
             user.sex = player.sex;
             user.state = player.status;
+            if (user.userID == App.DataCenter.UserInfo.getMyUserVo().userID) {
+                this.gameScene.readyBtn.visible = !!user.state;
+                !!user.state && this.gameScene.showExit();
+            }
             App.DataCenter.UserInfo.addUser(user);
             this.gameScene.headShowUI.updateUserHead(user);
         }
     }
 
     private revGameStart(data) {
+        this.gameScene.resetScene();
         let json = ProtocolData.Rev2003;
         json = data;
         this.gameScene.leftCardShowUI.setLeftCard(json.rest_mjs);
@@ -254,6 +264,9 @@ class GameController extends BaseController {
     private revNextGame(data) {
         let json = ProtocolData.Rev2019;
         json = data;
+        if (json.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
+            this.gameScene.readyBtn.visible = true;
+        }
     }
 
     private revGameOver(data) {
@@ -267,6 +280,7 @@ class GameController extends BaseController {
         let json = ProtocolData.Rev2025;
         json = data;
         this.gameScene.playChongFengJi();
+        console.log(json.seatid, "冲锋鸡！！！！！！！！")
     }
 
     private revZRenJi(data) {
@@ -275,10 +289,14 @@ class GameController extends BaseController {
     }
 
     private revReady(data) {
-        let json = ProtocolData.Rev2019;
+        let json = ProtocolData.Rev2004;
         json = data;
+        if (json.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
+            //准备阶段可以发起退出房间
+            this.gameScene.showExit();
+            this.gameScene.readyBtn.visible = false;
+        }
 
-        this.gameScene.showExit();  //准备阶段可以发起退出房间
     }
 
     /***广播解散房间（房卡游戏） */
@@ -293,6 +311,21 @@ class GameController extends BaseController {
                 this.sendDissolutionRoom(GameInfo.curRoomId);
             }
         }
+    }
+
+    /***玩家发起退出游戏 */
+    private revBCPlayWantExit(data) {
+        let json = ProtocolData.Rev201;
+        json = data;
+        if (json.init_uid != App.DataCenter.UserInfo.getMyUserVo().userID) {
+            App.MsgBoxManager.getBoxA().showMsg("玩家:" + json.init_nick_name + " 发起退出房间，你是否同意", () => { this.sendAggretExitGame(1) }, () => { this.sendAggretExitGame(0) })
+        }
+    }
+    /***玩家同意退出 */
+    private revBCExitStaus(data) {
+        let json = ProtocolData.Rev202;
+        json = data;
+        TipsLog.gameInfo("玩家：" + json.nick_name + json.confirm ? "  同意" : "不同意" + "退出房间")
     }
 
     /***所有玩家定却完成 */
@@ -437,6 +470,13 @@ class GameController extends BaseController {
 
     public sendWangExitGame() {
         let data = ProtocolData.Send103;
+        App.gameSocket.send(data);
+    }
+
+    /***1.同意 0.不同意  */
+    public sendAggretExitGame(confirm: number) {
+        let data = ProtocolData.Send104;
+        data.confirm = confirm
         App.gameSocket.send(data);
     }
 

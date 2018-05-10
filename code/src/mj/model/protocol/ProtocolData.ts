@@ -77,7 +77,7 @@ class ProtocolData {
 
 
     /** 广播某玩家的解散房间请求*/
-    public static Send201 = {
+    public static Rev201 = {
         cmd: 201,//	integer	协议ID
         init_uid: 0,//	integer	发起者用户的ID
         init_nick_name: "",//	string	发起者用户的昵称
@@ -86,7 +86,7 @@ class ProtocolData {
 
 
     /**广播某玩家是否同意解散房间*/
-    public static Send202 = {
+    public static Rev202 = {
         cmd: 202,//	integer	协议ID
         uid: 0,//integer	反馈用户的ID
         nick_name: "",//	string	反馈用户的昵称

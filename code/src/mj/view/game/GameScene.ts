@@ -21,6 +21,8 @@ class GameScene extends BaseScene {
     public exitBtn: eui.Button;
     public setBtn: eui.Button;
     public roomLab: eui.Label;
+    public readyBtn: eui.Button;
+
 
     private chongjiMc: egret.MovieClip;
 
@@ -92,7 +94,8 @@ class GameScene extends BaseScene {
             if (user.state > 1) {
                 /***恢复手牌******/
                 var cardList = player.hole_mjs;
-                var pos = this.cardLogic.changeSeat(player.seatid);  //获取位置
+                var pos = this.cardLogic.changeSeat(player.seatid);
+
                 /***拿出一张放到摸牌位置 */
                 if (json.cur_seat == player.seatid) {
                     this.takeCard(pos, cardList.shift());
@@ -103,7 +106,7 @@ class GameScene extends BaseScene {
                 this.cardShowUI.showHandCard(pos);
                 /**************/
 
-                /****恢复出牌 */
+                /****恢复出牌***/
                 var outCardList = player.out_mjs;
                 this.cardShowUI.createOutCard(pos, outCardList);
                 /*********** */
@@ -121,6 +124,7 @@ class GameScene extends BaseScene {
 
     protected onEnable() {
         this.initRes();
+        this.readyBtn.addEventListener("touchTap", this.ctrl.sendReady, this);
         this.optionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
     }
 
@@ -142,14 +146,14 @@ class GameScene extends BaseScene {
         switch (e.target) {
             case this.exitBtn:
                 if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
-                    App.MsgBoxManager.getBoxA().showMsg("解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
+                    App.MsgBoxManager.getBoxA().showMsg("游戏未进行时解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
                 } else {
                     App.MsgBoxManager.getBoxA().showMsg("你确定退出房间,退出房间后你将托管？", this.ctrl.sendQuiteGame, this.ctrl);
                 }
 
                 break;
             default:
-                // TipsLog.hallInfo("功能未实现！！")
+            // TipsLog.hallInfo("功能未实现！！")
         }
     }
 
@@ -198,6 +202,5 @@ class GameScene extends BaseScene {
         this.outFlagUI.hide();;
         this.discShowUI.hideAllLight();
     }
-
 
 }
