@@ -548,6 +548,7 @@ class ProtocolData {
         dice: [],//	array	两颗骰子的点数 state>0时有效
         //base_gold	: 0,//integer	基础分倍数 state>0时有效
         players: [],//	array<player_info>	所有用户信息
+        cur_seat: 0,//当前出牌的位置
     }
 
     public static player_info4 = {

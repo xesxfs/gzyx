@@ -53,6 +53,7 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.revAfterPeng, this);
 
         gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC, this.revEnterDinQue, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_SUCC_BC, this.revBCDinQue, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.revDinQueSuccess, this);
 
 
@@ -173,6 +174,12 @@ class GameController extends BaseController {
                 this.gameScene.selectActUI.updateInfo(actList, json.getin_mj);
                 this.gameScene.selectActUI.show();
             }
+
+            // if (json.getin_mj) {
+            //     this.gameScene.cardShowUI.findAndRmHandCard(json.getin_mj);
+            //     this.gameScene.cardShowUI.takeCard(pos, json.getin_mj);
+            // }
+
         }
 
     }
@@ -299,7 +306,8 @@ class GameController extends BaseController {
     private revBCDinQue(data) {
         let json = ProtocolData.Rev2024;
         json = data;
-        if (json.seatid == UserPosition.Down) {
+        let seatid = CardLogic.getInstance().changeSeat(json.seatid);
+        if (seatid == UserPosition.Down) {
             this.gameScene.dinQueUI.hide();
             this.dq_val = json.dq_val;
             this.gameScene.cardShowUI.setDinQueFlag(this.dq_val);

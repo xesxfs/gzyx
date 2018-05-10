@@ -16,6 +16,7 @@ class DinQueSelectUI extends eui.Component implements eui.UIComponent {
 	protected childrenCreated(): void {
 		super.childrenCreated();
 		this.hide();
+		this.addEventListener("touchTap", this.onTouchTap, this);
 	}
 
 	private onTouchTap(e: egret.TouchEvent) {
