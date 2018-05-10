@@ -92,7 +92,7 @@ class HallScene extends BaseScene {
     //刷新金币信息
     private onUpdateGold(data: any) {
         App.DataCenter.UserInfo.selfUser.gold = data;
-        this.goldLab.text = data;
+        this.goldLab.text = NumberTool.formatMoney(data);
     }
 
     //刷新钻石信息
