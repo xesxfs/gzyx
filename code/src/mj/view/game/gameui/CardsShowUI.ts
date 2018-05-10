@@ -605,6 +605,44 @@ class CardsShowUI extends eui.Component {
 		return false;
 	}
 
+	/***设置非定缺不能出的牌 */
+	public setDinQueFlag(dqVal: number) {
+		let cards = this.handleList[UserPosition.Down];
+		let card: Card;
+		for (let i = 0; i < cards.length; i++) {
+			card = cards[i];
+			if ((~~(card.cardValue / 10)) != dqVal) {
+				card.lock();
+			} else {
+				card.unLock();
+			}
+		}
+
+		if (this.curTakeCard) {
+			if ((~~(this.curTakeCard.cardValue / 10)) != dqVal) {
+				this.curTakeCard.lock();
+			} else {
+				this.curTakeCard.unLock();
+			}
+		}
+
+	}
+	/***重置定缺状态 */
+	public resetDinQueFlag() {
+		let cards = this.handleList[UserPosition.Down];
+		let card: Card;
+		for (let i = 0; i < cards.length; i++) {
+			card = cards[i];
+			card.unLock();
+		}
+		if (this.curTakeCard) {
+			this.curTakeCard.unLock();
+		}
+
+	}
+
+
+
 	private doAction(cardValue: number) {
 		let ctrl: GameController = App.getController(GameController.NAME);
 		ctrl.sendOutCard(cardValue);

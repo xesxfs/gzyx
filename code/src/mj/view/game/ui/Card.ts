@@ -10,6 +10,7 @@ class Card extends egret.DisplayObjectContainer {
     public upDist: number = 20;   //弹起的距离
     public initPosY: number = 0;  //初始y位置，用于牌的多种动画后，恢复原位时，防止位置错乱
     public childAt: number = 0;    //牌的层次
+    private lockSprite: egret.Sprite;
 
     public constructor() {
         super();
@@ -19,6 +20,25 @@ class Card extends egret.DisplayObjectContainer {
         this.addChild(this.cardImg);
         this.touchChildren = false;
         this.touchEnabled = false;
+    }
+
+    private createLock() {
+        if (this.lockSprite) return;
+        this.lockSprite = new egret.Sprite();
+        this.lockSprite.graphics.beginFill(0, 0.5);
+        this.lockSprite.graphics.drawRoundRect(0, 0, this.width, this.height, 10, 10);
+        this.lockSprite.graphics.endFill();
+        this.lockSprite.touchEnabled = false;
+        this.lockSprite.touchChildren = false;
+    }
+
+    public lock() {
+        this.createLock();
+        this.addChild(this.lockSprite);
+    }
+
+    public unLock() {
+        this.lockSprite.parent && this.lockSprite.parent.removeChild(this.lockSprite);
     }
 
 	/**
@@ -52,7 +72,7 @@ class Card extends egret.DisplayObjectContainer {
             this.scaleY = 0.7;
         }
     }
-    
+
 	/**
 	 * 设置出牌皮肤
 	 * @param cardValue 牌值
@@ -164,21 +184,12 @@ class Card extends egret.DisplayObjectContainer {
             this.cardBg.bitmapData = RES.getRes("card_big_bg2_png");
             this.cardImg.bitmapData = null;
 
-
         } else if (userPos == UserPosition.L) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg2_png");
             this.cardImg.bitmapData = null;
             this.cardBg.scaleX = 0.7;
             this.cardBg.scaleY = 0.7;
         }
-    }
-
-    public setUnSelect(){
-        this.touchEnabled=false;
-    }
-
-    public resetSelect(){
-        this.touchEnabled=true;
     }
 
     /**弹起*/
