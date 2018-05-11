@@ -29,6 +29,7 @@ class ClientSocket {
     public roomLevel: Room_Level;             //金币房间等级
     public deskCode: string;                  //加入的房间号
     private headSize: number = 4;       //头大小
+    private heartbeatKey: number;
 
 
     /**
@@ -88,6 +89,7 @@ class ClientSocket {
         egret.log(this.name + " connect success");
         this.resetReconnenct();
         App.EventManager.sendEvent(EventConst.SocketConnect, this);
+        this.startHeartbeat();
     }
 
     //连接关闭
@@ -171,7 +173,7 @@ class ClientSocket {
             sendDataByte.writeUTFBytes(sendJson);
             this.socket.writeBytes(sendDataByte);
             this.socket.flush();
-            console.log("Send:", JSON.stringify(data));
+            data.cmd != 2 && console.log("Send:", JSON.stringify(data));
         } else {
             egret.log("socket is not connected");
             this.dataBuffer = data;
@@ -227,20 +229,34 @@ class ClientSocket {
                 str = this.XORfunc(str);
                 data = JSON.parse(str);
             }
-            var proto = data.cmd+"";
+            var proto = data.cmd + "";
             var callBack: Function = this.callBackList[proto];
             var thisObject = this.objList[proto];
-            console.log("rev:", proto, data);
+            data.cmd != 2 && console.log("rev:", proto, data);
             if (callBack && thisObject) {
                 callBack.call(thisObject, data);
             } else {
-                console.log("未处理的消息:", proto);
+                data.cmd != 2 && console.log("未处理的消息:", proto);
             }
 
         }
+    }
 
+    public startHeartbeat() {
+        this.heartbeatKey = egret.setInterval(this.sendHearbeat, this, 2 * 1000);
+    }
 
+    private sendHearbeat() {
+        if (this.isConnected()) {
+            this.send(ProtocolData.Send2);
+        } else {
+            this.stopHeartbeat();
+        }
+    }
 
+    public stopHeartbeat() {
+        this.heartbeatKey && egret.clearInterval(this.heartbeatKey);
+        this.heartbeatKey = null;
     }
 
     // private XORfunc(str: string): string {
@@ -255,8 +271,8 @@ class ClientSocket {
 
     private XORfunc(str: string): string {
         var KEY = 13;
-        var from:egret.ByteArray = new egret.ByteArray();
-        var to:egret.ByteArray = new egret.ByteArray();
+        var from: egret.ByteArray = new egret.ByteArray();
+        var to: egret.ByteArray = new egret.ByteArray();
         from.writeUTFBytes(str);
         from.position = 0;
         var strLen = (from.length);

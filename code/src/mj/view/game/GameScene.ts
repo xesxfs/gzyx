@@ -21,6 +21,8 @@ class GameScene extends BaseScene {
     public exitBtn: eui.Button;
     public setBtn: eui.Button;
     public roomLab: eui.Label;
+    public readyBtn: eui.Button;
+
 
     private chongjiMc: egret.MovieClip;
 
@@ -54,14 +56,15 @@ class GameScene extends BaseScene {
         GameInfo.curRoomNo = json.room_pwd;
         GameInfo.curGameType = json.game_flag;
         this.setRoomNo(GameInfo.curRoomNo);
-        
+
+
         /***必须先找到自己的座位号，才能推导出其他玩家的相对位置 */
         for (let i = 0; i < json.players.length; i++) {
             let player = ProtocolData.player_info4
             player = json.players[i];
             if (player.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
                 let user = App.DataCenter.UserInfo.getMyUserVo();
-                user.seatID=player.seatid;
+                user.seatID = player.seatid;
                 break;
             }
         }
@@ -73,6 +76,7 @@ class GameScene extends BaseScene {
             let user: UserVO = new UserVO();
             if (player.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
                 user = App.DataCenter.UserInfo.getMyUserVo();
+                this.ctrl.dq_val = player.dq_val;
             }
             user.IP = player.login_ip;
             user.nickName = player.nick_name;
@@ -86,34 +90,42 @@ class GameScene extends BaseScene {
             App.DataCenter.UserInfo.addUser(user);
             this.headShowUI.updateUserHead(user);
 
-            /***恢复手牌******/
-            var cardList = player.hole_mjs;
-            var pos = this.cardLogic.changeSeat(player.seatid);  //获取位置
+            /***已经开始游戏 */
+            if (user.state > 1) {
+                /***恢复手牌******/
+                var cardList = player.hole_mjs;
+                var pos = this.cardLogic.changeSeat(player.seatid);
 
+                /***拿出一张放到摸牌位置 */
+                if (json.cur_seat == player.seatid) {
+                    this.takeCard(pos, cardList.shift());
+                }
+                for (var j = 0; j < cardList.length; j++) {
+                    this.cardShowUI.pushHandCard(cardList[j], pos);
+                }
+                this.cardShowUI.showHandCard(pos);
+                /**************/
 
-            /***有14张牌 拿出一张放到摸牌位置 */
-            if (cardList.length == 14) {
-                this.takeCard(pos, cardList.shift());
+                /****恢复出牌***/
+                var outCardList = player.out_mjs;
+                this.cardShowUI.createOutCard(pos, outCardList);
+                /*********** */
+
             }
 
-            for (var j = 0; j < cardList.length; j++) {
-                this.cardShowUI.pushHandCard(cardList[j], pos);
-            }
-            this.cardShowUI.showHandCard(pos);
-            /**************/
+        }
 
-
-            /****恢复出牌 */
-            var outCardList = player.out_mjs;
-            this.cardShowUI.createOutCard(pos, outCardList);
-            /*********** */
+        /***自己出牌设置定缺 */
+        if (json.cur_seat == App.DataCenter.UserInfo.getMyUserVo().seatID) {
+            this.cardShowUI.setDinQueFlag(this.ctrl.dq_val);
         }
 
     }
 
     protected onEnable() {
         this.initRes();
-        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+        this.readyBtn.addEventListener("touchTap", this.ctrl.sendReady, this);
+        this.optionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
     }
 
     protected onRemove() {
@@ -136,14 +148,14 @@ class GameScene extends BaseScene {
             //开房类型可以发起解散房间, 再发起http退出房间
             //排位赛金币赛可以退出房间
                 if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
-                    App.MsgBoxManager.getBoxA().showMsg("解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
+                    App.MsgBoxManager.getBoxA().showMsg("游戏未进行时解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
                 } else {
                     App.MsgBoxManager.getBoxA().showMsg("是否退出金币场，退出将由\n机器人代打，本局结束前\n不允许进入其他房间", this.ctrl.sendQuiteGame, this.ctrl);
                 }
 
                 break;
             default:
-                // TipsLog.hallInfo("功能未实现！！")
+            // TipsLog.hallInfo("功能未实现！！")
         }
     }
 
@@ -188,6 +200,5 @@ class GameScene extends BaseScene {
         this.outFlagUI.hide();;
         this.discShowUI.hideAllLight();
     }
-
 
 }

@@ -28,17 +28,19 @@ class Card extends egret.DisplayObjectContainer {
         this.lockSprite.graphics.beginFill(0, 0.5);
         this.lockSprite.graphics.drawRoundRect(0, 0, this.width, this.height, 10, 10);
         this.lockSprite.graphics.endFill();
-        this.lockSprite.touchEnabled = false;
-        this.lockSprite.touchChildren = false;
+        // this.lockSprite.touchEnabled = false;
+        // this.lockSprite.touchChildren = false;
     }
 
     public lock() {
+        this.touchEnabled = false;
         this.createLock();
         this.addChild(this.lockSprite);
     }
 
     public unLock() {
-        this.lockSprite.parent && this.lockSprite.parent.removeChild(this.lockSprite);
+        this.touchEnabled = true;
+        this.lockSprite && this.lockSprite.parent && this.lockSprite.parent.removeChild(this.lockSprite);
     }
 
 	/**
@@ -231,6 +233,8 @@ class Card extends egret.DisplayObjectContainer {
         this.cardImg.scaleY = 1;
         this.cardBg.scaleX = 1;
         this.cardBg.scaleY = 1;
+        this.lockSprite&&this.lockSprite.graphics.clear();
+        this.lockSprite = null;
         this.parent && this.parent.removeChild(this);
         ObjectPool.getPool(Card.NAME).returnObject(this);
     }

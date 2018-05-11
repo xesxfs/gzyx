@@ -77,7 +77,7 @@ class ProtocolData {
 
 
     /** 广播某玩家的解散房间请求*/
-    public static Send201 = {
+    public static Rev201 = {
         cmd: 201,//	integer	协议ID
         init_uid: 0,//	integer	发起者用户的ID
         init_nick_name: "",//	string	发起者用户的昵称
@@ -86,7 +86,7 @@ class ProtocolData {
 
 
     /**广播某玩家是否同意解散房间*/
-    public static Send202 = {
+    public static Rev202 = {
         cmd: 202,//	integer	协议ID
         uid: 0,//integer	反馈用户的ID
         nick_name: "",//	string	反馈用户的昵称
@@ -476,8 +476,6 @@ class ProtocolData {
     /** 游戏进入下一局开始准备阶段的全房间广播*/
     public static Rev2019 = {
         cmd: 2004,   //	integer	协议ID
-        uid: 0,  //	integer	用户的ID
-        seatid: 0,   //	integer	哪个座位准备好了
         roomid: 0,   //	integer	房间号
     }
 
@@ -551,6 +549,7 @@ class ProtocolData {
         dice: [],//	array	两颗骰子的点数 state>0时有效
         //base_gold	: 0,//integer	基础分倍数 state>0时有效
         players: [],//	array<player_info>	所有用户信息
+        cur_seat: 0,//当前出牌的位置
     }
 
     public static player_info4 = {

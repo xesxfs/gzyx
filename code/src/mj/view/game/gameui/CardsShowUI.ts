@@ -271,6 +271,12 @@ class CardsShowUI extends eui.Component {
 	/**出牌区域*/
 	public addCard2Out(pos: UserPosition, cardValue: number) {
 		var card = this.cardFactory.getOutCard(cardValue, pos);
+		/***如果当前出牌超出摆放的牌，需要移除一张牌 */
+		if (this.outList[pos].length >= this.outPointList[pos].length) {
+			let removeCard = this.outList[pos].pop();
+			removeCard.recycle();
+			console.warn("没地方放牌了！！！！");
+		}
 		this.outList[pos].push(card);
 		this.curOutCard = card;
 		var op = this.outPointList[pos][this.outList[pos].length - 1]
@@ -289,6 +295,12 @@ class CardsShowUI extends eui.Component {
 		var card: Card;
 		for (let i = 0; i < cardList.length; i++) {
 			card = this.cardFactory.getOutCard(cardList[i], pos);
+			/***如果当前出牌超出摆放的牌，需要移除一张牌 */
+			if (this.outList[pos].length >= this.outPointList[pos].length) {
+				let removeCard = this.outList[pos].pop();
+				removeCard.recycle();
+				console.warn("没地方放牌了！！！！");
+			}
 			this.outList[pos].push(card);
 			var op = this.outPointList[pos][this.outList[pos].length - 1]
 			card.x = op.x;
@@ -605,8 +617,10 @@ class CardsShowUI extends eui.Component {
 		return false;
 	}
 
-	/***设置非定缺不能出的牌 */
+	/***定缺牌设置 */
 	public setDinQueFlag(dqVal: number) {
+		/***没有定缺牌 */
+		if (!this.checkHaveQue(dqVal)) return;
 		let cards = this.handleList[UserPosition.Down];
 		let card: Card;
 		for (let i = 0; i < cards.length; i++) {
@@ -638,7 +652,26 @@ class CardsShowUI extends eui.Component {
 		if (this.curTakeCard) {
 			this.curTakeCard.unLock();
 		}
+	}
 
+	public checkHaveQue(dqVal: number): boolean {
+		let cards = this.handleList[UserPosition.Down];
+		let card: Card;
+		let haved: boolean = false;
+		for (let i = 0; i < cards.length; i++) {
+			card = cards[i];
+			if ((~~(card.cardValue / 10)) == dqVal) {
+				haved = true;
+				break;
+			}
+		}
+
+		if (this.curTakeCard) {
+			if ((~~(this.curTakeCard.cardValue / 10)) == dqVal) {
+				haved = true;
+			}
+		}
+		return haved;
 	}
 
 
