@@ -44,14 +44,14 @@ class RoundResultPanel extends BasePanel {
 			} else {
 				item.end_typeImg.visible = false;
 			}
-			let fj = new eui.Label("翻牌鸡           " + playInfo.fangpaiji_num + "  分");
-			let gj = new eui.Label("固定鸡           " + playInfo.gudingji_num_out + "  分");
-			let cj = new eui.Label("冲锋鸡           " + playInfo.chongfengji_num + "  分");
+			let fj = new eui.Label("翻牌鸡         " + playInfo.fangpaiji_num + "  分");
+			let gj = new eui.Label("固定鸡         " + playInfo.gudingji_num_out + "  分");
+			let cj = new eui.Label("冲锋鸡         " + playInfo.chongfengji_num + "  分");
 
 			let labs: eui.Label[] = [fj, gj, cj];
 			for (let i = 0; i < labs.length; i++) {
 				labs[i].x = 17
-				labs[i].y = 185 + i * labs[i].height + 18;
+				labs[i].y = 200 + i * labs[i].height + 18;
 				item.addChild(labs[i]);
 			}
 
