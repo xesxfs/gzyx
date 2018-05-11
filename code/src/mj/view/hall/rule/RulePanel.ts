@@ -60,7 +60,7 @@ class RulePanel extends BasePanel {
 
         focus.enabled = false;
         let xn = focus.x - (this.focusImg.width - focus.width) / 2
-        egret.Tween.get(this.focusImg).to({ x: xn }, 100);
+        egret.Tween.get(this.focusImg).to({ x: xn }, 50);
         this.ruleScll.viewport.scrollV = 0;
     }
 

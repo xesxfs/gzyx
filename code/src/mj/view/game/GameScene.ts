@@ -133,10 +133,12 @@ class GameScene extends BaseScene {
         console.log(e.target)
         switch (e.target) {
             case this.exitBtn:
+            //开房类型可以发起解散房间, 再发起http退出房间
+            //排位赛金币赛可以退出房间
                 if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
                     App.MsgBoxManager.getBoxA().showMsg("解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
                 } else {
-                    App.MsgBoxManager.getBoxA().showMsg("你确定退出房间,退出房间后你将托管？", this.ctrl.sendQuiteGame, this.ctrl);
+                    App.MsgBoxManager.getBoxA().showMsg("是否退出金币场，退出将由\n机器人代打，本局结束前\n不允许进入其他房间", this.ctrl.sendQuiteGame, this.ctrl);
                 }
 
                 break;
@@ -167,10 +169,6 @@ class GameScene extends BaseScene {
 
     public showExit() {
         this.exitBtn.visible = true;
-
-        //开房类型可以发起解散房间
-
-        //排位赛金币赛可以退出房间
     }
 
     /*******************************************************************************
