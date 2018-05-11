@@ -58,6 +58,7 @@ class App extends BaseApp {
 
         panel.register(PanelConst.RulePanel, RulePanel); //玩法说明面板
         panel.register(PanelConst.EmailPanel, EmailPanel);         //邮件面板
+        panel.register(PanelConst.HandDetailPanel, HandDetailPanel);         //手牌详情
 
         panel.register(PanelConst.PreloadPanel, PreloadPanel);                     //加载
         panel.register(PanelConst.SetPanel, SetPanel);//设置

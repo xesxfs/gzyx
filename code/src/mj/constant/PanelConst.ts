@@ -216,6 +216,8 @@ enum PanelConst {
     ClubPanel,
     /** 快抢赛页面 */
     GrabPanel,
+    /****手牌详情 */
+    HandDetailPanel,
 }
 
 

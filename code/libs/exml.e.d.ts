@@ -2,6 +2,8 @@ declare class AllRecordSkin extends eui.Skin{
 }
 declare class GameSceneSkin1 extends eui.Skin{
 }
+declare class HandDetailPanelSkin extends eui.Skin{
+}
 declare class RoundResultItemSkin extends eui.Skin{
 }
 declare class RoundResultPanelSkin extends eui.Skin{

@@ -525,6 +525,8 @@ class ProtocolData {
         diamonds: 0,//	integer	钻石数量
         paiwei_score: 0,//	integer	排位分数
         if_banker: 0,//integer	是不是庄家 1.是 0.否
+        hole_mjs: [],
+        out_mjs: [],
         //并入	: 0,//<player_mj_info>	用户的所有牌(有危险)
     }
 
