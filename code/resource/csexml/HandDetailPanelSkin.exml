@@ -9,7 +9,7 @@
 		<e:Label text="ID:001088" size="28" textColor="0xF9A909" scaleX="1" scaleY="1" y="60" x="114"/>
 		<e:Group x="300" height="101%">
 			<e:layout>
-				<e:VerticalLayout/>
+				<e:BasicLayout/>
 			</e:layout>
 		</e:Group>
 	</e:Group>
@@ -18,9 +18,9 @@
 		<e:Label text="robot1088" textColor="0x826060" size="28" scaleX="1" scaleY="1" y="20" x="114"/>
 		<e:Label text="ID:001088" size="28" textColor="0xF9A909" scaleX="1" scaleY="1" y="60" x="114"/>
 		<e:Group x="300" height="100%">
-		<e:layout>
-			<e:VerticalLayout/>
-		</e:layout>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
 		</e:Group>
 	</e:Group>
 	<e:Group x="78" y="475">
@@ -28,9 +28,9 @@
 		<e:Label text="robot1088" textColor="0x826060" size="28" scaleX="1" scaleY="1" y="20" x="114"/>
 		<e:Label text="ID:001088" size="28" textColor="0xF9A909" scaleX="1" scaleY="1" y="60" x="114"/>
 		<e:Group x="300" height="100%">
-		<e:layout>
-			<e:VerticalLayout/>
-		</e:layout>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
 		</e:Group>
 	</e:Group>
 	<e:Group x="78" y="598">
@@ -38,9 +38,9 @@
 		<e:Label text="robot1088" textColor="0x826060" size="28" scaleX="1" scaleY="1" y="20" x="114"/>
 		<e:Label text="ID:001088" size="28" textColor="0xF9A909" scaleX="1" scaleY="1" y="60" x="114"/>
 		<e:Group x="300" height="100%">
-		<e:layout>
-			<e:VerticalLayout/>
-		</e:layout>
+			<e:layout>
+				<e:BasicLayout/>
+			</e:layout>
 		</e:Group>
 	</e:Group>
 </e:Skin>

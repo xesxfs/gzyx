@@ -12,7 +12,7 @@ class HandDetailPanel extends BasePanel {
 		}
 	}
 
-	protected onEnable(){
+	protected onEnable() {
 		this.setCenter();
 	}
 
@@ -35,8 +35,9 @@ class HandDetailPanel extends BasePanel {
 				let value = playInfo.hole_mjs[i];
 				let card = CardFactory.getInstance().getOutCard(value, UserPosition.Down);
 				cardGroup.addChild(card);
-				card.x = i * card.width + 10;
-				card.y = (cardGroup.height - card.height);
+				card.x = i * card.width - 15;
+				card.y = 10;
+				// card.y = (cardGroup.height - card.height) >> 1;
 			}
 
 
