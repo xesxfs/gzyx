@@ -104,7 +104,7 @@ class ProtocolData {
 
 
     /**结束整个大牌局*/
-    public static Send204 = {
+    public static Rev204 = {
         cmd: 204,//	integer	协议ID
         board_choose: 0,//	integer	游戏局数
         end_board: 0,//	integer	玩了多少局

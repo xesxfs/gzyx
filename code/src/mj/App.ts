@@ -44,8 +44,7 @@ class App extends BaseApp {
         //注册弹框
         var panel: PanelManager = App.PanelManager;
 
-        panel.register(PanelConst.ResultPanel, ResultPanel);                        //结算面板
-        panel.register(PanelConst.ResultPanel1, ResultPanel);                        //结算面板
+        panel.register(PanelConst.RoundResultPanel, RoundResultPanel);                        //结算面板
         panel.register(PanelConst.SharePanel, SharePanel);                           //分享面板
         panel.register(PanelConst.MallPanel, MallPanel, AssetConst.Mall);                            //商城面板
         panel.register(PanelConst.PaymentPanel, PaymentPanel);                      //支付面板

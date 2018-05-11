@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="RoundResultPanelSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*"
+        xmlns:how="how.*" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="bg_png" width="100%" height="100%" />
+	<e:Image source="bg_center_lose_png" horizontalCenter="0" bottom="0" />
+	<e:Image source="bg_center_png" horizontalCenter="0" bottom="0" x="10" y="10" />
+	<ns1:RoundResultItem skinName="RoundResultItemSkin" y="30.4" x="45.45" />
+	<ns1:RoundResultItem skinName="RoundResultItemSkin" y="30.4" x="348" />
+	<ns1:RoundResultItem skinName="RoundResultItemSkin" y="30.4" x="651" />
+	<ns1:RoundResultItem skinName="RoundResultItemSkin" y="30.4" x="954.23" />
+	<e:Button id="ksyxBtn" label="" x="973.08" y="633.46">
+		<e:skinName>
+			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
+				<e:Image width="100%" height="100%" source="ksyx_btn_png" />
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+	<e:Button id="closeBtn" label="" x="1206" y="14">
+		<e:skinName>
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="btn_close_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+		</e:skinName>
+	</e:Button>
+</e:Skin>

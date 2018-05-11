@@ -31,6 +31,7 @@ class GameController extends BaseController {
 
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_REQ_BC, this.revBCPlayWantExit, this);
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_CONFIRM_BC, this.revBCExitStaus, this);
+        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_GAME_ALL_END_BC, this.revBCExitStaus, this);
 
         gameSocket.register(ProtocolHead.server_command.SERVER_ROOM_INFO_BC, this.revRoomInfo, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_GAME_START_BC, this.revGameStart, this);
@@ -45,7 +46,7 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_FANG_PAO_HU, this.revPaoHu, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_QIANG_GANG_HU, this.revQiangGangHu, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_GAME_READY_STAGE_BC, this.revNextGame, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_END_BC, this.revGameOver, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_END_BC, this.revRoundBalance, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_CHONG_FENG_JI_BC, this.revChongFengJi, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_ZHE_REN_JI_BC, this.revZRenJi, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_GETIN_MJ, this.revAdjAction, this);
@@ -266,12 +267,12 @@ class GameController extends BaseController {
         json = data;
         this.gameScene.readyBtn.visible = true;
     }
-
-    private revGameOver(data) {
-        console.log("+++++++++++++++++++++revGameOver---------------")
+    /***单局结算 */
+    private revRoundBalance(data) {
+        console.log("+++++++++++++++++++++RoundOver---------------")
         let json = ProtocolData.Rev2020;
         json = data;
-        (App.PanelManager.open(PanelConst.GameResultPanel) as GameResultPanel).update(json);
+        (App.PanelManager.open(PanelConst.RoundResultPanel) as RoundResultPanel).update(json);
     }
 
     private revChongFengJi(data) {
@@ -324,6 +325,13 @@ class GameController extends BaseController {
         let json = ProtocolData.Rev202;
         json = data;
         TipsLog.gameInfo("玩家：" + json.nick_name + json.confirm ? "  同意" : "不同意" + "退出房间")
+    }
+
+    /****房卡模式,房间结算 **/
+    private revRoomBalance(data) {
+        let json = ProtocolData.Rev204;
+        json = data;
+        (App.PanelManager.open(PanelConst.GameResultPanel) as GameResultPanel).update(json);
     }
 
     /***所有玩家定却完成 */

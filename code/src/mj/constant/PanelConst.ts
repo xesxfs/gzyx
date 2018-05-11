@@ -142,6 +142,11 @@ enum PanelConst {
      * 结算
      */
     GameResultPanel,
+
+    /**
+ * 回合结算
+ */
+    RoundResultPanel,
     /**
      * 胡牌类型
      */

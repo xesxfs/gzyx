@@ -13,6 +13,8 @@
     "resource/view/game/gameui/TuoGuanShowUISkin.exml",
     "resource/view/game/gameui/LeftCardShowUISkin.exml",
     "resource/csexml/GameSceneSkin1.exml",
+    "resource/csexml/RoundResultItemSkin.exml",
+    "resource/csexml/RoundResultPanelSkin.exml",
     "resource/csexml/gameResultItem2Skin.exml",
     "resource/csexml/gameResultItemSkin.exml",
     "resource/view/common/ButtonCloseSkin.exml",
