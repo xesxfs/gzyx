@@ -57,18 +57,11 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.revReady, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU, this.revCheckQiangGan, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.revAfterPeng, this);
-
         gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC, this.revEnterDinQue, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_SUCC_BC, this.revBCDinQue, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.revDinQueSuccess, this);
-
-
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
-
-
-
-
-
+        gameSocket.register(4, this.revChat, this);
     }
 
     public unRegisterSocket() {
@@ -312,6 +305,13 @@ class GameController extends BaseController {
         }
     }
 
+    private revChat(data) {
+        let json = ProtocolData.Rev4;
+        json = data;
+        let pos = CardLogic.getInstance().changeSeat(json.seatid);
+        this.gameScene.showChat(pos, json.type, json.tag, json.message);
+    }
+
     /***玩家发起退出游戏 */
     private revBCPlayWantExit(data) {
         let json = ProtocolData.Rev201;
@@ -483,6 +483,15 @@ class GameController extends BaseController {
     public sendAggretExitGame(confirm: number) {
         let data = ProtocolData.Send104;
         data.confirm = confirm
+        App.gameSocket.send(data);
+    }
+
+    /**type 1、2.是预设的头像或消息 3.是用户自定义消息      tag	ype=1、2时的预设内容     message	type=3时的自定义消息*/
+    public sendChat(type: number = 1, tag: number = 0, msg?: string) {
+        let data = ProtocolData.Send3;
+        data.type = type;
+        data.tag = tag;
+        data.message = msg;
         App.gameSocket.send(data);
     }
 

@@ -17,7 +17,7 @@ class LoginScene extends BaseScene {
 
     protected onEnable() {
         this.wxBtn.addEventListener("touchTap", this.onWXLogin, this);
-        this.accountBtn.addEventListener("touchTap", this.onAccountLogin, this)
+        this.accountBtn.addEventListener("touchTap", this.onAccountLogin, this);
     }
 
     protected onRemove() {
@@ -44,7 +44,7 @@ class LoginScene extends BaseScene {
         this.loginGrp.alpha = 0;
         this.loginGrp.visible = true;
         this.loginGrp.scaleX = this.loginGrp.scaleY = 0.5;
-        egret.Tween.get(this.loginGrp).to({ alpha: 1, scaleX:1, scaleY:1}, 100);
+        egret.Tween.get(this.loginGrp).to({ alpha: 1, scaleX: 1, scaleY: 1 }, 100);
     }
 
 }

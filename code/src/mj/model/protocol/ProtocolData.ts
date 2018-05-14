@@ -32,7 +32,7 @@ class ProtocolData {
     }
 
     /**常用语聊天应答*/
-    public static Send4 = {
+    public static Rev4 = {
         cmd: 4,//	integer	协议ID
         uid: 0,//	integer	发送用户ID
         seatid: 0,//	integer	座位号

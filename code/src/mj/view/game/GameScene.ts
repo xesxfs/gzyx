@@ -145,13 +145,27 @@ class GameScene extends BaseScene {
         console.log(e.target)
         switch (e.target) {
             case this.exitBtn:
-            //开房类型可以发起解散房间, 再发起http退出房间
-            //排位赛金币赛可以退出房间
+                //开房类型可以发起解散房间, 再发起http退出房间
+                //排位赛金币赛可以退出房间
                 if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
                     App.MsgBoxManager.getBoxA().showMsg("游戏未进行时解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
                 } else {
                     App.MsgBoxManager.getBoxA().showMsg("是否退出金币场，退出将由\n机器人代打，本局结束前\n不允许进入其他房间", this.ctrl.sendQuiteGame, this.ctrl);
                 }
+
+                break;
+            case this.chatBtn:
+                this.headShowUI.showTxt("helllllllllll", UserPosition.Down);
+                this.headShowUI.showTxt("helllllllllll", UserPosition.L);
+                this.headShowUI.showTxt("helllllllllll", UserPosition.R);
+                this.headShowUI.showTxt("helllllllllll", UserPosition.Up);
+
+
+                this.headShowUI.showEmoji("emoji_1", UserPosition.Down);
+                this.headShowUI.showEmoji("emoji_2", UserPosition.L);
+                this.headShowUI.showEmoji("emoji_3", UserPosition.R);
+                this.headShowUI.showEmoji("emoji_4", UserPosition.Up);
+
 
                 break;
             default:
@@ -161,8 +175,8 @@ class GameScene extends BaseScene {
 
     private initRes() {
         var resName = "hero_chongfengji"
-        var data = RES.getRes(resName + "_mc_json");
-        var img = RES.getRes(resName + "_tex_png");
+        var data = RES.getRes(resName + "_json");
+        var img = RES.getRes(resName + "_png");
         var mcFactory: egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data, img);
         this.chongjiMc = new egret.MovieClip(mcFactory.generateMovieClipData(resName));
 
@@ -175,12 +189,30 @@ class GameScene extends BaseScene {
             setTimeout(() => {
                 this.chongjiMc.stop();
                 this.chongjiMc.parent && this.chongjiMc.parent.removeChild(this.chongjiMc);
-            }, 1000);
+            }, 3000);
         }
     }
 
     public showExit() {
         this.exitBtn.visible = true;
+    }
+
+    public showChat(pos: UserPosition, type: number, tag: number, msg: string) {
+        try {
+
+            if (type == 2) {
+                this.headShowUI.showEmoji("emoji_" + tag.toString(), pos);
+            } else if (type == 1) {
+                this.headShowUI.showTxt(App.DataCenter.GameInfo.Chat_Msg[tag], pos);
+            } else if (type == 3) {
+                this.headShowUI.showTxt(msg, pos);
+            }
+
+        } catch (e) {
+            console.warn("聊天出现未知异常！！！");
+        }
+
+
     }
 
     /*******************************************************************************

@@ -10,6 +10,12 @@ class HeadShowUI extends eui.Component {
 	/**定位用,用完删除*/
 	private readyGroup: eui.Group;
 	private readyList = [];
+	public chatTxtGroup: eui.Group;
+	public chatEmojiGroup: eui.Group;
+	private emojiMcFactory: egret.MovieClipDataFactory;
+	private emojis: egret.MovieClip[] = [];
+	private chatShowTime: number = 2000;
+
 
 	protected childrenCreated() {
 		this.init();
@@ -19,6 +25,11 @@ class HeadShowUI extends eui.Component {
 
 	private init() {
 		this.headList = [];
+		var resName = "chat_emoji"
+		var data = RES.getRes(resName + "_json");
+		var img = RES.getRes(resName + "_png");
+		this.emojiMcFactory = new egret.MovieClipDataFactory(data, img);
+		let mcData = this.emojiMcFactory.generateMovieClipData("emoji");
 
 		let len = this.headGroup.numChildren;
 		for (let i = 0; i < len; i++) {
@@ -29,7 +40,12 @@ class HeadShowUI extends eui.Component {
 
 		for (let i = 0; i < 4; i++) {
 			this.readyList.push(this.readyGroup.getChildAt(i));
+			this.chatTxtGroup.getChildAt(i).visible = false;
+			let mc = new egret.MovieClip(mcData);
+			mc.frameRate = 8;
+			this.emojis.push(mc);
 		}
+
 
 	}
 
@@ -44,12 +60,12 @@ class HeadShowUI extends eui.Component {
 		headUI.visible = true;
 	}
 
-	public showZhuang(pos:UserPosition){
-		for(let i=0;i<4;i++){
+	public showZhuang(pos: UserPosition) {
+		for (let i = 0; i < 4; i++) {
 			var headUI = this.headList[i];
-			headUI.headzhuang.visible=false;
-			if(pos==i){
-				headUI.headzhuang.visible=true;
+			headUI.headzhuang.visible = false;
+			if (pos == i) {
+				headUI.headzhuang.visible = true;
 			}
 		}
 	}
@@ -57,7 +73,7 @@ class HeadShowUI extends eui.Component {
 
 
 	/**隐藏玩家头像*/
-	public hideHeadUI(pos:UserPosition) {
+	public hideHeadUI(pos: UserPosition) {
 		var headUI: HeadUI = this.headList[pos];
 		headUI.hide();
 	}
@@ -72,6 +88,30 @@ class HeadShowUI extends eui.Component {
 
 		}
 	}
+
+	public showTxt(txt: string, pos: UserPosition) {
+		let show = (this.chatTxtGroup.getChildAt(pos) as eui.Group).getChildAt(1) as eui.Label;
+		show.text = txt;
+		this.chatTxtGroup.getChildAt(pos).visible = true;
+		egret.Tween.removeTweens(show);
+		egret.Tween.get(show).wait(this.chatShowTime).call(() => { this.chatTxtGroup.getChildAt(pos).visible = false; });
+	}
+
+	public showEmoji(emoji: string, pos: UserPosition) {
+		let mc = this.emojis[pos];
+		mc.gotoAndPlay(emoji, -1);
+		let show = this.chatEmojiGroup.getChildAt(pos) as eui.Group;
+		show.addChild(mc);
+		egret.setTimeout(this.emojiCallBack, this, this.chatShowTime, mc);
+
+	}
+
+	private emojiCallBack(mc: egret.MovieClip) {
+		mc && mc.stop();
+		mc.parent && mc.parent.removeChild(mc);
+	}
+
+
 
 
 	/**显示准备图标*/
