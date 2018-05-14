@@ -91,7 +91,8 @@ class HeadShowUI extends eui.Component {
 
 	public showTxt(txt: string, pos: UserPosition) {
 		let show = (this.chatTxtGroup.getChildAt(pos) as eui.Group).getChildAt(1) as eui.Label;
-		show.text = txt;
+		/**加空格对齐 */
+		show.text = txt + "  ";
 		this.chatTxtGroup.getChildAt(pos).visible = true;
 		egret.Tween.removeTweens(show);
 		egret.Tween.get(show).wait(this.chatShowTime).call(() => { this.chatTxtGroup.getChildAt(pos).visible = false; });
