@@ -113,8 +113,6 @@ class HeadShowUI extends eui.Component {
 	}
 
 
-
-
 	/**显示准备图标*/
 	public showReady(pos: UserPosition) {
 		//最初状态准备按钮
