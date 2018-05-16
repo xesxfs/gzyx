@@ -153,16 +153,16 @@ class GameInfo {
 enum ACT_act {
     Act_ChangeCard = -2,// 换牌， 回放用
     Act_GetCard = -1,//摸牌,回放用
-    Act_Pass = 0,   //不吃、碰、杠、胡等
-    Act_NormalDo,   //出牌
-    Act_Ting,       //听
-    Act_Chi,        //吃
-    Act_Peng,       //碰
-    Act_Gang,       //杠
-    Act_AnGang,     //暗杠
-    Act_Hu,         //胡
+    Act_Pass = 5,   //不吃、碰、杠、胡等
+    Act_NormalDo = 7,   //出牌
+    Act_Ting = 0,       //听
+    Act_Chi = 6,        //吃
+    Act_Peng = 1,       //碰
+    Act_Gang = 2,       //杠
+    Act_AnGang = 3,     //暗杠
+    Act_Hu = 4,         //胡
 
-    Act_zimo        //自摸,额外添加
+    Act_zimo = 8        //自摸,额外添加
 };
 
 //胡牌类型
