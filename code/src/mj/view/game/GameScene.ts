@@ -55,8 +55,8 @@ class GameScene extends BaseScene {
         json = GameInfo.reBuildData;
         GameInfo.curRoomNo = json.room_pwd;
         GameInfo.curGameType = json.game_flag;
+        this.leftCardShowUI.setLeftCard(json.rest_mjs);
         this.setRoomNo(GameInfo.curRoomNo);
-
 
         /***必须先找到自己的座位号，才能推导出其他玩家的相对位置 */
         for (let i = 0; i < json.players.length; i++) {
@@ -68,7 +68,6 @@ class GameScene extends BaseScene {
                 break;
             }
         }
-
 
         for (let i = 0; i < json.players.length; i++) {
             let player = ProtocolData.player_info4
