@@ -21,12 +21,9 @@ class GameScene extends BaseScene {
     public exitBtn: eui.Button;
     public setBtn: eui.Button;
     public roomLab: eui.Label;
+    public jushu: eui.Label;
     public readyBtn: eui.Button;
-
-
     private chongjiMc: egret.MovieClip;
-
-
 
 
     public constructor() {
@@ -57,6 +54,7 @@ class GameScene extends BaseScene {
         GameInfo.curGameType = json.game_flag;
         this.leftCardShowUI.setLeftCard(json.rest_mjs);
         this.setRoomNo(GameInfo.curRoomNo);
+        this.setJushu(json.rest_board, json.board_choose)
 
         /***必须先找到自己的座位号，才能推导出其他玩家的相对位置 */
         for (let i = 0; i < json.players.length; i++) {
@@ -137,6 +135,14 @@ class GameScene extends BaseScene {
         if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
             this.roomLab.visible = true;
             this.roomLab.text = "房号:" + GameInfo.curRoomNo.toString();
+        }
+    }
+
+    public setJushu(cur: number, total: number) {
+        this.jushu.visible = false;
+        if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
+            this.jushu.visible = true;
+            this.jushu.text = "总局数:" + cur.toString() + "/" + total.toString();
         }
     }
 
