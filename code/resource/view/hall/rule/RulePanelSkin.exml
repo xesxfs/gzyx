@@ -1,47 +1,97 @@
-<?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="RulePanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*" width="1280" height="720">
+<?xml version='1.0' encoding='utf-8'?>
+<e:Skin class="RulePanelSkin" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing"
+        xmlns:how="how.*">
 	<e:Group>
-		<e:Image source="main_bg_jpg" width="100%" height="100%"/>
-		<e:Image source="Common_img_bg_png" x="88.5" y="39.97"/>
-
-		<e:Image source="h_Label_bg_png" x="268.5" y="9.99" scale9Grid="63,40,385,2" anchorOffsetX="0" width="740.33"/>
-		<e:Image id="focusImg" source="bisai_img_132_png" x="278" y="15"/>
+		<e:Image source="main_bg_jpg" width="100%" height="100%" />
+		<e:Image source="Common_img_bg_png" x="88.5" y="39.97" />
+		<e:Image source="h_Label_bg_png" x="268.5" y="9.99" scale9Grid="63,40,385,2" anchorOffsetX="0" width="740.33" />
+		<e:Image id="focusImg" source="bisai_img_132_png" x="278" y="15" />
+		<e:Button id="backBtn" label="" left="10" top="14">
+			<e:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_back_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+			</e:Skin>
+			</e:skinName>
+		</e:Button>
 		<e:Button id="commonBtn" label="" x="332.34" y="27" enabled="false">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="wanfa_txt_03_png" source.disabled="wanfa_txt_05_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image width="100%" height="100%" source="wanfa_txt_03_png" source.disabled="wanfa_txt_05_png" />
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
 		<e:Button id="basicBtn" label="" x="562" y="27">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="wanfa_txt_09_png" source.disabled="wanfa_txt_10_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image width="100%" height="100%" source="wanfa_txt_09_png" source.disabled="wanfa_txt_10_png" />
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
 		<e:Button id="integralBtn" label="" x="788.35" y="27">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="wanfa_txt_13_png" source.disabled="wanfa_txt_14_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					<e:Image width="100%" height="100%" source="wanfa_txt_13_png" source.disabled="wanfa_txt_14_png" />
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
 		<e:Scroller id="ruleScll" width="1004" height="504" x="138" y="127" anchorOffsetX="0" anchorOffsetY="0">
 			<e:Group>
-				<e:Label id="contentLab" text="Label" lineSpacing="20" wordWrap="true"/>
+				<e:Label id="contentLab" text="Label" lineSpacing="20" wordWrap="true" />
 			</e:Group>
 		</e:Scroller>
-		<how:Button id="backBtn" label="" x="11" y="13.7">
-			<how:skinName>
-				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="btn_back_png"/>
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
-				</e:Skin>
-			</how:skinName>
-		</how:Button>
-	</e:Group>
-</e:Skin>
+		<e:Scroller id="settleScll" width="1004" height="504" x="138" y="127" anchorOffsetX="0" anchorOffsetY="0"
+		            scrollPolicyV="auto" scrollPolicyH="off" visible="false">
+			<e:Group>
+			<e:Label text="抓鸡麻将根据底注倍数计算输赢额度，捉鸡麻将的底注设定为1分，一下介绍各种牌型胡牌的分值。" lineSpacing="20" wordWrap="true" x="0" y="0" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="一、牌型分值" lineSpacing="20" wordWrap="true" x="0" y="73.24" fontFamily="Microsoft YaHei" size="24" textColor="0xEACD11"/>
+	<e:Label text="1、平胡：平胡可以自摸胡牌，或在有“豆”情况下允许点胡。积分为1倍底注" lineSpacing="20" wordWrap="true" x="0" y="127.4" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="2、大对子：即对对胡，成牌时有4个三张相同的和1个对。积分为5倍底注" lineSpacing="20" wordWrap="true" x="0" y="284.305" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="3、七对：成牌时由7个对子组成。积分为10倍底注" lineSpacing="20" wordWrap="true" x="0" y="441.86" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="4、龙七对：成牌时由5个对子和4个相同的牌组成。积分为20倍底注" lineSpacing="20" wordWrap="true" x="0" y="599.485" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="5、清一色：成牌时所有牌都由条、筒、万中的一种组成。积分为10倍底注" lineSpacing="20" wordWrap="true" x="0" y="757.08" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="6、清大对：成牌由7个对子组成，且所有牌都由条、筒、万中的一种组成，积分为20倍底注" lineSpacing="20" wordWrap="true" x="0" y="914.355" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="7、清七对：成牌由7个对子组成，且所有牌都由条、筒万中的一种组成，积分为20倍底注" lineSpacing="20" wordWrap="true" x="0" y="1072.36" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="8、清龙背：成牌时由5个对子和4个相同的牌组成，且所有牌都由条、筒、万中的一种组成。		积分为30倍底注" lineSpacing="20" wordWrap="true" x="0" y="1226.065" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="9、单吊：玩家手里的牌经过碰杠之后手里只剩下一张牌了，算单吊，积分按10倍底注计算" lineSpacing="20" wordWrap="true" x="0" y="1267.21" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Label text="10、单吊清一色：单吊清一色按两个清一色计算，积分按20倍底注计算" lineSpacing="20" wordWrap="true" x="0" y="1305.81" fontFamily="Microsoft YaHei" size="21"/>
+	<e:Image source="card_01_png" x="0" y="1112.1275"/>
+	<e:Image source="card_02_png" x="0" y="167.3575"/>
+	<e:Image source="card_03_png" x="0" y="323.5425"/>
+	<e:Image source="card_04_png" x="0" y="482.1675"/>
+	<e:Image source="card_05_png" x="0" y="639.2725"/>
+	<e:Image source="card_06_png" x="0" y="797.5475"/>
+	<e:Image source="card_07_png" x="0" y="954.5925"/>
+	<e:Label text="二、额外分值" lineSpacing="20" wordWrap="true" x="0" y="1386.97" fontFamily="Microsoft YaHei" size="24" textColor="0xEACD11"/>
+	<e:Label text="1、天胡：庄家拿起牌即胡牌，称为天胡，积分按20倍底注计算。\n
+2、报听胡牌的玩家番数（天听、硬报）按20倍计算，（地听、软报）按10倍计算；\n
+3、杀报：在有任何玩家报听的情况下，报听玩家打出的牌，其他玩家任何时候都可以胡牌\n
+或者自摸，报听玩家牌型倍数给胡牌玩家杀报的番数；\n
+4、荒庄，有人叫牌，有人不叫牌，叫牌者根据所叫牌算分，不叫牌这需要分别给每个叫牌者相应的分数；\n本局所有玩家鸡和豆都不算分；\n
+5、点胡点炮者单独付底分，放热炮者，被抢杠者，本局所有鸡和豆都不算分；自摸胡牌其他三家都要付，\n底注加1分；\n
+6：一炮多响：如果有玩家出牌点了2家或者3家的炮，点炮者给胡牌的玩家相应的积分；\n
+7、被抢杠者加扣1分，胡牌者算自摸，被抢杠者包3家的牌，抢杠胡牌者鸡和豆还是三家\n
+分别给付；\n
+8、杠开按自摸算，且额外加1分；\n
+9、点热炮者点炮前成的那个豆不算，此外还需要付点炮的积分，接热炮胡牌者的鸡和豆还是\n
+三家分别给付，积分额外加2分。\n
+10、叫牌的情况下翻牌鸡每家每张需要支付一分（无论是在手上的还是打出去的），没叫牌则\n
+不用赔付。如果手中有一张鸡并且叫牌，则其他玩家每人给有鸡的玩家1分。多人有鸡分别\n
+赔付\n
+11、不管是打出去的还是手上的幺鸡在叫牌的情况下每家每张支付1分，没叫牌的情况下，	\n
+每只已经打出的幺鸡需要支付给其他叫牌和胡牌的玩家每家1分；\n
+12、幺鸡为“金鸡”，在结算时1只鸡为2分；\n
+13、每张冲锋鸡算两分，冲锋鸡玩家叫牌每家需要给2分，未叫牌冲锋鸡玩家需要给其他叫牌\n
+和胡牌的玩家每家2分。若翻到金鸡，翻一倍计算，结算时算4分；\n
+14、有“责任鸡”玩家叫牌，打出鸡牌的玩家应比其他玩家多付1分。如果有“责任鸡”的\n
+玩家未叫牌，对所有叫牌玩家包鸡，对打出鸡牌的玩家比其他玩家多付1分；\n
+15、闷豆：3分；\n
+16、转弯豆：3分；17、点豆：3分，没叫牌或放热炮豆不算分；" lineSpacing="20" wordWrap="true" x="0" y="1434.96" fontFamily="Microsoft YaHei" size="21"/>
+			</e:Group>
+			</e:Scroller>
+		</e:Group>
+	
+	</e:Skin>

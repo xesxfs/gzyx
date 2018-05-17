@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="gameUserSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*">
+<e:Skin class="gameUserSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:ns1="*" xmlns:how="how.*">
 	<w:Config id="1594658eddc"/>
 	<e:Group anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tankuang_small_png" anchorOffsetX="0" width="530" anchorOffsetY="0" height="350" y="0" x="0"/>
@@ -15,5 +15,13 @@
 		<e:Image id="headUrl" width="100" height="100" x="66.14" y="76.24" anchorOffsetX="0" anchorOffsetY="0" source="img_default_png"/>
 		<e:Image source="ico_jewel_png" x="208" y="99"/>
 		<e:Image source="ico_gold_png" x="208" y="160"/>
+		<how:Button id="headBtn" label="更换头像" x="43.56" y="256.8" scaleX="0.8" scaleY="0.8">
+			<how:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_blue_small_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</how:skinName>
+		</how:Button>
 	</e:Group>
 </e:Skin>

@@ -47,7 +47,7 @@
 		},
 		{
 			"name": "promise",
-			"path": "./promise"
+			"path": "../modules/promise"
 		}
 	],
 	"target": {

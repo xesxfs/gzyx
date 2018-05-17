@@ -46,6 +46,7 @@ class HallController extends BaseController {
 
         this.requestRanking();  //获取排行榜信息
         this.requestItemList(); //获取物品列表的基本信息
+        this.sendQuicklyGrabTicket();
         this.sendServerList();
     }
 
@@ -697,8 +698,11 @@ class HallController extends BaseController {
 
     private revQuicklyGrabTicket(rev: any) {
         if (rev.data) {
-            ProtocolHttp.rev_QuicklyGrabTicket.grab_info = rev.data;
-            (App.PanelManager.getPanel(PanelConst.GrabPanel) as GrabPanel).updateGrabTick();
+            let json = ProtocolHttp.grab_info;
+            json = rev.data;
+            // (App.PanelManager.getPanel(PanelConst.GrabPanel) as GrabPanel).updateGrabTick();
+            //获取快抢赛次数
+            this.hallScene.updateQuick(json.count.toString());
         }
     }
 

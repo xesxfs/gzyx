@@ -64,5 +64,38 @@
 				</e:Skin>
 			</how:skinName>
 		</how:Button>
+		<e:Group x="136.5" y="-7">
+			<e:Image source="img_infoFrame_png" x="65.5" y="31"/>
+			<e:Image source="img_touXiangFrame_png" x="0" y="0"/>
+			<e:Image id="maskImg" source="img_mask_png" x="0" y="0"/>
+			<e:Label id="nameLab" text="Label" x="130.7" y="45" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="170.75"/>
+			<e:Image id="headImg" source="img_default_png" x="10" y="12" width="100" height="100"/>
+		</e:Group>
+		<e:Group x="741.5" y="11">
+			<e:Image source="img_infoFrame_png" x="0" y="0"/>
+			<e:Image source="ico_jewel_png" x="11" y="6"/>
+			<e:Label id="coinLab" text="Label" x="71" y="17" anchorOffsetX="0" width="129"/>
+			<how:Button id="coinBtn" label="" x="199.5" y="1">
+				<how:skinName>
+				<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+				</how:skinName>
+			</how:Button>
+		</e:Group>
+		<e:Group x="1012.5" y="11">
+			<e:Image source="img_infoFrame_png" x="0" y="0"/>
+			<e:Image x="11" y="6" source="ico_gold_png"/>
+			<e:Label id="goldLab" text="Label" x="71" y="17" anchorOffsetX="0" width="129"/>
+			<how:Button id="goldBtn" label="" x="199.5" y="1">
+			<how:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_addCoin_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</how:skinName>
+			</how:Button>
+		</e:Group>
 	</e:Group>
 </e:Skin>
