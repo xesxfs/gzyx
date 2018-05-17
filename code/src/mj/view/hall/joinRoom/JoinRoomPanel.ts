@@ -50,6 +50,7 @@ class JoinRoomPanel extends BasePanel {
 						let roomId = this.getRoomId();
 						GameInfo.curGameType = GAME_TYPE.RoomCardGame;
 						(App.getController(HallController.NAME) as HallController).sendAddRoom(roomId);
+						this.resetRoomID();
 					}
 				}
 

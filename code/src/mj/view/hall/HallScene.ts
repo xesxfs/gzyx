@@ -7,33 +7,33 @@ class HallScene extends BaseScene {
     /**场景控制类*/
     protected ctrl: HallController;
 
-    public activeBtn: eui.Button;
-    public mallBtn: eui.Button;
-    public shareBtn: eui.Button;
-    public bagBtn: eui.Button;
-    public viewBtn: eui.Button;
-    public signinBtn: eui.Button;
-    public helpBtn: eui.Button;
-    public mailBtn: eui.Button;
-    public setBtn: eui.Button;
-    public rankGameBtn: eui.Button;
-    public goldGameBtn: eui.Button;
+    public activeBtn: how.Button;
+    public mallBtn: how.Button;
+    public shareBtn: how.Button;
+    public bagBtn: how.Button;
+    public signinBtn: how.Button;
+    public clubBtn: how.Button;
+    public setBtn: how.Button;
+    public menuBtn: how.Button;
+    public rankGameBtn: how.Button;
     public grabGameBtn: how.Button;
-    public createBtn: eui.Button;
-    public enterBtn: eui.Button;
+    public goldGameBtn: how.Button;
+    public createBtn: how.Button;
+    public enterBtn: how.Button;
     public personGroup: eui.Group;
     public nameLab: eui.Label;
-    public addDiaBtn: eui.Button;
+    public headUrl: eui.Image;
+    public maskImg: eui.Image;
+    public addDiaBtn: how.Button;
     public coinLab: eui.Label;
-    public addGoldBtn: eui.Button;
-    public goldLab: eui.Label;
-    public clubBtn: eui.Button;
     public addCardBtn: how.Button;
     public cardLab: eui.Label;
-    public headUrl: eui.Image;
-    public maskImg:eui.Image;
-
+    public quickLab: eui.Label;
     public rankingPnl: HallRankingPanel;
+    public menuGrp: eui.Group;
+    public mailBtn: how.Button;
+    public helpBtn: how.Button;
+
     public marquee: Marquee;
 
     public constructor() {
@@ -54,7 +54,7 @@ class HallScene extends BaseScene {
         let user = App.DataCenter.UserInfo.selfUser;
         this.nameLab.text = user.nickName;
         this.coinLab.text = user.coin.toString();
-        this.goldLab.text = NumberTool.formatMoney(user.gold);
+        // this.goldLab.text = NumberTool.formatMoney(user.gold);
         this.cardLab.text = user.roomCard.toString();
         this.headUrl.source = user.headUrl;
     }
@@ -92,7 +92,7 @@ class HallScene extends BaseScene {
     //刷新金币信息
     private onUpdateGold(data: any) {
         App.DataCenter.UserInfo.selfUser.gold = data;
-        this.goldLab.text = NumberTool.formatMoney(data);
+        // this.goldLab.text = NumberTool.formatMoney(data);
     }
 
     //刷新钻石信息
@@ -106,7 +106,13 @@ class HallScene extends BaseScene {
         this.cardLab.text = data;
     }
 
+    public updateQuick(data: any) {
+        this.quickLab.text = "快抢赛 " + data;
+    }
+
     private onClick(e: egret.TouchEvent) {
+        this.menuGrp.visible = false;
+
         switch (e.target) {
             case this.activeBtn:
                 this.ctrl.requestActive();
@@ -120,8 +126,6 @@ class HallScene extends BaseScene {
             case this.bagBtn:
                 this.ctrl.requestBackpack();
                 break;
-            case this.viewBtn:
-                break;
             case this.signinBtn:
                 this.ctrl.sendMonthlyCalendar();
                 break;
@@ -134,9 +138,9 @@ class HallScene extends BaseScene {
             case this.helpBtn:
                 App.PanelManager.open(PanelConst.RulePanel)
                 break;
-            case this.addGoldBtn:
-                (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Gold);
-                break;
+            // case this.addGoldBtn:
+            //     (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Gold);
+            //     break;
             case this.addDiaBtn:
                 (App.PanelManager.open(PanelConst.MallPanel) as MallPanel).showMall(MallType.Diamond);
                 break;
@@ -172,6 +176,12 @@ class HallScene extends BaseScene {
                 break;
             case this.clubBtn:
                 this.ctrl.sendClubList();
+                break;
+            case this.menuBtn:
+                this.menuGrp.visible = !this.menuGrp.visible;
+                break;
+            default:
+
                 break;
 
         }

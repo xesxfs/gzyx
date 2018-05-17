@@ -3,7 +3,7 @@
 
 	<e:Group horizontalCenter="0" verticalCenter="0">
 		<e:Image source="tankuang_big_png"/>
-		<e:TabBar id="mailTab" x="265" y="26.31" itemRendererSkinName="EmailTabBarSkin">
+		<e:TabBar id="mailTab" x="265" y="26.31" itemRendererSkinName="EmailTabBarSkin" selectedIndex="1">
 			<e:ArrayCollection>
 				<e:Array>
 					<e:Object iconUpBg="btn_left_unSelected_png" iconUp="mail_03_png" iconDownBg="btn_left_selected_png" iconDown="mail_03_png"/>

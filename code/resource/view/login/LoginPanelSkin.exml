@@ -18,10 +18,10 @@
 		         textAlign="left" scaleX="1" scaleY="1" textColor="0x493f39" />
 		<e:Image source="img_text_bg_png" x="195" y="129.19" scale9Grid="38,19,234,23" anchorOffsetX="0" width="352.43" />
 		<e:Image source="img_text_bg_png" x="195" y="222.54" scale9Grid="38,19,234,23" anchorOffsetX="0" width="352.43" />
-		<e:EditableText id="phoneEdit" width="340" height="36" text="15889745889" x="201.52" y="143" size="30"
+		<e:EditableText id="phoneEdit" width="340" height="36" text="" x="201.52" y="143" size="30"
 		                textColor="0x000000" anchorOffsetX="0" prompt="请输入11位手机号码" promptColor="0x070707" maxChars="11"
 		                restrict="&quot;0-9&quot;" inputType="tel" />
-		<e:EditableText id="passEdit" width="340" height="36" text="0123456" x="201.52" y="235.39" size="30"
+		<e:EditableText id="passEdit" width="340" height="36" text="" x="201.52" y="235.39" size="30"
 		                textColor="0x000000" anchorOffsetX="0" prompt="输入密码" displayAsPassword="true" promptColor="0x050504"
 		                restrict="&quot;a-zA-Z0-9&quot;" maxChars="16" inputType="password" />
 		<how:Button id="registBtn" label="注册" anchorOffsetX="0" anchorOffsetY="0" y="350.88" horizontalCenter="-105.5" x="258"

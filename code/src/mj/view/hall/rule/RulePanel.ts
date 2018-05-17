@@ -4,13 +4,15 @@
  * 2016/07/13
  */
 class RulePanel extends BasePanel {
-    public backBtn: eui.Button;
+    public focusImg: eui.Image;
     public commonBtn: eui.Button;
     public basicBtn: eui.Button;
     public integralBtn: eui.Button;
-    public contentLab: eui.Label;
-    public focusImg: eui.Image;
+    public backBtn: eui.Button;
     public ruleScll: eui.Scroller;
+    public contentLab: eui.Label;
+    public settleScll: eui.Scroller;
+
 
     public constructor() {
         super();
@@ -45,7 +47,7 @@ class RulePanel extends BasePanel {
                 this.clearBtnEnabled(evt.target);
                 break;
             case this.integralBtn:
-                this.contentLab.textFlow = this._integralDesc;
+                // this.contentLab.textFlow = this._integralDesc;
                 this.clearBtnEnabled(evt.target);
                 this.setFanType();
                 break;
@@ -63,7 +65,18 @@ class RulePanel extends BasePanel {
         let xn = focus.x - (this.focusImg.width - focus.width) / 2
         egret.Tween.get(this.focusImg).to({ x: xn }, 50);
         this.ruleScll.viewport.scrollV = 0;
+<<<<<<< HEAD
         this.fanGroup && this.fanGroup.parent && this.fanGroup.parent.removeChild(this.fanGroup);
+=======
+
+        if (focus == this.integralBtn) {
+            this.settleScll.visible = true;
+            this.ruleScll.visible = false;
+        } else {
+            this.settleScll.visible = false;
+            this.ruleScll.visible = true;
+        }
+>>>>>>> cc4b648aa9586c4b48475362042da1f528353aa0
     }
 
 
@@ -156,6 +169,7 @@ class RulePanel extends BasePanel {
             , { text: "\n10、单吊清一色：单吊清一色按两个清一色计算，积分按20倍底注计算", style: contentTextStyleJson }
             , { text: "\n\n二、额外分值", style: tetleTextStyleJson }
         ];
+
         this.contentLab.textFlow = this._commonDesc;
     }
 

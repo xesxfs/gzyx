@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="RankingItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="111" height="111">
-	<e:Image source="head_bg_png" x="0" y="0"/>
-	<e:Image id="maskImg" source="head_bg_png"/>
-	<e:Image id="headImg" width="110" height="110" y="0" x="0" source=""/>
+<e:Skin class="RankingItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="84" height="83">
+	<e:Image x="0" y="0" source="hall_top_t_png"/>
+	<e:Image id="maskImg" source="hall_head_mask_png"/>
+	<e:Image id="headImg" width="84" height="83" y="0" x="0" source=""/>
 	<e:Image id="iconImg" source="img_rank1_png" x="-3" y="-7" scaleX="0.7" scaleY="0.7" visible="false"/>
 	<e:Label id="numLab" text="0" x="10.55" y="6.15" textColor="0xff0000" stroke="2" strokeColor="0xffffff" fontFamily="Arial" bold="true" visible="false"/>
 </e:Skin>

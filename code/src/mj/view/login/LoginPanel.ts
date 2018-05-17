@@ -34,6 +34,9 @@ class LoginPanel extends BasePanel {
         this.LoginBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLogin, this);
         this.registBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.switchRLGroup, this);
         this.okBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchRegist, this);
+
+        this.phoneEdit.text = egret.localStorage.getItem("account");
+        this.passEdit.text = egret.localStorage.getItem("password");
     }
 
     /**注册登录切换 */
@@ -69,6 +72,10 @@ class LoginPanel extends BasePanel {
         loginData.param.user = testAccount
         loginData.param.password = testPassword;
         httpsend.send(loginData, this.revLogin, this);
+
+
+        egret.localStorage.setItem("account", testAccount);
+        egret.localStorage.setItem("password", testPassword);
     }
 
     private revLogin(data: any) {

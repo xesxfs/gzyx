@@ -8,7 +8,7 @@
 		"libs/modules/tween/tween.js",
 		"libs/modules/game/game.js",
 		"libs/modules/dragonBones/dragonBones.js",
-		"promise/bin/promise.js"
+		"libs/modules/promise/promise.js"
 	],
 	"game": [
 		"bin-debug/framework/base/BaseUI.js",

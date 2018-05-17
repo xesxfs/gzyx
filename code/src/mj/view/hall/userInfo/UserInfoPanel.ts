@@ -15,7 +15,7 @@ class UserInfoPanel extends BasePanel {
     public duanwei: eui.Label;
     public headUrl: eui.Image;
     public changeBtn: eui.Button;
-
+    public headBtn:how.Button;
 
     public constructor() {
         super();
@@ -34,13 +34,25 @@ class UserInfoPanel extends BasePanel {
         this.gold.text = user.gold.toString();
         this.headUrl.source = user.headUrl;
         this.score.text = "战绩：" + user.win_board + "胜/" + user.lose_board + "负/" + user.pin_board + "平";
-        this.duanwei.text = "排位：" + user.paiwei_rank_name + "      " + user.paiwei_score;
+        this.duanwei.text = "段位：" + user.paiwei_rank_name;
     }
 
     /** 添加到场景*/
     protected onEnable() {
         this.setCenter();
         this.changeBtn.addEventListener("touchTap", this.onChangTap, this);
+        // this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+    }
+
+    private onTouch(evt: egret.TouchEvent) {
+        switch (evt.target) {
+            case this.headBtn:
+                Tips.info("敬请期待...");
+                break;
+            default:
+                break;
+        }
+
     }
 
     /** 从场景中移除*/
