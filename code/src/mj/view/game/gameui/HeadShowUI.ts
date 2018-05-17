@@ -34,7 +34,7 @@ class HeadShowUI extends eui.Component {
 		let len = this.headGroup.numChildren;
 		for (let i = 0; i < len; i++) {
 			let orginObj = this.headGroup.getChildAt(i) as HeadUI;
-			orginObj.visible = false;
+			// orginObj.visible = false;
 			this.headList.push(orginObj);
 		}
 
@@ -75,7 +75,7 @@ class HeadShowUI extends eui.Component {
 	/**隐藏玩家头像*/
 	public hideHeadUI(pos: UserPosition) {
 		var headUI: HeadUI = this.headList[pos];
-		headUI.hide();
+		headUI.reset();
 	}
 
 	/**清理所有玩家头像UI*/
@@ -84,7 +84,7 @@ class HeadShowUI extends eui.Component {
 		var headUI: HeadUI;
 		for (var i = 0; i < len; i++) {
 			headUI = this.headList[i];
-			headUI.hide();
+			headUI.reset();
 
 		}
 	}
@@ -121,7 +121,7 @@ class HeadShowUI extends eui.Component {
 		// 	this.readyGroup.addChild(this.readyList[pos]);
 		// } else {
 		// 	this.readyList = this.readyList2;
-		// 	this.readyGroup.addChild(this.readyList[pos]);
+		this.readyGroup.addChild(this.readyList[pos]);
 		// }
 	}
 
@@ -130,12 +130,12 @@ class HeadShowUI extends eui.Component {
 		//最初状态准备按钮
 		// if (!this.bMove) {
 		// 	this.readyList = this.readyList1;
-		// 	var ready = this.readyList[pos];
-		// 	ready && ready.parent && ready.parent.removeChild(ready);
+		var ready = this.readyList[pos];
+		ready && ready.parent && ready.parent.removeChild(ready);
 		// } else {
 		// 	this.readyList = this.readyList2;
 		// 	var ready = this.readyList[pos];
-		// 	ready && ready.parent && ready.parent.removeChild(ready);
+		// ready && ready.parent && ready.parent.removeChild(ready);
 		// }
 	}
 

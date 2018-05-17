@@ -2,9 +2,9 @@
 <e:Skin class="LeftCardShowUISkin"  xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group id="juGroup" touchThrough="false" touchEnabled="false" y="0">
 		<e:Image width="160" height="30" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="0" verticalCenter="0" source="infoFrame_png"/>
-		<e:Image x="-16" y="0" scale9Grid="24,5,149,36" source="oppo_hand_1_png"/>
-		<e:Label size="20" text="剩余" verticalAlign="middle" textAlign="center" height="30" bold="true" horizontalCenter="-17" verticalCenter="0" anchorOffsetX="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
-		<e:Label id="leftCardLabel" size="20" text="108" verticalAlign="middle" textAlign="center" width="40" height="30" bold="true" horizontalCenter="28" textColor="0xE5CE4F" verticalCenter="0" anchorOffsetX="0"/>
-		<e:Label size="20" text="张" verticalAlign="middle" textAlign="center" height="30" bold="true" horizontalCenter="60" verticalCenter="0" anchorOffsetX="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Image x="-16" y="0" scale9Grid="24,5,149,36" source="oppo_hand_1_png" visible="false"/>
+		<e:Label size="20" text="剩余" verticalAlign="middle" textAlign="center" height="30" bold="true" horizontalCenter="-29" verticalCenter="0" anchorOffsetX="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
+		<e:Label id="leftCardLabel" size="20" text="108" verticalAlign="middle" textAlign="center" width="40" height="30" bold="true" horizontalCenter="16" textColor="0xE5CE4F" verticalCenter="0" anchorOffsetX="0"/>
+		<e:Label size="20" text="张" verticalAlign="middle" textAlign="center" height="30" bold="true" horizontalCenter="48" verticalCenter="0" anchorOffsetX="0" textColor="0xffffff" fontFamily="Microsoft YaHei"/>
 	</e:Group>
 </e:Skin>

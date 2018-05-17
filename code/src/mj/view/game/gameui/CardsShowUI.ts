@@ -58,6 +58,7 @@ class CardsShowUI extends eui.Component {
 		this.cardFactory = CardFactory.getInstance();
 		this.initPos();
 		this.cardGroups[UserPosition.Down].addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchTap, this);
+		this.cardGroups[UserPosition.Down].addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onDragCardBegin, this);
 		this.reset();
 		this.rectGroup.visible = false;
 	}
@@ -716,6 +717,72 @@ class CardsShowUI extends eui.Component {
 		if (e.target instanceof Card) {
 			this.checkOutCard(e.target);
 			return;
+		}
+	}
+
+
+	//拖牌
+	private dragCard: Card;
+	private dragCardValue: number = 0;
+	private onDragCardBegin(e: egret.TouchEvent) {
+		if (e.target instanceof Card) {  //自己手牌
+			var card: Card = e.target;
+			if (card.parent == this.cardGroups[UserPosition.Down]) {
+				this.dragCardValue = card.cardValue;
+				App.StageUtils.stage.addEventListener(egret.TouchEvent.TOUCH_MOVE, this.onDragCardMove, this);
+				App.StageUtils.stage.addEventListener(egret.TouchEvent.TOUCH_END, this.onDragCardEnd, this);
+			}
+		}
+	}
+
+	//拖拽移动
+	private onDragCardMove(e: egret.TouchEvent) {
+		if (this.dragCardValue != 0) {
+			if (this.dragCard == null && e.stageY < this.handlePointList[UserPosition.Down][0].y) {
+				this.dragCard = this.cardFactory.getHandCard(this.dragCardValue, UserPosition.Down);
+				this.cardGroups[UserPosition.Down].addChild(this.dragCard);
+			}
+			if (this.dragCard) {
+				this.dragCard.x = e.stageX - this.dragCard.width / 2;
+				this.dragCard.y = e.stageY - this.dragCard.height / 2;
+			}
+		}
+	}
+
+	//释放拖拽
+	private onDragCardEnd(e: egret.TouchEvent) {
+		this.dragCardValue = 0;
+		if (this.dragCard == null) {
+			return;
+		}
+		//删除拖拽牌
+		var dragCardValue = this.dragCard.cardValue;
+		this.clearDragCard();
+		//允许出牌，则从手牌获取相同牌值的牌，并打出
+		if (this.bAllowOutCard && e.stageY < this.cardGroups[UserPosition.Down][0].y) {
+			var cardList = this.handleList[UserPosition.Down];
+			var cardLen = cardList.length;
+			var card: Card;
+			for (var i = 0; i < cardLen; i++) {
+				card = cardList[i];
+				if (card.cardValue == dragCardValue) {
+					this.bAllowOutCard = false;
+					this.curTouchCard = card;
+					this.doAction(this.curTouchCard.cardValue);
+					break;
+				}
+			}
+		}
+	}
+
+	//清理拖拽牌
+	private clearDragCard() {
+		App.StageUtils.stage.removeEventListener(egret.TouchEvent.TOUCH_MOVE, this.onDragCardMove, this);
+		App.StageUtils.stage.removeEventListener(egret.TouchEvent.TOUCH_END, this.onDragCardEnd, this);
+		this.dragCardValue = 0;
+		if (this.dragCard) {
+			this.dragCard.recycle();
+			this.dragCard = null;
 		}
 	}
 

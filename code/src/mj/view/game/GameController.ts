@@ -93,12 +93,15 @@ class GameController extends BaseController {
             user.headUrl = player.avater_url;
             user.sex = player.sex;
             user.state = player.status;
+            let pos = CardLogic.getInstance().changeSeat(user.seatID);
+            !!user.state && this.gameScene.headShowUI.showReady(pos);
             if (user.userID == App.DataCenter.UserInfo.getMyUserVo().userID) {
                 this.gameScene.readyBtn.visible = !!user.state;
                 !!user.state && this.gameScene.showExit();
             }
             App.DataCenter.UserInfo.addUser(user);
             this.gameScene.headShowUI.updateUserHead(user);
+
         }
     }
 
@@ -111,6 +114,7 @@ class GameController extends BaseController {
         this.gameScene.headShowUI.showZhuang(zhuangPos);
         this.gameScene.cardShowUI.createHandCard(json.players);
         this.gameScene.diceAnim.playAnimation(json.dice[0], json.dice[1]);
+        this.gameScene.headShowUI.hideAllReady();
     }
 
     private revOutCard(data) {
@@ -283,6 +287,8 @@ class GameController extends BaseController {
     private revReady(data) {
         let json = ProtocolData.Rev2004;
         json = data;
+        let pos = CardLogic.getInstance().changeSeat(json.seatid);
+        this.gameScene.headShowUI.showReady(pos);
         if (json.uid == App.DataCenter.UserInfo.getMyUserVo().userID) {
             //准备阶段可以发起退出房间
             this.gameScene.showExit();

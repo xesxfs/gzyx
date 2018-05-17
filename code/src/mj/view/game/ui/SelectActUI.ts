@@ -28,12 +28,14 @@ class SelectActUI extends eui.Component {
 
 	public childrenCreated() {
 		this.hide();
+		this.btnList[ACT_act.Act_Pass] = this.passBtn;
+		this.btnList[ACT_act.Act_Hu] = this.huBtn;
 		this.btnList[ACT_act.Act_Peng] = this.pengBtn;
 		this.btnList[ACT_act.Act_Ting] = this.tingBtn;
 		this.btnList[ACT_act.Act_Gang] = this.gangBtn;
 		this.btnList[ACT_act.Act_AnGang] = this.gangBtn;
-		this.btnList[ACT_act.Act_Hu] = this.huBtn;
-		this.btnList[ACT_act.Act_Pass] = this.passBtn;
+
+
 		this.touchEnabled = false;
 
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);

@@ -35,9 +35,14 @@ class HeadUI extends eui.Component {
         if (headUrl && headUrl != "") {
             var url = headUrl;
             this.headImg.source = url;
-        }else{
-            this.headImg.source="img_default_png"
+        } else {
+            this.headImg.source = "img_default_png";
         }
+    }
+
+    public reset() {
+        this.headImg.source = "friend_invite_png";
+
     }
 
 
