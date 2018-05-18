@@ -182,6 +182,8 @@ declare class PaymentPanelSkin extends eui.Skin{
 }
 declare class MarqueeSkin extends eui.Skin{
 }
+declare class ProfilePhotoSkin extends eui.Skin{
+}
 declare class HallRankingSkin extends eui.Skin{
 }
 declare class RankingItemSkin extends eui.Skin{

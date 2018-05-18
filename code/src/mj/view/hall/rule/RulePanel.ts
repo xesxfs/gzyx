@@ -23,6 +23,7 @@ class RulePanel extends BasePanel {
     private _basicDesc = [];    //基本玩法
     private _integralDesc = []; //积分结算
     private _btnArr = [];
+    private fanGroup: eui.Group;
 
     //添加场景
     protected onEnable() {
@@ -48,8 +49,8 @@ class RulePanel extends BasePanel {
             case this.integralBtn:
                 // this.contentLab.textFlow = this._integralDesc;
                 this.clearBtnEnabled(evt.target);
+                this.setFanType();
                 break;
-
             default:
                 break;
         }
@@ -64,6 +65,9 @@ class RulePanel extends BasePanel {
         let xn = focus.x - (this.focusImg.width - focus.width) / 2
         egret.Tween.get(this.focusImg).to({ x: xn }, 50);
         this.ruleScll.viewport.scrollV = 0;
+<<<<<<< HEAD
+        this.fanGroup && this.fanGroup.parent && this.fanGroup.parent.removeChild(this.fanGroup);
+=======
 
         if (focus == this.integralBtn) {
             this.settleScll.visible = true;
@@ -72,6 +76,7 @@ class RulePanel extends BasePanel {
             this.settleScll.visible = false;
             this.ruleScll.visible = true;
         }
+>>>>>>> cc4b648aa9586c4b48475362042da1f528353aa0
     }
 
 
@@ -148,23 +153,68 @@ class RulePanel extends BasePanel {
         ];
 
         //积分结算
-        // this._integralDesc = <Array<egret.ITextElement>>[
-        //     { text: "抓鸡麻将根据底注倍数计算输赢额度，捉鸡麻将的底注设定为1分，一下介绍各种牌型胡牌的分值。", style: contentTextStyleJson }
-        //     , { text: "\n\n一、牌型分值", style: tetleTextStyleJson }
-        //     , { text: "\n1、平胡：平胡可以自摸胡牌，或在有“豆”情况下允许点胡。积分为1倍底注", style: contentTextStyleJson }
-        //     , { text: "\n2、大对子：即对对胡，成牌时有4个三张相同的和1个对。积分为5倍底注", style: contentTextStyleJson }
-        //     , { text: "\n3、七对：成牌时由7个对子组成。积分为10倍底注", style: contentTextStyleJson }
-        //     , { text: "\n4、龙七对：成牌时由5个对子和4个相同的牌组成。积分为20倍底注", style: contentTextStyleJson }
-        //     , { text: "\n5、清一色：成牌时所有牌都由条、筒、万中的一种组成。积分为10倍底注", style: contentTextStyleJson }
-        //     , { text: "\n6、清大对：成牌由7个对子组成，且所有牌都由条、筒、万中的一种组成，积分为20倍底注", style: contentTextStyleJson }
-        //     , { text: "\n7、清七对：成牌由7个对子组成，且所有牌都由条、筒万中的一种组成，积分为20倍底注", style: contentTextStyleJson }
-        //     , { text: "\n8、清龙背：成牌时由5个对子和4个相同的牌组成，且所有牌都由条、筒、万中的一种组成。\n积分为30倍底注", style: contentTextStyleJson }
-        //     , { text: "\n9、单吊：玩家手里的牌经过碰杠之后手里只剩下一张牌了，算单吊，积分按10倍底注计算", style: contentTextStyleJson }
-        //     , { text: "\n10、单吊清一色：单吊清一色按两个清一色计算，积分按20倍底注计算", style: contentTextStyleJson }
-        //     , { text: "\n\n二、额外分值", style: tetleTextStyleJson }
-        // ];
+        this._integralDesc = <Array<egret.ITextElement>>[
+            { text: "\n抓鸡麻将根据底注倍数计算输赢额度，捉鸡麻将的底注设定为1分，一下介绍各种牌型胡牌的分值。", style: contentTextStyleJson }
+            , { text: "\n\n一、牌型分值", style: tetleTextStyleJson }
+            , { text: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" }
+            // , { text: "\n1、平胡：平胡可以自摸胡牌，或在有“豆”情况下允许点胡。积分为1倍底注", style: contentTextStyleJson }
+            // , { text: "\n2、大对子：即对对胡，成牌时有4个三张相同的和1个对。积分为5倍底注", style: contentTextStyleJson }
+            // , { text: "\n3、七对：成牌时由7个对子组成。积分为10倍底注", style: contentTextStyleJson }
+            // , { text: "\n4、龙七对：成牌时由5个对子和4个相同的牌组成。积分为20倍底注", style: contentTextStyleJson }
+            // , { text: "\n5、清一色：成牌时所有牌都由条、筒、万中的一种组成。积分为10倍底注", style: contentTextStyleJson }
+            // , { text: "\n6、清大对：成牌由7个对子组成，且所有牌都由条、筒、万中的一种组成，积分为20倍底注", style: contentTextStyleJson }
+            // , { text: "\n7、清七对：成牌由7个对子组成，且所有牌都由条、筒万中的一种组成，积分为20倍底注", style: contentTextStyleJson }
+            , { text: "\n8、清龙背：成牌时由5个对子和4个相同的牌组成，且所有牌都由条、筒、万中的一种组成。\n积分为30倍底注", style: contentTextStyleJson }
+            , { text: "\n9、单吊：玩家手里的牌经过碰杠之后手里只剩下一张牌了，算单吊，积分按10倍底注计算", style: contentTextStyleJson }
+            , { text: "\n10、单吊清一色：单吊清一色按两个清一色计算，积分按20倍底注计算", style: contentTextStyleJson }
+            , { text: "\n\n二、额外分值", style: tetleTextStyleJson }
+        ];
 
         this.contentLab.textFlow = this._commonDesc;
+    }
+
+    private setFanType() {
+        if (!this.fanGroup) {
+            let fanGroup = this.fanGroup = new eui.Group();
+            let fanType = new FanTypeItem();
+            fanType.setDescripe("1、平胡：平胡可以自摸胡牌，或在有“豆”情况下允许点胡。积分为1倍底注");
+            fanType.setCardList([11, 12, 13, 14, 14, 14, 33, 34, 35, 36, 37, 38, 39, 39]);
+            fanGroup.addChild(fanType);
+
+
+            fanType = new FanTypeItem();
+            fanType.setDescripe("2、大对子：即对对胡，成牌时有4个三张相同的和1个对。积分为5倍底注");
+            fanType.setCardList([11, 11, 11, 14, 14, 14, 33, 33, 33, 38, 38, 38, 38, 39, 39]);
+            fanType.y = fanType.height * 1;
+            fanGroup.addChild(fanType);
+
+            fanType = new FanTypeItem();
+            fanType.setDescripe("3、七对：成牌时由7个对子组成。积分为10倍底注");
+            fanType.setCardList([11, 11, 13, 13, 14, 14, 33, 33, 35, 35, 38, 58, 58, 58, 39, 39]);
+            fanType.y = fanType.height * 2;
+            fanGroup.addChild(fanType);
+
+            fanType = new FanTypeItem();
+            fanType.setDescripe("4、龙七对：成牌时由5个对子和4个相同的牌组成。积分为20倍底注");
+            fanType.setCardList([11, 11, 13, 13, 14, 14, 33, 33, 35, 35, 58, 58, 58, 58]);
+            fanType.y = fanType.height * 3;
+            fanGroup.addChild(fanType);
+
+            fanType = new FanTypeItem();
+            fanType.setDescripe("5、清一色：成牌时所有牌都由条、筒、万中的一种组成。积分为10倍底注");
+            fanType.setCardList([31, 31, 31, 32, 32, 32, 33, 34, 35, 36, 37, 38, 39, 39]);
+            fanType.y = fanType.height * 4;
+            fanGroup.addChild(fanType);
+
+            fanType = new FanTypeItem();
+            fanType.setDescripe("6、清大对：成牌由7个对子组成，且所有牌都由条、筒、万中的一种组成，积分为20倍底注");
+            fanType.setCardList([31, 31, 32, 32, 33, 33, 34, 34, 35, 35, 38, 38, 39, 39]);
+            fanType.y = fanType.height * 5;
+            fanGroup.addChild(fanType);
+
+            fanGroup.y = 24*4;
+        }
+        (this.ruleScll.getChildAt(0) as eui.Group).addChild(this.fanGroup);
     }
 
 }

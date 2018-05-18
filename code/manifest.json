@@ -181,6 +181,7 @@
 		"bin-debug/mj/view/hall/mall/PayMentMethodItem.js",
 		"bin-debug/mj/view/hall/mall/PaymentPanel.js",
 		"bin-debug/mj/view/hall/marquee/Marquee.js",
+		"bin-debug/mj/view/hall/photo/ProfilePhotoPanel.js",
 		"bin-debug/mj/view/hall/ranking/HallRankingPanel.js",
 		"bin-debug/mj/view/hall/rule/RulePanel.js",
 		"bin-debug/mj/view/hall/set/SetPanel.js",

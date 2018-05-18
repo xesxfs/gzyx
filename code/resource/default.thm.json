@@ -94,6 +94,7 @@
     "resource/view/hall/mall/PaymentMethodSkin.exml",
     "resource/view/hall/mall/PaymentPanelSkin.exml",
     "resource/view/hall/marquee/MarqueeSkin.exml",
+    "resource/view/hall/photo/ProfilePhotoSkin.exml",
     "resource/view/hall/ranking/RankingItemSkin.exml",
     "resource/view/hall/rule/RulePanelSkin.exml",
     "resource/view/hall/set/SoundHSliderSkin.exml",

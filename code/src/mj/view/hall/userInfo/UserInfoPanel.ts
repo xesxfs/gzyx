@@ -14,6 +14,7 @@ class UserInfoPanel extends BasePanel {
     public score: eui.Label;
     public duanwei: eui.Label;
     public headUrl: eui.Image;
+    public changeBtn: eui.Button;
     public headBtn:how.Button;
 
     public constructor() {
@@ -39,23 +40,28 @@ class UserInfoPanel extends BasePanel {
     /** 添加到场景*/
     protected onEnable() {
         this.setCenter();
-        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+        this.changeBtn.addEventListener("touchTap", this.onChangTap, this);
+        // this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
     }
 
-    private onTouch(evt:egret.TouchEvent) {
+    private onTouch(evt: egret.TouchEvent) {
         switch (evt.target) {
             case this.headBtn:
                 Tips.info("敬请期待...");
                 break;
-        
             default:
                 break;
         }
+
     }
 
     /** 从场景中移除*/
     protected onRemove() {
 
+    }
+
+    private onChangTap(e: egret.TouchEvent) {
+        App.PanelManager.open(PanelConst.ProfilePhotoPanel);
     }
 
     /**关闭*/

@@ -15,13 +15,16 @@
 		<e:Image id="headUrl" width="100" height="100" x="66.14" y="76.24" anchorOffsetX="0" anchorOffsetY="0" source="img_default_png"/>
 		<e:Image source="ico_jewel_png" x="208" y="99"/>
 		<e:Image source="ico_gold_png" x="208" y="160"/>
-		<how:Button id="headBtn" label="更换头像" x="43.56" y="256.8" scaleX="0.8" scaleY="0.8">
-			<how:skinName>
+
+		<e:Button id="changeBtn" label="更换头像" x="48" y="257" anchorOffsetX="0" anchorOffsetY="0" scaleY="0.6" scaleX="0.6">
+			<e:skinName>
 				<e:Skin states="up,down,disabled">
-				<e:Image width="100%" height="100%" source="btn_blue_small_png"/>
+				<e:Image width="100%" height="100%" source="btn_blue_big_png" source.down="btn_blue_small_png"/>
 				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 				</e:Skin>
-			</how:skinName>
-		</how:Button>
+			</e:skinName>
+		</e:Button>
+
+
 	</e:Group>
 </e:Skin>

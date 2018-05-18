@@ -76,6 +76,8 @@ class App extends BaseApp {
         panel.register(PanelConst.InvitePanelT, InvitePanelT);//好友房邀请好友
         panel.register(PanelConst.LoginPanel, LoginPanel);//登录界面
 
+        panel.register(PanelConst.ProfilePhotoPanel, ProfilePhotoPanel);//选择头像
+
         panel.register(PanelConst.ShareResultPanel, ShareResultPanel);//结算分享界面
         panel.register(PanelConst.AllRecord, AllRecord);      //总结算面板
         panel.register(PanelConst.LoginChoosePanel, LoginChoosePanel);      //登录选择

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="ProfilePhotoSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:how="how.*">
+	<e:Image source="tankuang_big_png" scaleX="1" scaleY="1" width="677.33" height="481.33" scale9Grid="166,116,575,394" anchorOffsetX="0" anchorOffsetY="0" y="0"/>
+	<how:Button id="closeBtn" label="" skinName="ButtonCloseSkin" right="41" top="36"/>
+	<e:Image source="title_bg_png" y="31.34" horizontalCenter="0"/>
+	<e:Scroller width="532.33" anchorOffsetX="0" horizontalCenter="0" y="124" anchorOffsetY="0" height="314">
+		<e:Group id="photoGroup">
+		<e:Image source="img_default_png" x="-636" y="0" scaleX="1" scaleY="1"/>
+		<e:Image source="img_default_png" x="-530" y="0" scaleX="1" scaleY="1"/>
+		<e:Image source="img_default_png" x="-424" y="0" scaleX="1" scaleY="1"/>
+		<e:Image source="img_default_png" x="-318" y="0" scaleX="1" scaleY="1"/>
+		<e:Image source="img_default_png" x="-212" y="0" scaleX="1" scaleY="1"/>
+		<e:Image source="img_default_png" x="-106" y="0" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-96" y="10" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-86" y="20" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-76" y="30" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-66" y="40" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-56" y="50" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-46" y="60" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-36" y="70" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-26" y="80" scaleX="1" scaleY="1"/>
+			<e:Image source="img_default_png" x="-16" y="90" scaleX="1" scaleY="1"/>
+			<e:layout>
+				<e:TileLayout requestedColumnCount="4" orientation="rows" horizontalAlign="center" verticalAlign="middle" horizontalGap="30" paddingLeft="20"/>
+			</e:layout>
+		</e:Group>
+	</e:Scroller>
+</e:Skin>
