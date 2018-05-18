@@ -37,11 +37,19 @@ class CreateRoomPanel extends BasePanel {
 		this.hide();
 
 	}
+	public cardLab: eui.Label;
+	public eightRadBtn: eui.RadioButton;
 
 	private onTouch(evt: egret.TouchEvent) {
 		switch (evt.target) {
 			case this.okBtn:
 				this.createRoom();
+				break;
+			case this.fourRadBtn:
+				this.cardLab.text = "3张房卡"
+				break;
+			case this.eightRadBtn:
+				this.cardLab.text = "5张房卡"
 				break;
 			default:
 				break;

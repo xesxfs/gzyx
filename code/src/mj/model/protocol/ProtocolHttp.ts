@@ -711,7 +711,8 @@ class ProtocolHttp {
     }
 
     public static rev_ClubMembers = {
-        members: [],
+        list: [],       //俱乐部列表
+        is_change:0,    //1有变化0没变化
     }
 
     /** 查看的俱乐部列表 */
@@ -868,7 +869,7 @@ class ProtocolHttp {
     public static send_ExchangeTicket = {
         action: "ExchangeTicket",
         param: {
-
+            is_return: false,   //如果是会员并且是第二次购买,根据这个字段来是否返回购买前的提示,不传的话默认返回提示
         }
     }
 

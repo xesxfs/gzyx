@@ -4,7 +4,14 @@
 	<w:Declarations></w:Declarations>
 	<e:Group width="100%" height="100%">
 		<e:Image source="main_bg_jpg" width="100%" height="100%" locked="true" />
-		<e:Group x="785.14" y="20">
+		<e:Group x="136.5" y="-7">
+			<e:Image source="img_infoFrame_png" x="65.5" y="31"/>
+			<e:Image source="img_touXiangFrame_png" x="0" y="0"/>
+			<e:Image id="headMask" source="img_mask_png" x="0" y="0"/>
+			<e:Label id="nameLab" text="Label" x="130.7" y="45" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="170.75"/>
+			<e:Image id="headImg" source="img_default_png" x="10" y="12" width="100" height="100"/>
+		</e:Group>
+		<e:Group x="785.14" y="18">
 			<e:Image source="img_infoFrame_png" y="0" width="180" />
 			<e:Image x="12" source="ico_jewel_png" verticalCenter="0" />
 			<how:Button id="addDiaBtn" xmlns:how="how.*" label="" left="175">
@@ -18,7 +25,7 @@
 			<e:Label id="coinLab" text="1111111" textColor="0xFCC83C" verticalCenter="0" x="65" width="100" size="28"
 			         fontFamily="Arial" />
 		</e:Group>
-		<e:Group x="1026" y="20">
+		<e:Group x="1026" y="18">
 			<e:Image source="img_infoFrame_png" x="0" y="0" width="180" />
 			<e:Image x="12" verticalCenter="0" source="kqs_icon_png" />
 			<how:Button id="addGrabBtn" xmlns:how="how.*" label="" left="175">

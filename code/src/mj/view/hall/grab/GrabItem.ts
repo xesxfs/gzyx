@@ -4,6 +4,8 @@ class GrabItem extends eui.ItemRenderer {
 		this.skinName = "GrabItemSkin";
 	}
 
+	public rect: eui.Rect;
+
 	protected childrenCreated() {
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 	}
@@ -19,6 +21,16 @@ class GrabItem extends eui.ItemRenderer {
 					(App.getController(HallController.NAME) as HallController).sendJoinRoom(data, element["server_ip"] + ":" + element["websocket_port"]);
 				}
 			})
+		}
+	}
+
+	protected dataChanged() {
+		super.dataChanged();
+
+		if (this.data["status"] == GrabMatchStatus.ToBegin) {
+			this.rect.visible = true;
+		} else {
+			this.rect.visible = false;
 		}
 	}
 }

@@ -49,7 +49,7 @@ class ClubMember extends BaseUI {
 
 	public initMembers() {
 		this.memberGrp.x = 980;
-		let data = ProtocolHttp.rev_ClubMembers.members;
+		let data = ProtocolHttp.rev_ClubMembers.list;
 		this._membersCollction = new eui.ArrayCollection(data);
 		this.membersLst.dataProvider = this._membersCollction;
 		this.deleteBtn.visible = true;

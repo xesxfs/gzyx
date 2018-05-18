@@ -36,7 +36,7 @@
 				</e:TabBar>
 			</e:Group>
 		</e:Scroller>
-		<e:Label id="contentLab" text="" x="307.66" y="196" textColor="0x577687" size="20" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="540" anchorOffsetY="0" height="282.67"/>
+		<e:Label id="contentLab" text="" x="307.66" y="196" size="20" fontFamily="Microsoft YaHei" anchorOffsetX="0" width="540" anchorOffsetY="0" height="282.67" textColor="0x577687"/>
 		<e:Button id="receiveBtn" label="Button" x="515.2" y="465.8" enabled="false" visible="false">
 			<e:skinName>
 				<e:Skin states="up,down,disabled">
@@ -47,6 +47,7 @@
 				</e:Skin>
 			</e:skinName>
 		</e:Button>
+		<e:Label id="titleLab" text=" " x="303.5" y="137.8" anchorOffsetX="0" width="540.67" textAlign="center" textColor="0x577687" fontFamily="Microsoft YaHei"/>
 
 
 	</e:Group>

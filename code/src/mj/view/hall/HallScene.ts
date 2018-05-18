@@ -55,7 +55,7 @@ class HallScene extends BaseScene {
         this.nameLab.text = user.nickName;
         this.coinLab.text = user.coin.toString();
         // this.goldLab.text = NumberTool.formatMoney(user.gold);
-        this.cardLab.text = user.roomCard.toString();
+        this.cardLab.text = "房卡 " + user.roomCard.toString();
         this.headUrl.source = user.headUrl;
     }
 

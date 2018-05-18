@@ -606,7 +606,7 @@ class HallController extends BaseController {
 
     private revClubMembers(rev: any) {
         if (rev.data) {
-            ProtocolHttp.rev_ClubMembers.members = rev.data;
+            ProtocolHttp.rev_ClubMembers = rev.data;
 
             this.clubPanel.showMember();
         }

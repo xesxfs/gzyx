@@ -8,6 +8,7 @@ class EmailPanel extends BasePanel {
     public titleLst: eui.TabBar;
     public contentLab: eui.Label;
     public receiveBtn: eui.Button;
+    public titleLab: eui.Label;
 
     public constructor() {
         super();
@@ -22,18 +23,18 @@ class EmailPanel extends BasePanel {
     private _focusMail: Object;
     public onShowMail(info: any) {
         this.contentLab.text = info["content"];
-
+        this.titleLab.text = info["head"];
         if (info["get_gold_num"] > 0 || info["get_diamonds_num"] > 0) {
             this.receiveBtn.enabled = info["if_get"] == 0 ? true : false;   //是否已经接受附件 0:没接收 1:接收了
             this.receiveBtn.visible = true;
         }
         this._focusMail = info;
-        this.readMail();
+        // this.readMail();
     }
 
     private changeSelect() {
         // console.log(this.titleLst.selectedItem);
-        
+
     }
 
     /**添加到场景中*/
@@ -58,7 +59,7 @@ class EmailPanel extends BasePanel {
     private revReadMail(rev: any) {
         if (rev.data) {
             this._focusMail["if_get"] = 1;
-            ProtocolHttp.rev_ReadMail.mail_list = rev.data;
+            ProtocolHttp.rev_ReadMail.mail_list = rev.data.mail_list;
             ProtocolHttp.rev_ReadMail.mail_list.forEach((mail) => {
                 if (mail["gold"] > 0) {
                     App.EventManager.sendEvent(EventConst.UpdateGold, mail["gold"]);

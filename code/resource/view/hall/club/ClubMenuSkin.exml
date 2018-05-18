@@ -5,8 +5,8 @@
 		<e:Image source="club_msg_kuang_png" x="0" y="0"/>
 		<e:Group id="myClubGrp" x="17" y="70" visible="false">
 			<e:Label id="changeNameLab" text="修改俱乐部名称" x="0" y="0" textColor="0x4B4847" fontFamily="Microsoft YaHei" size="28"/>
-			<e:Label id="msgLab" text="群发消息" x="44" y="92.84" textColor="0x4B4847" fontFamily="Microsoft YaHei" size="28"/>
-			<e:Label id="dissolveLab" text="解散俱乐部" x="30" y="185.67" textColor="0x4B4847" fontFamily="Microsoft YaHei" size="28"/>
+			<e:Label id="msgLab" text="群发消息" x="44" y="92.84" textColor="0x4B4847" fontFamily="Microsoft YaHei" size="28" visible="false"/>
+			<e:Label id="dissolveLab" text="解散俱乐部" x="30" y="92" textColor="0x4B4847" fontFamily="Microsoft YaHei" size="28"/>
 		</e:Group>
 		<e:Group id="clubGrp" x="17" y="70">
 			<e:Label id="createClubLab" text="创建俱乐部" x="22" y="0" textColor="0x4B4847" fontFamily="Microsoft YaHei" size="28"/>

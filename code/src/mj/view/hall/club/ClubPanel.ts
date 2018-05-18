@@ -102,14 +102,26 @@ class ClubPanel extends BasePanel {
 		}
 	}
 
+	private _refreshCount = 4;
+	private _refreshDelay;
 	/** 刷新俱乐部列表和房间列表 */
 	private refresh() {
 		this.ctrl.sendClubList();
 		if (this._focusClub) {
 			this.ctrl.sendClubRoomList(this._focusClub["id"]);
 		}
-		this.refreshBtn.visible = false;
-		egret.setTimeout(function () { this.refreshBtn.visible = true; }, this, 5000);
+		this.refreshBtn.enabled = false;
+		this.refreshBtn.label = "5";
+		this._refreshDelay = egret.setInterval(function () {
+			this.refreshBtn.label = this._refreshCount.toString();
+			this._refreshCount--;
+			if (this._refreshCount == 0) {
+				egret.clearInterval(this._refreshDelay);
+				this.refreshBtn.label = "";
+				this._refreshCount = 4;
+				this.refreshBtn.enabled = true;
+			}
+		}, this, 1000);
 	}
 
 	/** 显示俱乐部成员模块 */

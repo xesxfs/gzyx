@@ -4,11 +4,15 @@ class GrabPanel extends BasePanel {
 		this.skinName = "GrabPanelSkin";
 	}
 
+	public headMask: eui.Image;
+	public nameLab: eui.Label;
+	public headImg: eui.Image;
 	public addDiaBtn: how.Button;
 	public coinLab: eui.Label;
 	public addGrabBtn: how.Button;
 	public grabLab: eui.Label;
 	public backBtn: how.Button;
+	public bankGrp: eui.Group;
 	public baner0: eui.Image;
 	public baner1: eui.Image;
 	public maskImg: eui.Image;
@@ -17,8 +21,8 @@ class GrabPanel extends BasePanel {
 	public icon0: eui.Image;
 	public icon1: eui.Image;
 	public commodityLst: eui.List;
-	public bankGrp: eui.Group;
-	public recordGrp: eui.Group;
+	public recordLab: eui.Label;
+	public maskRet: eui.Rect;
 
 	protected childrenCreated() {
 		this.bankGrp.mask = this.maskImg;
@@ -63,11 +67,19 @@ class GrabPanel extends BasePanel {
 
 	public initData() {
 		let data = ProtocolHttp.rev_QuicklyGrab.match_infos;
-		this.commodityLst.dataProvider = new eui.ArrayCollection(data);
-		this.coinLab.text = App.DataCenter.UserInfo.selfUser.coin.toString();
-		this.grabLab.text = "0";
+		let arr = [];
+		//过滤掉禁用的比赛
+		data.forEach((element) => {
+			if (element["status"] != GrabMatchStatus.Disabled) {
+				arr.push(element);
+			}
+			element["icon_url"] = "";
+		});
 
-		this.ctrl.sendQuicklyGrabTicket();
+		this.commodityLst.dataProvider = new eui.ArrayCollection(arr);
+		this.coinLab.text = App.DataCenter.UserInfo.selfUser.coin.toString();
+		this.grabLab.text = ProtocolHttp.grab_info.count.toString();
+		this.headImg.source = App.DataCenter.UserInfo.selfUser.headUrl;
 		this.ctrl.sendQuicklyGrabRecord();
 	}
 
@@ -76,8 +88,6 @@ class GrabPanel extends BasePanel {
 		this.grabLab.text = data["count"];
 	}
 
-	public recordLab: eui.Label;
-	public maskRet: eui.Rect;
 	private _recordDelay: number;
 	public updateGrabRecord() {
 		this.recordLab.y = this.maskRet.height / 2;
@@ -153,4 +163,11 @@ class GrabPanel extends BasePanel {
 		this.clearMove();
 		egret.Tween.removeTweens(this.recordLab);
 	}
+}
+
+/** 快抢赛状态 */
+enum GrabMatchStatus {
+	Disabled,	//禁用
+	ToBegin,	//待开始
+	Started,	//已开始
 }

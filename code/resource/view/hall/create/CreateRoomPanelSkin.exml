@@ -39,7 +39,7 @@
 				</e:Skin>
 			</e:skinName>
 		</e:RadioButton>
-		<e:RadioButton label="8局" x="569" y="353" groupName="jushu" value="8">
+		<e:RadioButton id="eightRadBtn" label="8局" x="569" y="353" groupName="jushu" value="8">
 			<e:skinName>
 			<e:Skin states="up,down,disabled">
 				<e:Image source="img_check_png" source.down="img_sigle_png"/>
@@ -79,7 +79,7 @@
 			</e:Skin>
 			</e:skinName>
 		</e:RadioButton>
-		<e:Label text="32钻石" x="466.3" y="442" size="28" textColor="0xf29696"/>
-		<e:Image source="ico_jewel_png" x="401" y="430"/>
+		<e:Label id="cardLab" text="3张房卡" x="499" y="447.5" size="28" textColor="0xf29696"/>
+		<e:Image x="401" y="430" source="fk1_png" scaleX="0.6" scaleY="0.6"/>
 	</e:Group>
 </e:Skin>
