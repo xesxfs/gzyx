@@ -49,7 +49,7 @@ class RulePanel extends BasePanel {
             case this.integralBtn:
                 // this.contentLab.textFlow = this._integralDesc;
                 this.clearBtnEnabled(evt.target);
-                this.setFanType();
+                // this.setFanType();
                 break;
             default:
                 break;
@@ -65,9 +65,9 @@ class RulePanel extends BasePanel {
         let xn = focus.x - (this.focusImg.width - focus.width) / 2
         egret.Tween.get(this.focusImg).to({ x: xn }, 50);
         this.ruleScll.viewport.scrollV = 0;
-<<<<<<< HEAD
+
         this.fanGroup && this.fanGroup.parent && this.fanGroup.parent.removeChild(this.fanGroup);
-=======
+
 
         if (focus == this.integralBtn) {
             this.settleScll.visible = true;
@@ -76,7 +76,6 @@ class RulePanel extends BasePanel {
             this.settleScll.visible = false;
             this.ruleScll.visible = true;
         }
->>>>>>> cc4b648aa9586c4b48475362042da1f528353aa0
     }
 
 

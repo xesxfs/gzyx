@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="HeadShowUISkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Image source="game_jpg" width="100%" height="100%" visible="false"/>
+
 	<e:Group id="readyGroup" touchThrough="true" width="100%" height="100%">
 		<e:Image touchEnabled="false" y="388.67" rotation="0" scaleY="0.8" source="ok_png" scaleX="0.8" left="27"/>
 		<e:Image x="1180.32" top="300" source="ok_png" scaleX="0.8" scaleY="0.8"/>

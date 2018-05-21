@@ -768,4 +768,18 @@ class HallController extends BaseController {
             }
         }
     }
+
+    /** 领取邮件的附件 */
+    public sendReadAccessoryMail(id:number) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_ReadAccessoryMail;
+        request.param.mail_id = id;
+        httpsend.send(request, this.revReadAccessoryMail, this);
+    }
+
+    private revReadAccessoryMail(rev:any) {
+        // if (rev.data) {
+            App.PanelManager.getPanel(PanelConst.EmailPanel).revReadMail();
+        // }
+    }
 }

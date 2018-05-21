@@ -109,6 +109,7 @@ class ProtocolHttp {
     /***邮件信息 */
     public static mail_info = {
         id: 0,//	integer	邮件ID
+        type: 0, //	integer	1普通邮件2领取附件邮件
         to_uid: 0,//	integer	这个邮件是系统发给谁的
         head: "",//	string	标题
         content: "",//	string	内容
@@ -712,7 +713,7 @@ class ProtocolHttp {
 
     public static rev_ClubMembers = {
         list: [],       //俱乐部列表
-        is_change:0,    //1有变化0没变化
+        is_change: 0,    //1有变化0没变化
     }
 
     /** 查看的俱乐部列表 */
@@ -897,5 +898,22 @@ class ProtocolHttp {
     public static grab_record = {
         nickname: "",    //	string	用户昵称
         match_name: "",  //	string	快抢赛名称
+    }
+
+    public static send_ReadAccessoryMail = {
+        action: "ReadAccessoryMail",
+        param: {
+            mail_id: 0,
+        }
+    }
+
+    public static rev_ReadAccessoryMail = {
+        // props: [],  // 领取返回的道具信息
+    }
+
+    public static prop_info = {
+        icon_id: 0,  //	integer	道具icon
+        name: "",    //	string	道具名称
+        num: 0,  //	integer	道具数量
     }
 }

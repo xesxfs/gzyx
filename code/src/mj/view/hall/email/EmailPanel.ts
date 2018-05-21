@@ -24,17 +24,26 @@ class EmailPanel extends BasePanel {
     public onShowMail(info: any) {
         this.contentLab.text = info["content"];
         this.titleLab.text = info["head"];
-        if (info["get_gold_num"] > 0 || info["get_diamonds_num"] > 0) {
+
+        if (info["type"] == 2) {
             this.receiveBtn.enabled = info["if_get"] == 0 ? true : false;   //是否已经接受附件 0:没接收 1:接收了
             this.receiveBtn.visible = true;
+        } else {
+            this.receiveBtn.visible = false;
         }
+
         this._focusMail = info;
-        // this.readMail();
+
+        this.changeSelect();
     }
 
+    private _focusTitle: EmailItem;
     private changeSelect() {
         // console.log(this.titleLst.selectedItem);
 
+        if (this._focusTitle) this._focusTitle.titleBtn.selected = false;
+        this._focusTitle = this.titleLst.getChildAt(this.titleLst.selectedIndex) as EmailItem;
+        this._focusTitle.titleBtn.selected = true;
     }
 
     /**添加到场景中*/
@@ -43,38 +52,33 @@ class EmailPanel extends BasePanel {
         App.EventManager.addEvent(EventConst.ShowMail, this.onShowMail, this);
 
         this.titleLst.itemRenderer = EmailItem;
-        // this.receiveBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+        this.receiveBtn.addEventListener(egret.TouchEvent.TOUCH_TAP, this.readMail, this);
 
         this.update();
     }
 
     private readMail() {
-        var httpsend = new HttpSender();
-        var request = ProtocolHttp.send_ReadMail;
-        request.param.mail_id = this._focusMail["id"];
-        httpsend.send(request, this.revReadMail, this);
-        // this.receiveBtn.enabled = false;
+        (App.getController(HallController.NAME) as HallController).sendReadAccessoryMail(this._focusMail["id"]);
+        this.receiveBtn.enabled = false;
     }
 
-    private revReadMail(rev: any) {
-        if (rev.data) {
+    public revReadMail() {
+        if (this._focusMail) {
             this._focusMail["if_get"] = 1;
-            ProtocolHttp.rev_ReadMail.mail_list = rev.data.mail_list;
-            ProtocolHttp.rev_ReadMail.mail_list.forEach((mail) => {
-                if (mail["gold"] > 0) {
-                    App.EventManager.sendEvent(EventConst.UpdateGold, mail["gold"]);
-                }
 
-                if (mail["diamonds"] > 0) {
-                    App.EventManager.sendEvent(EventConst.UpdateDiamond, mail["diamonds"]);
-                }
+            let data = this._focusMail["icon_list"];
+            data.forEach((prop) => {
+                Tips.info("恭喜您获得 " + prop["name"] + "x" + prop["num"])
             });
         }
     }
 
     /**从场景中移除*/
     protected onRemove() {
-
+        this.receiveBtn.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.readMail, this);
+        this.receiveBtn.visible = false;
+        this.contentLab.text = "";
+        this.titleLab.text =  "";
     }
 
     /**返回 */
