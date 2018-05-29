@@ -22,6 +22,12 @@ declare class reSetRuleSkin extends eui.Skin{
 }
 declare class socketClosePanelSkin extends eui.Skin{
 }
+declare class BindFriendSkin extends eui.Skin{
+}
+declare class DinQueSelectUISkin extends eui.Skin{
+}
+declare class FeedbackSkin extends eui.Skin{
+}
 declare class BottomMenuASkin extends eui.Skin{
 }
 declare class BottomMenuBSkin extends eui.Skin{

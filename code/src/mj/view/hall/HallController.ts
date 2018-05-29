@@ -770,16 +770,42 @@ class HallController extends BaseController {
     }
 
     /** 领取邮件的附件 */
-    public sendReadAccessoryMail(id:number) {
+    public sendReadAccessoryMail(id: number) {
         var httpsend = new HttpSender();
         var request = ProtocolHttp.send_ReadAccessoryMail;
         request.param.mail_id = id;
         httpsend.send(request, this.revReadAccessoryMail, this);
     }
 
-    private revReadAccessoryMail(rev:any) {
+    private revReadAccessoryMail(rev: any) {
         // if (rev.data) {
-            App.PanelManager.getPanel(PanelConst.EmailPanel).revReadMail();
+        App.PanelManager.getPanel(PanelConst.EmailPanel).revReadMail();
         // }
+    }
+
+    public sendCreateFeedback(title: string, content: string) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_createFeedback;
+        request.param.content = content;
+        request.param.title = title;
+        httpsend.send(request, this.revCreateFeedback, this);
+    }
+
+    public revCreateFeedback(rev: any) {
+        App.PanelManager.close(PanelConst.NewFeedBackPanel);
+        Tips.info("谢谢您的反馈意见，我们会尽快处理");
+    }
+
+    public sendBindFriend(uid: number) {
+        var httpsend = new HttpSender();
+        var request = ProtocolHttp.send_userBingDing;
+        request.param.bingding_uid = uid;
+        httpsend.send(request, this.revBindFriend, this);
+    }
+
+    public revBindFriend(rev:any) {
+        App.PanelManager.close(PanelConst.BindFriendPanel);
+        this.hallScene.hideBind();
+        Tips.info("成功绑定好友");
     }
 }

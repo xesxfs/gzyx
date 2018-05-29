@@ -102,6 +102,11 @@ class LoginPanel extends BasePanel {
             suser.paiwei_rank = json.data.paiwei_rank;
             suser.paiwei_rank_name = json.data.paiwei_rank_name;
             suser.paiwei_score = json.data.paiwei_score;
+            suser.is_first_time = json.data.is_first_time;
+            suser.vip_level = json.data.vip_level;
+            suser.vip_name = json.data.vip_name;
+            suser.is_binding =json.data.is_binding;
+            
             App.DataCenter.UserInfo.addUser(suser);
             ctrl.gotoHall();
         } else {

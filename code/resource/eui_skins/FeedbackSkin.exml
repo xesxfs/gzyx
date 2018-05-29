@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="FeedbackSkin" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group horizontalCenter="0" verticalCenter="0" width="962" height="606">
+		<e:Image source="common_bg_png" x="0" y="0" scale9Grid="45,42,272,257" anchorOffsetX="0" width="962" anchorOffsetY="0" height="606"/>
+		<e:Image source="common_bg2_png" x="12" y="65" anchorOffsetX="0" width="942" anchorOffsetY="0" height="494" scale9Grid="27,4,9,8"/>
+		<how:Button id="submitBtn" label="提交" x="237.33" y="478" width="208" height="58">
+			<how:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="common_button_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" strokeColor="0x9a2e06" stroke="2" fontFamily="SimHei"/>
+			</e:Skin>
+			</how:skinName>
+		</how:Button>
+		<how:Button id="cancelBtn" label="取消" x="488" y="478" width="207" height="58">
+			<how:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="common_button01_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" strokeColor="0x2f750e" stroke="2" fontFamily="SimHei"/>
+			</e:Skin>
+			</how:skinName>
+		</how:Button>
+		<how:Button id="closeBtn" label="" x="900.99" y="12.67" skinName="ButtonCloseSkin"/>
+		<e:Image source="common_title_png" x="309" y="4.17"/>
+		<e:Label text="反馈" x="433.32" y="11.51" size="40" stroke="2" strokeColor="0x841e1c" fontFamily="SimHei"/>
+		<e:Image source="common_title-bg_png" x="37" y="92" scale9Grid="19,18,41,6" anchorOffsetX="0" width="468"/>
+		<e:Image source="common_title-bg_png" x="37" y="153" scale9Grid="19,18,41,6" anchorOffsetX="0" width="870" anchorOffsetY="0" height="308"/>
+		<e:EditableText id="titleTxt" width="434.67" height="20.17" text="" x="58" y="105.67" anchorOffsetX="0" anchorOffsetY="0" prompt="请输入标题" size="20" textColor="0xa38c67" promptColor="0xa38c67" fontFamily="SimHei"/>
+		<e:EditableText id="contentTxt" width="826.67" height="267.17" text="" x="58" y="173.17" anchorOffsetX="0" anchorOffsetY="0" prompt="请输入正文内容" size="20" textColor="0xA38C67" promptColor="0xA38C67" fontFamily="SimHei"/>
+	</e:Group>
+</e:Skin>

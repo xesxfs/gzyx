@@ -8,6 +8,7 @@
 	"eui": {
 		"exmlRoot": [
 			"resource/csexml",
+			"resource/eui_skins",
 			"resource/view"
 		],
 		"themes": [

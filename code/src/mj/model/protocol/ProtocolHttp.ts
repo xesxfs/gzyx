@@ -25,6 +25,10 @@ class ProtocolHttp {
             paiwei_score: 0,//	integer	排位分
             paiwei_rank: 0,//integer	排位等级
             paiwei_rank_name: "",//string	等级名称
+            is_first_time: 0,    //	integer	今天是否第一次登陆,1是-1不是
+            vip_level: 0,    //	integer	VIP等级，0普通1白银2黄金
+            vip_name: "",    //	string	VIP名称
+            is_binding: 0,   //	integer	是否绑定了UID，0否1是
         }
     }
 
@@ -915,5 +919,20 @@ class ProtocolHttp {
         icon_id: 0,  //	integer	道具icon
         name: "",    //	string	道具名称
         num: 0,  //	integer	道具数量
+    }
+
+    public static send_createFeedback = {
+        action: "createFeedback",
+        param: {
+            title: "",   //	string	反馈标题
+            content: "", //	string	反馈正文
+        }
+    }
+
+    public static send_userBingDing = {
+        action: "userBingDing",
+        param: {
+            bingding_uid: 0,
+        }
     }
 }

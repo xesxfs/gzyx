@@ -219,7 +219,8 @@ enum PanelConst {
     /****手牌详情 */
     HandDetailPanel,
     /***头像选择 */
-    ProfilePhotoPanel
+    ProfilePhotoPanel,
+    BindFriendPanel
 }
 
 

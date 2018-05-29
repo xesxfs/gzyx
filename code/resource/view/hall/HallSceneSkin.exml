@@ -158,8 +158,8 @@
 		<e:Image source="hall_foot_line_png" x="779.31" y="646" />
 		<e:Image source="hall_foot_line_png" x="935.31" y="646" />
 		<e:Group id="menuGrp" x="1189" y="96" visible="false">
-			<e:Image source="hall_top_menu02_bg_png" x="0" y="0"/>
-			<how:Button id="mailBtn" label="" x="8.01" y="42.21">
+			<e:Image source="hall_top_menu02_bg_png" x="0" y="0" scale9Grid="37,76,1,95" anchorOffsetY="0" height="251"/>
+			<how:Button id="mailBtn" label="" x="8.01" y="32" scaleX="0.65" scaleY="0.65">
 				<how:skinName>
 				<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="hall_top_button_mail_png"/>
@@ -167,7 +167,7 @@
 				</e:Skin>
 				</how:skinName>
 			</how:Button>
-			<how:Button id="helpBtn" label="" x="8.01" y="116.21">
+			<how:Button id="helpBtn" label="" x="8.01" y="105.02" scaleX="0.65" scaleY="0.65">
 				<how:skinName>
 				<e:Skin states="up,down,disabled">
 					<e:Image width="100%" height="100%" source="hall_top_button_q_png"/>
@@ -175,7 +175,23 @@
 				</e:Skin>
 				</how:skinName>
 			</how:Button>
+			<how:Button id="feedbackBtn" label="" x="8.01" y="179.21" scaleX="0.65" scaleY="0.65">
+				<how:skinName>
+					<e:Skin states="up,down,disabled">
+					<e:Image width="100%" height="100%" source="hall_feedback_png"/>
+					<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+					</e:Skin>
+				</how:skinName>
+			</how:Button>
 		</e:Group>
+		<how:Button id="inviteBtn" label="" x="152.34" y="105.65" scaleX="0.65" scaleY="0.65">
+			<how:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="adfrends_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</how:skinName>
+		</how:Button>
 		
 	</e:Group>
 </e:Skin>

@@ -33,6 +33,8 @@ class HallScene extends BaseScene {
     public menuGrp: eui.Group;
     public mailBtn: how.Button;
     public helpBtn: how.Button;
+    public feedbackBtn: how.Button;
+    public inviteBtn: how.Button;
 
     public marquee: Marquee;
 
@@ -57,6 +59,7 @@ class HallScene extends BaseScene {
         // this.goldLab.text = NumberTool.formatMoney(user.gold);
         this.cardLab.text = "房卡 " + user.roomCard.toString();
         this.headUrl.source = user.headUrl;
+        this.inviteBtn.visible = user.is_binding == 0 ? true : false;
     }
 
     protected onEnable() {
@@ -180,11 +183,21 @@ class HallScene extends BaseScene {
             case this.menuBtn:
                 this.menuGrp.visible = !this.menuGrp.visible;
                 break;
+            case this.feedbackBtn:
+                App.PanelManager.open(PanelConst.NewFeedBackPanel);
+                break;
+            case this.inviteBtn:
+                App.PanelManager.open(PanelConst.BindFriendPanel);
+                break;
             default:
 
                 break;
 
         }
+    }
+
+    public hideBind() {
+        this.inviteBtn.visible = false;
     }
 
     private onPersion() {

@@ -5277,6 +5277,66 @@
 			"url": "assets/lobby/siteGold/IMG_20180327101003.png",
 			"type": "image",
 			"name": "IMG_20180327101003_png"
+		},
+		{
+			"url": "assets/text/feedback_titlefont.png",
+			"type": "image",
+			"name": "feedback_titlefont_png"
+		},
+		{
+			"url": "assets/common_new/common_bg.png",
+			"type": "image",
+			"name": "common_bg_png"
+		},
+		{
+			"url": "assets/common_new/common_button.png",
+			"type": "image",
+			"name": "common_button_png"
+		},
+		{
+			"url": "assets/common_new/common_button01.png",
+			"type": "image",
+			"name": "common_button01_png"
+		},
+		{
+			"url": "assets/common_new/common_close.png",
+			"type": "image",
+			"name": "common_close_png"
+		},
+		{
+			"url": "assets/common_new/common_title-bg.png",
+			"type": "image",
+			"name": "common_title-bg_png"
+		},
+		{
+			"url": "assets/common_new/common_title.png",
+			"type": "image",
+			"name": "common_title_png"
+		},
+		{
+			"url": "assets/a1.jpg",
+			"type": "image",
+			"name": "a1_jpg"
+		},
+		{
+			"url": "assets/a2.jpg",
+			"type": "image",
+			"name": "a2_jpg"
+		},
+		{
+			"url": "assets/common_new/common_bg2.png",
+			"type": "image",
+			"name": "common_bg2_png"
+		},
+		{
+			"url": "assets/hall/adfrends.png",
+			"type": "image",
+			"name": "adfrends_png"
+		},
+		{
+			"url": "assets/hall/hall_feedback.png",
+			"type": "image",
+			"name": "hall_feedback_png"
 		}
 	]
 }

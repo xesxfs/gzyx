@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="ButtonCloseSkin" xmlns:e="http://ns.egret.com/eui">
-	<e:Button label="">
-		<e:skinName>
+<e:Skin class="ButtonCloseSkin" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*">
+	<how:Button label="" scaleX="0.6" scaleY="0.6">
+		<how:skinName>
 			<e:Skin states="up,down,disabled">
-			<e:Image width="100%" height="100%" source="btn_close_png"/>
+			<e:Image width="100%" height="100%" source="common_close_png"/>
 			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
-		</e:skinName>
-	</e:Button>
+		</how:skinName>
+
+	</how:Button>
 </e:Skin>

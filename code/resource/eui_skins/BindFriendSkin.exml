@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="BindFriendSkin" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image source="common_bg2_png" x="8.6" y="54.4" scale9Grid="26,4,13,8" anchorOffsetX="0" width="390" anchorOffsetY="0" height="220"/>
+		<e:Image source="common_bg_png" x="0" y="0" anchorOffsetX="0" width="407.33" anchorOffsetY="0" height="288.66" scale9Grid="45,42,272,238"/>
+		<how:Button id="submitBtn" label="邀请" x="42.5" y="208" width="208" height="58" scaleX="0.76" scaleY="0.76">
+			<how:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="common_button_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" strokeColor="0x9a2e06" stroke="2" fontFamily="SimHei"/>
+			</e:Skin>
+			</how:skinName>
+		</how:Button>
+		<how:Button id="cancelBtn" label="取消" x="215.18" y="208" width="207" height="58" scaleX="0.76" scaleY="0.76">
+			<how:skinName>
+			<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="common_button01_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" strokeColor="0x2f750e" stroke="2" fontFamily="SimHei"/>
+			</e:Skin>
+			</how:skinName>
+		</how:Button>
+		<how:Button id="closeBtn" label="" x="352.5" y="6" skinName="ButtonCloseSkin"/>
+		<e:Image source="common_title_png" x="86.27" y="3" scaleX="0.7" scaleY="0.7"/>
+		<e:Label text="好友邀请" x="151.5" y="12" size="26" stroke="1" strokeColor="0x841E1C" fontFamily="SimHei"/>
+		<e:Image source="common_title-bg_png" x="32.5" y="123" scale9Grid="19,18,41,6" anchorOffsetX="0" width="340"/>
+		<e:Label text="请填写您邀请好友的UID" x="42.5" y="94" textColor="0xa38c67" size="16" fontFamily="SimHei"/>
+		<e:EditableText id="txtUid" width="302" height="29" text="" x="50" y="130.5" anchorOffsetX="0" anchorOffsetY="0" textColor="0xa38c67" fontFamily="SimHei" restrict="0-9"/>
+	</e:Group>
+</e:Skin>

@@ -46,7 +46,7 @@
 	<script egret="lib" src="bin-debug/framework/base/BaseController.js"></script>
 	<script egret="lib" src="bin-debug/framework/base/BasePanel.js"></script>
 	<script egret="lib" src="bin-debug/framework/base/BaseScene.js"></script>
-	<script egret="lib" src="bin-debug/mj/view/game/gameui/TuoGuanShowUI.js"></script>
+	<script egret="lib" src="bin-debug/mj/view/game/gameui/TuoGuanShowUISkin.g.js"></script>
 	<script egret="lib" src="bin-debug/Main.js"></script>
 	<script egret="lib" src="bin-debug/framework/adapter/ThemeAdapter.js"></script>
 	<script egret="lib" src="bin-debug/framework/display/BitmapMovie.js"></script>
@@ -132,8 +132,8 @@
 	<script egret="lib" src="bin-debug/mj/view/game/gameui/LeftCardShowUISkin.g.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/gameui/OutCardTipUI.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/gameui/OutCardTipUISkin.g.js"></script>
+	<script egret="lib" src="bin-debug/mj/view/game/gameui/TuoGuanShowUI.js"></script>
 	<script egret="lib" src="bin-debug/framework/adapter/AssetAdapter.js"></script>
-	<script egret="lib" src="bin-debug/mj/view/game/gameui/TuoGuanShowUISkin.g.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/invite/InvitePanelT.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/jiesan/JiesanHead.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/game/jiesan/JieSanPanel.js"></script>
@@ -181,6 +181,7 @@
 	<script egret="lib" src="bin-debug/mj/view/hall/active/ActiveTip.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/backpack/BackpackItem.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/backpack/BackpackPanel.js"></script>
+	<script egret="lib" src="bin-debug/mj/view/hall/bind/BindFriendPanel.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/club/ClubItem.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/club/ClubMember.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/club/ClubMenu.js"></script>
@@ -197,6 +198,7 @@
 	<script egret="lib" src="bin-debug/mj/view/hall/create/CreateRoomPanelSkin.g.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/email/EmailItem.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/email/EmailPanel.js"></script>
+	<script egret="lib" src="bin-debug/mj/view/hall/feedback/FeedBackPanel.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/friend/FriendPanelT.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/goldgame/GoldPanel.js"></script>
 	<script egret="lib" src="bin-debug/mj/view/hall/goldgame/GoldPanelSkin.g.js"></script>
@@ -245,7 +247,8 @@
     <script>
    	
 	  	var version = "1.0.99";    	
-      	egret.runEgret({renderMode:"webgl"});
+      	// egret.runEgret({renderMode:"webgl"});
+		  egret.runEgret({renderMode:"canvas"});
     </script>
 </body>
 </html>

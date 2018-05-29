@@ -84,6 +84,8 @@ class App extends BaseApp {
         panel.register(PanelConst.BindPanel, BindPanel);      //绑定
         panel.register(PanelConst.ClubPanel, ClubPanel, AssetConst.Club);
         panel.register(PanelConst.GrabPanel, GrabPanel, AssetConst.Grab);
+        panel.register(PanelConst.NewFeedBackPanel, FeedBackPanel);
+        panel.register(PanelConst.BindFriendPanel, BindFriendPanel);
 
 
 

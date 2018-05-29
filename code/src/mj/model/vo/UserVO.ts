@@ -62,6 +62,14 @@ class UserVO {
     public paiwei_rank: number;
     /** 等级名称 */
     public paiwei_rank_name: string;
+    /** 今天是否第一次登陆,1是-1不是 */
+    public is_first_time: number;
+    /** VIP等级，0普通1白银2黄金 */
+    public vip_level:number;
+    /** VIP名称 */
+    public vip_name:string;
+    /** 是否绑定了UID，0否1是 */
+    public is_binding:number;
 
     //服务端头像默认传送的不是字符串，而是数字，导致加载头像无法识别
     public set headUrl(url: any) {
