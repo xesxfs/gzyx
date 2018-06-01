@@ -1,8 +1,12 @@
-declare class AllRecordSkin extends eui.Skin{
+declare class CatchChickenSkin extends eui.Skin{
 }
 declare class GameSceneSkin1 extends eui.Skin{
 }
+declare class GameSettingSkin extends eui.Skin{
+}
 declare class HandDetailPanelSkin extends eui.Skin{
+}
+declare class NewFile extends eui.Skin{
 }
 declare class RoundResultItemSkin extends eui.Skin{
 }
@@ -28,6 +32,10 @@ declare class DinQueSelectUISkin extends eui.Skin{
 }
 declare class FeedbackSkin extends eui.Skin{
 }
+declare module skins{
+	class RadioButtonSkin extends eui.Skin{
+	}
+}
 declare class BottomMenuASkin extends eui.Skin{
 }
 declare class BottomMenuBSkin extends eui.Skin{
@@ -47,6 +55,12 @@ declare class MessageBoxCSkin extends eui.Skin{
 declare class MessageBoxDSkin extends eui.Skin{
 }
 declare class SideMenuSkin extends eui.Skin{
+}
+declare class ChatEmojiItem extends eui.Skin{
+}
+declare class ChatWZItem extends eui.Skin{
+}
+declare class GameChatPanelSkin extends eui.Skin{
 }
 declare class FanTypeItemSkin extends eui.Skin{
 }

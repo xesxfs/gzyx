@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="CatchChickenSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group width="132" x="574" anchorOffsetX="0" height="49" y="533">
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+	</e:Group>
+	<e:Group width="132" x="1016.67" anchorOffsetX="0" verticalCenter="0" height="49">
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+	</e:Group>
+	<e:Group width="132" anchorOffsetX="0" height="49" y="116" x="574">
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+	</e:Group>
+	<e:Group width="132" x="166" anchorOffsetX="0" verticalCenter="0" height="49">
+		<e:layout>
+			<e:VerticalLayout/>
+		</e:layout>
+	</e:Group>
+
+
+
+
+
+
+</e:Skin>

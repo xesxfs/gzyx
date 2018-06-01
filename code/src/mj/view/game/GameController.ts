@@ -61,7 +61,7 @@ class GameController extends BaseController {
         gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_SUCC_BC, this.revBCDinQue, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.revDinQueSuccess, this);
         gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
-        gameSocket.register(4, this.revChat, this);
+        gameSocket.register(ProtocolHead.system_command.SERVER_NOLMAL_CHAT_BC, this.revChat, this);
     }
 
     public unRegisterSocket() {
@@ -80,6 +80,7 @@ class GameController extends BaseController {
         let json = ProtocolData.Rev2002;
         json = data;
         GameInfo.playerNumber = json.player_num;
+        GameInfo.state = json.status;
         let playerInfo = json.players;
         for (let i = 0; i < playerInfo.length; i++) {
             let player = ProtocolData.player_info2;
@@ -106,6 +107,7 @@ class GameController extends BaseController {
     }
 
     private revGameStart(data) {
+        GameInfo.state = GameState.Playing;
         this.gameScene.resetScene();
         let json = ProtocolData.Rev2003;
         json = data;
@@ -263,13 +265,26 @@ class GameController extends BaseController {
         let json = ProtocolData.Rev2019;
         json = data;
         this.gameScene.readyBtn.visible = true;
+        GameInfo.state = GameState.Ready;
     }
     /***单局结算 */
     private revRoundBalance(data) {
         console.log("+++++++++++++++++++++RoundOver---------------")
         let json = ProtocolData.Rev2020;
         json = data;
-        (App.PanelManager.open(PanelConst.RoundResultPanel) as RoundResultPanel).update(json);
+
+        let delay = 0;
+        //播放抓鸡动画
+        if (json.fangpaiji_mj != 0) {
+            delay = 5000;
+            (App.PanelManager.open(PanelConst.CatchChicken) as CatchChickenPanel).update(json);
+        }
+
+        // //5s后显示结算信息
+        egret.setTimeout(() => {
+            App.PanelManager.close(PanelConst.CatchChicken);
+            (App.PanelManager.open(PanelConst.RoundResultPanel) as RoundResultPanel).update(json);
+        }, this, delay)
     }
 
     private revChongFengJi(data) {
@@ -282,6 +297,7 @@ class GameController extends BaseController {
     private revZRenJi(data) {
         let json = ProtocolData.Rev2025;
         json = data;
+        this.gameScene.playZRJi();
     }
 
     private revReady(data) {

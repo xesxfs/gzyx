@@ -9,11 +9,11 @@
 			"name": "lobby"
 		},
 		{
-			"keys": "card_bgup_png,card_bgup1_png,card_bgup2_png,card_big_17_png,card_big_18_png,card_big_19_png,card_big_33_png,card_big_34_png,card_big_35_png,card_big_36_png,card_big_37_png,card_big_38_png,card_big_39_png,card_big_51_png,card_big_52_png,card_big_53_png,card_big_54_png,card_big_55_png,card_big_56_png,card_big_57_png,card_big_bg_3_png,card_big_bg0_png,card_big_bg1_png,card_big_bg2_png,card_left_17_png,card_left_18_png,card_left_19_png,card_left_33_png,card_left_34_png,card_left_35_png,card_left_36_png,card_left_37_png,card_left_38_png,card_left_39_png,card_left_51_png,card_left_52_png,card_left_53_png,card_left_54_png,card_left_55_png,card_left_56_png,card_left_57_png,card_left_bg0_png,card_left_bg1_png,card_left_bg2_png,card_mid_bg0_png,card_midself_bg_png,card_right_17_png,card_right_18_png,card_right_19_png,card_right_33_png,card_right_34_png,card_right_35_png,card_right_36_png,card_right_37_png,card_right_38_png,card_right_39_png,card_right_51_png,card_right_52_png,card_right_53_png,card_right_54_png,card_right_55_png,card_right_56_png,card_right_57_png,card_small_17_png,card_small_18_png,card_small_19_png,card_small_33_png,card_small_34_png,card_small_35_png,card_small_36_png,card_small_37_png,card_small_51_png,card_small_52_png,card_small_53_png,card_small_54_png,card_small_55_png,card_small_56_png,card_small_57_png,card_small_bg0_png,card_small_bg1_png,card_small_bg2_png,card_big_11_png,card_big_12_png,card_big_13_png,card_big_14_png,card_big_15_png,card_big_16_png,card_big_31_png,card_big_32_png,card_big_58_png,card_big_59_png,card_big_71_png,card_big_81_png,card_big_91_png,card_left_11_png,card_left_12_png,card_left_13_png,card_left_14_png,card_left_15_png,card_left_16_png,card_left_31_png,card_left_32_png,card_left_58_png,card_left_59_png,card_left_71_png,card_left_81_png,card_left_91_png,card_right_11_png,card_right_12_png,card_right_13_png,card_right_14_png,card_right_15_png,card_right_16_png,card_right_31_png,card_right_32_png,card_right_58_png,card_right_59_png,card_right_71_png,card_right_81_png,card_right_91_png,card_small_11_png,card_small_12_png,card_small_13_png,card_small_14_png,card_small_15_png,card_small_16_png,card_small_31_png,card_small_32_png,card_small_39_png,card_small_58_png,card_small_59_png,card_small_71_png,card_small_81_png,card_small_91_png,card_small_38_png,tin_jiant_png,baoting-btnnormal_png,baoting-btnpress_png,gang_btnnormal_png,gang_btnpress_png,hu_btnnormal_png,hu_btnpress_png,pass_btnnormal_png,pass_btnpress_png,peng_btnnormal_png,peng_btnpress_png,ting_btnnormal_png,ting_btnpress_png,s2_png,s3_png,s4_png,s5_png,s6_png,shaizi_mc_json,shaizi_tex_png,s1_png",
+			"keys": "card_bgup_png,card_bgup1_png,card_bgup2_png,card_big_17_png,card_big_18_png,card_big_19_png,card_big_33_png,card_big_34_png,card_big_35_png,card_big_36_png,card_big_37_png,card_big_38_png,card_big_39_png,card_big_51_png,card_big_52_png,card_big_53_png,card_big_54_png,card_big_55_png,card_big_56_png,card_big_57_png,card_big_bg_3_png,card_big_bg0_png,card_big_bg1_png,card_big_bg2_png,card_left_17_png,card_left_18_png,card_left_19_png,card_left_33_png,card_left_34_png,card_left_35_png,card_left_36_png,card_left_37_png,card_left_38_png,card_left_39_png,card_left_51_png,card_left_52_png,card_left_53_png,card_left_54_png,card_left_55_png,card_left_56_png,card_left_57_png,card_left_bg0_png,card_left_bg1_png,card_left_bg2_png,card_mid_bg0_png,card_midself_bg_png,card_right_17_png,card_right_18_png,card_right_19_png,card_right_33_png,card_right_34_png,card_right_35_png,card_right_36_png,card_right_37_png,card_right_38_png,card_right_39_png,card_right_51_png,card_right_52_png,card_right_53_png,card_right_54_png,card_right_55_png,card_right_56_png,card_right_57_png,card_small_17_png,card_small_18_png,card_small_19_png,card_small_33_png,card_small_34_png,card_small_35_png,card_small_36_png,card_small_37_png,card_small_51_png,card_small_52_png,card_small_53_png,card_small_54_png,card_small_55_png,card_small_56_png,card_small_57_png,card_small_bg0_png,card_small_bg1_png,card_small_bg2_png,card_big_11_png,card_big_12_png,card_big_13_png,card_big_14_png,card_big_15_png,card_big_16_png,card_big_31_png,card_big_32_png,card_big_58_png,card_big_59_png,card_big_71_png,card_big_81_png,card_big_91_png,card_left_11_png,card_left_12_png,card_left_13_png,card_left_14_png,card_left_15_png,card_left_16_png,card_left_31_png,card_left_32_png,card_left_58_png,card_left_59_png,card_left_71_png,card_left_81_png,card_left_91_png,card_right_11_png,card_right_12_png,card_right_13_png,card_right_14_png,card_right_15_png,card_right_16_png,card_right_31_png,card_right_32_png,card_right_58_png,card_right_59_png,card_right_71_png,card_right_81_png,card_right_91_png,card_small_11_png,card_small_12_png,card_small_13_png,card_small_14_png,card_small_15_png,card_small_16_png,card_small_31_png,card_small_32_png,card_small_39_png,card_small_58_png,card_small_59_png,card_small_71_png,card_small_81_png,card_small_91_png,card_small_38_png,tin_jiant_png,baoting-btnnormal_png,baoting-btnpress_png,gang_btnnormal_png,gang_btnpress_png,hu_btnnormal_png,hu_btnpress_png,pass_btnnormal_png,pass_btnpress_png,peng_btnnormal_png,peng_btnpress_png,ting_btnnormal_png,ting_btnpress_png,s2_png,s3_png,s4_png,s5_png,s6_png,shaizi_mc_json,shaizi_tex_png,s1_png,pg_ani_png,pg_ani_json,zhuo_png,relate_ani_png,relate_ani_json,ji_png,hero_ani_png,hero_ani_json",
 			"name": "game"
 		},
 		{
-			"keys": "common_blue_bg_png,return_btn_png,roome_Setting_tankuang_png,tankuang_big_png,tankuang_small_png,title_bg_png,volumeBig_png,volumeSmall_png,btn_back_png,btn_blue_big_png,btn_blue_small_png,btn_close_png,btn_left_selected_png,btn_left_unSelected_png,btn_right_selected_png,btn_right_unselected_png,btn_yellow_png,btn_yellow_big_png,hero_chongfengji_json,hero_chongfengji_png",
+			"keys": "common_blue_bg_png,return_btn_png,roome_Setting_tankuang_png,tankuang_big_png,tankuang_small_png,title_bg_png,volumeBig_png,volumeSmall_png,btn_back_png,btn_blue_big_png,btn_blue_small_png,btn_close_png,btn_left_selected_png,btn_left_unSelected_png,btn_right_selected_png,btn_right_unselected_png,btn_yellow_png,btn_yellow_big_png",
 			"name": "common"
 		},
 		{
@@ -867,16 +867,6 @@
 			"url": "assets/lobby_new/wifi_B.png",
 			"type": "image",
 			"name": "wifi_B_png"
-		},
-		{
-			"url": "assets/action/ji.png",
-			"type": "image",
-			"name": "ji_png"
-		},
-		{
-			"url": "assets/action/zhuo.png",
-			"type": "image",
-			"name": "zhuo_png"
 		},
 		{
 			"url": "assets/action_new/yuan.png",
@@ -1884,31 +1874,6 @@
 			"name": "my_rank_score_bg_png"
 		},
 		{
-			"url": "assets/room/hupai/5536.png",
-			"type": "image",
-			"name": "5536_png"
-		},
-		{
-			"url": "assets/room/hupai/8.png",
-			"type": "image",
-			"name": "8_png"
-		},
-		{
-			"url": "assets/room/hupai/9.png",
-			"type": "image",
-			"name": "9_png"
-		},
-		{
-			"url": "assets/room/hupai/14.png",
-			"type": "image",
-			"name": "14_png"
-		},
-		{
-			"url": "assets/room/hupai/15.png",
-			"type": "image",
-			"name": "15_png"
-		},
-		{
 			"url": "assets/room/hupai/jiao0.png",
 			"type": "image",
 			"name": "jiao0_png"
@@ -1917,51 +1882,6 @@
 			"url": "assets/room/hupai/jiao1.png",
 			"type": "image",
 			"name": "jiao1_png"
-		},
-		{
-			"url": "assets/room/hupai/12.png",
-			"type": "image",
-			"name": "12_png"
-		},
-		{
-			"url": "assets/room/hupai/animation/animation_config.json",
-			"type": "json",
-			"name": "animation_config_json"
-		},
-		{
-			"url": "assets/room/hupai/13.png",
-			"type": "image",
-			"name": "13_png"
-		},
-		{
-			"url": "assets/room/hupai/11.png",
-			"type": "image",
-			"name": "11_png"
-		},
-		{
-			"url": "assets/room/hupai/10.png",
-			"type": "image",
-			"name": "10_png"
-		},
-		{
-			"url": "assets/room/hupai/22.png",
-			"type": "image",
-			"name": "22_png"
-		},
-		{
-			"url": "assets/room/hupai/669.png",
-			"type": "image",
-			"name": "669_png"
-		},
-		{
-			"url": "assets/room/hupai/4.png",
-			"type": "image",
-			"name": "4_png"
-		},
-		{
-			"url": "assets/room/hupai/5.png",
-			"type": "image",
-			"name": "5_png"
 		},
 		{
 			"url": "assets/room/hupai/end_type1.png",
@@ -1974,49 +1894,14 @@
 			"name": "end_type3_png"
 		},
 		{
-			"url": "assets/room/hupai/55.png",
-			"type": "image",
-			"name": "55_png"
-		},
-		{
-			"url": "assets/room/hupai/7.png",
-			"type": "image",
-			"name": "7_png"
-		},
-		{
-			"url": "assets/room/hupai/6.png",
-			"type": "image",
-			"name": "6_png"
-		},
-		{
 			"url": "assets/room/hupai/end_type2.png",
 			"type": "image",
 			"name": "end_type2_png"
 		},
 		{
-			"url": "assets/room/hupai/2.png",
-			"type": "image",
-			"name": "2_png"
-		},
-		{
-			"url": "assets/room/hupai/555.png",
-			"type": "image",
-			"name": "555_png"
-		},
-		{
-			"url": "assets/room/hupai/3.png",
-			"type": "image",
-			"name": "3_png"
-		},
-		{
 			"url": "assets/room/hupai/end_type5.png",
 			"type": "image",
 			"name": "end_type5_png"
-		},
-		{
-			"url": "assets/room/hupai/1.png",
-			"type": "image",
-			"name": "1_png"
 		},
 		{
 			"url": "assets/room/hupai/end_type4.png",
@@ -2242,11 +2127,6 @@
 			"url": "assets/room/friend_invite.png",
 			"type": "image",
 			"name": "friend_invite_png"
-		},
-		{
-			"url": "assets/room/peng_gang_animation.plist",
-			"type": "bin",
-			"name": "peng_gang_animation_plist"
 		},
 		{
 			"url": "assets/room/text_CancelAI.png",
@@ -2537,11 +2417,6 @@
 			"url": "assets/room/img_tableInfoBg.png",
 			"type": "image",
 			"name": "img_tableInfoBg_png"
-		},
-		{
-			"url": "assets/room/peng_gang_animation.png",
-			"type": "image",
-			"name": "peng_gang_animation_png"
 		},
 		{
 			"url": "assets/room/chat_btn.png",
@@ -5089,16 +4964,6 @@
 			"name": "s1_png"
 		},
 		{
-			"url": "assets/action/hero/hero_chongfengji.json",
-			"type": "json",
-			"name": "hero_chongfengji_json"
-		},
-		{
-			"url": "assets/action/hero/hero_chongfengji.png",
-			"type": "image",
-			"name": "hero_chongfengji_png"
-		},
-		{
 			"url": "assets/login/fcm_d.png",
 			"type": "image",
 			"name": "fcm_d_png"
@@ -5279,11 +5144,6 @@
 			"name": "IMG_20180327101003_png"
 		},
 		{
-			"url": "assets/text/feedback_titlefont.png",
-			"type": "image",
-			"name": "feedback_titlefont_png"
-		},
-		{
 			"url": "assets/common_new/common_bg.png",
 			"type": "image",
 			"name": "common_bg_png"
@@ -5314,16 +5174,6 @@
 			"name": "common_title_png"
 		},
 		{
-			"url": "assets/a1.jpg",
-			"type": "image",
-			"name": "a1_jpg"
-		},
-		{
-			"url": "assets/a2.jpg",
-			"type": "image",
-			"name": "a2_jpg"
-		},
-		{
 			"url": "assets/common_new/common_bg2.png",
 			"type": "image",
 			"name": "common_bg2_png"
@@ -5337,6 +5187,166 @@
 			"url": "assets/hall/hall_feedback.png",
 			"type": "image",
 			"name": "hall_feedback_png"
+		},
+		{
+			"url": "assets/common/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "assets/common/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "assets/common/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "assets/common/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "assets/room/pg_ani.png",
+			"type": "image",
+			"name": "pg_ani_png"
+		},
+		{
+			"url": "assets/room/pg_ani.json",
+			"type": "json",
+			"name": "pg_ani_json"
+		},
+		{
+			"url": "assets/action/hero_ani.png",
+			"type": "image",
+			"name": "hero_ani_png"
+		},
+		{
+			"url": "assets/action/ji.png",
+			"type": "image",
+			"name": "ji_png"
+		},
+		{
+			"url": "assets/action/zhuo.png",
+			"type": "image",
+			"name": "zhuo_png"
+		},
+		{
+			"url": "assets/action/relate_ani.png",
+			"type": "image",
+			"name": "relate_ani_png"
+		},
+		{
+			"url": "assets/action/hero_ani.json",
+			"type": "json",
+			"name": "hero_ani_json"
+		},
+		{
+			"url": "assets/action/relate_ani.json",
+			"type": "json",
+			"name": "relate_ani_json"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_3.png",
+			"type": "image",
+			"name": "cardtype_3_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_2.png",
+			"type": "image",
+			"name": "cardtype_2_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_4.png",
+			"type": "image",
+			"name": "cardtype_4_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_6.png",
+			"type": "image",
+			"name": "cardtype_6_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_5.png",
+			"type": "image",
+			"name": "cardtype_5_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_7.png",
+			"type": "image",
+			"name": "cardtype_7_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_8.png",
+			"type": "image",
+			"name": "cardtype_8_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_9.png",
+			"type": "image",
+			"name": "cardtype_9_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_10.png",
+			"type": "image",
+			"name": "cardtype_10_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_11.png",
+			"type": "image",
+			"name": "cardtype_11_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_12.png",
+			"type": "image",
+			"name": "cardtype_12_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_13.png",
+			"type": "image",
+			"name": "cardtype_13_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_14.png",
+			"type": "image",
+			"name": "cardtype_14_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_15.png",
+			"type": "image",
+			"name": "cardtype_15_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_22.png",
+			"type": "image",
+			"name": "cardtype_22_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_55.png",
+			"type": "image",
+			"name": "cardtype_55_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_555.png",
+			"type": "image",
+			"name": "cardtype_555_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_669.png",
+			"type": "image",
+			"name": "cardtype_669_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_5536.png",
+			"type": "image",
+			"name": "cardtype_5536_png"
+		},
+		{
+			"url": "assets/room/hupai/cardtype_1.png",
+			"type": "image",
+			"name": "cardtype_1_png"
 		}
 	]
 }

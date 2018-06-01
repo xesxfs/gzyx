@@ -45,8 +45,6 @@ class HeadShowUI extends eui.Component {
 			mc.frameRate = 8;
 			this.emojis.push(mc);
 		}
-
-
 	}
 
 	/** 设置更新头像信息*/
@@ -100,7 +98,7 @@ class HeadShowUI extends eui.Component {
 
 	public showEmoji(emoji: string, pos: UserPosition) {
 		let mc = this.emojis[pos];
-		mc.gotoAndPlay(emoji, -1);
+		mc.gotoAndPlay(emoji, 4);
 		let show = this.chatEmojiGroup.getChildAt(pos) as eui.Group;
 		show.addChild(mc);
 		egret.setTimeout(this.emojiCallBack, this, this.chatShowTime, mc);

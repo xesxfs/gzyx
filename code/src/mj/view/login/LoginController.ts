@@ -46,7 +46,7 @@ class LoginController extends BaseController {
 		this.loginScene = App.SceneManager.runScene(SceneConst.LoginScene) as LoginScene;
 		this.loginScene.setController(this);
 		// 加载进入大厅必须的素材
-		App.ResUtils.loadGroup([AssetConst.Lobby, AssetConst.Common, AssetConst.Game], this, this.loadHallComplete);
+		App.ResUtils.loadGroup([AssetConst.Lobby, AssetConst.Common, AssetConst.Game, AssetConst.Chat], this, this.loadHallComplete);
 	}
 
 	private loadHallComplete() {

@@ -86,7 +86,9 @@ class App extends BaseApp {
         panel.register(PanelConst.GrabPanel, GrabPanel, AssetConst.Grab);
         panel.register(PanelConst.NewFeedBackPanel, FeedBackPanel);
         panel.register(PanelConst.BindFriendPanel, BindFriendPanel);
-
+        panel.register(PanelConst.GameSet, GameSetting);
+        panel.register(PanelConst.ChatPanel, GameChatPanel);
+        panel.register(PanelConst.CatchChicken, CatchChickenPanel);
 
 
         //显示登录界面

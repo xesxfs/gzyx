@@ -22,6 +22,8 @@ class CardsShowUI extends eui.Component {
 	private CPGPointList: Array<Array<egret.Point>>;
 	/** 吃碰刚牌*/
 	public CPGList: Array<Array<Card>>;
+	/** 吃碰杠效果的牌位置 */
+	public CPGAniPoint: Array<egret.Point>;
 
 	//--------------逻辑--------------
 	public cardFactory: CardFactory;      //麻将牌工厂
@@ -44,6 +46,8 @@ class CardsShowUI extends eui.Component {
 	private eat2: eui.Group;
 	private eat3: eui.Group;
 
+	public pgGrp: eui.Group;
+
 	/**定位 */
 	private rectGroup: eui.Group;
 	/**初始化 cardGroups 用*/
@@ -57,10 +61,25 @@ class CardsShowUI extends eui.Component {
 		this.cardLogic = CardLogic.getInstance();
 		this.cardFactory = CardFactory.getInstance();
 		this.initPos();
+		this.initAni();
 		this.cardGroups[UserPosition.Down].addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchTap, this);
 		this.cardGroups[UserPosition.Down].addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onDragCardBegin, this);
 		this.reset();
 		this.rectGroup.visible = false;
+	}
+
+	private _pengMc: egret.MovieClip;	//碰到特效
+	/** 初始化特效 */
+	private initAni() {
+		//碰杠效果
+		let data = RES.getRes("pg_ani_json");
+		let txtr = RES.getRes("pg_ani_png");
+		let mcFactory = new egret.MovieClipDataFactory(data, txtr);
+		if (mcFactory) {
+			this._pengMc = new egret.MovieClip(mcFactory.generateMovieClipData("pg_effect"));
+		} else {
+			console.log("not find pg_ani");
+		}
 	}
 
 	private initCardList() {
@@ -81,6 +100,7 @@ class CardsShowUI extends eui.Component {
 		this.outPointList = [];
 		this.cardGroups = [];
 		this.CPGPointList = [];
+		this.CPGAniPoint = [];
 		for (let i = 0; i < this.playNum; i++) {
 			this.handlePointList[i] = [];
 			this.outPointList[i] = [];
@@ -91,6 +111,14 @@ class CardsShowUI extends eui.Component {
 		for (let i = 0; i < len; i++) {
 			var cardgroup = this.cardGroup.getChildAt(i) as eui.Group;
 			this.cardGroups.push(cardgroup);
+		}
+
+		// 储存吃碰杠效果的牌位置数据
+		for (let i = 0; i < this.pgGrp.numChildren; i++) {
+			let card = this.pgGrp.getChildAt(i);
+			this.CPGAniPoint.push(new egret.Point(card.x, card.y));
+			this.pgGrp.removeChild(card);
+			card = null;
 		}
 		this.initDown();
 		this.initRight();
@@ -336,11 +364,16 @@ class CardsShowUI extends eui.Component {
 	/***通知可以出牌*/
 	public noticeOutCard() {
 		this.bAllowOutCard = true;
+		console.log("可以出牌了");
+
 	}
 
 	/***点击出牌*/
 	private checkOutCard(card: Card) {
+		console.log("点击出牌");
 		if (card.parent == this.cardGroups[UserPosition.Down]) {
+			console.log(this.bAllowOutCard);
+
 			if (this.bAllowOutCard) {
 				if (card.bUp) {
 					this.bAllowOutCard = false;
@@ -533,6 +566,7 @@ class CardsShowUI extends eui.Component {
 			this.addBuGang(pos, cgpCards[0]);
 		} else {
 			this.addCPG(pos, cgpCards);
+			// this.playPGAni("peng", cardListValue);
 		}
 		/**删除玩家的手牌 */
 		this.removeHandCardByList(pos, deleteCardList);
@@ -546,6 +580,36 @@ class CardsShowUI extends eui.Component {
 		} else {
 			if (act == ACT_act.Act_Chi || act == ACT_act.Act_Peng) {
 				this.offsetHandCard(pos);
+			}
+		}
+	}
+
+	/** 播放碰杠特效 */
+	private playPGAni(mName: string, cardsVal: Array<number>) {
+		console.log(cardsVal);
+
+		let card;
+		for (var i = 0; i < cardsVal.length; i++) {
+			card = this.cardFactory.getEatCard(cardsVal[i], UserPosition.Down);
+			this.pgGrp.addChild(card);
+		}
+		this._pengMc.gotoAndPlay(mName, 2);
+		this.pgGrp.addChild(this._pengMc);
+		egret.setTimeout(this.stopPGAni, this, 2000);
+	}
+
+	/** 停止移动碰杠特效 */
+	private stopPGAni() {
+		this.pgGrp.visible = false;
+		this._pengMc.stop();
+		this.pgGrp.removeChild(this._pengMc);
+
+		let card: Card;
+		while (this.pgGrp.numChildren > 0) {
+			if (this.pgGrp.getChildAt(0) instanceof Card) {
+				card = this.pgGrp.getChildAt(0) as Card;
+				card.recycle();
+				card = null;
 			}
 		}
 	}
@@ -592,11 +656,6 @@ class CardsShowUI extends eui.Component {
 		if (cardList.length == 3) {
 			this.CPGList[pos].push(null);
 		}
-	}
-
-	public pushCPG(pos: UserPosition, act: ACT_act, cardsValue: Array<number>) {
-		let cards = this.createCPGCard(pos, act, cardsValue);
-		this.addCPG(pos, cards);
 	}
 
 	/**补刚 */
@@ -714,6 +773,7 @@ class CardsShowUI extends eui.Component {
 	}
 
 	private onTouchTap(e: egret.TouchEvent) {
+		console.log("onTouchTap");
 		if (e.target instanceof Card) {
 			this.checkOutCard(e.target);
 			return;
@@ -725,6 +785,7 @@ class CardsShowUI extends eui.Component {
 	private dragCard: Card;
 	private dragCardValue: number = 0;
 	private onDragCardBegin(e: egret.TouchEvent) {
+		console.log("onDragCardBegin");
 		if (e.target instanceof Card) {  //自己手牌
 			var card: Card = e.target;
 			if (card.parent == this.cardGroups[UserPosition.Down]) {
@@ -759,7 +820,8 @@ class CardsShowUI extends eui.Component {
 		var dragCardValue = this.dragCard.cardValue;
 		this.clearDragCard();
 		//允许出牌，则从手牌获取相同牌值的牌，并打出
-		if (this.bAllowOutCard && e.stageY < this.cardGroups[UserPosition.Down][0].y) {
+		// if (this.bAllowOutCard && e.stageY < this.cardGroups[UserPosition.Down][0].y) {
+		if (this.bAllowOutCard) {
 			var cardList = this.handleList[UserPosition.Down];
 			var cardLen = cardList.length;
 			var card: Card;

@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="RoundResultItemSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
 	<e:Group>
-		<e:Image source="totalaccount_bg_png" scaleX="1" scaleY="1"/>
-		<e:Image id="headImg" x="4.61" y="8.22" source="img_default_png"/>
+		<e:Image id="bgImg" source="totalaccount_bg_png" scaleX="1" scaleY="1" height="567" scale9Grid="36,202,218,295"/>
+		<e:Image source="img_headMask_png" x="10" y="10"/>
+		<e:Image id="maskImg" source="head_bg_png" x="10" y="10" anchorOffsetX="0" width="90" anchorOffsetY="0" height="90"/>
+
+		<e:Image id="headImg" x="0" y="5" source="img_default_png" width="100" height="100"/>
 		<e:Label id="nickNameLab" text="robot1088" x="112.88" y="27.15" textColor="0x826060" size="28"/>
-		<e:Label text="ID:" x="112.88" y="69" textColor="0xF9A909" size="22"/>
-		<e:Label id="uidLab" text="001088" x="143.18" y="69" size="22" textColor="0xF9A909"/>
-		<e:Label text="合计分数" x="16.83" y="185" size="28" textColor="0x826060"/>
-		<e:Label id="scoreLab" text="-500" x="149.84" y="185" textColor="0x826060" size="28"/>
-		<e:Label text="分" x="233.78" y="185" size="28" textColor="0x826060"/>
+		<e:Label text="ID:" x="112.88" y="69" size="22" textColor="0xc57e1b"/>
+		<e:Label id="uidLab" text="001088" x="143.18" y="69" size="22" textColor="0xc57e1b"/>
+		<e:Label text="合计分数" x="16.83" y="185" size="28" textColor="0xc57e1b"/>
+		<e:Label id="scoreLab" text="-500" x="149.84" y="185" size="28" textColor="0x877a71"/>
+		<e:Label text="分" x="233.78" y="185" size="28" textColor="0xc57e1b"/>
 		<e:Image id="card_typeImg" source="1_png" x="72" y="114"/>
 		<e:Image id="end_typeImg" source="end_type1_png" y="49" right="0"/>
+		<e:Image id="bankerImg" source="img_zhuang_png" x="0" y="0" visible="false"/>
 	</e:Group>
 </e:Skin>

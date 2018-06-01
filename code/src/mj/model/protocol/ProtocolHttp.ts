@@ -51,6 +51,7 @@ class ProtocolHttp {
             password: "",
             nick_name: "",
             ua: "",//手机型号
+            code: "9527",
         }
     }
 

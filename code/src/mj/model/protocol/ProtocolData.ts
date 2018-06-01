@@ -263,6 +263,7 @@ class ProtocolData {
         max_access_gold: 0,//integer	最多可玩金币数 适用game_flag为金币场时
         tai_fee: 0,//integer	税收 适用game_flag为金币场时
         players: [],//	array<player_info>	房间中所有用户的信息
+        status:0,   //	integer	当前游戏进行的阶段 0.准备 1.开始动画 2.定缺 3游戏进行中 4.游戏结束动画
     }
 
     public static player_info2 = {
@@ -537,7 +538,7 @@ class ProtocolData {
         uid: 0,//integer	用户ID
         seatid: 0,//integer	座位ID
         room_pwd: 0,//	integer	房间号
-        state: State,//integer<STATE>	用户重连时的游戏状态
+        state: 0,//integer<STATE>	用户重连时的游戏状态
         do_dissolution: 0,//integer	是否同意解散房间 1.同意 0.不同意
         board_choose: 0,//	integer	房间可玩局数
         rest_board: 0,//	integer	还剩多少局可以玩

@@ -111,6 +111,7 @@ class HallController extends BaseController {
         GameInfo.isReConnection = true;
         GameInfo.reBuildData = json;
         GameInfo.playerNumber = json.player_num;
+        GameInfo.state = json.state;
         this.sendEvent(GameController.EVENT_SHOW_GAME_SCENE);
     }
 

@@ -16,7 +16,7 @@ module EffectUtils {
         egretObj.scaleX = 4;
         egretObj.scaleY = 4;
         egretObj.alpha = 0;
-        egret.Tween.get(egretObj).to({ scaleX: 1,scaleY: 1,alpha: 1 },200).wait(waitTime).call(() => { egretObj.parent && egretObj.parent.removeChild(egretObj) });
+        egret.Tween.get(egretObj).to({ scaleX: 1,scaleY: 1,alpha: 1 },200);//.wait(waitTime).call(() => { egretObj.parent && egretObj.parent.removeChild(egretObj) });
 	}
 	
     export function showFload(egretObj: egret.DisplayObjectContainer | egret.DisplayObject,waitTime: number = 1000){

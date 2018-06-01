@@ -16,7 +16,9 @@ class HeadUI extends eui.Component {
     public userID: number = 0;   //用户ID
     public headzhuang: eui.Image;
     public goldLabel: eui.Label;
+    public headMask: eui.Image;
 
+    public headLoader:egret.ImageLoader;
 
     public constructor() {
         super();
@@ -24,8 +26,27 @@ class HeadUI extends eui.Component {
     }
 
     public childrenCreated() {
-
+        this.headImg.mask = this.headMask;
+        
+        this.headLoader = new egret.ImageLoader();
+        this.headLoader.addEventListener(egret.Event.COMPLETE,this.loadCompleteHandler,this);
+        this.headLoader.crossOrigin = "Anonymous";
     }
+
+    private loadCompleteHandler() {
+        let texture = new egret.Texture();
+        texture._setBitmapData(this.headLoader.data);
+        // var bitmap:egret.Bitmap = new egret.Bitmap(texture);
+        // bitmap.width = 100;
+        // bitmap.height = 100;
+        // bitmap.x = this.headImg.x;
+        // bitmap.y = this.headImg.y;
+        // bitmap.mask = this.headMask;
+        // this.addChild(bitmap);
+
+        this.headImg.source = texture;
+    }
+
 
     /**
      * 加载头像图片
@@ -34,7 +55,8 @@ class HeadUI extends eui.Component {
     public loadImg(headUrl) {
         if (headUrl && headUrl != "") {
             var url = headUrl;
-            this.headImg.source = url;
+            // this.headImg.source = url;
+            this.headLoader.load(url);
         } else {
             this.headImg.source = "img_default_png";
         }

@@ -23,8 +23,6 @@ class GameScene extends BaseScene {
     public roomLab: eui.Label;
     public jushu: eui.Label;
     public readyBtn: eui.Button;
-    private chongjiMc: egret.MovieClip;
-
 
     public constructor() {
         super();
@@ -33,6 +31,8 @@ class GameScene extends BaseScene {
 
     /**组件初始化完成 */
     protected childrenCreated() {
+        this.initAni();
+
         this.cardLogic = CardLogic.getInstance();
         this.cardFactory = CardFactory.getInstance();
         this.outFlagUI = new OutFlagUI();
@@ -120,7 +120,6 @@ class GameScene extends BaseScene {
     }
 
     protected onEnable() {
-        this.initRes();
         this.readyBtn.addEventListener("touchTap", this.ctrl.sendReady, this);
         this.optionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
     }
@@ -147,54 +146,80 @@ class GameScene extends BaseScene {
     }
 
     private onOptionTouch(e: egret.TouchEvent) {
-        console.log(e.target)
         switch (e.target) {
             case this.exitBtn:
                 //开房类型可以发起解散房间, 再发起http退出房间
                 //排位赛金币赛可以退出房间
-                if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
-                    App.MsgBoxManager.getBoxA().showMsg("游戏未进行时解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
+
+                if (GameInfo.state == GameState.Ready) {
+                    this.ctrl.sendQuiteGame();
                 } else {
-                    App.MsgBoxManager.getBoxA().showMsg("是否退出金币场，退出将由\n机器人代打，本局结束前\n不允许进入其他房间", this.ctrl.sendQuiteGame, this.ctrl);
+                    if (GameInfo.curGameType == GAME_TYPE.RoomCardGame) {
+                        App.MsgBoxManager.getBoxA().showMsg("游戏未进行时解散房间不扣房卡，是否确定解散？", this.ctrl.sendWangExitGame, this.ctrl);
+                    } else {
+                        App.MsgBoxManager.getBoxA().showMsg("是否退出金币场，退出将由\n机器人代打，本局结束前\n不允许进入其他房间", this.ctrl.sendQuiteGame, this.ctrl);
+                    }
                 }
+
 
                 break;
             case this.chatBtn:
-                this.headShowUI.showTxt("helllllllllll", UserPosition.Down);
-                this.headShowUI.showTxt("helllllllllll", UserPosition.L);
-                this.headShowUI.showTxt("helllllllllll", UserPosition.R);
-                this.headShowUI.showTxt("helllllllllll", UserPosition.Up);
-
-
-                this.headShowUI.showEmoji("emoji_1", UserPosition.Down);
-                this.headShowUI.showEmoji("emoji_2", UserPosition.L);
-                this.headShowUI.showEmoji("emoji_3", UserPosition.R);
-                this.headShowUI.showEmoji("emoji_4", UserPosition.Up);
-
-
+                App.PanelManager.open(PanelConst.ChatPanel);
+                break;
+            case this.setBtn:
+                App.PanelManager.open(PanelConst.GameSet);
                 break;
             default:
             // TipsLog.hallInfo("功能未实现！！")
         }
     }
 
-    private initRes() {
-        var resName = "hero_chongfengji"
-        var data = RES.getRes(resName + "_json");
-        var img = RES.getRes(resName + "_png");
-        var mcFactory: egret.MovieClipDataFactory = new egret.MovieClipDataFactory(data, img);
-        this.chongjiMc = new egret.MovieClip(mcFactory.generateMovieClipData(resName));
+    private _heroMc: egret.MovieClip;   //冲锋鸡特效
+    private _relateMc: egret.MovieClip;  //责任鸡特效
+    private initAni() {
+        let data = RES.getRes("hero_ani_json");
+        let txtr = RES.getRes("hero_ani_png");
+        let mcFactory = new egret.MovieClipDataFactory(data, txtr);
+        if (mcFactory) {
+            this._heroMc = new egret.MovieClip(mcFactory.generateMovieClipData("ji_effect"));
+        } else {
+            console.log("not find hero_ani");
+        }
 
+        data = RES.getRes("relate_ani_json");
+        txtr = RES.getRes("relate_ani_png");
+        mcFactory = new egret.MovieClipDataFactory(data, txtr);
+        if (mcFactory) {
+            this._relateMc = new egret.MovieClip(mcFactory.generateMovieClipData("ji_effect"));
+        } else {
+            console.log("not find relate_ani");
+        }
     }
     /**播放冲锋鸡动画 */
     public playChongFengJi() {
-        if (this.chongjiMc) {
-            this.chongjiMc.play();
-            this.addChild(this.chongjiMc);
+        if (this._heroMc) {
+            this._heroMc.x = App.StageUtils.halfStageWidth;
+            this._heroMc.y = App.StageUtils.halfStageHeight;
+            this.addChild(this._heroMc);
+            this._heroMc.play(-1);
             setTimeout(() => {
-                this.chongjiMc.stop();
-                this.chongjiMc.parent && this.chongjiMc.parent.removeChild(this.chongjiMc);
-            }, 3000);
+                this._heroMc.stop();
+                this._heroMc.parent && this._heroMc.parent.removeChild(this._heroMc);
+            }, 2000);
+        }
+    }
+
+    /** 播放责任鸡 */
+    public playZRJi() {
+        if (this._relateMc) {
+            this._relateMc.x = App.StageUtils.halfStageWidth;
+            this._relateMc.y = App.StageUtils.halfStageHeight;
+            this.addChild(this._relateMc);
+            this._relateMc.play(-1);
+            setTimeout(() => {
+                this._relateMc.stop();
+                this._relateMc.parent && this._relateMc.parent.removeChild(this._relateMc);
+            }, 2000);
         }
     }
 
@@ -205,11 +230,11 @@ class GameScene extends BaseScene {
     public showChat(pos: UserPosition, type: number, tag: number, msg: string) {
         try {
 
-            if (type == 2) {
+            if (type == CHAT_TYPE.Face) {
                 this.headShowUI.showEmoji("emoji_" + tag.toString(), pos);
-            } else if (type == 1) {
-                this.headShowUI.showTxt(App.DataCenter.GameInfo.Chat_Msg[tag], pos);
-            } else if (type == 3) {
+            } else if (type == CHAT_TYPE.Common) {
+                this.headShowUI.showTxt(App.DataCenter.GameInfo.Chat_Msg[tag]["wz"], pos);
+            } else if (type == CHAT_TYPE.Text) {
                 this.headShowUI.showTxt(msg, pos);
             }
 
@@ -232,6 +257,7 @@ class GameScene extends BaseScene {
     }
 
     public resetScene() {
+
         this.cardShowUI.reset();
         this.touGuanShowUI.hideTuoGuan();
         this.outFlagUI.hide();;

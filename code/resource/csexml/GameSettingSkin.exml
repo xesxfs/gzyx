@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameSettingSkin" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group verticalCenter="0" horizontalCenter="0">
+		<e:Image source="tankuang_big_png" anchorOffsetX="0" width="733" anchorOffsetY="0" height="426"/>
+		<e:Image source="title_bg_png" y="29" horizontalCenter="0"/>
+		<e:Image source="yxsz_tx_png" x="283" y="44"/>
+		<e:Label text="音效：" x="57" y="215.7" textColor="0xC27D18" size="24" fontFamily="Microsoft YaHei"/>
+		<e:Label text="语言：" x="57" y="150.7" textColor="0xC27D18" size="24" fontFamily="Microsoft YaHei"/>
+		<e:Label text="音乐：" x="57" y="292.7" textColor="0xC27D18" size="24" fontFamily="Microsoft YaHei"/>
+		<e:HSlider id="soundHdr" x="194" y="211.7" skinName="SoundHSliderSkin"/>
+		<e:HSlider id="musicHdr" x="194" y="283.7" skinName="SoundHSliderSkin"/>
+		<how:Button id="closeBtn" xmlns:how="how.*" label="" x="658.5" y="29" skinName="ButtonCloseSkin"/>
+		<e:RadioButton label="普通话" x="187" y="151.7" skinName="skins.RadioButtonSkin"/>
+		<e:RadioButton label="方言" x="435" y="151.7" skinName="skins.RadioButtonSkin"/>
+	</e:Group>
+</e:Skin>

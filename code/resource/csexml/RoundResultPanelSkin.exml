@@ -8,13 +8,14 @@
 	<ns1:RoundResultItem skinName="RoundResultItemSkin" y="30.4" x="348" />
 	<ns1:RoundResultItem skinName="RoundResultItemSkin" y="30.4" x="651" />
 	<ns1:RoundResultItem skinName="RoundResultItemSkin" y="30.4" x="954.23" />
-	<e:Button id="ksyxBtn" label="" x="973.08" y="633.46">
+	<e:Button id="ksyxBtn" label="继续游戏" x="688" y="636">
 		<e:skinName>
-			<e:Skin states="up,down,disabled" xmlns:w="http://ns.egret.com/wing">
-				<e:Image width="100%" height="100%" source="ksyx_btn_png" />
-				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0" />
+			<e:Skin states="up,down,disabled">
+			<e:Image width="100%" height="100%" source="btn_yellow_big_png"/>
+			<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
 			</e:Skin>
 		</e:skinName>
+
 	</e:Button>
 	<e:Button id="closeBtn" label="" x="1206" y="14">
 		<e:skinName>
@@ -24,7 +25,7 @@
 			</e:Skin>
 		</e:skinName>
 	</e:Button>
-	<e:Button id="detailBtn" label="手牌详情" y="633.46" horizontalCenter="0">
+	<e:Button id="detailBtn" label="手牌详情" y="636" x="385">
 		<e:skinName>
 		<e:Skin states="up,down,disabled">
 			<e:Image width="100%" height="100%" source="btn_blue_big_png"/>

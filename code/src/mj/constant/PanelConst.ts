@@ -220,7 +220,8 @@ enum PanelConst {
     HandDetailPanel,
     /***头像选择 */
     ProfilePhotoPanel,
-    BindFriendPanel
+    BindFriendPanel,
+    CatchChicken,
 }
 
 

@@ -18,6 +18,7 @@ class GoldPanel extends BasePanel {
 
 	protected childrenCreated() {
 		this.headImg.mask = this.maskImg;
+		this.initData();
 	}
 
 	/**添加到场景中*/
@@ -26,8 +27,6 @@ class GoldPanel extends BasePanel {
 		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 		App.EventManager.addEvent(EventConst.UpdateGold, this.onUpdateGold, this);
         App.EventManager.addEvent(EventConst.UpdateDiamond, this.onUpdateDiamond, this);
-		this.initData();
-
 	}
 
 	/**从场景中移除*/

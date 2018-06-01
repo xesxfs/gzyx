@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="GameChatPanelSkin" width="913" height="613" xmlns:e="http://ns.egret.com/eui" xmlns:how="how.*" xmlns:w="http://ns.egret.com/wing">
+	<e:Group horizontalCenter="0" verticalCenter="0">
+		<e:Image source="tankuang_big_png" anchorOffsetX="0" width="913" anchorOffsetY="0" height="613" x="0" y="0" scale9Grid="200,77,605,466"/>
+		<e:Image source="title_bg_png" y="28.5" x="82.59"/>
+		<e:Image x="173.09" y="43" source="cybq_txt_png"/>
+		<e:TabBar id="chatTab" x="487.5" y="28" itemRendererSkinName="EmailTabBarSkin" selectedIndex="1">
+			<e:ArrayCollection>
+				<e:Array>
+					<e:Object iconUpBg="btn_left_unSelected_png" iconUp="cyy_txt_png" iconDownBg="btn_left_selected_png" iconDown="cyy_txt_png"/>
+					<e:Object iconUpBg="btn_right_unselected_png" iconUp="ltjl_txt_png" iconDownBg="btn_right_selected_png" iconDown="ltjl_txt_png"/>
+				</e:Array>
+			</e:ArrayCollection>
+			<e:layout>
+			<e:HorizontalLayout gap="0"/>
+			</e:layout>
+		</e:TabBar>
+		<e:Scroller width="366.67" height="361.33" x="61" y="111" anchorOffsetX="0" anchorOffsetY="0" scrollPolicyH="off">
+			<e:Group>
+				<e:List id="emojiLst" width="100%" itemRendererSkinName="ChatEmojiItem">
+					<e:ArrayCollection>
+						<e:Array>
+							<e:Object emoji="dou_lt_bq_1_png"/>
+							<e:Object emoji="dou_lt_bq_1_png"/>
+							<e:Object emoji="dou_lt_bq_1_png"/>
+							<e:Object emoji="dou_lt_bq_1_png"/>
+						</e:Array>
+					</e:ArrayCollection>
+					<e:layout>
+						<e:TileLayout requestedColumnCount="3" columnWidth="125" rowHeight="82"/>
+					</e:layout>
+				</e:List>
+			</e:Group>
+		</e:Scroller>
+		<e:Scroller width="360" height="371" x="487" y="100" anchorOffsetX="0" anchorOffsetY="0">
+			<e:Group>
+				<e:List id="wzLst" width="100%" itemRendererSkinName="ChatWZItem">
+					<e:ArrayCollection>
+						<e:Array>
+							<e:Object wz="大家好！很高兴见到各位！"/>
+							<e:Object wz="大家好！很高兴见到各位！"/>
+							<e:Object wz="大家好！很高兴见到各位！"/>
+						</e:Array>
+					</e:ArrayCollection>
+					<e:layout>
+						<e:VerticalLayout gap="14"/>
+					</e:layout>
+				</e:List>
+			</e:Group>
+		</e:Scroller>
+		<e:Image source="img_textDi_png" x="54.42" y="513" scale9Grid="45,6,270,38" anchorOffsetX="0" width="599.34"/>
+		<e:Image source="maobi_png" x="587" y="507"/>
+		<how:Button id="sendBtn" label="发送" x="685.48" y="503.69">
+			<how:skinName>
+				<e:Skin states="up,down,disabled">
+				<e:Image width="100%" height="100%" source="btn_yellow_png"/>
+				<e:Label id="labelDisplay" horizontalCenter="0" verticalCenter="0"/>
+				</e:Skin>
+			</how:skinName>
+		</how:Button>
+		<e:EditableText id="txtChat" width="482" height="30" text="" x="82.59" y="524.02" anchorOffsetX="0" anchorOffsetY="0" fontFamily="SimHei" textColor="0x44687b" prompt="输入聊天内容"/>
+	</e:Group>
+</e:Skin>

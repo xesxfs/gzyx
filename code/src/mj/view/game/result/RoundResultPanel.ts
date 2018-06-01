@@ -37,10 +37,16 @@ class RoundResultPanel extends BasePanel {
 			item.uidLab.text = playInfo.uid.toString();
 			item.nickNameLab.text = playInfo.nick_name;
 			item.scoreLab.text = playInfo.score.toString();
-			item.card_typeImg.source = playInfo.card_type.toString() + "_png";
+			if (playInfo.card_type == 0) {
+				item.card_typeImg.source = "jiao" + playInfo.jiaopai_flag + "_png"
+			} else {
+				item.card_typeImg.source = "cardtype_" + playInfo.card_type.toString() + "_png";
+			}
+			item.bankerImg.visible = playInfo.if_banker == 0 ? false : true;
 			/**赢家 */
 			if (playInfo.cur_end_flag == 2) {
-				item.end_typeImg.source = "end_type" + data.end_type.toString() + "_png"
+				item.end_typeImg.source = "end_type" + data.end_type.toString() + "_png";
+				item.bgImg.source = "jies_yellow_bg_png";
 			} else {
 				item.end_typeImg.visible = false;
 			}
