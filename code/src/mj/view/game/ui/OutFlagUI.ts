@@ -15,7 +15,7 @@ class OutFlagUI extends egret.Bitmap {
 	private initRes() {
 		if (this.bInitRes == false) {
 			this.bInitRes = true;
-			this.bitmapData = RES.getRes("tin_jiant_png");
+			this.bitmapData = RES.getRes("finger_png");
 			console.log("bitmapData:", this.bitmapData);
 		}
 	}

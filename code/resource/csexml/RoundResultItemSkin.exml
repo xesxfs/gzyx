@@ -9,10 +9,10 @@
 		<e:Label id="nickNameLab" text="robot1088" x="112.88" y="27.15" textColor="0x826060" size="28"/>
 		<e:Label text="ID:" x="112.88" y="69" size="22" textColor="0xc57e1b"/>
 		<e:Label id="uidLab" text="001088" x="143.18" y="69" size="22" textColor="0xc57e1b"/>
-		<e:Label text="合计分数" x="16.83" y="185" size="28" textColor="0xc57e1b"/>
-		<e:Label id="scoreLab" text="-500" x="149.84" y="185" size="28" textColor="0x877a71"/>
-		<e:Label text="分" x="233.78" y="185" size="28" textColor="0xc57e1b"/>
-		<e:Image id="card_typeImg" source="1_png" x="72" y="114"/>
+		<e:Label id="descLab" text="" x="16.83" y="185" size="28" textColor="0xc57e1b" anchorOffsetX="0" width="256" anchorOffsetY="0" height="312.5" lineSpacing="20"/>
+
+
+		<e:Image id="card_typeImg" x="72" y="114" source="cardtype_1_png"/>
 		<e:Image id="end_typeImg" source="end_type1_png" y="49" right="0"/>
 		<e:Image id="bankerImg" source="img_zhuang_png" x="0" y="0" visible="false"/>
 	</e:Group>

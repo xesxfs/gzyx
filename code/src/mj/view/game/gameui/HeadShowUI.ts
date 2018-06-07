@@ -4,23 +4,19 @@ class HeadShowUI extends eui.Component {
 	public constructor() {
 		super();
 	}
-	public bMove: boolean = false;
-	private headGroup: eui.Group;
-	private headList: Array<HeadUI>;
-	/**定位用,用完删除*/
-	private readyGroup: eui.Group;
-	private readyList = [];
+	public readyGroup: eui.Group;
+	public headGroup: eui.Group;
 	public chatTxtGroup: eui.Group;
 	public chatEmojiGroup: eui.Group;
+
+	public bMove: boolean = false;
+	private headList: Array<HeadUI>;
 	private emojiMcFactory: egret.MovieClipDataFactory;
 	private emojis: egret.MovieClip[] = [];
 	private chatShowTime: number = 2000;
 
-
 	protected childrenCreated() {
 		this.init();
-		this.hideAllReady();
-
 	}
 
 	private init() {
@@ -33,14 +29,11 @@ class HeadShowUI extends eui.Component {
 
 		let len = this.headGroup.numChildren;
 		for (let i = 0; i < len; i++) {
-			let orginObj = this.headGroup.getChildAt(i) as HeadUI;
-			// orginObj.visible = false;
-			this.headList.push(orginObj);
+			let head = this.headGroup.getChildAt(i) as HeadUI;
+			this.headList.push(head);
 		}
 
 		for (let i = 0; i < 4; i++) {
-			this.readyList.push(this.readyGroup.getChildAt(i));
-			this.chatTxtGroup.getChildAt(i).visible = false;
 			let mc = new egret.MovieClip(mcData);
 			mc.frameRate = 8;
 			this.emojis.push(mc);
@@ -51,11 +44,7 @@ class HeadShowUI extends eui.Component {
 	public updateUserHead(user: UserVO) {
 		let pos = CardLogic.getInstance().changeSeat(user.seatID);
 		var headUI = this.headList[pos];
-		headUI.userID = user.userID;
-		headUI.loadImg(user.headUrl);
-		headUI.nameLabel.text = user.nickName;
-		headUI.goldLabel.text = user.gold.toString();
-		headUI.visible = true;
+		headUI.update(user);
 	}
 
 	public showZhuang(pos: UserPosition) {
@@ -67,8 +56,6 @@ class HeadShowUI extends eui.Component {
 			}
 		}
 	}
-
-
 
 	/**隐藏玩家头像*/
 	public hideHeadUI(pos: UserPosition) {
@@ -83,7 +70,6 @@ class HeadShowUI extends eui.Component {
 		for (var i = 0; i < len; i++) {
 			headUI = this.headList[i];
 			headUI.reset();
-
 		}
 	}
 
@@ -113,38 +99,22 @@ class HeadShowUI extends eui.Component {
 
 	/**显示准备图标*/
 	public showReady(pos: UserPosition) {
-		//最初状态准备按钮
-		// if (!this.bMove) {
-		// 	this.readyList = this.readyList1;
-		// 	this.readyGroup.addChild(this.readyList[pos]);
-		// } else {
-		// 	this.readyList = this.readyList2;
-		this.readyGroup.addChild(this.readyList[pos]);
-		// }
+		let ready = this.readyGroup.getChildAt(pos);
+		if (!ready.visible) {
+			ready.visible = true;
+			EffectUtils.showMax2Min(ready);
+		}
 	}
 
 	/***隐藏准备图标*/
 	public hideReady(pos: UserPosition) {
-		//最初状态准备按钮
-		// if (!this.bMove) {
-		// 	this.readyList = this.readyList1;
-		var ready = this.readyList[pos];
-		ready && ready.parent && ready.parent.removeChild(ready);
-		// } else {
-		// 	this.readyList = this.readyList2;
-		// 	var ready = this.readyList[pos];
-		// ready && ready.parent && ready.parent.removeChild(ready);
-		// }
+
 	}
 
-	/***重置准备*/
-	public resetReady() {
-		this.hideAllReady();
-	}
-
-	/***隐藏所有准备图标*/
 	public hideAllReady() {
-		this.readyGroup.removeChildren();
+		for (let i = 0; i < this.readyGroup.numChildren; i++) {
+			this.readyGroup.getChildAt(i).visible = false;
+		}
 	}
 
 }

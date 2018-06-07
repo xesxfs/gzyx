@@ -54,8 +54,8 @@ class HallController extends BaseController {
     public registerSocket() {
         var gameSocket: ClientSocket = App.gameSocket;
         gameSocket.register(ProtocolHead.server_command.SERVER_ENTER_ROOM_UC, this.revEnterRoom, this);
-        gameSocket.register(ProtocolHead.open_room_type_command.CLIENT_OPEN_ROOM_REQ, this.revOpenRoom, this);
-        gameSocket.register(ProtocolHead.open_room_type_command.CLIENT_JOIN_ROOM_REQ, this.revJoinRoom, this);
+        gameSocket.register(ProtocolHead.open_room_command.CLIENT_OPEN_ROOM_REQ, this.revOpenRoom, this);
+        gameSocket.register(ProtocolHead.open_room_command.CLIENT_JOIN_ROOM_REQ, this.revJoinRoom, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_REBIND_UC, this.revReBind, this);
         gameSocket.register(ProtocolHead.server_command.SERVER_ERROR_UC, this.revError, this);
 

@@ -11,14 +11,17 @@
 */
 
 class HeadUI extends eui.Component {
-    public nameLabel: eui.Label;   //昵称文本
-    public headImg: eui.Image;    //头像图片
-    public userID: number = 0;   //用户ID
-    public headzhuang: eui.Image;
-    public goldLabel: eui.Label;
     public headMask: eui.Image;
+    public headImg: eui.Image;
+    public headzhuang: eui.Image;
+    public nameGrp: eui.Group;
+    public nameLabel: eui.Label;
+    public goldLabel: eui.Label;
+    public heroImg: eui.Image;
+    public relateImg: eui.Image;
 
-    public headLoader:egret.ImageLoader;
+    public headLoader: egret.ImageLoader;
+    public userID: number = 0;   //用户ID
 
     public constructor() {
         super();
@@ -27,22 +30,23 @@ class HeadUI extends eui.Component {
 
     public childrenCreated() {
         this.headImg.mask = this.headMask;
-        
+
         this.headLoader = new egret.ImageLoader();
-        this.headLoader.addEventListener(egret.Event.COMPLETE,this.loadCompleteHandler,this);
+        this.headLoader.addEventListener(egret.Event.COMPLETE, this.loadCompleteHandler, this);
         this.headLoader.crossOrigin = "Anonymous";
+    }
+
+    public update(user: UserVO) {
+        this.userID = user.userID;
+        this.loadImg(user.headUrl);
+        this.nameLabel.text = user.nickName;
+        this.goldLabel.text = user.gold.toString();
+        this.nameGrp.visible = true;
     }
 
     private loadCompleteHandler() {
         let texture = new egret.Texture();
         texture._setBitmapData(this.headLoader.data);
-        // var bitmap:egret.Bitmap = new egret.Bitmap(texture);
-        // bitmap.width = 100;
-        // bitmap.height = 100;
-        // bitmap.x = this.headImg.x;
-        // bitmap.y = this.headImg.y;
-        // bitmap.mask = this.headMask;
-        // this.addChild(bitmap);
 
         this.headImg.source = texture;
     }
@@ -52,11 +56,11 @@ class HeadUI extends eui.Component {
      * 加载头像图片
      * @param headUrl 图片地址
      */
-    public loadImg(headUrl) {
+    public loadImg(headUrl: string) {
         if (headUrl && headUrl != "") {
-            var url = headUrl;
-            // this.headImg.source = url;
-            this.headLoader.load(url);
+            if (headUrl.indexOf("http")) {
+                this.headLoader.load(headUrl);
+            }
         } else {
             this.headImg.source = "img_default_png";
         }
@@ -64,13 +68,11 @@ class HeadUI extends eui.Component {
 
     public reset() {
         this.headImg.source = "friend_invite_png";
-
+        this.nameGrp.visible = false;
+        this.headzhuang.visible = false;
+        this.heroImg.visible = false;
+        this.relateImg.visible = false;
+        this.goldLabel.text = "0";
+        this.nameLabel.text = "";
     }
-
-
-    //隐藏
-    public hide() {
-        this.parent && this.parent.removeChild(this);
-    }
-
 }

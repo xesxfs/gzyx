@@ -5,12 +5,6 @@
  */
  module  ProtocolHead {
 
-    export enum mjcode {
-        W1 = 11, W2, W3, W4, W5, W6, W7, W8, W9, // 1~9 万
-        S1 = 31, S2, S3, S4, S5, S6, S7, S8, S9, // 1~9 条(索)ííí
-        T1 = 51, T2, T3, T4, T5, T6, T7, T8, T9, // 1~9 筒(饼)
-        Zh = 71, Fa = 81, Ba = 91              // 中, 发, 白
-    };
     //基本系统指令
    export enum system_command {
         SYS_ECHO = 1, //测试指令
@@ -22,8 +16,7 @@
     };
 
     //只和开房模式玩法相关的指令
-    export enum open_room_type_command {
-
+    export enum open_room_command {
         CLIENT_OPEN_ROOM_REQ = 101, //开房    
         CLIENT_JOIN_ROOM_REQ = 102, //输入开房密码加入房间    
         CLIENT_DISSOLUTION_ROOM_REQ = 103, //客户端发起解散房间
@@ -33,7 +26,6 @@
         SERVER_DISSOLUTION_ROOM_RESULT_BC = 203, //广播解散房间结果
         SERVER_GAME_ALL_END_BC = 204, //结束整个大牌局        
     };
-
 
     //游戏逻辑玩法基本请求指令
     export enum client_command {
@@ -55,6 +47,7 @@
         CLIENT_CANCEL_ROBOT_OP_REQ = 1052, //取消托管操作
         CLIENT_ROBOT_AUTO_OUT_MJ_REQ = 1053, //机器人自动出一张牌
     };
+
     //游戏逻辑玩法基本应答指令  
     export enum server_command {
         SERVER_ENTER_ROOM_UC = 2001,//进入房间成功

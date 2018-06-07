@@ -11,11 +11,13 @@ class GameController extends BaseController {
     public constructor() {
         super();
     }
+
     /**注册模块时调用*/
     public onRegister() {
         this.addEvent(GameController.EVENT_SHOW_GAME_SCENE, this.showGameScene, this);
         this.registerSocket();
     }
+
     /**显示游戏*/
     private showGameScene() {
         this.gameScene = <GameScene>App.SceneManager.runScene(SceneConst.GameScene, this);
@@ -24,49 +26,83 @@ class GameController extends BaseController {
     public onRemove() {
         this.removeEvent(GameController.EVENT_SHOW_GAME_SCENE, this.showGameScene, this);
     }
+
     /**** 注册socket*/
     public registerSocket() {
         var gameSocket: ClientSocket = App.gameSocket;
 
+        gameSocket.register(ProtocolHead.open_room_command.SERVER_DISSOLUTION_ROOM_REQ_BC, this.rev201, this);
+        gameSocket.register(ProtocolHead.open_room_command.SERVER_DISSOLUTION_ROOM_CONFIRM_BC, this.rev202, this);
+        gameSocket.register(ProtocolHead.open_room_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.rev203, this);
+        gameSocket.register(ProtocolHead.open_room_command.SERVER_GAME_ALL_END_BC, this.rev204, this);
 
-        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_REQ_BC, this.revBCPlayWantExit, this);
-        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_CONFIRM_BC, this.revBCExitStaus, this);
-        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_GAME_ALL_END_BC, this.revBCExitStaus, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ROOM_INFO_BC, this.rev2002, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_START_BC, this.rev2003, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GET_ONE_MJ, this.rev2005, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_OUT_ONE_MJ, this.rev2006, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_PASS, this.rev2011, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_PENG, this.rev2012, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ANGGANG, this.rev2013, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_MINGGANG, this.rev2014, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_FANG_GANG, this.rev2015, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ZIMOHU, this.rev2016, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_FANG_PAO_HU, this.rev2017, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_QIANG_GANG_HU, this.rev2018, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_READY_STAGE_BC, this.rev2019, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_END_BC, this.rev2020, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_CHONG_FENG_JI_BC, this.rev2025, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ZHE_REN_JI_BC, this.rev2027, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_GETIN_MJ, this.rev2007, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_OTHERS_PUTOUT_MJ, this.rev2008, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_BEGIN_ROBOT_OP_BC, this.rev2039, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_CANCEL_ROBOT_OP_SUCC_BC, this.rev2040, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM, this.rev2038, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.rev2004, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU, this.rev2010, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.rev2009, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC, this.rev2023, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_SUCC_BC, this.rev2024, this);
+        gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.rev2041, this);
 
-        gameSocket.register(ProtocolHead.server_command.SERVER_ROOM_INFO_BC, this.revRoomInfo, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_START_BC, this.revGameStart, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GET_ONE_MJ, this.revGetCard, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_OUT_ONE_MJ, this.revOutCard, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_PASS, this.revPass, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_PENG, this.revPeng, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_ANGGANG, this.revAnGang, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_MINGGANG, this.revMingGang, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_FANG_GANG, this.revFangGang, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_ZIMOHU, this.revZMHu, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_FANG_PAO_HU, this.revPaoHu, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_QIANG_GANG_HU, this.revQiangGangHu, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_READY_STAGE_BC, this.revNextGame, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GAME_END_BC, this.revRoundBalance, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_CHONG_FENG_JI_BC, this.revChongFengJi, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_ZHE_REN_JI_BC, this.revZRenJi, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_GETIN_MJ, this.revAdjAction, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_OTHERS_PUTOUT_MJ, this.revPassiveAction, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_BEGIN_ROBOT_OP_BC, this.revTuoGuang, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_CANCEL_ROBOT_OP_SUCC_BC, this.revCancleTuoGuang, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM, this.revGoldRoomQuiteGame, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_READY_BC, this.revReady, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU, this.revCheckQiangGan, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG, this.revAfterPeng, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC, this.revEnterDinQue, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_DINGQUE_SUCC_BC, this.revBCDinQue, this);
-        gameSocket.register(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC, this.revDinQueSuccess, this);
-        gameSocket.register(ProtocolHead.open_room_type_command.SERVER_DISSOLUTION_ROOM_RESULT_BC, this.revBCQiteGame, this);
-        gameSocket.register(ProtocolHead.system_command.SERVER_NOLMAL_CHAT_BC, this.revChat, this);
+        gameSocket.register(ProtocolHead.system_command.SERVER_NOLMAL_CHAT_BC, this.rev4, this);
     }
 
     public unRegisterSocket() {
-        var socket: ClientSocket = App.gameSocket;
-        // socket.unRegister(ProtocolHead.Rev100145);
+        var gameSocket: ClientSocket = App.gameSocket;
+        gameSocket.unRegister(ProtocolHead.open_room_command.SERVER_DISSOLUTION_ROOM_REQ_BC);
+        gameSocket.unRegister(ProtocolHead.open_room_command.SERVER_DISSOLUTION_ROOM_CONFIRM_BC);
+        gameSocket.unRegister(ProtocolHead.open_room_command.SERVER_DISSOLUTION_ROOM_RESULT_BC);
+        gameSocket.unRegister(ProtocolHead.open_room_command.SERVER_GAME_ALL_END_BC);
+
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_ROOM_INFO_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_GAME_START_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_GET_ONE_MJ);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_OUT_ONE_MJ);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_PASS);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_PENG);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_ANGGANG);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_MINGGANG);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_FANG_GANG);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_ZIMOHU);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_FANG_PAO_HU);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_QIANG_GANG_HU);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_GAME_READY_STAGE_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_GAME_END_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_CHONG_FENG_JI_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_ZHE_REN_JI_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_GETIN_MJ);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_OPERATE_CHECK_OTHERS_PUTOUT_MJ);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_BEGIN_ROBOT_OP_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_CANCEL_ROBOT_OP_SUCC_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_GOLDROOM_LOGOUT_ROOM);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_READY_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_OPERATE_CHECK_QIANG_GANG_HU);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_OPERATE_CHECK_AFTER_PENG);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_DINGQUE_STARGE_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_DINGQUE_SUCC_BC);
+        gameSocket.unRegister(ProtocolHead.server_command.SERVER_ALL_DIN_QUE_SUCC_BC);
+
+        gameSocket.unRegister(ProtocolHead.system_command.SERVER_NOLMAL_CHAT_BC);
     }
 
     public continueGame() {
@@ -75,8 +111,8 @@ class GameController extends BaseController {
     }
 
     /***************************************接收数据****************************************** */
-
-    private revRoomInfo(data) {
+    /** 房间信息 */
+    private rev2002(data) {
         let json = ProtocolData.Rev2002;
         json = data;
         GameInfo.playerNumber = json.player_num;
@@ -106,7 +142,8 @@ class GameController extends BaseController {
         }
     }
 
-    private revGameStart(data) {
+    /** 开始游戏了 */
+    private rev2003(data) {
         GameInfo.state = GameState.Playing;
         this.gameScene.resetScene();
         let json = ProtocolData.Rev2003;
@@ -119,7 +156,8 @@ class GameController extends BaseController {
         this.gameScene.headShowUI.hideAllReady();
     }
 
-    private revOutCard(data) {
+    /** 玩家出牌广播 */
+    private rev2006(data) {
         let json = ProtocolData.Rev2006;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -133,7 +171,8 @@ class GameController extends BaseController {
         }
     }
 
-    private revGetCard(data) {
+    /** 玩家摸牌广播 */
+    private rev2005(data) {
         let json = ProtocolData.Rev2005;
         json = data;
         this.gameScene.leftCardShowUI.setLeftCard(json.rest_mjs);
@@ -149,8 +188,8 @@ class GameController extends BaseController {
         }
     }
 
-
-    private revTuoGuang(data) {
+    /** 玩家自动开启托管广播 */
+    private rev2039(data) {
         let json = ProtocolData.Rev2039;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -160,7 +199,8 @@ class GameController extends BaseController {
         }
     }
 
-    private revCancleTuoGuang(data) {
+    /** 取消托管操作 */
+    private rev2040(data) {
         let json = ProtocolData.Rev2040;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -170,7 +210,7 @@ class GameController extends BaseController {
     }
 
     /***主动动作，玩家摸取麻将牌后，自己的可操作提示板 //自摸胡，亮牌，暗杠，蓄杠，过 */
-    private revAdjAction(data) {
+    private rev2007(data) {
         let json = ProtocolData.Rev2007;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -193,8 +233,9 @@ class GameController extends BaseController {
         }
 
     }
-    /****被动动作，其它玩家出牌后的 点炮胡，碰，明杠，过 */
-    private revPassiveAction(data) {
+
+    /** 被动动作，其它玩家出牌后的 点炮胡，碰，明杠，过 */
+    private rev2008(data) {
         let json = ProtocolData.Rev2008;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -208,67 +249,75 @@ class GameController extends BaseController {
                 this.gameScene.selectActUI.updateInfo(actList);
                 this.gameScene.selectActUI.show();
             }
-
         }
-
     }
 
-    private revPass(data) {
+    /** PASS别人打的牌 */
+    private rev2011(data) {
         let json = ProtocolData.Rev2011;
         json = data;
     }
 
-    private revPeng(data) {
+    /** 碰 */
+    private rev2012(data) {
         let json = ProtocolData.Rev2012;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
         this.gameScene.cardShowUI.dealCPGAction(ACT_act.Act_Peng, pos, [json.mj], 0);
     }
 
-    private revAnGang(data) {
+    /** 暗杠 */
+    private rev2013(data) {
         let json = ProtocolData.Rev2013;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
         this.gameScene.cardShowUI.dealCPGAction(ACT_act.Act_AnGang, pos, [json.mj], 0);
     }
 
-    private revMingGang(data) {
+    /** 明杠 */
+    private rev2014(data) {
         let json = ProtocolData.Rev2014;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
         this.gameScene.cardShowUI.dealCPGAction(ACT_act.Act_Gang, pos, [json.mj], 1);
     }
 
-    private revFangGang(data) {
+    /** 放杠 */
+    private rev2015(data) {
         let json = ProtocolData.Rev2015;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
         this.gameScene.cardShowUI.dealCPGAction(ACT_act.Act_Gang, pos, [json.mj], 3);
     }
 
-    private revZMHu(data) {
+    /** 自摸胡 */
+    private rev2016(data) {
         let json = ProtocolData.Rev2016;
         json = data;
     }
 
-    private revPaoHu(data) {
+    /** 接炮胡 */
+    private rev2017(data) {
         let json = ProtocolData.Rev2017;
         json = data;
     }
 
-    private revQiangGangHu(data) {
+    /** 玩家抢杠胡 */
+    private rev2018(data) {
         let json = ProtocolData.Rev2018;
         json = data;
     }
 
-    private revNextGame(data) {
+    /** 游戏进入下一局开始准备阶段 */
+    private rev2019(data) {
         let json = ProtocolData.Rev2019;
         json = data;
         this.gameScene.readyBtn.visible = true;
         GameInfo.state = GameState.Ready;
     }
-    /***单局结算 */
-    private revRoundBalance(data) {
+
+    /***单局结算 游戏结束结算广播 */
+    private rev2020(data) {
         console.log("+++++++++++++++++++++RoundOver---------------")
         let json = ProtocolData.Rev2020;
         json = data;
@@ -287,20 +336,22 @@ class GameController extends BaseController {
         }, this, delay)
     }
 
-    private revChongFengJi(data) {
+    /** 冲锋鸡广播 */
+    private rev2025(data) {
         let json = ProtocolData.Rev2025;
         json = data;
         this.gameScene.playChongFengJi();
-        console.log(json.seatid, "冲锋鸡！！！！！！！！")
     }
 
-    private revZRenJi(data) {
+    /** 责任鸡广播 */
+    private rev2027(data) {
         let json = ProtocolData.Rev2025;
         json = data;
         this.gameScene.playZRJi();
     }
 
-    private revReady(data) {
+    /** 广播玩家游戏准备 */
+    private rev2004(data) {
         let json = ProtocolData.Rev2004;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -314,39 +365,49 @@ class GameController extends BaseController {
     }
 
     /***广播解散房间（房卡游戏） */
-    private revBCQiteGame(data) {
+    private rev203(data) {
         let json = ProtocolData.Rev203;
         json = data;
         if (json.result == 1) {
             App.DataCenter.UserInfo.deleteAllUserExcptMe();
             App.PanelManager.closeAllPanel();
 
+            // 请求http解散请求
             if (json.ticket_id != 0 && json.roomid != 0) {
                 this.sendDissolutionRoom(GameInfo.curRoomId);
             }
         }
     }
 
-    private revChat(data) {
+    /** 结束整个大牌局 */
+    private rev204(data) {
+        let json = ProtocolData.Rev204;
+        json = data;
+    }
+
+    /** 常用语聊天应答 */
+    private rev4(data) {
         let json = ProtocolData.Rev4;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
         this.gameScene.showChat(pos, json.type, json.tag, json.message);
     }
 
-    /***玩家发起退出游戏 */
-    private revBCPlayWantExit(data) {
+    /*** 广播某玩家的解散房间请求 */
+    private rev201(data) {
         let json = ProtocolData.Rev201;
         json = data;
         if (json.init_uid != App.DataCenter.UserInfo.getMyUserVo().userID) {
             App.MsgBoxManager.getBoxA().showMsg("玩家:" + json.init_nick_name + " 发起退出房间，你是否同意", () => { this.sendAggretExitGame(1) }, () => { this.sendAggretExitGame(0) })
         }
     }
-    /***玩家同意退出 */
-    private revBCExitStaus(data) {
+
+    /*** 广播某玩家是否同意解散房间 */
+    private rev202(data) {
         let json = ProtocolData.Rev202;
         json = data;
-        TipsLog.gameInfo("玩家：" + json.nick_name + json.confirm ? "  同意" : "不同意" + "退出房间")
+        let msg = "玩家：" + json.nick_name + json.confirm ? "  同意" : "不同意" + "退出房间";
+        Tips.info(msg);
     }
 
     /****房卡模式,房间结算 **/
@@ -356,20 +417,21 @@ class GameController extends BaseController {
         (App.PanelManager.open(PanelConst.GameResultPanel) as GameResultPanel).update(json);
     }
 
-    /***所有玩家定却完成 */
-    private revDinQueSuccess(data) {
+    /*** 所有玩家定却完成 */
+    private rev2041(data) {
         let json = ProtocolData.Rev2041;
         json = data;
     }
 
-    /***进入定却 */
-    private revEnterDinQue(data) {
+    /*** 进入定缺阶段广播	只在开房场的2-3人局生效 */
+    private rev2023(data) {
         let json = ProtocolData.Rev2023;
         json = data;
         this.gameScene.dinQueUI.show();
     }
-    /****定却广播 */
-    private revBCDinQue(data) {
+
+    /** 发送定缺成功广播 */
+    private rev2024(data) {
         let json = ProtocolData.Rev2024;
         json = data;
         let seatid = CardLogic.getInstance().changeSeat(json.seatid);
@@ -380,18 +442,20 @@ class GameController extends BaseController {
         }
     }
 
-    private revCheckQiangGan(data) {
+    /** 玩家明杠时-其他玩家可否抢杠胡操作板 */
+    private rev2010(data) {
         let json = ProtocolData.Rev2010;
         json = data;
     }
 
-    private revAfterPeng(data) {
+    /** 玩家碰牌后-操作板提示自己可否暗杠 */
+    private rev2009(data) {
         let json = ProtocolData.Rev2009;
         json = data;
     }
 
-
-    private revGoldRoomQuiteGame(data) {
+    /** 退出房间 */
+    private rev2038(data) {
         let json = ProtocolData.Rev2038;
         json = data;
         let pos = CardLogic.getInstance().changeSeat(json.seatid);
@@ -405,6 +469,8 @@ class GameController extends BaseController {
         }
 
     }
+
+    /*-------------------------------------发送websocket请求----------------------------------------- */
 
     public sendReady() {
         let json = ProtocolData.Send1001;

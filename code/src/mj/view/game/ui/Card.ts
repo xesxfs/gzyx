@@ -55,8 +55,8 @@ class Card extends egret.DisplayObjectContainer {
             this.cardBg.bitmapData = RES.getRes("card_big_bg1_png");
             this.cardImg.bitmapData = RES.getRes("card_big_" + cardValue + "_png");
             // this.cardImg.x = 3
-            // this.scaleX = .8;
-            // this.scaleY = .8;
+            this.scaleX = .88;
+            this.scaleY = .88;
         } else if (userPos == UserPosition.R) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg1_png");
             this.cardImg.bitmapData = null;
@@ -107,6 +107,7 @@ class Card extends egret.DisplayObjectContainer {
             this.cardImg.x = 10;
             this.cardImg.y = 2;
         }
+        this.scaleX = this.scaleY = 0.58;
     }
 
 	/**
@@ -137,7 +138,7 @@ class Card extends egret.DisplayObjectContainer {
             this.cardImg.bitmapData = RES.getRes("card_small_" + cardValue + "_png");
             this.cardImg.x = 13;
             this.cardImg.y = 8;
-
+            this.scaleX = this.scaleY = 0.7;
         } else if (userPos == UserPosition.L) {
             this.cardBg.bitmapData = RES.getRes("card_left_bg0_png");
             this.cardImg.bitmapData = RES.getRes("card_left_" + cardValue + "_png");

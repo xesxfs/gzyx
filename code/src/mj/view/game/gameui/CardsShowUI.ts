@@ -65,7 +65,6 @@ class CardsShowUI extends eui.Component {
 		this.cardGroups[UserPosition.Down].addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouchTap, this);
 		this.cardGroups[UserPosition.Down].addEventListener(egret.TouchEvent.TOUCH_BEGIN, this.onDragCardBegin, this);
 		this.reset();
-		this.rectGroup.visible = false;
 	}
 
 	private _pengMc: egret.MovieClip;	//碰到特效
@@ -129,110 +128,114 @@ class CardsShowUI extends eui.Component {
 
 	/** 初始化吃碰杠的位置数据 */
 	private initCPG() {
-		for (let i = 0; i < this.playNum; i++) {
-			var cpgGroup = this.rectGroup.getChildAt(i + this.playNum * 2) as eui.Group;
-			var cpgPosList = this.CPGPointList[i];
+		for (let i = 0; i < 4; i++) {
+			var cpgGroup = this.rectGroup.getChildAt(i + 8) as eui.Group;
 			var len = cpgGroup.numChildren;
-			for (let i = 0; i < len; i++) {
-				var cp = cpgGroup.getChildAt(i);
+			for (let j = 0; j < len; j++) {
+				var cp = cpgGroup.getChildAt(0);
 				var pos = new egret.Point(cp.x, cp.y);
-				cpgPosList.push(pos);
+				this.CPGPointList[i][j] = pos;
+				cpgGroup.removeChild(cp);
 			}
+		}
+
+		while (this.rectGroup.numChildren > 0) {
+			this.rectGroup.removeChildAt(0);
 		}
 	}
 
 	private initDown() {
 		var len = this.hand0.numChildren;
-		var locateGet = this.hand0.getChildAt(len - 1);						//获取拿牌
-		var locateGetPoint = new egret.Point(locateGet.x, locateGet.y);
-		this.takePointList.push(locateGetPoint);							//保存拿牌的位置
+		var take = this.hand0.getChildAt(len - 1);						//获取拿牌
+		var point = new egret.Point(take.x, take.y);
+		this.takePointList[UserPosition.Down] = point;					//保存拿牌的位置
+		this.hand0.removeChild(take);
 
-		for (let i = len - 2; i >= 0; i--) {
-			var op = this.hand0.getChildAt(i);								//获取其他手牌的位置
+		for (let i = 0; i < len - 1; i++) {
+			var op = this.hand0.getChildAt(this.hand0.numChildren - 1);	//获取其他手牌的位置
 			var p = new egret.Point(op.x, op.y);
-			this.handlePointList[0].push(p);
+			this.handlePointList[UserPosition.Down][i] = p;
+			this.hand0.removeChild(op);
 		}
 
-		var out = this.out0
-		var olen = out.numChildren;
-		var outPointList = this.outPointList[0];
+		var olen = this.out0.numChildren;
 		for (let i = 0; i < olen; i++) {
-			var co = out.getChildAt(i);
+			var co = this.out0.getChildAt(0);
 			var point = new egret.Point(co.x, co.y);
-			outPointList.push(point);										//保存发牌的位置数据
+			this.outPointList[UserPosition.Down][i] = point;			//保存出牌后的位置数据
+			this.out0.removeChild(co);
 		}
 	}
 
 	private initRight() {
-		var hlen = this.hand1.numChildren;
-		var locateGet = this.hand1.getChildAt(0);
-		var locateGetPoint = new egret.Point(locateGet.x, locateGet.y);
-		this.takePointList.push(locateGetPoint);
+		var len = this.hand1.numChildren;
+		var take = this.hand1.getChildAt(len - 1);
+		var point = new egret.Point(take.x, take.y);
+		this.takePointList[UserPosition.R] = point;
+		this.hand1.removeChild(take);
 
-		for (let i = 1; i < hlen; i++) {
-			var op = this.hand1.getChildAt(i);
+		for (let i = 0; i < len - 1; i++) {
+			var op = this.hand1.getChildAt(0);
 			var p = new egret.Point(op.x, op.y);
-			this.handlePointList[1].push(p)
+			this.handlePointList[UserPosition.R][i] = p;
+			this.hand1.removeChild(op);
 		}
 
-		var out = this.out1
-		var olen = out.numChildren;
-		var outPointList = this.outPointList[1];
+		var olen = this.out1.numChildren;
 		for (let i = 0; i < olen; i++) {
-			var co = out.getChildAt(i);
+			var co = this.out1.getChildAt(0);
 			var point = new egret.Point(co.x, co.y);
-			outPointList.push(point);
+			this.outPointList[UserPosition.R][i] = point;
+			this.out1.removeChild(co);
 		}
-
-
 	}
-
 
 	private initUp() {
 		var len = this.hand2.numChildren;
-		var locateGet = this.hand2.getChildAt(len - 1);
-		var locateGetPoint = new egret.Point(locateGet.x, locateGet.y);
-		this.takePointList.push(locateGetPoint);
+		var take = this.hand2.getChildAt(len - 1);
+		var point = new egret.Point(take.x, take.y);
+		this.takePointList[UserPosition.Up] = point;
+		this.hand2.removeChild(take);
 
 		for (let i = 0; i < len - 1; i++) {
-			var op = this.hand2.getChildAt(i);
+			var op = this.hand2.getChildAt(0);
 			var p = new egret.Point(op.x, op.y);
-			this.handlePointList[UserPosition.Up].push(p)
+			this.handlePointList[UserPosition.Up][i] = p;
+			this.hand2.removeChild(op);
 		}
 
-		var out = this.out2
-		var olen = out.numChildren;
+		var olen = this.out2.numChildren;
 		var outPointList = this.outPointList[2];
 		for (let i = 0; i < olen; i++) {
-			var co = out.getChildAt(i);
+			var co = this.out2.getChildAt(0);
 			var point = new egret.Point(co.x, co.y);
-			outPointList.push(point);
+			this.outPointList[UserPosition.Up][i] = point;
+			this.out2.removeChild(co);
 		}
 
 	}
 
 	private initLeft() {
 		var len = this.hand3.numChildren;
-		var locateGet = this.hand3.getChildAt(len - 1);
-		var locateGetPoint = new egret.Point(locateGet.x, locateGet.y);
-		this.takePointList.push(locateGetPoint);
+		var take = this.hand3.getChildAt(len - 1);
+		var point = new egret.Point(take.x, take.y);
+		this.takePointList[UserPosition.L] = point;
+		this.hand3.removeChild(take);
 
 		for (let i = 0; i < len - 1; i++) {
-			var op = this.hand3.getChildAt(i);
+			var op = this.hand3.getChildAt(0);
 			var p = new egret.Point(op.x, op.y);
-			this.handlePointList[3].push(p)
+			this.handlePointList[UserPosition.L][i] = p;
+			this.hand3.removeChild(op);
 		}
 
-		var out = this.out3
-		var olen = out.numChildren;
-		var outPointList = this.outPointList[3];
+		var olen = this.out3.numChildren;
 		for (let i = 0; i < olen; i++) {
-			var co = out.getChildAt(i);
+			var co = this.out3.getChildAt(0);
 			var point = new egret.Point(co.x, co.y);
-			outPointList.push(point);
+			this.outPointList[UserPosition.L][i] = point;
+			this.out3.removeChild(co);
 		}
-
-
 	}
 
 	/** 获取某个位置的全部手牌 */

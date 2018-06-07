@@ -47,9 +47,9 @@ class ClientSocket {
      * 取消注册
      * @param proto 协议
      */
-    public unRegister(proto: string) {
-        delete this.callBackList[proto];
-        delete this.objList[proto];
+    public unRegister(proto: number) {
+        delete this.callBackList[proto.toString()];
+        delete this.objList[proto.toString()];
     }
 
     /**

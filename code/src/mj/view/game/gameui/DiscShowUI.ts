@@ -19,8 +19,8 @@ class DiscShowUI extends eui.Component {
         for (let i = 0; i < 4; i++) {
             this.redDiscBGList.push(this.discGroup.getChildAt(i * 2 + 2));
             this.redDiscList.push(this.discGroup.getChildAt(i * 2 + 3));
-            // console.log(i, (this.redDiscList[i] as eui.Image).source);
         }
+
 
     }
 
@@ -55,8 +55,10 @@ class DiscShowUI extends eui.Component {
     }
 
     /***开始出牌计时器*/
-    public startOutTimer() {
-
+    public startOutTimer(t:number) {
+        this.outTime = t;
+        
+        this.stopOutTimer();
         this.outTimer.addEventListener(egret.TimerEvent.TIMER, this.onOutTime, this);
         this.outTimer.repeatCount = this.outTime;
         this.curOutTimeLimit = this.outTime;
@@ -82,7 +84,7 @@ class DiscShowUI extends eui.Component {
     public stopOutTimer() {
         this.outTimer.removeEventListener(egret.TimerEvent.TIMER, this.onOutTime, this);
         this.outTimer.stop();
-        this.setCdLabel("");
+        this.setCdLabel("00");
     }
 
     public hide() {

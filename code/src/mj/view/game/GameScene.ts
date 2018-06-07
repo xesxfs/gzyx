@@ -122,9 +122,15 @@ class GameScene extends BaseScene {
     protected onEnable() {
         this.readyBtn.addEventListener("touchTap", this.ctrl.sendReady, this);
         this.optionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+
+        this.dinQueUI.hide();
+        this.leftCardShowUI.hide();
+        this.readyBtn.visible = false;
     }
 
     protected onRemove() {
+        this.dinQueUI.hide();
+        this.leftCardShowUI.hide();
         App.SoundManager.stopBGM();
         this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
     }

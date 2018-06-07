@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="headUISkin1" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+<e:Skin class="headUISkin1" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" width="157" height="161">
 	<w:Config id="162398a87bf" horizontalCenter="0" y="13"/>
-	<e:Image source="img_headMask_png" x="32.6" y="9.65"/>
-	<e:Image id="headMask" horizontalCenter="0.5" y="10.85" source="head_bg_png" anchorOffsetX="0" width="88" anchorOffsetY="0" height="88"/>
-	<e:Image id="headImg" source="friend_invite_png" y="5" width="100" height="100" x="27"/>
-	<e:Image id="headzhuang" source="img_zhuang_png" x="11" visible="false"/>
-	<e:Label id="nameLabel" y="94" size="26" verticalAlign="middle" textAlign="center" multiline="true" maxChars="5" text="sos" horizontalCenter="0.5" anchorOffsetX="0" textColor="0xffffff"/>
-	<e:Image source="infoFrame_png" y="125"/>
-	<e:Label id="goldLabel" text="0" y="129" size="25" textAlign="center" horizontalCenter="0" textColor="0xf7c70e"/>
+	<e:Image source="img_headMask_png" x="34.93" y="11.99"/>
+	<e:Image id="headMask" y="12" source="head_bg_png" anchorOffsetX="0" width="90" anchorOffsetY="0" height="90" x="35" visible="false"/>
+	<e:Image id="headImg" source="friend_invite_png" y="7.34" width="100" height="100" x="29.33"/>
+	<e:Image id="headzhuang" source="img_zhuang_png" x="18.99" y="0" visible="false"/>
+	<e:Group id="nameGrp" x="0" y="98.5" visible="false">
+		<e:Label id="nameLabel" y="0" size="26" verticalAlign="middle" textAlign="center" multiline="true" maxChars="5" text="sos" anchorOffsetX="0" textColor="0xffffff" x="0" width="156.33" fontFamily="SimHei"/>
+		<e:Image source="infoFrame_png" y="28.84" x="2.33"/>
+		<e:Label id="goldLabel" text="0" y="32.99" size="24" textAlign="center" textColor="0xf7c70e" anchorOffsetX="0" width="107.34" horizontalCenter="0"/>
+		<e:Image source="img_gold_png" x="0" y="25.83"/>
+	</e:Group>
+	<e:Image id="heroImg" source="chongfengji_commov_png" x="107" y="-4" visible="false"/>
+	<e:Image id="relateImg" source="zerenji_youxiz_lobby_png" x="107" y="-4" visible="false"/>
+
+
+
+
+
+
+
 </e:Skin>

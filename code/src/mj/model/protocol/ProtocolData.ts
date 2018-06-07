@@ -263,7 +263,7 @@ class ProtocolData {
         max_access_gold: 0,//integer	最多可玩金币数 适用game_flag为金币场时
         tai_fee: 0,//integer	税收 适用game_flag为金币场时
         players: [],//	array<player_info>	房间中所有用户的信息
-        status:0,   //	integer	当前游戏进行的阶段 0.准备 1.开始动画 2.定缺 3游戏进行中 4.游戏结束动画
+        status: 0,   //	integer	当前游戏进行的阶段 0.准备 1.开始动画 2.定缺 3游戏进行中 4.游戏结束动画
     }
 
     public static player_info2 = {
@@ -275,11 +275,11 @@ class ProtocolData {
         sex: 0,//	integer	性别 1.男 0.女
         gold: 0,//	integer	黄金
         diamonds: 0,//	integer	钻石
-        status: 0,//	integer	用户状态 1.可用
+        status: 0,//	0未准备 1准备 2游戏中没轮到操作 3游戏中轮到操作未操作 4游戏中轮到操作已经操作(已经打出牌了)
         online: 0,//	integer	是否在线 1.在 0.不在
         paiwei_score: 0,//	integer	排位分
         score: 0,//	integer	游戏得分
-
+        vip_level: 0,    //	integer	VIP等级
     }
 
     /** 开始游戏*/

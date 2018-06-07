@@ -16,76 +16,42 @@ class GameInfo {
     public static reBuildData: any;
     /***玩家数量 */
     public static playerNumber: number = 4;
-    public static state:number; //当前游戏进行的阶段 0.准备 1.开始动画 2.定缺 3游戏进行中 4.游戏结束动画
+    public static state: number; //当前游戏进行的阶段 0.准备 1.开始动画 2.定缺 3游戏进行中 4.游戏结束动画
 
     //聊天信息
     public Chat_Msg = [
         { "wz": "大家好，很高兴见到各位!" },
-			{ "wz": "快点吧,我等到花儿都谢了!" },
-			{ "wz": "不要走，决战到天亮!" },
-			{ "wz": "你是帅哥还是美女啊?" },
-			{ "wz": "君子报仇，十年不算晚!" },
-			{ "wz": "不要意思，我有事要先走一会了!" },
-			{ "wz": "家里是开银行的吧!" },
-			{ "wz": "今天真高兴!" },
-			{ "wz": "你的牌打的太好了!" },
-			{ "wz": "你放炮，我不胡!" },
-			{ "wz": "你手气真的太好了!" },
-			{ "wz": "你太牛哦!" },
+        { "wz": "快点吧,我等到花儿都谢了!" },
+        { "wz": "不要走，决战到天亮!" },
+        { "wz": "你是帅哥还是美女啊?" },
+        { "wz": "君子报仇，十年不算晚!" },
+        { "wz": "不要意思，我有事要先走一会了!" },
+        { "wz": "家里是开银行的吧!" },
+        { "wz": "今天真高兴!" },
+        { "wz": "你的牌打的太好了!" },
+        { "wz": "你放炮，我不胡!" },
+        { "wz": "你手气真的太好了!" },
+        { "wz": "你太牛哦!" },
     ];
-
-    //特殊玩法：一炮三响，三元牌，风位风圈刻字，海底捞月，抢杠胡，杠上开花，杠上开花包杠,大三元包自摸,大四喜包自摸、十二张落地包自摸
 
     //胡牌类型
     public huTypeList = [
-        "",
-        "鸡胡",     //[---1---]
+        "无牌型",
         "平胡",
-        "自摸",    //自摸不算番型
-        "风位",
-        "风圈",
-        "三元牌",   //中
-        "三元牌",   //白
-        "三元牌",   //发
-        "碰碰胡",
-        "混一色",   //[---10---]
-        "一炮三响",
-        "杠上开花",
-        "海底捞月",
-
-
+        "大对子",
+        "七对",
         "清一色",
-        "混碰",
-        "清碰",
-        "混幺九",
-        "小三元",
-        "小四喜",
-        "字一色",  //[---20---]
-        "清幺九",
-        "大三元",
-        "大四喜",
-        "九莲宝灯",
-        "十三幺",
-        "抢杠胡",
+        "单调",
+        "地听",
+        "清大对",
+        "单调清一色",
+        "天听",
+        "龙七对",
+        "清七对",
         "天胡",
-        "人胡",
         "地胡",
-
-        "小胡", //推倒胡普通牌型   //[---30---]
-        "无鬼",
-        "杠上开花",
-        "满鬼",
-        "清一色",
-        "字一色",
-        "七对子",
-        "四暗刻",
-        "十八罗汉",
-        "大三元",
-        "小四喜",   //[---40---]
-        "大四喜",
-        "十三幺",
-        "抢杠胡",   //[---43---]
-        "杠牌加番"
+        "杀报",
+        "清龙背"
     ];
 
     public csHuTypeList = [
@@ -125,21 +91,6 @@ class GameInfo {
         "抢杠胡"
     ];
 
-    /**玩法列表，有些胡牌类型属于玩法，而不是番型*/
-    public playTypeList = [
-        MJ_TYPE.MJTYPE_JIPINGHU_FENG_WEI,           // 风位
-        MJ_TYPE.MJTYPE_JIPINGHU_FENG_QUAN,          // 风圈
-        MJ_TYPE.MJTYPE_JIPINGHU_JIAN_ZHONG,         // 三元牌， 中   
-        MJ_TYPE.MJTYPE_JIPINGHU_JIAN_BAI,           // 三元牌， 白
-        MJ_TYPE.MJTYPE_JIPINGHU_JIAN_FA,            // 三元牌， 发
-        MJ_TYPE.MJTYPE_JIPINGHU_YI_PAO_SAN_XIANG,   // 一炮三响
-        MJ_TYPE.MJTYPE_JIPINGHU_GANG_SHANG_KAI_HUA, // 杠上开花
-        MJ_TYPE.MJTYPE_JIPINGHU_HAI_DI_LAO_YUE,     // 海底捞月
-        MJ_TYPE.MJTYPE_JIPINGHU_QIANG_GANG_HU,      // 抢杠胡
-        MJ_TYPE.MJTYPE_TUIDAOHU_GANG_SHANG_KAI_HUA, //杠开
-        MJ_TYPE.MJTYPE_TUIDAOHU_QIANG_GANG,          //抢杠
-        MJ_TYPE.MJTYPE_JIPINGHU_GANG_ADD_FAN         //杠牌加番                  
-    ];
 }
 
 
@@ -172,56 +123,22 @@ enum ACT_act {
 
 //胡牌类型
 enum MJ_TYPE {
-    MJTYPE_JIPINGHU_JI_HU = 1, // 鸡胡    [---1---]
-    MJTYPE_JIPINGHU_PING_HU,  // 平胡
-    MJTYPE_JIPINGHU_ZI_MO,   // 自摸
-    MJTYPE_JIPINGHU_FENG_WEI,  // 风位
-    MJTYPE_JIPINGHU_FENG_QUAN,  // 风圈
-    MJTYPE_JIPINGHU_JIAN_ZHONG,  // 三元牌， 中
-    MJTYPE_JIPINGHU_JIAN_BAI,  // 三元牌， 白
-    MJTYPE_JIPINGHU_JIAN_FA,   // 三元牌， 发
-    MJTYPE_JIPINGHU_PENG_PENG_HU, // 碰碰胡
-    MJTYPE_JIPINGHU_HUN_YI_SE,  // 混一色    [---10---]
-    MJTYPE_JIPINGHU_YI_PAO_SAN_XIANG,// 一炮三响
-    MJTYPE_JIPINGHU_GANG_SHANG_KAI_HUA,// 杠上开花
-    MJTYPE_JIPINGHU_HAI_DI_LAO_YUE, // 海底捞月
-
-    // 下面是爆胡
-    MJTYPE_JIPINGHU_QING_YI_SE,  // 清一色
-    MJTYPE_JIPINGHU_HUN_PENG,  // 混碰
-    MJTYPE_JIPINGHU_QING_PENG,  // 清碰
-    MJTYPE_JIPINGHU_HUN_YAO_JIU,  // 混幺九
-    MJTYPE_JIPINGHU_XIAO_SAN_YUAN, // 小三元
-    MJTYPE_JIPINGHU_XIAO_SI_XI,  // 小四喜
-    MJTYPE_JIPINGHU_ZI_YI_SE,  // 字一色      [---20---]
-    MJTYPE_JIPINGHU_QING_YAO_JIU, // 清幺九
-    MJTYPE_JIPINGHU_DA_SAN_YUAN,  // 大三元
-    MJTYPE_JIPINGHU_DA_SI_XI,  // 大四喜
-    MJTYPE_JIPINGHU_JIU_LIAN_BAO_DENG,// 九莲宝灯
-    MJTYPE_JIPINGHU_SHI_SAN_YAO,  // 十三幺
-    MJTYPE_JIPINGHU_QIANG_GANG_HU, // 抢杠胡
-    MJTYPE_JIPINGHU_TIAN_HU,   // 天胡
-    MJTYPE_JIPINGHU_REN_HU,   // 人胡
-    MJTYPE_JIPINGHU_DI_HU,   // 地胡
-
-
-    MJTYPE_TUIDAOHU_BASE_TYPE,  //  推倒胡基础牌型    [---30---]
-
-    // 下面是大胡
-    MJTYPE_TUIDAOHU_WU_ONI,   // 无鬼
-    MJTYPE_TUIDAOHU_GANG_SHANG_KAI_HUA, // 杠开
-    MJTYPE_TUIDAOHU_MAN_ONI,  // 满鬼
-    MJTYPE_TUIDAOHU_QING_YI_SE,  // 推到胡，清一色，带鬼
-    MJTYPE_TUIDAOHU_ZI_YI_SE,  // 推倒胡， 字一色， 带鬼
-    MJTYPE_TUIDAOHU_QI_DUI_ZI,  // 推倒胡， 七对子， 带鬼
-    MJTYPE_TUIDAOHU_SI_AN_KE,  // 推倒胡， 四暗刻, 带鬼
-    MJTYPE_TUIDAOHU_SHI_BA_LOU_HAN, // 推倒胡, 十八罗汉
-    MJTYPE_TUIDAOHU_DA_SAN_YUAN, // 推倒胡， 大三元， 带鬼
-    MJTYPE_TUIDAOHU_XIAO_SI_XI,  // 推倒胡, 小四喜, 带鬼    [---40---]
-    MJTYPE_TUIDAOHU_DA_SI_XI,  // 推倒胡, 大四喜，带鬼
-    MJTYPE_TUIDAOHU_SHI_SAN_YAO, // 推倒胡, 十三幺, 带鬼
-    MJTYPE_TUIDAOHU_QIANG_GANG,  // 抢杠            [---43---]
-    MJTYPE_JIPINGHU_GANG_ADD_FAN    //杠牌加番
+    CARD_TYPE_ERROR = 0,     //无牌型
+    CARD_TYPE_PINGHU = 1,   //平胡，1
+    CARD_TYPE_DADUIZI = 2,   //大对子 (碰碰胡)，5
+    CARD_TYPE_QIDUI = 3,   //七对   (七小对)，10
+    CARD_TYPE_QINGYISE = 4,  //清一色 ，10
+    CARD_TYPE_DANDIAO = 5,   //单调，10	
+    CARD_TYPE_DI_TING = 6, //地听，10	
+    CARD_TYPE_QINGDADUI = 7, //清大对 (清一色碰碰胡)，15		
+    CARD_TYPE_DANDIAOQINGYISE = 8, //单调清一色，20
+    CARD_TYPE_TIAN_TING = 9,//天听，20
+    CARD_TYPE_LONGQIDUI = 10, //龙七对 (豪华七对)，20
+    CARD_TYPE_QINGQIDUI = 11, //清七对 (清一色七小对)，20
+    CARD_TYPE_TIANHU = 12, //天胡，20
+    CARD_TYPE_DIHU = 13, //地胡，20
+    CARD_TYPE_SHA_BAO = 14, //杀报 
+    CARD_TYPE_QINGLONGBEI = 15, //清龙背 (清一色 豪华七对)，30
 };
 
 
