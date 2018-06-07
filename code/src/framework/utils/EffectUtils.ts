@@ -10,7 +10,7 @@ module EffectUtils {
 	 *  由大到小
 	 */ 
 	export function showMax2Min(egretObj:egret.DisplayObjectContainer|egret.DisplayObject,waitTime:number=1000){	  
-    	
+    	egretObj.visible = true;
         egretObj.anchorOffsetX = egretObj.width / 2;
         egretObj.anchorOffsetY = egretObj.height / 2;
         egretObj.scaleX = 4;

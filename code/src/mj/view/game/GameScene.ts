@@ -120,8 +120,8 @@ class GameScene extends BaseScene {
     }
 
     protected onEnable() {
-        this.readyBtn.addEventListener("touchTap", this.ctrl.sendReady, this);
-        this.optionGroup.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
+        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+        App.EventManager.addEvent(EventConst.ContinueGame, this.resetScene, this);
 
         this.dinQueUI.hide();
         this.leftCardShowUI.hide();
@@ -129,10 +129,10 @@ class GameScene extends BaseScene {
     }
 
     protected onRemove() {
-        this.dinQueUI.hide();
-        this.leftCardShowUI.hide();
+        this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+        this.resetScene();
+
         App.SoundManager.stopBGM();
-        this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onOptionTouch, this);
     }
 
     public setRoomNo(roomNo: number) {
@@ -151,7 +151,7 @@ class GameScene extends BaseScene {
         }
     }
 
-    private onOptionTouch(e: egret.TouchEvent) {
+    private onTouch(e: egret.TouchEvent) {
         switch (e.target) {
             case this.exitBtn:
                 //开房类型可以发起解散房间, 再发起http退出房间
@@ -167,7 +167,6 @@ class GameScene extends BaseScene {
                     }
                 }
 
-
                 break;
             case this.chatBtn:
                 App.PanelManager.open(PanelConst.ChatPanel);
@@ -175,8 +174,9 @@ class GameScene extends BaseScene {
             case this.setBtn:
                 App.PanelManager.open(PanelConst.GameSet);
                 break;
-            default:
-            // TipsLog.hallInfo("功能未实现！！")
+            case this.readyBtn:
+                this.ctrl.sendReady();
+                break;
         }
     }
 
@@ -263,7 +263,6 @@ class GameScene extends BaseScene {
     }
 
     public resetScene() {
-
         this.cardShowUI.reset();
         this.touGuanShowUI.hideTuoGuan();
         this.outFlagUI.hide();;

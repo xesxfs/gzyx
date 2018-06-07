@@ -61,6 +61,8 @@ class HeadShowUI extends eui.Component {
 	public hideHeadUI(pos: UserPosition) {
 		var headUI: HeadUI = this.headList[pos];
 		headUI.reset();
+
+		this.readyGroup.getChildAt(pos).visible = false;
 	}
 
 	/**清理所有玩家头像UI*/

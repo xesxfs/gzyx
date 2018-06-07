@@ -8,15 +8,37 @@ class RoundResultPanel extends BasePanel {
 	public detailBtn: eui.Button;
 	public detailData: any;
 
+	protected onEnable() {
+		this.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
 
-	protected childrenCreated() {
-		this.closeBtn.addEventListener("touchTap", this.hide, this);
-		this.ksyxBtn.addEventListener("touchTap", this.hide, this);
-		this.detailBtn.addEventListener("touchTap", this.onDetailTap, this);
 		for (let i = 0; i < 4; i++) {
 			let item = this.getChildAt(i + 3) as RoundResultItem;
 			item.visible = false;
 		}
+	}
+
+	protected onRemove() {
+		this.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onTouch, this);
+	}
+
+	private onTouch(evt: egret.TouchEvent) {
+		switch (evt.target) {
+			case this.closeBtn:
+			case this.ksyxBtn:
+				App.EventManager.sendEvent(EventConst.ContinueGame);
+				this.hide();
+				break;
+			case this.detailBtn:
+				this.onDetailTap();
+				break;
+
+			default:
+				break;
+		}
+	}
+
+	protected childrenCreated() {
+
 	}
 
 	private onDetailTap() {

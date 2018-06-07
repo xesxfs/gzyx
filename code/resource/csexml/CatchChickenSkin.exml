@@ -1,25 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="CatchChickenSkin" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
-	<e:Group width="132" x="574" anchorOffsetX="0" height="49" y="533">
+	<e:Group anchorOffsetX="0" y="533" horizontalCenter="0">
 		<e:layout>
 			<e:VerticalLayout/>
 		</e:layout>
 	</e:Group>
-	<e:Group width="132" x="1016.67" anchorOffsetX="0" verticalCenter="0" height="49">
+	<e:Group x="1016.67" anchorOffsetX="0" verticalCenter="0">
 		<e:layout>
 			<e:VerticalLayout/>
 		</e:layout>
 	</e:Group>
-	<e:Group width="132" anchorOffsetX="0" height="49" y="116" x="574">
+	<e:Group anchorOffsetX="0" y="116" horizontalCenter="0">
 		<e:layout>
 			<e:VerticalLayout/>
 		</e:layout>
 	</e:Group>
-	<e:Group width="132" x="166" anchorOffsetX="0" verticalCenter="0" height="49">
+	<e:Group x="166" anchorOffsetX="0" verticalCenter="0">
 		<e:layout>
 			<e:VerticalLayout/>
 		</e:layout>
 	</e:Group>
+	<e:Group anchorOffsetX="0" x="640" y="360">
+		<e:layout>
+		<e:VerticalLayout/>
+		</e:layout>
+	</e:Group>
+	<e:Image id="zhuaImg" source="zhuo_png" x="471" y="276" anchorOffsetX="65" anchorOffsetY="56"/>
+	<e:Image id="jiImg" source="ji_png" x="846.58" y="276.33" anchorOffsetX="63.33" anchorOffsetY="65.33"/>
 
 
 

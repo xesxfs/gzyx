@@ -105,11 +105,6 @@ class GameController extends BaseController {
         gameSocket.unRegister(ProtocolHead.system_command.SERVER_NOLMAL_CHAT_BC);
     }
 
-    public continueGame() {
-        this.sendReady();
-        this.gameScene.resetScene();
-    }
-
     /***************************************接收数据****************************************** */
     /** 房间信息 */
     private rev2002(data) {
@@ -145,7 +140,7 @@ class GameController extends BaseController {
     /** 开始游戏了 */
     private rev2003(data) {
         GameInfo.state = GameState.Playing;
-        this.gameScene.resetScene();
+        
         let json = ProtocolData.Rev2003;
         json = data;
         this.gameScene.leftCardShowUI.setLeftCard(json.rest_mjs);
